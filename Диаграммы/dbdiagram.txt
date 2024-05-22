@@ -1,0 +1,37 @@
+Table users {
+  id bigint [pk, increment]
+  name varchar(50)
+  email varchar(100) [unique]
+  password varchar(255)
+  role varchar(20)
+}
+
+Table restaurants {
+  id bigint [pk, increment]
+  name varchar(100)
+  address varchar(255)
+  description text
+}
+
+Table orders {
+  id bigint [pk, increment]
+  user_id bigint 
+  restaurant_id bigint 
+  total_price decimal
+  status varchar(20)
+  created_at timestamp
+}
+
+Table products {
+  id bigint [pk, increment]
+  name varchar(100)
+  description text
+  price decimal
+  category_id bigint 
+}
+
+Table categories {
+  id bigint [pk, increment]
+  name varchar(50)
+  description text
+}
