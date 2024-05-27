@@ -1,0 +1,5 @@
+version: '3.8'
+
+include:
+  - path: './docker-compose.postgresql.yaml'
+  - path: './docker-compose.s3.yaml'
