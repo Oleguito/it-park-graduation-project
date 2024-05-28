@@ -57,16 +57,14 @@ public class KeycloakConfiguration {
                                 .anyRequest().permitAll()
                 );
 
-        http.oauth2ResourceServer(
-                (oauth2) ->
-                        oauth2
-                                .jwt(
-                                        jwt -> jwt.jwtAuthenticationConverter(jwtAuthConvertor)
-                                )
+        http.oauth2ResourceServer((oauth2) -> oauth2
+                .jwt(jwt -> jwt
+                        .jwtAuthenticationConverter(jwtAuthConvertor))
         );
 
 
-        http.sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.sessionManagement(configurer -> configurer
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
 

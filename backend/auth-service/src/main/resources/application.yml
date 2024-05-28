@@ -11,8 +11,8 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://auth.dppmai.ru/realms/lessons
-          jwk-uri: https://auth.dppmai.ru/realms/lessons/protocol/openid-connect/certs
+          issuer-uri: https://auth.dppmai.ru/realms/group-1
+          jwk-uri: https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/certs
   liquibase:
     user: authservice
     password: 12345
@@ -25,7 +25,7 @@ spring:
 keycloak:
   serverUrl: https://auth.dppmai.ru
   realm: lessons
-  clientId: admin-cli
+  clientId: lessons-client
   username: admin
   password: HVG-Rqf-5PV-Lp6
   realmName: lessons
@@ -37,4 +37,5 @@ logging:
     file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} %M - %msg%n"
   file:
     name: log.txt
-  level.root: info
+  level:
+    root: info
