@@ -1,7 +1,7 @@
-package ru.itpark.userservice.infrastructure.repositories;
+package ru.itpark.authservice.infrastructure.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.itpark.userservice.domain.user.User;
+import ru.itpark.authservice.domain.user.User;
 
 import java.util.Optional;
 
