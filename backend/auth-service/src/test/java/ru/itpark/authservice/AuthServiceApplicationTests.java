@@ -1,10 +1,10 @@
-package ru.itpark.userservice;
+package ru.itpark.authservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class UserServiceApplicationTests {
+class AuthServiceApplicationTests {
 
     @Test
     void contextLoads() {

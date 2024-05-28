@@ -1,4 +1,4 @@
-package ru.itpark.userservice;
+package ru.itpark.authservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -17,7 +17,7 @@ public class TestUserServiceApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.from(UserServiceApplication::main).with(TestUserServiceApplication.class).run(args);
+        SpringApplication.from(AuthServiceApplication::main).with(TestUserServiceApplication.class).run(args);
     }
 
 }

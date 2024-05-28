@@ -1,14 +1,12 @@
-package ru.itpark.userservice.domain.user.converters;
+package ru.itpark.authservice.domain.user.converters;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.shaded.gson.reflect.TypeToken;
 import jakarta.persistence.AttributeConverter;
-import org.hibernate.type.internal.ParameterizedTypeImpl;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
-import ru.itpark.userservice.domain.user.VO.Language;
+import ru.itpark.authservice.domain.user.VO.Language;
 
 import java.lang.reflect.Type;
 import java.util.List;

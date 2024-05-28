@@ -1,4 +1,4 @@
-package ru.itpark.userservice.domain.user.VO;
+package ru.itpark.authservice.domain.user.VO;
 
 import lombok.*;
 

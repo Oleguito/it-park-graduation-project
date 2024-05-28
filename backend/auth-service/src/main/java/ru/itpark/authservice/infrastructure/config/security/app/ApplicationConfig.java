@@ -1,4 +1,4 @@
-package ru.itpark.userservice.infrastructure.config.app;
+package ru.itpark.authservice.infrastructure.config.app;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import ru.itpark.userservice.infrastructure.repositories.UserRepository;
+import ru.itpark.authservice.infrastructure.repositories.UserRepository;
 
 
 @Configuration
