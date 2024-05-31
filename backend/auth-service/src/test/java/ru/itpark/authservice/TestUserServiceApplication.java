@@ -17,7 +17,10 @@ public class TestUserServiceApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.from(AuthServiceApplication::main).with(TestUserServiceApplication.class).run(args);
+        
+        SpringApplication.from(AuthServiceApplication::main)
+                .with(TestUserServiceApplication.class)
+                .run(args);
     }
 
 }

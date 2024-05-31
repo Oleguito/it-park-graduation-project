@@ -8,4 +8,24 @@ class SomeTests extends Specification {
         expect:
         1 == 1
     }
+
+    def "skjdfhksjdhf"() {
+//        String folderPath = "/usr/src/mymaven/backend";
+//        System.out.println(folderPath);
+        runLsInFolder("/usr/src/")
+        runLsInFolder("/usr/src/mymaven")
+        runLsInFolder("/usr/src/mymaven/backend")
+        expect:
+        1 == 1
+    }
+
+    def runLsInFolder(folder) {
+        def process = "ls ${folder}".execute()
+        def output = new StringBuffer()
+        process.consumeProcessOutput(output, System.err)
+        process.waitFor()
+        println "Output: $output"
+    }
+
+    
 }
