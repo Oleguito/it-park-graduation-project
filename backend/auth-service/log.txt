@@ -1,0 +1,1325 @@
+2024-05-31 10:59:49 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 80 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 10:59:49 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 10:59:49 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor logTo - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-31 10:59:49 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor logTo - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-31 10:59:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 10:59:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 166 ms. Found 1 JPA repository interface.
+2024-05-31 10:59:51 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Unable to load cache item
+2024-05-31 10:59:51 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 10:59:51 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+java.lang.IllegalStateException: Unable to load cache item
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:75)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:130)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:317)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:533)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:310)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.NoClassDefFoundError: JwtAuthConvertor
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555)
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:655)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:57)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:366)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.lambda$new$1(AbstractClassGenerator.java:107)
+	at org.springframework.cglib.core.internal.LoadingCache.lambda$createEntry$1(LoadingCache.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:57)
+	... 25 common frames omitted
+Caused by: java.lang.ClassNotFoundException: JwtAuthConvertor
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:467)
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 38 common frames omitted
+2024-05-31 11:17:09 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 94 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 11:17:09 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 11:17:10 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 11:17:10 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 166 ms. Found 1 JPA repository interface.
+2024-05-31 11:17:11 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 11:17:11 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 11:17:11 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 11:17:12 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 11:17:12 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2861 ms
+2024-05-31 11:17:12 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: Connection to postgresql:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2024-05-31 11:17:12 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 11:17:12 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 11:17:12 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: Connection to postgresql:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: Connection to postgresql:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: Connection to postgresql:5433 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:342)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 11:56:17 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 78 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 11:56:17 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 11:56:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 11:56:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 162 ms. Found 1 JPA repository interface.
+2024-05-31 11:56:19 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Unable to load cache item
+2024-05-31 11:56:19 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 11:56:19 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+java.lang.IllegalStateException: Unable to load cache item
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:75)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:130)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:317)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:533)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:310)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: JwtAuthConvertor
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555)
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:655)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:57)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:366)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.lambda$new$1(AbstractClassGenerator.java:107)
+	at org.springframework.cglib.core.internal.LoadingCache.lambda$createEntry$1(LoadingCache.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:57)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: JwtAuthConvertor
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 33 common frames omitted
+2024-05-31 11:59:20 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 77 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 11:59:20 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 11:59:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 11:59:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 169 ms. Found 1 JPA repository interface.
+2024-05-31 11:59:22 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Unable to load cache item
+2024-05-31 11:59:22 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 11:59:22 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+java.lang.IllegalStateException: Unable to load cache item
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:75)
+	at org.springframework.cglib.core.internal.LoadingCache.get(LoadingCache.java:34)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.get(AbstractClassGenerator.java:130)
+	at org.springframework.cglib.core.AbstractClassGenerator.create(AbstractClassGenerator.java:317)
+	at org.springframework.cglib.proxy.Enhancer.createHelper(Enhancer.java:562)
+	at org.springframework.cglib.proxy.Enhancer.createClass(Enhancer.java:407)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.createClass(ConfigurationClassEnhancer.java:138)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer.enhance(ConfigurationClassEnhancer.java:109)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.enhanceConfigurationClasses(ConfigurationClassPostProcessor.java:533)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanFactory(ConfigurationClassPostProcessor.java:310)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:363)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:153)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: java.lang.NoClassDefFoundError: JwtAuthConvertor
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method)
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3373)
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2555)
+	at org.springframework.cglib.proxy.Enhancer.generateClass(Enhancer.java:655)
+	at org.springframework.cglib.transform.TransformingClassGenerator.generateClass(TransformingClassGenerator.java:35)
+	at org.springframework.cglib.core.DefaultGeneratorStrategy.generate(DefaultGeneratorStrategy.java:26)
+	at org.springframework.cglib.core.ClassLoaderAwareGeneratorStrategy.generate(ClassLoaderAwareGeneratorStrategy.java:57)
+	at org.springframework.cglib.core.AbstractClassGenerator.generate(AbstractClassGenerator.java:366)
+	at org.springframework.cglib.proxy.Enhancer.generate(Enhancer.java:575)
+	at org.springframework.cglib.core.AbstractClassGenerator$ClassLoaderData.lambda$new$1(AbstractClassGenerator.java:107)
+	at org.springframework.cglib.core.internal.LoadingCache.lambda$createEntry$1(LoadingCache.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.springframework.cglib.core.internal.LoadingCache.createEntry(LoadingCache.java:57)
+	... 20 common frames omitted
+Caused by: java.lang.ClassNotFoundException: JwtAuthConvertor
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+	... 33 common frames omitted
+2024-05-31 12:10:22 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 84 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 12:10:22 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 12:10:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 12:10:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 164 ms. Found 1 JPA repository interface.
+2024-05-31 12:10:25 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 12:10:25 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 12:10:25 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 12:10:25 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 12:10:25 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2948 ms
+2024-05-31 12:10:33 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+2024-05-31 12:10:33 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 12:10:33 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 12:10:33 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: postgresql
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 12:13:29 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 78 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 12:13:29 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 12:13:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 12:13:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 166 ms. Found 1 JPA repository interface.
+2024-05-31 12:13:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 12:13:32 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 12:13:32 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 12:13:32 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 12:13:32 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2812 ms
+2024-05-31 12:13:40 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+2024-05-31 12:13:40 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 12:13:40 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 12:13:40 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: postgresql
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 12:15:17 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 76 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 12:15:17 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 12:15:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 12:15:18 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 166 ms. Found 1 JPA repository interface.
+2024-05-31 12:15:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 12:15:20 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 12:15:20 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 12:15:20 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 12:15:20 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2878 ms
+2024-05-31 12:15:23 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+2024-05-31 12:15:23 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 12:15:23 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 12:15:23 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: collaborative-project-postgres
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 12:45:18 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 79 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 12:45:18 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 12:45:19 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 12:45:19 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 170 ms. Found 1 JPA repository interface.
+2024-05-31 12:45:21 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 12:45:21 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 12:45:21 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 12:45:21 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 12:45:21 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2902 ms
+2024-05-31 12:45:24 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+2024-05-31 12:45:24 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 12:45:24 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 12:45:24 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: collaborative-project-postgres
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 12:49:26 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 80 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 12:49:26 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 12:49:28 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 12:49:28 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 170 ms. Found 1 JPA repository interface.
+2024-05-31 12:49:29 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 12:49:29 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 12:49:29 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 12:49:29 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 12:49:29 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2849 ms
+2024-05-31 12:49:32 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+2024-05-31 12:49:32 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 12:49:32 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 12:49:33 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: collaborative-project-postgres
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 12:50:31 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 78 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 12:50:31 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 12:50:32 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 12:50:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 168 ms. Found 1 JPA repository interface.
+2024-05-31 12:50:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 12:50:34 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 12:50:34 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 12:50:34 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 12:50:34 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2850 ms
+2024-05-31 12:50:37 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+2024-05-31 12:50:37 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 12:50:37 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 12:50:37 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: The connection attempt failed.
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+Caused by: java.net.UnknownHostException: collaborative-project-postgres-VASYA
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 29 common frames omitted
+2024-05-31 13:04:40 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 78 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:04:40 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:04:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:04:41 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 167 ms. Found 1 JPA repository interface.
+2024-05-31 13:04:42 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:04:42 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:04:42 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:04:43 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:04:43 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2833 ms
+2024-05-31 13:04:43 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: FATAL: database "collaborative-project-postgres-db" does not exist
+2024-05-31 13:04:43 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:04:43 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:04:43 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: org.postgresql.util.PSQLException: FATAL: database "collaborative-project-postgres-db" does not exist
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.DatabaseException: org.postgresql.util.PSQLException: FATAL: database "collaborative-project-postgres-db" does not exist
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:288)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: database "collaborative-project-postgres-db" does not exist
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.readStartupMessages(QueryExecutorImpl.java:2825)
+	at org.postgresql.core.v3.QueryExecutorImpl.<init>(QueryExecutorImpl.java:175)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:313)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at org.springframework.jdbc.datasource.SimpleDriverDataSource.getConnectionFromDriver(SimpleDriverDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:205)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:169)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283)
+	... 21 common frames omitted
+2024-05-31 13:05:29 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 77 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:05:29 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:05:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:05:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 166 ms. Found 1 JPA repository interface.
+2024-05-31 13:05:32 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:05:32 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:05:32 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:05:32 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:05:32 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2787 ms
+2024-05-31 13:05:32 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2024-05-31 13:05:32 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:05:32 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:05:32 ERROR o.s.b.d.LoggingFailureAnalysisReporter report - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-05-31 13:10:19 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 89 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:10:19 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:10:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:10:21 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 177 ms. Found 1 JPA repository interface.
+2024-05-31 13:10:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:10:22 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:10:22 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:10:22 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:10:22 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2858 ms
+2024-05-31 13:10:22 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+2024-05-31 13:10:22 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:10:22 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:10:22 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.getIfUnique(DefaultListableBeanFactory.java:2153)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Cannot load driver class: SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 40 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot load driver class: SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+	at org.springframework.util.Assert.state(Assert.java:97)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:175)
+	at org.springframework.boot.autoconfigure.jdbc.PropertiesJdbcConnectionDetails.getDriverClassName(PropertiesJdbcConnectionDetails.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:55)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari.dataSource(DataSourceConfiguration.java:117)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 41 common frames omitted
+2024-05-31 13:13:42 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 91 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:13:42 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:13:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:13:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 170 ms. Found 1 JPA repository interface.
+2024-05-31 13:13:45 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:13:45 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:13:45 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:13:45 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:13:45 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2813 ms
+2024-05-31 13:13:46 WARN  liquibase.integration log - Null connection returned by liquibase datasource. Using offline unknown database
+2024-05-31 13:13:46 WARN  liquibase.database log - Unknown database: Offline unknown
+2024-05-31 13:13:46 INFO  liquibase.command log - Using deploymentId: 7161226902
+2024-05-31 13:13:47 ERROR liquibase.changelog log - ChangeSet db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks encountered an exception.
+2024-05-31 13:13:47 INFO  liquibase.command log - Update command encountered an exception.
+2024-05-31 13:13:47 INFO  liquibase.command log - Command execution complete
+2024-05-31 13:13:47 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+2024-05-31 13:13:47 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:13:47 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:13:47 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:222)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1371)
+	at liquibase.Liquibase.update(Liquibase.java:211)
+	at liquibase.Liquibase.update(Liquibase.java:193)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:331)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:122)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$doRun$1(AbstractUpdateCommandStep.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.command.core.AbstractUpdateCommandStep.doRun(AbstractUpdateCommandStep.java:104)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:63)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:62)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:106)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	... 31 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:785)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:118)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:110)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Scope.child(Scope.java:250)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:100)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Scope.child(Scope.java:250)
+	at liquibase.Scope.child(Scope.java:254)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:74)
+	... 45 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:72)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:177)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1291)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1273)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	... 61 common frames omitted
+2024-05-31 13:19:32 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 78 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:19:32 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:19:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:19:34 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 168 ms. Found 1 JPA repository interface.
+2024-05-31 13:19:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:19:35 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:19:35 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:19:35 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:19:35 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2855 ms
+2024-05-31 13:19:36 WARN  liquibase.integration log - Null connection returned by liquibase datasource. Using offline unknown database
+2024-05-31 13:19:36 WARN  liquibase.database log - Unknown database: Offline unknown
+2024-05-31 13:19:36 INFO  liquibase.command log - Using deploymentId: 7161576705
+2024-05-31 13:19:36 ERROR liquibase.changelog log - ChangeSet db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks encountered an exception.
+2024-05-31 13:19:36 INFO  liquibase.command log - Update command encountered an exception.
+2024-05-31 13:19:36 INFO  liquibase.command log - Command execution complete
+2024-05-31 13:19:36 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+2024-05-31 13:19:36 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:19:36 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:19:37 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:222)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Liquibase.runInScope(Liquibase.java:1371)
+	at liquibase.Liquibase.update(Liquibase.java:211)
+	at liquibase.Liquibase.update(Liquibase.java:193)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:331)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:286)
+	at org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase.afterPropertiesSet(DataSourceClosingSpringLiquibase.java:46)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 18 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:122)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$doRun$1(AbstractUpdateCommandStep.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.command.core.AbstractUpdateCommandStep.doRun(AbstractUpdateCommandStep.java:104)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:63)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:62)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:106)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	... 31 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/2024-05-27/db-cumulative-changelog.yaml::1::oleguitoswagbucks:
+     Reason: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:785)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:118)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:110)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Scope.child(Scope.java:250)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:100)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Scope.child(Scope.java:250)
+	at liquibase.Scope.child(Scope.java:254)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:74)
+	... 45 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Cannot execute commands against an offline database
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:72)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:177)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1291)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1273)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	... 61 common frames omitted
+2024-05-31 13:38:52 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 92 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:38:52 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:38:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:38:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 170 ms. Found 1 JPA repository interface.
+2024-05-31 13:38:55 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:38:55 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:38:55 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:38:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:38:55 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2832 ms
+2024-05-31 13:38:56 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+2024-05-31 13:38:56 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:38:56 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:38:56 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Name must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:172)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:268)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.convertFromString(DataSourceBuilder.java:506)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
+	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:192)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.getMigrationDataSource(LiquibaseAutoConfiguration.java:148)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.createSpringLiquibase(LiquibaseAutoConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted
+2024-05-31 13:44:44 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 81 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:44:44 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:44:46 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:44:46 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 170 ms. Found 1 JPA repository interface.
+2024-05-31 13:44:47 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:44:47 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:44:47 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:44:47 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:44:47 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2854 ms
+2024-05-31 13:44:48 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+2024-05-31 13:44:48 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:44:48 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:44:48 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Name must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:172)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:268)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.convertFromString(DataSourceBuilder.java:506)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
+	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:192)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.getMigrationDataSource(LiquibaseAutoConfiguration.java:148)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.createSpringLiquibase(LiquibaseAutoConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted
+2024-05-31 13:58:07 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 81 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 13:58:07 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 13:58:08 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 13:58:08 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 174 ms. Found 1 JPA repository interface.
+2024-05-31 13:58:09 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 13:58:09 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 13:58:09 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 13:58:10 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 13:58:10 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2866 ms
+2024-05-31 13:58:10 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+2024-05-31 13:58:10 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 13:58:10 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 13:58:10 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Name must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:172)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:268)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.convertFromString(DataSourceBuilder.java:506)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
+	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:192)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.getMigrationDataSource(LiquibaseAutoConfiguration.java:148)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.createSpringLiquibase(LiquibaseAutoConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted
+2024-05-31 14:04:42 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 82 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 14:04:42 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 14:04:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 14:04:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 182 ms. Found 1 JPA repository interface.
+2024-05-31 14:04:45 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 14:04:45 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 14:04:45 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 14:04:45 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 14:04:45 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3000 ms
+2024-05-31 14:04:45 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+2024-05-31 14:04:45 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 14:04:45 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 14:04:45 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Name must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:172)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:268)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.convertFromString(DataSourceBuilder.java:506)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
+	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:192)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.getMigrationDataSource(LiquibaseAutoConfiguration.java:148)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.createSpringLiquibase(LiquibaseAutoConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted
+2024-05-31 14:09:02 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 147 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 14:09:02 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 14:09:04 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 14:09:04 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 176 ms. Found 1 JPA repository interface.
+2024-05-31 14:09:05 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 14:09:05 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 14:09:05 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 14:09:05 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 14:09:05 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 3079 ms
+2024-05-31 14:09:05 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+2024-05-31 14:09:05 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 14:09:05 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 14:09:05 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Name must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:172)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:268)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.convertFromString(DataSourceBuilder.java:506)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
+	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:192)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.getMigrationDataSource(LiquibaseAutoConfiguration.java:148)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.createSpringLiquibase(LiquibaseAutoConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted
+2024-05-31 14:12:58 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 150 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-05-31 14:12:58 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-05-31 14:13:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-31 14:13:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.
+2024-05-31 14:13:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-05-31 14:13:01 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-05-31 14:13:01 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-31 14:13:01 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-05-31 14:13:01 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2983 ms
+2024-05-31 14:13:02 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+2024-05-31 14:13:02 INFO  o.a.catalina.core.StandardService log - Stopping service [Tomcat]
+2024-05-31 14:13:02 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-05-31 14:13:02 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [liquibase.integration.spring.SpringLiquibase]: Factory method 'liquibase' threw exception with message: Name must not be null
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Name must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:172)
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:268)
+	at org.springframework.util.ClassUtils.resolveClassName(ClassUtils.java:345)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.convertFromString(DataSourceBuilder.java:506)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperty.set(DataSourceBuilder.java:479)
+	at org.springframework.boot.jdbc.DataSourceBuilder$MappedDataSourceProperties.set(DataSourceBuilder.java:373)
+	at org.springframework.boot.jdbc.DataSourceBuilder.build(DataSourceBuilder.java:192)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.getMigrationDataSource(LiquibaseAutoConfiguration.java:148)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.createSpringLiquibase(LiquibaseAutoConfiguration.java:130)
+	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.liquibase(LiquibaseAutoConfiguration.java:101)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 22 common frames omitted

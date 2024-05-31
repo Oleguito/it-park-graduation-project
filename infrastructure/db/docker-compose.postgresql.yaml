@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  collaborative-project-postgres-db:
+    image: postgres:14.2
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: 'collaborative-project-platform'
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: '12345'
+      PGDATA: '/var/lib/postgresql/data/pgdata'
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
+      - ./dbroot:/root
+      - ./dbroot/init.sql:/docker-entrypoint-initdb.d/db.sql
+    networks:
+      - backend
+
+volumes:
+  postgres_data: {}
+
+networks:
+  backend: {}

@@ -1,0 +1,42 @@
+server:
+  port: 8080
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: certificate.p12
+    key-store-password: 1PwCgNAb
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://auth.dppmai.ru/realms/group-1
+          jwk-uri: https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/certs
+  liquibase:
+    user: authservice
+    password: 12345
+    change-log: 'classpath:db/changelog/db-init.yaml'
+    url: ${SPRING_DATASOURCE_URL}
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+
+keycloak:
+  serverUrl: https://auth.dppmai.ru
+  realm: lessons
+  clientId: lessons-client
+  username: admin
+  password: HVG-Rqf-5PV-Lp6
+  realmName: lessons
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) %logger{36} %M - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} %M - %msg%n"
+  file:
+    name: log.txt
+  level:
+    root: info
