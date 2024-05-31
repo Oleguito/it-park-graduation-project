@@ -13,7 +13,7 @@ services:
     stdin_open: true
     tty: true
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgreqsl://collaborative-project-postgres-db:${POSTGRES_PORT}/${POSTGRES_DB}
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://collaborative-project-postgres-db:${POSTGRES_PORT}/${POSTGRES_DB}
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
     depends_on:

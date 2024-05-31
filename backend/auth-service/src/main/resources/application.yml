@@ -14,10 +14,9 @@ spring:
           issuer-uri: https://auth.dppmai.ru/realms/group-1
           jwk-uri: https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/certs
   liquibase:
-    user: authservice
-    password: 12345
+    user: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     change-log: 'classpath:db/changelog/db-init.yaml'
-    url: ${SPRING_DATASOURCE_URL}
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
