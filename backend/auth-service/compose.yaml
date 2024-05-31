@@ -1,0 +1,53 @@
+version: '3'
+services:
+  maven:
+    ports:
+      - "8080:8080"
+    image: maven:3.8.3-openjdk-17
+    command: mvn package spring-boot:run
+    volumes:
+      - .:/usr/src/mymaven
+      - $HOME/.m2:/root/.m2
+      - ./target:/usr/src/mymaven/target
+    working_dir: /usr/src/mymaven
+    stdin_open: true
+    tty: true
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgreqsl://collaborative-project-postgres-db:${POSTGRES_PORT}/${POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      - collaborative-project-postgres-db
+    networks:
+      backend: {}
+
+networks:
+  backend: {}
+
+# version: '3'
+# services:
+  # maven:
+    # image: maven:3.8.3-openjdk-17
+    # command: mvn spring-boot:run
+    # volumes:
+      # - .:/usr/src/mymaven
+      # - $HOME/.m2:/root/.m2
+      # - ./target:/usr/src/mymaven/target
+    # working_dir: /usr/src/mymaven
+    # stdin_open: true
+    # tty: true
+  
+  # postgresql:
+    # image: postgres:14.2
+    # environment:
+      # - POSTGRES_DB=authservicedb
+      # - POSTGRES_USER=authservice
+      # - POSTGRES_PASSWORD=12345
+    # volumes:
+      # - postgres-data:/var/lib/postgresql/data
+    # ports:
+      # - "5432:5432"
+    
+# volumes:
+  # postgres-data: {}
+  # postgres-data: {}

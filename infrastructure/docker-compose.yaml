@@ -1,4 +1,4 @@
 version: '3.8'
-
 include:
-  - path: './db/docker-compose.yaml'
+  - path: ./db/docker-compose.yaml
+  - path: ../backend/auth-service/compose.yaml

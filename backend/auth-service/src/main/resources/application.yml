@@ -3,7 +3,7 @@ server:
   ssl:
     enabled: true
     key-store-type: PKCS12
-    key-store: backend/auth-service/certificate.p12
+    key-store: certificate.p12
     key-store-password: 1PwCgNAb
 
 spring:
@@ -17,10 +17,12 @@ spring:
     user: authservice
     password: 12345
     change-log: 'classpath:db/changelog/db-init.yaml'
+    url: ${SPRING_DATASOURCE_URL}
   datasource:
-    url: "jdbc:postgresql://localhost:5432/authservicedb"
-    username: authservice
-    password: 12345
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driverClassName: org.postgresql.Driver
 
 keycloak:
   serverUrl: https://auth.dppmai.ru
@@ -29,7 +31,6 @@ keycloak:
   username: admin
   password: HVG-Rqf-5PV-Lp6
   realmName: lessons
-
 
 logging:
   pattern:
