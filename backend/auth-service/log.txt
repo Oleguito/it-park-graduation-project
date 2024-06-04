@@ -1878,3 +1878,41 @@ Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to no
 2024-05-31 18:56:23 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-05-31 18:56:23 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Initializing Servlet 'dispatcherServlet'
 2024-05-31 18:56:23 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Completed initialization in 1 ms
+2024-06-03 11:35:06 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 172 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-06-03 11:35:06 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-06-03 11:35:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-03 11:35:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.
+2024-06-03 11:35:09 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-06-03 11:35:09 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-06-03 11:35:09 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-03 11:35:09 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-06-03 11:35:09 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2884 ms
+2024-06-03 11:35:10 INFO  liquibase.database log - Set default schema name to public
+2024-06-03 11:35:10 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-03 11:35:10 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-03 11:35:10 INFO  liquibase.util log - UPDATE SUMMARY
+2024-06-03 11:35:10 INFO  liquibase.util log - Run:                          0
+2024-06-03 11:35:10 INFO  liquibase.util log - Previously run:               1
+2024-06-03 11:35:10 INFO  liquibase.util log - Filtered out:                 0
+2024-06-03 11:35:10 INFO  liquibase.util log - -------------------------------
+2024-06-03 11:35:10 INFO  liquibase.util log - Total change sets:            1
+2024-06-03 11:35:10 INFO  liquibase.util log - Update summary generated
+2024-06-03 11:35:10 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-06-03 11:35:10 INFO  liquibase.command log - Command execution complete
+2024-06-03 11:35:11 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-06-03 11:35:11 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@18dd7767
+2024-06-03 11:35:11 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-06-03 11:35:11 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-03 11:35:11 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-03 11:35:11 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-06-03 11:35:12 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-03 11:35:14 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-03 11:35:14 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-03 11:35:15 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-03 11:35:15 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@109f95b1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d20cbb5, org.springframework.security.web.context.SecurityContextHolderFilter@40e41f88, org.springframework.security.web.header.HeaderWriterFilter@15e881c0, org.springframework.security.web.authentication.logout.LogoutFilter@3344c1d7, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@f36c8b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d86f330, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e8b0ab5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74eae1e0, org.springframework.web.filter.CorsFilter@6f3f0ae, org.springframework.security.web.session.SessionManagementFilter@46c093b4, org.springframework.security.web.access.ExceptionTranslationFilter@6023b54f, org.springframework.security.web.access.intercept.AuthorizationFilter@735dc133]
+2024-06-03 11:35:16 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [/root/.keystore] using alias [tomcat] with trust store [null]
+2024-06-03 11:35:16 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8080 (https) with context path ''
+2024-06-03 11:35:16 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 10.816 seconds (process running for 11.459)
+2024-06-03 11:35:47 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-03 11:35:47 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Initializing Servlet 'dispatcherServlet'
+2024-06-03 11:35:47 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Completed initialization in 1 ms
