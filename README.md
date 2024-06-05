@@ -48,3 +48,5 @@ Oleguito
 3) https://tracker.yandex.ru/pages/projects/1
 
 4) https://github.com/Oleguito/it-park-graduation-project
+
+5) Диаграммы (dbdiagram, excalidraw) в папке Diagrams
