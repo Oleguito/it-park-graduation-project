@@ -49,4 +49,4 @@ Oleguito
 
 4) https://github.com/Oleguito/it-park-graduation-project
 
-5) Диаграммы (dbdiagram, excalidraw) в папке Diagrams
+5) Диаграммы(dbdiagram, excalidraw) в папке Diagrams
