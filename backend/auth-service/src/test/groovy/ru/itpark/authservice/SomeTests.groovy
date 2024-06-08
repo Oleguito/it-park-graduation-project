@@ -30,11 +30,15 @@ class SomeTests extends Specification {
 //    }
 
     def "Use REST Template to get a jwt token from KeyCloak"() {
+        given:
         def keycloakClient = new KeycloakClient()
+
+        when:
         def response = keycloakClient.getKeycloakResponse()
         println response['access_token']
-        expect:
-        1==1
+
+        then:
+        response['access_token'] != null
     }
     
 }

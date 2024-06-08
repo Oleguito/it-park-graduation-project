@@ -19,6 +19,11 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>3.19.7</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -101,9 +106,19 @@
             <version>1.19.8</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta-extensions-liquibase</artifactId>
+            <version>3.19.9</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/db/changelog</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -133,6 +148,87 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                src/main/resources/jooq-config.properties
+                            </files>
+                        </configuration>
+
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>3.19.9</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <jdbc>
+                                <driver>${db.driver}</driver>
+                                <url>${db.url}</url>
+                                <user>${db.username}</user>
+                                <password>${db.password}</password>
+                            </jdbc>
+                            <generator>
+                                <target>
+                                    <packageName>ru.itpark.authservice</packageName>
+                                    <directory>src/main/java</directory>
+                                </target>
+                                <database>
+                                    <name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
+                                    <properties>
+
+                                        <!-- Specify the classpath location of your XML, YAML, or JSON script. -->
+                                        <property>
+                                            <key>scripts</key>
+                                            <value>${project.basedir}/src/main/resources/db/changelog/db-init.yaml</value>
+                                        </property>
+
+                                        <!-- Whether you want to include liquibase tables in generated output
+
+                                             - false (default)
+                                             - true: includes DATABASECHANGELOG and DATABASECHANGELOGLOCK tables -->
+                                        <property>
+                                            <key>includeLiquibaseTables</key>
+                                            <value>false</value>
+                                        </property>
+
+                                        <!-- Properties prefixed "database." will be passed on to the liquibase.database.Database class
+                                             if a matching setter is found -->
+                                        <property>
+                                            <key>database.liquibaseSchemaName</key>
+                                            <value>lb</value>
+                                        </property>
+
+                                        <!-- The property "changeLogParameters.contexts" will be passed on to the
+                                             liquibase.database.Database.update() call (jOOQ 3.13.2+).
+                                             See https://www.liquibase.org/documentation/contexts.html -->
+                                        <property>
+                                            <key>changeLogParameters.contexts</key>
+                                            <value>!test</value>
+                                        </property>
+                                    </properties>
+                                </database>
+                            </generator>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
