@@ -19,6 +19,10 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.jooq</groupId>
 			<artifactId>jooq</artifactId>
 			<version>3.19.7</version>
@@ -111,6 +115,13 @@
 			<artifactId>jooq-meta-extensions-liquibase</artifactId>
 			<version>3.19.9</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-postgres-extensions</artifactId>
+			<version>3.19.9</version>
+		</dependency>
+		
 	</dependencies>
 	
 	<build>
@@ -161,7 +172,7 @@
 						</goals>
 						<configuration>
 							<files>
-								src/main/resources/jooq-config.properties
+								<file>${project.basedir}/src/main/resources/jooq-config.properties</file>
 							</files>
 						</configuration>
 					
@@ -180,61 +191,71 @@
 						</goals>
 						<configuration>
 							<jdbc>
+<!--								<driver>org.postgresql.Driver</driver>-->
+<!--								<url>jdbc:postgresql://localhost:5432/authservicedb</url>-->
 								<driver>${db.driver}</driver>
 								<url>${db.url}</url>
 								<user>${db.username}</user>
 								<password>${db.password}</password>
 							</jdbc>
 							<generator>
-								<target>
-									<packageName>ru.itpark.authservice</packageName>
-									<directory>src/main/java</directory>
-								</target>
-								<database>
-									<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>
-									<properties>
-										
-										<property>
-											<key>rootPath</key>
-											<value>${project.basedir}/src/main/resources</value>
-										</property>
-										
-										<!-- Specify the classpath location of your XML, YAML, or JSON script. -->
-										<property>
-											<key>scripts</key>
-											<value>db/changelog/db-init.yaml</value>
-<!--											<value>classpath:/db/changelog/db-init.yaml</value>-->
-										</property>
-										
-										<!-- Whether you want to include liquibase tables in generated output
+								<name>org.jooq.codegen.JavaGenerator</name>
+<!--								<target>-->
+<!--									<packageName>ru.itpark.authservice</packageName>-->
+<!--									<directory>src/main/java/ru/itpark</directory>-->
+<!--								</target>-->
+<!--								<database>-->
+<!--									<name>org.jooq.meta.extensions.liquibase.LiquibaseDatabase</name>-->
+<!--									<properties>-->
+<!--										-->
+<!--										<property>-->
+<!--											<key>rootPath</key>-->
+<!--											<value>${project.basedir}/src/main/resources</value>-->
+<!--										</property>-->
+<!--										-->
+<!--										&lt;!&ndash; Specify the classpath location of your XML, YAML, or JSON script. &ndash;&gt;-->
+<!--										<property>-->
+<!--											<key>scripts</key>-->
+<!--											<value>db/changelog/db-init.yaml</value>-->
+<!--&lt;!&ndash;											<value>classpath:/db/changelog/db-init.yaml</value>&ndash;&gt;-->
+<!--										</property>-->
+<!--										-->
+<!--										&lt;!&ndash; Whether you want to include liquibase tables in generated output-->
 
-												 - false (default)
-												 - true: includes DATABASECHANGELOG and DATABASECHANGELOGLOCK tables -->
-										<property>
-											<key>includeLiquibaseTables</key>
-											<value>false</value>
-										</property>
-										
-										<!-- Properties prefixed "database." will be passed on to the liquibase.database.Database class
-												 if a matching setter is found -->
-										<property>
-											<key>database.liquibaseSchemaName</key>
-											<value>lb</value>
-										</property>
-										
-										<!-- The property "changeLogParameters.contexts" will be passed on to the
-												 liquibase.database.Database.update() call (jOOQ 3.13.2+).
-												 See https://www.liquibase.org/documentation/contexts.html -->
-										<property>
-											<key>changeLogParameters.contexts</key>
-											<value>!test</value>
-										</property>
-									</properties>
-								</database>
+<!--												 - false (default)-->
+<!--												 - true: includes DATABASECHANGELOG and DATABASECHANGELOGLOCK tables &ndash;&gt;-->
+<!--										<property>-->
+<!--											<key>includeLiquibaseTables</key>-->
+<!--											<value>false</value>-->
+<!--										</property>-->
+<!--										-->
+<!--										&lt;!&ndash; Properties prefixed "database." will be passed on to the liquibase.database.Database class-->
+<!--												 if a matching setter is found &ndash;&gt;-->
+<!--										<property>-->
+<!--											<key>database.liquibaseSchemaName</key>-->
+<!--											<value>lb</value>-->
+<!--										</property>-->
+<!--										-->
+<!--										&lt;!&ndash; The property "changeLogParameters.contexts" will be passed on to the-->
+<!--												 liquibase.database.Database.update() call (jOOQ 3.13.2+).-->
+<!--												 See https://www.liquibase.org/documentation/contexts.html &ndash;&gt;-->
+<!--										<property>-->
+<!--											<key>changeLogParameters.contexts</key>-->
+<!--											<value>!test</value>-->
+<!--										</property>-->
+<!--									</properties>-->
+<!--								</database>-->
 							</generator>
 						</configuration>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<version>42.7.3</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
