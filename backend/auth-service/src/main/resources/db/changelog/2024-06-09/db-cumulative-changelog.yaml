@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: KPV
+      changes:
+        - sqlFile:
+            path: db/changelog/2024-06-09/init-schema.sql
