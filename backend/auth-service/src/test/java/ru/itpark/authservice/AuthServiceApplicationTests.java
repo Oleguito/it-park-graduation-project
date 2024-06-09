@@ -30,8 +30,6 @@ class AuthServiceApplicationTests {
 
         System.out.println("Перед подключением JOOQ");
 
-        // Connection is the only JDBC resource that we need
-        // PreparedStatement and ResultSet are handled by jOOQ, internally
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
             System.out.println("подключились connected");
             DSLContext create = DSL.using(conn, SQLDialect.POSTGRES);
