@@ -1,10 +1,15 @@
 package ru.itpark.authservice;
 
 import lombok.Value;
+import org.jooq.DSLContext;
+import org.jooq.Record;
+import org.jooq.Result;
+import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Component;
+import ru.itpark.authservice.domain.user.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,6 +34,10 @@ class AuthServiceApplicationTests {
         // PreparedStatement and ResultSet are handled by jOOQ, internally
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
             System.out.println("подключились connected");
+            DSLContext create = DSL.using(conn, SQLDialect.POSTGRES);
+            Result<Record> result = create.select().from("users").fetch();
+            System.out.println("Количество записей: " + result.size());
+            System.out.println("Записи: " + result);
         }
 
         // For the sake of this tutorial, let's keep exception handling simple

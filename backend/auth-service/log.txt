@@ -2351,3 +2351,191 @@ Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to no
 2024-06-09 12:50:11 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [/root/.keystore] using alias [tomcat] with trust store [null]
 2024-06-09 12:50:11 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8080 (https) with context path ''
 2024-06-09 12:50:11 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 7.718 seconds (process running for 8.009)
+2024-06-09 13:00:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:00:03 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-06-09 13:00:03 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-06-09 13:00:22 INFO  r.i.a.AuthServiceApplicationTests logStarting - Starting AuthServiceApplicationTests using Java 17.0.1 with PID 102 (started by root in /usr/src/mymaven)
+2024-06-09 13:00:22 INFO  r.i.a.AuthServiceApplicationTests logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 13:00:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 13:00:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 257 ms. Found 1 JPA repository interface.
+2024-06-09 13:00:26 INFO  liquibase.database log - Set default schema name to public
+2024-06-09 13:00:26 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:00:27 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:00:27 INFO  liquibase.util log - UPDATE SUMMARY
+2024-06-09 13:00:27 INFO  liquibase.util log - Run:                          0
+2024-06-09 13:00:27 INFO  liquibase.util log - Previously run:               1
+2024-06-09 13:00:27 INFO  liquibase.util log - Filtered out:                 0
+2024-06-09 13:00:27 INFO  liquibase.util log - -------------------------------
+2024-06-09 13:00:27 INFO  liquibase.util log - Total change sets:            1
+2024-06-09 13:00:27 INFO  liquibase.util log - Update summary generated
+2024-06-09 13:00:27 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-06-09 13:00:27 INFO  liquibase.command log - Command execution complete
+2024-06-09 13:00:27 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-06-09 13:00:27 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b632442
+2024-06-09 13:00:27 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-06-09 13:00:27 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 13:00:27 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 13:00:27 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-06-09 13:00:28 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 13:00:30 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 13:00:30 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:00:31 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 13:00:32 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33e80a27, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7649d350, org.springframework.security.web.context.SecurityContextHolderFilter@47ccbbd5, org.springframework.security.web.header.HeaderWriterFilter@28f5a003, org.springframework.security.web.authentication.logout.LogoutFilter@3c9cab4, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@b7952d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f65a6d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67726dd1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37e7e089, org.springframework.web.filter.CorsFilter@519e0814, org.springframework.security.web.session.SessionManagementFilter@314b0d53, org.springframework.security.web.access.ExceptionTranslationFilter@227e4ea8, org.springframework.security.web.access.intercept.AuthorizationFilter@24710e61]
+2024-06-09 13:00:33 INFO  r.i.a.AuthServiceApplicationTests logStarted - Started AuthServiceApplicationTests in 11.69 seconds (process running for 13.645)
+2024-06-09 13:00:34 INFO  org.jooq.Constants lambda$info$5 - 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.19.9 (Build date: 2024-05-30T06:38:49Z)
+                                      
+2024-06-09 13:00:34 INFO  org.jooq.Constants lambda$info$5 - 
+
+jOOQ tip of the day: You don't have to use jOOQ's DSL. You can use all of jOOQ's API with native SQL as well: https://blog.jooq.org/using-java-13-text-blocks-for-plain-sql-with-jooq/
+
+2024-06-09 13:00:34 WARN  o.j.i.D.logVersionSupport lambda$warn$7 - Version mismatch         : Database version is older than what dialect POSTGRES supports: 14.2 (Debian 14.2-1.pgdg110+1). Consider https://www.jooq.org/download/support-matrix to see what jOOQ version and edition supports which RDBMS versions.
+2024-06-09 13:00:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:00:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-06-09 13:00:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-06-09 13:00:41 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 250 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-06-09 13:00:41 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 13:00:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 13:00:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.
+2024-06-09 13:00:43 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-06-09 13:00:43 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-06-09 13:00:43 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-09 13:00:43 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-06-09 13:00:43 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2004 ms
+2024-06-09 13:00:44 INFO  liquibase.database log - Set default schema name to public
+2024-06-09 13:00:44 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:00:44 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:00:44 INFO  liquibase.util log - UPDATE SUMMARY
+2024-06-09 13:00:44 INFO  liquibase.util log - Run:                          0
+2024-06-09 13:00:44 INFO  liquibase.util log - Previously run:               1
+2024-06-09 13:00:44 INFO  liquibase.util log - Filtered out:                 0
+2024-06-09 13:00:44 INFO  liquibase.util log - -------------------------------
+2024-06-09 13:00:44 INFO  liquibase.util log - Total change sets:            1
+2024-06-09 13:00:44 INFO  liquibase.util log - Update summary generated
+2024-06-09 13:00:44 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-06-09 13:00:44 INFO  liquibase.command log - Command execution complete
+2024-06-09 13:00:44 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-06-09 13:00:45 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6f2d3391
+2024-06-09 13:00:45 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-06-09 13:00:45 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 13:00:45 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 13:00:45 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-06-09 13:00:45 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 13:00:47 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 13:00:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:00:47 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 13:00:47 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77587422, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39eea4f6, org.springframework.security.web.context.SecurityContextHolderFilter@183e64a8, org.springframework.security.web.header.HeaderWriterFilter@4795876e, org.springframework.security.web.authentication.logout.LogoutFilter@5d72da0b, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@189fb01b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b8466c2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2044f708, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c94d4b8, org.springframework.web.filter.CorsFilter@1d98daa0, org.springframework.security.web.session.SessionManagementFilter@50f65fe0, org.springframework.security.web.access.ExceptionTranslationFilter@4fe8ac61, org.springframework.security.web.access.intercept.AuthorizationFilter@665c79a2]
+2024-06-09 13:00:48 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [/root/.keystore] using alias [tomcat] with trust store [null]
+2024-06-09 13:00:48 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8080 (https) with context path ''
+2024-06-09 13:00:48 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 7.671 seconds (process running for 7.942)
+2024-06-09 13:05:44 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:05:44 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-06-09 13:05:44 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-06-09 13:06:05 INFO  r.i.a.AuthServiceApplicationTests logStarting - Starting AuthServiceApplicationTests using Java 17.0.1 with PID 105 (started by root in /usr/src/mymaven)
+2024-06-09 13:06:05 INFO  r.i.a.AuthServiceApplicationTests logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 13:06:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 13:06:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 251 ms. Found 1 JPA repository interface.
+2024-06-09 13:06:09 INFO  liquibase.database log - Set default schema name to public
+2024-06-09 13:06:09 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:06:09 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:06:09 INFO  liquibase.util log - UPDATE SUMMARY
+2024-06-09 13:06:09 INFO  liquibase.util log - Run:                          0
+2024-06-09 13:06:09 INFO  liquibase.util log - Previously run:               1
+2024-06-09 13:06:09 INFO  liquibase.util log - Filtered out:                 0
+2024-06-09 13:06:09 INFO  liquibase.util log - -------------------------------
+2024-06-09 13:06:09 INFO  liquibase.util log - Total change sets:            1
+2024-06-09 13:06:09 INFO  liquibase.util log - Update summary generated
+2024-06-09 13:06:10 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-06-09 13:06:10 INFO  liquibase.command log - Command execution complete
+2024-06-09 13:06:10 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-06-09 13:06:10 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b632442
+2024-06-09 13:06:10 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-06-09 13:06:10 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 13:06:10 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 13:06:10 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-06-09 13:06:11 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 13:06:13 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 13:06:13 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:06:14 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 13:06:15 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@33e80a27, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7649d350, org.springframework.security.web.context.SecurityContextHolderFilter@47ccbbd5, org.springframework.security.web.header.HeaderWriterFilter@28f5a003, org.springframework.security.web.authentication.logout.LogoutFilter@3c9cab4, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@b7952d2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f65a6d7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67726dd1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37e7e089, org.springframework.web.filter.CorsFilter@519e0814, org.springframework.security.web.session.SessionManagementFilter@314b0d53, org.springframework.security.web.access.ExceptionTranslationFilter@227e4ea8, org.springframework.security.web.access.intercept.AuthorizationFilter@24710e61]
+2024-06-09 13:06:16 INFO  r.i.a.AuthServiceApplicationTests logStarted - Started AuthServiceApplicationTests in 11.635 seconds (process running for 13.59)
+2024-06-09 13:06:17 INFO  org.jooq.Constants lambda$info$5 - 
+                                      
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@  @@@@  @@  @@    @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@    @@  @@  @@@@  @@@@@@@@@@
+@@@@@@@@@@        @@  @  @  @@@@@@@@@@
+@@@@@@@@@@        @@        @@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@  @@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  Thank you for using jOOQ 3.19.9 (Build date: 2024-05-30T06:38:49Z)
+                                      
+2024-06-09 13:06:17 INFO  org.jooq.Constants lambda$info$5 - 
+
+jOOQ tip of the day: Common SQL patterns can be matched and transformed into more optimal or simpler SQL using pattern transformation, both on jOOQ queries or ordinary JDBC based queries: https://www.jooq.org/doc/latest/manual/sql-building/queryparts/sql-transformation/transform-patterns/
+
+2024-06-09 13:06:17 WARN  o.j.i.D.logVersionSupport lambda$warn$7 - Version mismatch         : Database version is older than what dialect POSTGRES supports: 14.2 (Debian 14.2-1.pgdg110+1). Consider https://www.jooq.org/download/support-matrix to see what jOOQ version and edition supports which RDBMS versions.
+2024-06-09 13:06:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:06:18 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-06-09 13:06:18 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-06-09 13:06:23 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.1 with PID 238 (/usr/src/mymaven/target/classes started by root in /usr/src/mymaven)
+2024-06-09 13:06:23 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 13:06:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 13:06:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 177 ms. Found 1 JPA repository interface.
+2024-06-09 13:06:25 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8080 (https)
+2024-06-09 13:06:25 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-06-09 13:06:25 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-09 13:06:25 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-06-09 13:06:25 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2018 ms
+2024-06-09 13:06:26 INFO  liquibase.database log - Set default schema name to public
+2024-06-09 13:06:26 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:06:26 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-06-09 13:06:26 INFO  liquibase.util log - UPDATE SUMMARY
+2024-06-09 13:06:26 INFO  liquibase.util log - Run:                          0
+2024-06-09 13:06:26 INFO  liquibase.util log - Previously run:               1
+2024-06-09 13:06:26 INFO  liquibase.util log - Filtered out:                 0
+2024-06-09 13:06:26 INFO  liquibase.util log - -------------------------------
+2024-06-09 13:06:26 INFO  liquibase.util log - Total change sets:            1
+2024-06-09 13:06:26 INFO  liquibase.util log - Update summary generated
+2024-06-09 13:06:26 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-06-09 13:06:26 INFO  liquibase.command log - Command execution complete
+2024-06-09 13:06:26 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-06-09 13:06:26 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d221b20
+2024-06-09 13:06:26 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-06-09 13:06:26 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 13:06:27 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 13:06:27 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-06-09 13:06:27 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 13:06:29 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 13:06:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 13:06:29 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 13:06:29 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5889e697, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c3d1214, org.springframework.security.web.context.SecurityContextHolderFilter@696a6506, org.springframework.security.web.header.HeaderWriterFilter@5edd2170, org.springframework.security.web.authentication.logout.LogoutFilter@3cc5ca01, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@2e895acb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cbd855e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@534c3b9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48064a5a, org.springframework.web.filter.CorsFilter@45b32dfe, org.springframework.security.web.session.SessionManagementFilter@3599b7e8, org.springframework.security.web.access.ExceptionTranslationFilter@28a33dc9, org.springframework.security.web.access.intercept.AuthorizationFilter@53a645a2]
+2024-06-09 13:06:30 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [/root/.keystore] using alias [tomcat] with trust store [null]
+2024-06-09 13:06:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8080 (https) with context path ''
+2024-06-09 13:06:30 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 7.811 seconds (process running for 8.087)
