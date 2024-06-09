@@ -1,5 +1,4 @@
 
-CREATE SEQUENCE users_id_seq OWNED BY authservice;
+CREATE SEQUENCE users_id_seq;
 ALTER TABLE users ALTER COLUMN id SET DEFAULT nextval('users_id_seq');
-UPDATE users SET id = nextval('users_id_seq');
 
