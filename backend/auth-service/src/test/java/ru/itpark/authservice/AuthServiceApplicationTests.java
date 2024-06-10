@@ -1,10 +1,8 @@
 package ru.itpark.authservice;
 
 import lombok.Value;
-import org.jooq.DSLContext;
+import org.jooq.*;
 import org.jooq.Record;
-import org.jooq.Result;
-import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,10 +39,14 @@ class AuthServiceApplicationTests {
             System.out.println("Количество записей: " + result.size());
             System.out.println("Записи: " + result);
 
-            UsersRecord someEnv = create.newRecord(USERS);
-            someEnv.setEmail("blabla@gmail.com");
-            someEnv.setFullName("KABACHOK");
-            someEnv.store();
+            Result<Record> recordsFromDB = create.select().from(USERS).where(USERS.EMAIL.eq("blabla@gmail.com")).fetch();
+
+            if (recordsFromDB.size() == 0) {
+                UsersRecord someEnv = create.newRecord(USERS);
+                someEnv.setEmail("blabla@gmail.com");
+                someEnv.setFullName("KABACHOK");
+                someEnv.store();
+            }
 
         }
 
