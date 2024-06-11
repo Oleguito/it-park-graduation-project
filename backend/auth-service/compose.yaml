@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/usr/src/mymaven
       - $HOME/.m2:/root/.m2
-      - ./target:/usr/src/mymaven/target
+#      - ./target:/usr/src/mymaven/target
     working_dir: /usr/src/mymaven
     stdin_open: true
     tty: true

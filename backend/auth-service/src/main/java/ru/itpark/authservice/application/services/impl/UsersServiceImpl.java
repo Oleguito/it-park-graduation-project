@@ -38,7 +38,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public String login(UserQuery user) {
-        Map keycloakResponse = keycloakClient.getKeycloakResponse(user);
+        Map keycloakResponse = keycloakClient.getUserInfo(user);
         log.info("Response info: {}", keycloakResponse);
         return (String) keycloakResponse.get("access_token");
     }

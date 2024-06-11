@@ -1,13 +1,7 @@
 package ru.itpark.authservice.infrastructure.config.security.keycloak;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -17,8 +11,30 @@ import java.util.Map;
 
 @Component
 public class KeycloakClient {
-    
-    public Map getKeycloakResponse(UserQuery user) {
+
+    public boolean revokeUserToken(String adminToken, String toRevokeToken){
+        final var restTemplate = new RestTemplate();
+
+        final var headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        headers.setBearerAuth(adminToken);
+
+        var body = new LinkedMultiValueMap <String, String>();
+        body.add("token", toRevokeToken);
+        body.add("token_type_hint", "refresh_token");
+        body.add("client_id", "grad-project-oleguito");
+
+        final var requestEntity = new HttpEntity <MultiValueMap <String, String>>(body, headers);
+        ResponseEntity <Map> responseEntity =
+                restTemplate.postForEntity(
+                        "https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/revoke",
+                        requestEntity,
+                        Map.class);
+
+        return responseEntity.getStatusCode()== HttpStatusCode.valueOf(200);
+    }
+
+    public Map getUserInfo(UserQuery user) {
         
         final var restTemplate = new RestTemplate();
         
@@ -39,5 +55,10 @@ public class KeycloakClient {
                         Map.class);
         
         return responseEntity.getBody();
+    }
+
+    public String createUserToken(UserQuery user) {
+
+        return (String) getUserInfo(user).get("access_token");
     }
 }
