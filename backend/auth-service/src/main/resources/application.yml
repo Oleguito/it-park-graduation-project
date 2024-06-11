@@ -17,6 +17,7 @@ spring:
     user: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
     change-log: 'classpath:db/changelog/db-init.yaml'
+#    change-log: '${project.basedir}/src/main/resources/db/changelog/db-init.yaml'
   datasource:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
