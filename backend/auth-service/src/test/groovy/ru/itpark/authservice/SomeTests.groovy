@@ -7,7 +7,7 @@ import spock.lang.Specification
 class SomeTests extends Specification {
 
     def keycloakClient = new KeycloakClient()
-    def userQuery
+    UserQuery userQuery
 
     def setup() {
         userQuery = new UserQuery()
@@ -21,7 +21,7 @@ class SomeTests extends Specification {
     }
 
     def "Use REST Template to get a jwt token from KeyCloak"() {
-        given: "KeycloakClient class"
+        setup: "KeycloakClient class"
 
         when:
         def response = keycloakClient.getUserInfo(userQuery)
