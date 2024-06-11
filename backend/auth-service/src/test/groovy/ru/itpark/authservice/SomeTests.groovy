@@ -1,7 +1,7 @@
 package ru.itpark.authservice
 
-import org.springframework.web.client.RestTemplate
-import ru.itpark.keycloak.KeycloakClient;
+import ru.itpark.authservice.domain.user.dto.queries.UserQuery
+import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakClient;
 import spock.lang.Specification
 
 class SomeTests extends Specification {
@@ -33,8 +33,12 @@ class SomeTests extends Specification {
         given:
         def keycloakClient = new KeycloakClient()
 
+        def query = new UserQuery()
+        query.setUsername("admin")
+        query.setPassword("12345")
+
         when:
-        def response = keycloakClient.getKeycloakResponse()
+        def response = keycloakClient.getKeycloakResponse(query)
         println response['access_token']
 
         then:
