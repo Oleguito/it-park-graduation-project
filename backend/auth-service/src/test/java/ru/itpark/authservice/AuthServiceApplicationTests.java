@@ -6,6 +6,7 @@ import org.jooq.Record;
 //import org.jooq.generated.public_.tables.records.UsersRecord;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.stereotype.Component;
 import ru.itpark.authservice.domain.user.User;
@@ -20,7 +21,6 @@ import java.sql.DriverManager;
 //import static org.jooq.generated.public_.Tables.USERS;
 import static ru.itpark.authservice.tables.Users.USERS;
 
-@SpringBootTest
 class AuthServiceApplicationTests {
 
     @Test

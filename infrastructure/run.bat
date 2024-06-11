@@ -1,4 +1,4 @@
 @echo off
 cls
 docker compose stop
-docker compose up
+start docker compose up
