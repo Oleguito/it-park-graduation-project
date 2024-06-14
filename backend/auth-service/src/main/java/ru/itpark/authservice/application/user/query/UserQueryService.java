@@ -11,7 +11,6 @@ import java.util.List;
 @Service
 public class UserQueryService {
 
-    @Autowired
     private final CustomUserRepository customUserRepository;
 
     public UserQueryService(CustomUserRepository customUserRepository) {
