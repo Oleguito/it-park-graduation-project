@@ -1,4 +1,4 @@
-package ru.itpark.authservice.domain.user.VO;
+package ru.itpark.authservice.domain.user.valueobjects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

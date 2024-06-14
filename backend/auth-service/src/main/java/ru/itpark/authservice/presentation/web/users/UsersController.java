@@ -1,4 +1,4 @@
-package ru.itpark.authservice.presentation.web;
+package ru.itpark.authservice.presentation.web.users;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

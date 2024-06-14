@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.shaded.gson.reflect.TypeToken;
 import jakarta.persistence.AttributeConverter;
 import org.springframework.stereotype.Component;
-import ru.itpark.authservice.domain.user.VO.Language;
+import ru.itpark.authservice.domain.user.valueobjects.Language;
 
 import java.lang.reflect.Type;
 import java.util.List;

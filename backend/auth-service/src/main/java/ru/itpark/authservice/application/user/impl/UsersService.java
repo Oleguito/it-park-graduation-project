@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
-import ru.itpark.authservice.infrastructure.repositories.UserRepository;
+import ru.itpark.authservice.infrastructure.repositories.user.UserRepository;
 import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakClient;
 
 import java.util.List;

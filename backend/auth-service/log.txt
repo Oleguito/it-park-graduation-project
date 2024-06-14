@@ -260,9 +260,9 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.postProcess(AutowireBeanFactoryObjectPostProcessor.java:67)
 	... 103 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -273,9 +273,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
 	... 126 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -292,9 +292,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
 	... 133 common frames omitted
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
@@ -449,9 +449,9 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.postProcess(AutowireBeanFactoryObjectPostProcessor.java:67)
 	... 103 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -462,9 +462,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
 	... 126 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -481,9 +481,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
 	... 133 common frames omitted
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
@@ -744,9 +744,9 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.postProcess(AutowireBeanFactoryObjectPostProcessor.java:67)
 	... 103 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -757,9 +757,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
 	... 126 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -776,9 +776,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
 	... 133 common frames omitted
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
@@ -933,9 +933,9 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor.postProcess(AutowireBeanFactoryObjectPostProcessor.java:67)
 	... 103 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mvcHandlerMappingIntrospector' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -946,9 +946,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
 	... 126 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
@@ -965,9 +965,9 @@ ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
 	... 133 common frames omitted
 Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'usersController' method 
-ru.itpark.authservice.presentation.web.UsersController#getUsers()
+ru.itpark.authservice.presentation.web.users.UsersController#getUsers()
 to {GET [/api/users]}: There is already 'usersController' bean method
-ru.itpark.authservice.presentation.web.UsersController#getUser(String) mapped.
+ru.itpark.authservice.presentation.web.users.UsersController#getUser(String) mapped.
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:674)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:636)
 	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331)
@@ -1822,7 +1822,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 0 of constructor in ru.itpark.authservice.presentation.web.UsersController required a bean of type 'ru.itpark.authservice.application.services.user.UsersService' that could not be found.
+Parameter 0 of constructor in ru.itpark.authservice.presentation.web.users.UsersController required a bean of type 'ru.itpark.authservice.application.services.user.UsersService' that could not be found.
 
 
 Action:
