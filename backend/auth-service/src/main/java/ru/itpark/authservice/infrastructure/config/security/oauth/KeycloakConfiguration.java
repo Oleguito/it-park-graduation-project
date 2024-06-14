@@ -14,7 +14,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-import ru.itpark.authservice.infrastructure.config.jwt.JwtAuthConvertor;
 
 import java.util.Arrays;
 
@@ -24,7 +23,7 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class KeycloakConfiguration {
 
-    private final JwtAuthConvertor jwtAuthConvertor;
+    private final ru.itpark.authservice.infrastructure.config.jwt.JwtAuthConverter jwtAuthConverter;
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -58,7 +57,7 @@ public class KeycloakConfiguration {
 
         http.oauth2ResourceServer((oauth2) -> oauth2
                 .jwt(jwt -> jwt
-                        .jwtAuthenticationConverter(jwtAuthConvertor))
+                        .jwtAuthenticationConverter(jwtAuthConverter))
         );
 
 

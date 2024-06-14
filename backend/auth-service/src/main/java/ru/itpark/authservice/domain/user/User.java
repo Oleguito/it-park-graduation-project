@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.itpark.authservice.domain.user.VO.DateInfo;
-import ru.itpark.authservice.domain.user.VO.Language;
+import ru.itpark.authservice.domain.user.valueobjects.DateInfo;
+import ru.itpark.authservice.domain.user.valueobjects.Language;
 import ru.itpark.authservice.domain.user.converters.LanguageConverter;
 
 import java.util.Collection;

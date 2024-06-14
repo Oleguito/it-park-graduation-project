@@ -5,7 +5,7 @@ services:
       - "8080:8080"
     image: maven:3.8.3-openjdk-17
 #    command: mvn package spring-boot:run
-    command: mvn test && exit
+    command: mvn package
     volumes:
       - .:/usr/src/mymaven
       - $HOME/.m2:/root/.m2

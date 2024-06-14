@@ -9,7 +9,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import ru.itpark.authservice.infrastructure.repositories.UserRepository;
+import ru.itpark.authservice.infrastructure.repositories.user.UserRepository;
 
 
 @Configuration
