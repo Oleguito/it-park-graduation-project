@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.itpark.authservice.application.user.impl.UsersService;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
+import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
 
 import java.util.List;
 
@@ -32,6 +33,10 @@ public class UsersController {
     @ResponseStatus(HttpStatus.OK)
     public String login(@RequestBody UserQuery user) {
         return usersService.login(user);
+    }
+
+    public User findUser(@RequestBody UserSearchParams userSearchParams) {
+        return null;
     }
 
 }
