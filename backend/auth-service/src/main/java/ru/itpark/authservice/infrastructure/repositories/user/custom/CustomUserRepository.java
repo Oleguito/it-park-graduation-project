@@ -1,18 +1,18 @@
-package ru.itpark.userservice.infrastructure.repositories.user.custom;
+package ru.itpark.authservice.infrastructure.repositories.user.custom;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.jooq.*;
+import org.jooq.DSLContext;
+import org.jooq.JSONB;
+import org.jooq.SelectForUpdateStep;
+import org.jooq.SelectLimitPercentStep;
 import org.jooq.impl.DSL;
-import org.jooq.Field.*;
 import org.springframework.stereotype.Repository;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
 import ru.itpark.authservice.tables.records.UsersRecord;
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +27,8 @@ public class CustomUserRepository {
     private final DSLContext dsl;
 
     public List<User> search(UserSearchParams searchParams) {
+
+        // Returns autocloseable
         var query = dsl.selectFrom(USERS).where(DSL.noCondition());
 
         if (searchParams.getId() != null) {
@@ -71,7 +73,7 @@ public class CustomUserRepository {
             finalQuery2 = finalQuery.offset(searchParams.getOffset());
         }
 
-        return finalQuery.fetchInto(UsersRecord.class).stream()
+        return finalQuery2.fetchInto(UsersRecord.class).stream()
                 .map(record -> record.into(User.class))
                 .collect(Collectors.toList());
     }
