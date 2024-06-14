@@ -30,6 +30,7 @@ class AuthServiceApplicationTests {
     @Test
     public void someTest() {
 
+        // hello
         String userName = "authservice";
         String password = "12345";
         String url = "jdbc:postgresql://collaborative-project-postgres-db:5432/authservicedb";
@@ -49,6 +50,7 @@ class AuthServiceApplicationTests {
                 UsersRecord someEnv = create.newRecord(USERS);
                 someEnv.setEmail("blabla@gmail.com");
                 someEnv.setFullName("KABACHOK");
+                someEnv.setLanguages(JSONB.valueOf("[{\"language\":\"ru\", \"level\":\"2\"}, {\"language\":\"en\", \"level\":\"c3\"}]"));
                 someEnv.store();
             }
 
