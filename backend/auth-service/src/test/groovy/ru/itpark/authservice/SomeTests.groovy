@@ -44,7 +44,7 @@ class SomeTests extends Specification {
 
         when:
         def response = keycloakClient.revokeUserToken(adminToken, toRevokeToken)
-        println response
+        println "revoke user token returned 200: ${response}"
 
         then: "response should be status 200 for success"
         response

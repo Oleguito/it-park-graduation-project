@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.itpark.authservice.application.services.UsersService;
+import ru.itpark.authservice.application.user.impl.UsersService;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
 
