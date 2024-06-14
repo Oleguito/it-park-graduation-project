@@ -7,6 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
+@Builder
 public class Language {
     private String language;
     private String level;
