@@ -73,7 +73,7 @@ class AuthServiceApplicationTests {
 
         }
 
-        // For the sake of this tutorial, let's keep exception handling simple
+
         catch (Exception e) {
             e.printStackTrace();
         }

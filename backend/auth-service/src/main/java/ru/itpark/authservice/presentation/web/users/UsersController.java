@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.itpark.authservice.application.user.facade.UserQueryFacade;
 import ru.itpark.authservice.application.user.impl.UsersService;
 import ru.itpark.authservice.application.user.query.UserQueryService;
 import ru.itpark.authservice.domain.user.User;
@@ -20,7 +21,9 @@ import java.util.List;
 public class UsersController {
 
     private final UsersService usersService;
-    private final UserQueryService userQueryService;
+
+    private final UserQueryFacade userQueryFacade;
+
 
     @GetMapping
     public ResponseEntity<List<User>> getUsers() {
@@ -42,7 +45,6 @@ public class UsersController {
     @PostMapping("/search")
     public List<User> findUser(@RequestBody UserSearchParams userSearchParams) {
         log.info("Searching user with query {}", userSearchParams.getLanguages());
-        return userQueryService.search(userSearchParams);
+        return userQueryFacade.search(userSearchParams);
     }
-
 }
