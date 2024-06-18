@@ -14,14 +14,15 @@ spring:
           issuer-uri: https://auth.dppmai.ru/realms/group-1
           jwk-uri: https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/certs
   liquibase:
-    user: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    user: authservice
+    password: 12345
     change-log: 'classpath:db/changelog/db-init.yaml'
 #    change-log: '${project.basedir}/src/main/resources/db/changelog/db-init.yaml'
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+#    url: ${SPRING_DATASOURCE_URL}
+    url: jdbc:postgresql://localhost:5432/authservicedb
+    username: authservice
+    password: 12345
     driverClassName: org.postgresql.Driver
 
 keycloak:

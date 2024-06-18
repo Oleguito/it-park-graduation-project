@@ -1,31 +1,23 @@
 package ru.itpark.authservice;
 
-import lombok.Value;
-import org.jooq.*;
 import org.jooq.Record;
-//import org.jooq.generated.public_.tables.records.UsersRecord;
+import org.jooq.*;
 import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.stereotype.Component;
 import org.testcontainers.shaded.com.fasterxml.jackson.databind.ObjectMapper;
-import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
-import ru.itpark.authservice.tables.Users;
- import ru.itpark.authservice.tables.records.UsersRecord;
+import ru.itpark.authservice.tables.records.UsersRecord;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
-//import static org.jooq.generated.public_.Tables.*;
-//
-//import static org.jooq.generated.public_.Tables.USERS;
 import static ru.itpark.authservice.tables.Users.USERS;
 
 class AuthServiceApplicationTests {
+
+    String url = "jdbc:postgresql://localhost:5432/authservicedb";
 
     @Test
     void contextLoads() {
@@ -36,10 +28,10 @@ class AuthServiceApplicationTests {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // hello
         String userName = "authservice";
         String password = "12345";
-        String url = "jdbc:postgresql://collaborative-project-postgres-db:5432/authservicedb";
+
+
 
         System.out.println("Перед подключением JOOQ");
 

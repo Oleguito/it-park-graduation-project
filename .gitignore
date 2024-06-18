@@ -1,1 +1,4 @@
-infrastructure/db/dbdata
+/infrastructure/db/dbdata
+.idea
+.vscode
+/backend/auth-service/.mvn/

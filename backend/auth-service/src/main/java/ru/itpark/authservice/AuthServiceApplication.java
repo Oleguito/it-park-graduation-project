@@ -16,26 +16,31 @@ public class AuthServiceApplication implements CommandLineRunner {
     }
     
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         String folderPath = "/usr/src/mymaven/backend";
         System.out.println(folderPath);
         runLsCommand(folderPath);
     }
-    
+
     private void runLsCommand(String folderPath) {
-        try {
-            Process process = Runtime.getRuntime().exec("ls " + folderPath);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                System.out.println(line);
+        String osName = System.getProperty("os.name");
+        if (osName.startsWith("Linux")) {
+            try {
+                Process process = Runtime.getRuntime().exec("ls " + folderPath);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+                int exitCode = process.waitFor();
+                if (exitCode != 0) {
+                    System.err.println("Command execution failed with exit code: " + exitCode);
+                }
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
             }
-            int exitCode = process.waitFor();
-            if (exitCode != 0) {
-                System.err.println("Command execution failed with exit code: " + exitCode);
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+        } else {
+            System.out.println("This code is meant to run on Linux only.");
         }
     }
 }

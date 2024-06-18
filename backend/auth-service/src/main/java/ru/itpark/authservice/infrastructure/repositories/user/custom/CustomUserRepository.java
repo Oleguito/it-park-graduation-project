@@ -4,22 +4,22 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jooq.*;
+import org.jooq.Condition;
+import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
 import ru.itpark.authservice.tables.records.UsersRecord;
 
-import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static ru.itpark.authservice.tables.Users.USERS;
+//import static ru.itpark.authservice.
+
+
 
 @Repository
 @RequiredArgsConstructor
