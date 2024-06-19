@@ -223,8 +223,8 @@
                             <inputSchema>public</inputSchema>
                         </database>
                         <target>
-                            <packageName>ru.itpark.authservice</packageName>
-                            <directory>src/main/java/ru/itpark/authservice/jooq</directory>
+                            <packageName></packageName>
+                            <directory>src/main/java/</directory>
                         </target>
                     </generator>
                 </configuration>

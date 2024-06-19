@@ -11,19 +11,19 @@ import org.springframework.stereotype.Repository;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
-import ru.itpark.authservice.tables.records.UsersRecord;
+import org.jooq.generated.tables.records.UsersRecord;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static ru.itpark.authservice.tables.Users.USERS;
+import static org.jooq.generated.Tables.USERS;
 
 @Repository
 @RequiredArgsConstructor
 @Slf4j
 public class CustomUserRepository {
 
-//    private static final Logger log = LoggerFactory.getLogger(CustomUserRepository.class);
+    //    private static final Logger log = LoggerFactory.getLogger(CustomUserRepository.class);
     private final ObjectMapper objectMapper;
 
     private final DSLContext dsl;
