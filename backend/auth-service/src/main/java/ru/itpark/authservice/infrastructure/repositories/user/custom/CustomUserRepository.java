@@ -18,8 +18,6 @@ import java.util.stream.Collectors;
 
 import static ru.itpark.authservice.tables.Users.USERS;
 
-
-
 @Repository
 @RequiredArgsConstructor
 @Slf4j

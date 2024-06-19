@@ -224,7 +224,7 @@
                         </database>
                         <target>
                             <packageName>ru.itpark.authservice</packageName>
-                            <directory>target/generated-sources/jooq</directory>
+                            <directory>src/main/java/ru/itpark/authservice/jooq</directory>
                         </target>
                     </generator>
                 </configuration>
