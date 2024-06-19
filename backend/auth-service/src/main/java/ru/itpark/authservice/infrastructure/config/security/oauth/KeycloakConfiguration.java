@@ -1,4 +1,4 @@
-package ru.itpark.authservice.infrastructure.config.oauth;
+package ru.itpark.authservice.infrastructure.config.security.oauth;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -8,12 +8,16 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.server.resource.authentication.BearerTokenAuthenticationToken;
+import org.springframework.security.oauth2.server.resource.web.BearerTokenAuthenticationFilter;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.session.SessionManagementFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter;
+import ru.itpark.authservice.infrastructure.config.security.jwt.JwtAuthConverter;
 
 import java.util.Arrays;
 
@@ -23,7 +27,8 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class KeycloakConfiguration {
 
-    private final ru.itpark.authservice.infrastructure.config.jwt.JwtAuthConverter jwtAuthConverter;
+    private final JwtAuthConverter jwtAuthConverter;
+    private final JwtTokenValidatorFilter jwtTokenValidatorFilter;
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -58,7 +63,8 @@ public class KeycloakConfiguration {
         http.oauth2ResourceServer((oauth2) -> oauth2
                 .jwt(jwt -> jwt
                         .jwtAuthenticationConverter(jwtAuthConverter))
-        );
+        )
+                .addFilterAfter(jwtTokenValidatorFilter, BearerTokenAuthenticationFilter.class);
 
 
         http.sessionManagement(configurer -> configurer

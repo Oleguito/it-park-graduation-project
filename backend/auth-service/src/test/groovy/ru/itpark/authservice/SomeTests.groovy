@@ -29,7 +29,7 @@ class SomeTests extends Specification {
         setup: "KeycloakClient class"
 
         when:
-        def response = keycloakClient.getUserInfo(userQuery as UserQuery)
+        def response = keycloakClient.getUserAuthInfo(userQuery as UserQuery)
         println response['access_token']
 
         then:

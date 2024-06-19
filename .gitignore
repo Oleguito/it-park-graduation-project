@@ -1,4 +1,10 @@
 /infrastructure/db/dbdata
 .idea
 .vscode
+/log*.txt
+/log*.gz
+/backend/auth-service/log*.gz
 /backend/auth-service/.mvn/
+/backend/auth-service/.idea
+/backend/auth-service/log*.txt
+/backend/auth-service/log*.gz

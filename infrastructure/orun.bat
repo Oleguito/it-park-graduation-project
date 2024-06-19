@@ -1,9 +1,9 @@
 @echo off
+chcp 65001 >nul
 cls
 docker compose down
 docker compose up -d
 
-start ^
-C:\Users\1\Desktop\it-park-graduation-project\backend\auth-service\run.bat ^
-test
+cd ../backend/auth-service
+mvnw clean test spring-boot:run -Dspring-boot.run.profiles=dev
 rem spring-boot:run

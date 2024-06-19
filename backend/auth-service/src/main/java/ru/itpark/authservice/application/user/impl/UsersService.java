@@ -28,12 +28,12 @@ public class UsersService {
     }
 
     public User getUserByEmail(String login) {
-        return userRepository.findByLogin(login).orElseThrow();
+        return userRepository.findByEmail(login).orElseThrow();
     }
 
-    public String login(UserQuery user) {
-        Map keycloakResponse = keycloakClient.getUserInfo(user);
+    public Map login(UserQuery user) {
+        Map keycloakResponse = keycloakClient.getUserAuthInfo(user);
         log.info("Response info: {}", keycloakResponse);
-        return (String) keycloakResponse.get("access_token");
+        return keycloakResponse;
     }
 }

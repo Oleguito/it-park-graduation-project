@@ -19,8 +19,7 @@ spring:
     change-log: 'classpath:db/changelog/db-init.yaml'
 #    change-log: '${project.basedir}/src/main/resources/db/changelog/db-init.yaml'
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-#    url: jdbc:postgresql://localhost:5432/authservicedb
+    url: jdbc:postgresql://localhost:5432/authservicedb
     username: authservice
     password: 12345
     driverClassName: org.postgresql.Driver

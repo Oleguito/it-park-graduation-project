@@ -1,5 +1,6 @@
 package ru.itpark.authservice;
 
+import org.hibernate.cfg.Environment;
 import org.jooq.Record;
 import org.jooq.*;
 import org.jooq.impl.DSL;
@@ -30,8 +31,6 @@ class AuthServiceApplicationTests {
 
         String userName = "authservice";
         String password = "12345";
-
-
 
         System.out.println("Перед подключением JOOQ");
 

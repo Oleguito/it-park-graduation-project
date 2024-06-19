@@ -1,4 +1,4 @@
-package ru.itpark.authservice.infrastructure.config.app;
+package ru.itpark.authservice.infrastructure.config.security.app;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class ApplicationConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return login -> repository.findByLogin(login).orElseThrow(() -> new EntityNotFoundException("User not found"));
+        return login -> repository.findByEmail(login).orElseThrow(() -> new EntityNotFoundException("User not found"));
     }
 
     @Bean

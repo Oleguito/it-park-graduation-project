@@ -1,4 +1,4 @@
-package ru.itpark.authservice.infrastructure.config.jwt;
+package ru.itpark.authservice.infrastructure.config.security.jwt;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
