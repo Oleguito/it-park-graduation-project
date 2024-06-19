@@ -11,12 +11,12 @@ import org.springframework.stereotype.Repository;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
-import org.jooq.generated.tables.records.UsersRecord;
+import ru.itpark.authservice.tables.records.UsersRecord;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.jooq.generated.Tables.USERS;
+import static ru.itpark.authservice.Tables.USERS;
 
 @Repository
 @RequiredArgsConstructor

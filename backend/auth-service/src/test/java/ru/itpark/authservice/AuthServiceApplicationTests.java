@@ -7,14 +7,14 @@ import org.jooq.impl.DSL;
 import org.junit.jupiter.api.Test;
 import org.testcontainers.shaded.com.fasterxml.jackson.databind.ObjectMapper;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
-import org.jooq.generated.tables.records.UsersRecord;
+import ru.itpark.authservice.tables.records.UsersRecord;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.jooq.generated.Tables.USERS;
+import static ru.itpark.authservice.Tables.USERS;
 
 class AuthServiceApplicationTests {
 
