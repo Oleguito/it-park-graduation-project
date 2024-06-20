@@ -32,7 +32,9 @@ public class UsersController {
     @PreAuthorize("isAuthenticated()")
     @Operation(summary = "Получить список всех пользователей микросервиса")
     public ResponseEntity<List<User>> getUsers() {
-        return ResponseEntity.ok(usersService.getAllUsers());
+        throw new RuntimeException("FUCK!!!");
+//        return ResponseEntity.ok(usersService.getAllUsers());
+
     }
 
     @PostMapping
