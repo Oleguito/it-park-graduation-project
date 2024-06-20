@@ -27,16 +27,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-            <!--            <exclusions>-->
-            <!--                <exclusion>-->
-            <!--                    <groupId>org.apache.logging.log4j</groupId>-->
-            <!--                    <artifactId>log4j-to-slf4j</artifactId>-->
-            <!--                </exclusion>-->
-            <!--                <exclusion>-->
-            <!--                    <groupId>ch.qos.logback</groupId>-->
-            <!--                    <artifactId>logback-classic</artifactId>-->
-            <!--                </exclusion>-->
-            <!--            </exclusions>-->
         </dependency>
 
         <dependency>
@@ -62,12 +52,6 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-devtools</artifactId>-->
-        <!--            <scope>runtime</scope>-->
-        <!--            <optional>true</optional>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -213,14 +197,10 @@
                 </executions>
                 <configuration>
                     <jdbc>
-                        <!--                        <driver>${db.driver}</driver>-->
-                        <!--                        <url>${db.url}</url>-->
-                        <!--                        <user>${db.username}</user>-->
-                        <!--                        <password>${db.password}</password>-->
-                        <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/authservicedb</url>
-                        <user>authservice</user>
-                        <password>12345</password>
+                        <driver>${db.driver}</driver>
+                        <url>${db.url}</url>
+                        <user>${db.username}</user>
+                        <password>${db.password}</password>
                     </jdbc>
                     <generator>
                         <database>
@@ -248,10 +228,10 @@
                 </executions>
                 <configuration>
                     <changeLogFile>src/main/resources/db/changelog/db-init.yaml</changeLogFile>
-                    <url>jdbc:postgresql://localhost:5432/authservicedb</url>
-                    <username>authservice</username>
-                    <password>12345</password>
-                    <driver>org.postgresql.Driver</driver>
+                    <url>${db.url}</url>
+                    <username>${db.username}</username>
+                    <password>${db.password}</password>
+                    <driver>${db.driver}</driver>
                 </configuration>
             </plugin>
             <plugin>
