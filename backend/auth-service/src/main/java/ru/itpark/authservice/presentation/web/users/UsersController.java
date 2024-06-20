@@ -1,5 +1,6 @@
 package ru.itpark.authservice.presentation.web.users;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,7 @@ public class UsersController {
 
     @GetMapping
     @PreAuthorize("isAuthenticated()")
+    @Operation(summary = "Получить список всех пользователей микросервиса")
     public ResponseEntity<List<User>> getUsers() {
         return ResponseEntity.ok(usersService.getAllUsers());
     }
@@ -36,12 +38,16 @@ public class UsersController {
     @PostMapping
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
+    @Operation(summary = "Залогинить пользователя в keycloak по логину и паролю", description =
+            "На этапе создания аннотации возвращает содержимое jwt из keycloak")
     public Map login(@RequestBody UserQuery user) {
         return usersService.login(user);
     }
 
     @PostMapping("/search")
     @PreAuthorize("isAuthenticated()")
+    @Operation(summary = "Найти пользователя по одному или нескольким параметрам", description =
+            "Например, те кто владеет английским и учетка создана вчера")
     public List<User> findUser(@RequestBody UserSearchParams userSearchParams) {
         log.info("Searching user with query {}", userSearchParams.getLanguages());
         return userQueryFacade.search(userSearchParams);

@@ -1,5 +1,8 @@
 package ru.itpark.authservice
 
+import org.hibernate.cfg.Environment
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery
 import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakClient
 import spock.lang.Narrative
@@ -29,11 +32,10 @@ class SomeTests extends Specification {
         setup: "KeycloakClient class"
 
         when:
-        def response = keycloakClient.getUserAuthInfo(userQuery as UserQuery)
-        println response['access_token']
+        def response = keycloakClient.createUserToken(userQuery as UserQuery)
 
         then:
-        response['access_token'] != null
+        response != null
     }
 
 
