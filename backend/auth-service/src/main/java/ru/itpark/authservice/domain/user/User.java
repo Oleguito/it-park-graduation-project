@@ -38,6 +38,10 @@ public class User implements UserDetails {
     @Convert(converter = LanguageConverter.class)
     private List<Language> languages;
 
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @Embedded
     private DateInfo dateInfo;
 
