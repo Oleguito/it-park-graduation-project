@@ -47,11 +47,11 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
 
         resourceAccess = jwt.getClaim("resource_access");
         
-        if (resourceAccess.get("spring-client") == null) {
+        if (resourceAccess.get("grad-project-oleguito") == null) {
             return Set.of();
         }
 
-        resource = (Map <String, Object> )resourceAccess.get("spring-client");
+        resource = (Map <String, Object> )resourceAccess.get("grad-project-oleguito");
         resourceRoles = (Collection <String>)resource.get("roles");
 
 
