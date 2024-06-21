@@ -23,7 +23,6 @@ import static ru.itpark.authservice.Tables.USERS;
 @Slf4j
 public class CustomUserRepository {
 
-    //    private static final Logger log = LoggerFactory.getLogger(CustomUserRepository.class);
     private final ObjectMapper objectMapper;
 
     private final DSLContext dsl;

@@ -12,7 +12,6 @@ import java.util.Map;
 @Component
 public class KeycloakClient {
 
-//    @Value("${keycloak.client-secret}")
     private final String clientSecret = System.getenv("client-secret");
 
     public boolean revokeUserToken(String adminToken, String toRevokeToken){
@@ -47,7 +46,6 @@ public class KeycloakClient {
         
         var body = new LinkedMultiValueMap <String, String>();
         body.add("grant_type", "password");
-//        body.add("grant_type", "client_credentials");
         body.add("client_secret", clientSecret);
         body.add("client_id", "grad-project-oleguito");
         body.add("username", user.getUsername());

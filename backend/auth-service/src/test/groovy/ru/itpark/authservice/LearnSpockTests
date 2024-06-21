@@ -1,0 +1,39 @@
+package ru.itpark.authservice
+
+import spock.lang.Specification
+
+
+class LearnSpock extends Specification {
+
+    Publisher publisher = new Publisher()
+    Subscriber subscriber = Mock()
+    Subscriber subscriber2 = Mock()
+
+    def "Еще кое-чето из спока"() {
+        when:
+        publisher.send("hello")
+
+        then:
+        def message = "hello"
+        1 * subscriber.receive(message)
+    }
+
+    def "Что-то да проверяем.. не?"() {
+        def a = 2
+        def b = a * 3
+        expect:
+        a + b == 8
+    }
+}
+
+class Publisher {
+    def send() {
+
+    }
+}
+
+class Subscriber {
+    def receive() {
+
+    }
+}
