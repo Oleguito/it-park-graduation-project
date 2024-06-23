@@ -11,7 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.itpark.authservice.infrastructure.repositories.user.UserRepository;
 
-
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
@@ -36,3 +35,4 @@ public class ApplicationConfig {
         return provider;
     }
 }
+

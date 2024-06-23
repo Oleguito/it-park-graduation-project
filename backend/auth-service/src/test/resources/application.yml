@@ -7,6 +7,16 @@ server:
     key-store-password: 1PwCgNAb
 
 spring:
+  ssl:
+    bundle:
+      jks:
+        keycloak:
+          key:
+            alias: "my-cert"
+          keystore:
+            type: PKCS12
+            location: classpath:certificate.p12
+            password: 1PwCgNAb
   security:
     oauth2:
       resourceserver:
@@ -41,10 +51,4 @@ logging:
   file:
     name: log.txt
   level:
-    root: info
-
-org:
-  springframework:
-    test:
-      context:
-        cache: DEBUG
+    root: error

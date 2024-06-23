@@ -1,3 +1,4 @@
 chcp 65001
 cls
-mvn clean test spring-boot:run
+mvn test
+rem spring-boot:run

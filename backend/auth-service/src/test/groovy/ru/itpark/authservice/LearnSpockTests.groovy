@@ -3,7 +3,7 @@ package ru.itpark.authservice
 import spock.lang.Specification
 
 
-class LearnSpock extends Specification {
+class LearnSpockTests extends Specification {
 
     Publisher publisher = new Publisher()
     Subscriber subscriber = Mock()
@@ -13,9 +13,13 @@ class LearnSpock extends Specification {
         when:
         publisher.send("hello")
 
-        then:
-        def message = "hello"
-        1 * subscriber.receive(message)
+        then: "Без блока interaction будет ошибка"
+        interaction {
+            def message = "hello"
+            /* _ означает "что-то одно, но неважно что"
+            * то есть любое число вызовов */
+            _ * subscriber.receive(message)
+        }
     }
 
     def "Что-то да проверяем.. не?"() {
@@ -27,13 +31,13 @@ class LearnSpock extends Specification {
 }
 
 class Publisher {
-    def send() {
+    def send(String message) {
 
     }
 }
 
 class Subscriber {
-    def receive() {
+    def receive(String message) {
 
     }
 }
