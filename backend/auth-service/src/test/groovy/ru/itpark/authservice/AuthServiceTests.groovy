@@ -51,11 +51,6 @@ class AuthServiceTests extends Specification {
     RestClient restClient
 
     def setup() {
-//        restClient = restClientBuilder
-//        .baseUrl("https://localhost:${port}")
-//        .apply(restClientSsl.fromBundle("keycloak"))
-//        .build()
-
 
 //        // Load the keystore
 //        KeyStore ks = KeyStore.getInstance("PKCS12")
