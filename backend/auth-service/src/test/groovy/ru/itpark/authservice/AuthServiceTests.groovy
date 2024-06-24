@@ -1,133 +1,92 @@
 package ru.itpark.authservice
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.autoconfigure.web.client.RestClientSsl
-import org.springframework.boot.ssl.SslBundles
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
 import org.springframework.boot.test.web.server.LocalServerPort
-import org.springframework.boot.web.client.RestTemplateBuilder
-import org.springframework.core.io.Resource
+import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.context.TestPropertySource
 import org.springframework.web.client.RestClient
+import org.testcontainers.containers.PostgreSQLContainer
+import org.testcontainers.spock.Testcontainers
+import org.testcontainers.utility.DockerImageName
+import ru.itpark.authservice.domain.user.User
+import ru.itpark.authservice.domain.user.dto.queries.UserQuery
+import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakClient
 import ru.itpark.authservice.presentation.web.users.UsersController
 import spock.lang.Specification
+import spock.lang.Subject
 
-import javax.net.ssl.*
-import java.security.KeyStore
-import java.security.SecureRandom
-import java.security.cert.X509Certificate
+import javax.net.ssl.HttpsURLConnection
+import java.sql.ResultSet
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 // @WithMockUser
-@TestPropertySource(locations = "classpath:application.yml")
+// @TestPropertySource(locations = "classpath:application.yml")
+@Testcontainers
 class AuthServiceTests extends Specification {
+
+    @Subject
+    @Autowired
+    UsersController controller
 
     @LocalServerPort
     int port
 
     @Autowired
-    UsersController controller
-
-    @Value('classpath:${server.ssl.key-store}')
-    private Resource keyStore   // inject keystore specified in config
-
-    @Value('${server.ssl.key-store-password}')
-    private String keyStorePassword  // inject password from config
-
-    @Autowired
-    SslBundles sslBundles;
-
-    @Autowired
-    RestTemplateBuilder restTemplateBuilder
-
-    @Autowired
     RestClient.Builder restClientBuilder
 
-    @Autowired
-    RestClientSsl restClientSsl
+    static PostgreSQLContainer<?> postgresContainer
+            = new PostgreSQLContainer<>(
+            DockerImageName.parse("postgres:14.2"))
+            .withDatabaseName("authservicedb")
+            .withUsername("authservice")
+            .withPassword("12345")
+
 
     RestClient restClient
 
-    def setup() {
-//        restClient = restClientBuilder
-//        .baseUrl("https://localhost:${port}")
-//        .apply(restClientSsl.fromBundle("keycloak"))
-//        .build()
+    @Autowired
+    KeycloakClient keycloakClient
 
+    String adminAccessToken
 
-//        // Load the keystore
-//        KeyStore ks = KeyStore.getInstance("PKCS12")
-//        ks.load(keyStore.getInputStream(), keyStorePassword.toCharArray())
-//
-//        // Create SSL context
-//        SSLContext sslContext = SSLContext.getInstance("TLS")
-//        sslContext.init(null, null, new java.security.SecureRandom())
-//
-//        // Apply SSL context to RestClient
-//        restClient = restClientBuilder
-//                .baseUrl("https://localhost:${port}")
-//                .apply(restClientSsl.fromBundle("keycloak"))
-//                .build()
-
-//        // Load the keystore
-//        KeyStore ks = KeyStore.getInstance("PKCS12")
-//        ks.load(keyStore.getInputStream(), keyStorePassword.toCharArray())
-//
-//        // Create TrustManagerFactory
-//        TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
-//        tmf.init(ks)
-//
-//        // Create SSL context
-//        SSLContext sslContext = SSLContext.getInstance("TLS")
-//        sslContext.init(null, tmf.getTrustManagers(), new java.security.SecureRandom())
-//
-//        // Apply SSL context to RestClient
-//        restClient = restClientBuilder
-//                .baseUrl("https://localhost:${port}")
-//                .apply(restClientSsl.fromBundle("keycloak"))
-//                .build()
-
-//        // Load the keystore
-//        KeyStore ks = KeyStore.getInstance("PKCS12")
-//        ks.load(keyStore.getInputStream(), keyStorePassword.toCharArray())
-//
-//        // Create TrustManagerFactory
-//        TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm())
-//        tmf.init(ks)
-//
-//        // Create SSL context
-//        SSLContext sslContext = SSLContext.getInstance("TLS")
-//        sslContext.init(null, tmf.getTrustManagers(), new java.security.SecureRandom())
-
-        def sslContext = sslBundles.getBundle("keycloak").createSslContext()
-
-        // HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory())
-        HttpsURLConnection.setDefaultHostnameVerifier({ hostname, session -> true })
-
-        // Apply SSL context to RestClient
-        restClient = restClientBuilder
-                .baseUrl("https://localhost:${port}")
-                .apply(restClientSsl.fromBundle("keycloak"))
-                .build()
-
+    static {
+        postgresContainer.start()
     }
 
-//    private void disableSslVerification() {
-//        TrustManager[] trustAllCerts = [
-//                new X509TrustManager() {
-//                    X509Certificate[] getAcceptedIssuers() { null }
-//                    void checkClientTrusted(X509Certificate[] certs, String authType) { }
-//                    void checkServerTrusted(X509Certificate[] certs, String authType) { }
-//                }
-//        ]
-//
-//        SSLContext sc = SSLContext.getInstance("TLS")
-//        sc.init(null, trustAllCerts, new SecureRandom())
-//        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory())
-//        HttpsURLConnection.setDefaultHostnameVerifier({ hostname, session -> true })
-//    }
+    def setup() {
+
+        // Без этого SSL не будет работать
+        HttpsURLConnection.setDefaultHostnameVerifier(
+                { hostname, session -> true})
+
+        restClient = restClientBuilder
+                .baseUrl("https://localhost:${port}")
+                .build()
+
+        adminAccessToken = keycloakClient.createUserToken(
+                new UserQuery("admin", "12345"))
+    }
+
+    def "Получить список юзеров по ручке"() {
+        given:
+        def users
+                = restClient
+                .get()
+                .uri("/api/users")
+                .header("Authorization", "Bearer ${adminAccessToken}")
+                .retrieve()
+                .body(List<User>)
+
+        expect:
+        users.size() >= 0
+    }
+
+    def "postgres testcontainer is not null"() {
+        expect:
+        postgresContainer != null
+    }
 
     def "тестовый контроллер возвращает 'вы авторизованы'"() throws Exception {
 
@@ -152,10 +111,25 @@ class AuthServiceTests extends Specification {
         1
     }
 
-    def "User Controller loads"() {
+    def "User Controller gets injected"() {
 
         expect:
         controller != null
     }
 
 }
+
+//    private void disableSslVerification() {
+//        TrustManager[] trustAllCerts = [
+//                new X509TrustManager() {
+//                    X509Certificate[] getAcceptedIssuers() { null }
+//                    void checkClientTrusted(X509Certificate[] certs, String authType) { }
+//                    void checkServerTrusted(X509Certificate[] certs, String authType) { }
+//                }
+//        ]
+//
+//        SSLContext sc = SSLContext.getInstance("TLS")
+//        sc.init(null, trustAllCerts, new SecureRandom())
+//        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory())
+//        HttpsURLConnection.setDefaultHostnameVerifier({ hostname, session -> true })
+//    }

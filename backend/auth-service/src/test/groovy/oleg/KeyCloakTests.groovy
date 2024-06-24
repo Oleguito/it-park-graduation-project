@@ -1,4 +1,4 @@
-package ru.itpark.authservice
+package oleg
 
 import org.hibernate.cfg.Environment
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,7 +12,7 @@ import spock.lang.Specification
     Большой длинный и удобный текст 
     который подробно объясняет че за херня тут творится
 """)
-class SomeTests extends Specification {
+class KeyCloakTests extends Specification {
 
     def keycloakClient = new KeycloakClient()
     def userQuery
@@ -23,12 +23,7 @@ class SomeTests extends Specification {
         userQuery.setPassword("12345")
     }
 
-    def "Что-то да проверяем.. не?"() {
-        expect:
-        1 == 1
-    }
-
-    def "Use REST Template to get a jwt token from KeyCloak"() {
+    def "Взять токен по REST Template из KeyCloak"() {
         setup: "KeycloakClient class"
 
         when:
@@ -39,7 +34,7 @@ class SomeTests extends Specification {
     }
 
 
-    def "UsersController handle to revoke Jwt token via keycloak status 200"() {
+    def "Отозвать токен по REST Template из KeyCloak"() {
         given:
         def adminToken = keycloakClient.createUserToken(userQuery as UserQuery)
         def toRevokeToken = adminToken

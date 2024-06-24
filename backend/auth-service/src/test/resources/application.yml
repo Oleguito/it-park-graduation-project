@@ -52,3 +52,14 @@ logging:
     name: log.txt
   level:
     root: error
+
+
+org:
+  springframework:
+    jdbc:
+      datasource:
+        init: DEBUG
+    test:
+      context:
+        jdbc: DEBUG
+

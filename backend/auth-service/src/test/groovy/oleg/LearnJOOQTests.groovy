@@ -1,10 +1,10 @@
-package ru.itpark.authservice
+package oleg
 
 import spock.lang.Specification
 
 class LearnJOOQTests extends Specification {
 
-    def "tesskjhfds"() {
+    def "Expect 1 == 1"() {
         expect:
         1 == 1
     }
