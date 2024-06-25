@@ -1,6 +1,5 @@
 package ru.itpark.authservice;
 
-import org.hibernate.cfg.Environment;
 import org.jooq.Record;
 import org.jooq.*;
 import org.jooq.impl.DSL;
@@ -26,6 +25,8 @@ class AuthServiceApplicationTests {
 
     @Test
     public void someTest() {
+
+        if(System.getenv("KEYCLOAK_DEAD").equals(1)) return;
 
         ObjectMapper objectMapper = new ObjectMapper();
 

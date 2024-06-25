@@ -12,7 +12,16 @@ import java.util.Map;
 @Component
 public class KeycloakClient {
 
-    private final String clientSecret = System.getenv("client-secret");
+    private final String clientSecret = System.getenv("GP_AUTHSERVICE_CLIENT_SECRET");
+
+    private final String revokeKeycloakUrl =
+            "https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/revoke";
+    private final String loginKeycloakUrl =
+            "https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token";
+    private final String introspectKeycloakUrl =
+            "https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token/introspect";
+
+    private final String clientId = "auth-service";
 
     public boolean revokeUserToken(String adminToken, String toRevokeToken){
         final var restTemplate = new RestTemplate();
@@ -24,13 +33,13 @@ public class KeycloakClient {
         var body = new LinkedMultiValueMap <String, String>();
         body.add("token", toRevokeToken);
         body.add("token_type_hint", "refresh_token");
-        body.add("client_id", "grad-project-oleguito");
+        body.add("client_id", clientId);
         body.add("client_secret", clientSecret);
 
         final var requestEntity = new HttpEntity <MultiValueMap <String, String>>(body, headers);
         ResponseEntity <Map> responseEntity =
                 restTemplate.postForEntity(
-                        "https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/revoke",
+                        revokeKeycloakUrl,
                         requestEntity,
                         Map.class);
 
@@ -47,14 +56,14 @@ public class KeycloakClient {
         var body = new LinkedMultiValueMap <String, String>();
         body.add("grant_type", "password");
         body.add("client_secret", clientSecret);
-        body.add("client_id", "grad-project-oleguito");
+        body.add("client_id", clientId);
         body.add("username", user.getUsername());
         body.add("password", user.getPassword());
         
         final var requestEntity = new HttpEntity <MultiValueMap <String, String>>(body, headers);
         ResponseEntity <Map> responseEntity =
                 restTemplate.postForEntity(
-                        "https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/token",
+                        loginKeycloakUrl,
                         requestEntity,
                         Map.class);
         
@@ -75,13 +84,13 @@ public class KeycloakClient {
 
         var body = new LinkedMultiValueMap <String, String>();
         body.add("client_secret", clientSecret);
-        body.add("client_id", "grad-project-oleguito");
+        body.add("client_id", clientId);
         body.add("token", token);
 
         final var requestEntity = new HttpEntity <MultiValueMap <String, String>>(body, headers);
         ResponseEntity<Map> responseEntity =
                 restTemplate.postForEntity(
-                        "https://auth.dppmai.ru/realms/group-1/protocol/openid-connect/token/introspect",
+                        introspectKeycloakUrl,
                         requestEntity,
                         Map.class);
 

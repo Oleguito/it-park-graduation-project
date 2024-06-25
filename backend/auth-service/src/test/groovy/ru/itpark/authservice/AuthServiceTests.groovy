@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
 import org.springframework.boot.test.web.server.LocalServerPort
-import org.springframework.security.test.context.support.WithMockUser
-import org.springframework.test.context.TestPropertySource
 import org.springframework.web.client.RestClient
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.spock.Testcontainers
@@ -18,7 +16,6 @@ import spock.lang.Specification
 import spock.lang.Subject
 
 import javax.net.ssl.HttpsURLConnection
-import java.sql.ResultSet
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 // @WithMockUser
@@ -36,13 +33,12 @@ class AuthServiceTests extends Specification {
     @Autowired
     RestClient.Builder restClientBuilder
 
-    static PostgreSQLContainer<?> postgresContainer
+    static PostgreSQLContainer<?> pg
             = new PostgreSQLContainer<>(
             DockerImageName.parse("postgres:14.2"))
             .withDatabaseName("authservicedb")
             .withUsername("authservice")
             .withPassword("12345")
-
 
     RestClient restClient
 
@@ -52,7 +48,7 @@ class AuthServiceTests extends Specification {
     String adminAccessToken
 
     static {
-        postgresContainer.start()
+        pg.start()
     }
 
     def setup() {
@@ -66,9 +62,18 @@ class AuthServiceTests extends Specification {
                 .build()
 
         adminAccessToken = keycloakClient.createUserToken(
-                new UserQuery("admin", "12345"))
+                new UserQuery("oleguito", "12345"))
+
+//        adminAccessToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdHJpbmctY2xhaW0iOiJzdHJpbmctdmFsdWUiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJhZG1pbiIsIm51bWJlci1jbGFpbSI6NDIsImJvb2wtY2xhaW0iOnRydWUsImV4cCI6MTc1MDg0NTY2NywiaWF0IjoxNzE5MzA5NjY3LCJhY3RpdmUiOnRydWV9.LkxGbLYdIkBXbfKfjAfWcu6wAl3kpcNxojCuq-OFPwdO_K9clQFHwOMoC4CIyBT0zwV2iam9o1mG4a3GZ44d41hIXVqTNmAgkWC9fZVzEWYR0EORXcfr8qNpucHiqwourTAXhGOwp0SYOAHGZGbUb1-9_uBWQvEnFkmfBZW9hBSOS60Ah_vRL0WmmtSg3imr0ZXiIOfTle7TFw0rWHkBIXJvt2ang1NrinCHttTz930VIOc6MhLeejQnqZ9kkT_IEkgka4r8YAcmm4bHhWwhYYTFRu22HIhDmH7GzHdfApzAFv3ALg28aVflbN72ZTeYU8TyR-8xVl12pvmMraAwNQ"
+
+        println "-----------------------------------------------------------"
     }
 
+    def cleanup() {
+        println "-----------------------------------------------------------"
+    }
+
+    // @IgnoreIf({env.get("KEYCLOAK_DEAD")})
     def "Получить список юзеров по ручке"() {
         given:
         def users
@@ -79,13 +84,14 @@ class AuthServiceTests extends Specification {
                 .retrieve()
                 .body(List<User>)
 
+
         expect:
         users.size() >= 0
     }
 
     def "postgres testcontainer is not null"() {
         expect:
-        postgresContainer != null
+        pg != null
     }
 
     def "тестовый контроллер возвращает 'вы авторизованы'"() throws Exception {
