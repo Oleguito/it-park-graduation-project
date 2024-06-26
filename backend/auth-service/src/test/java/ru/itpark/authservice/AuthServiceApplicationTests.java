@@ -26,6 +26,8 @@ class AuthServiceApplicationTests {
     @Test
     public void someTest() {
 
+
+
         if(System.getenv("KEYCLOAK_DEAD").equals(1)) return;
 
         ObjectMapper objectMapper = new ObjectMapper();

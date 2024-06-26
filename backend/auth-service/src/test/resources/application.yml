@@ -24,14 +24,15 @@ spring:
           issuer-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project
           jwk-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/certs
   liquibase:
+    enabled: true
     user: authservice
     password: ${GP_AUTHSERVICE_DB_PASSWORD}
-    change-log: 'classpath:db/changelog/db-init.yaml'
+    change-log: classpath:db/changelog/db-init.yaml
   datasource:
-    url: jdbc:postgresql://localhost:5432/authservicedb
+    url: jdbc:tc:postgresql:14.2:///authservicedb?TC_REUSABLE=true
     username: authservice
     password: ${GP_AUTHSERVICE_DB_PASSWORD}
-    driverClassName: org.postgresql.Driver
+    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
 
 keycloak:
   serverUrl: https://lemur-7.cloud-iam.com
@@ -46,9 +47,9 @@ keycloak:
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} %highlight(%-5level) %logger{36} %M - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} %M - %msg%n"
-  file:
-    name: log.txt
+#    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} %M - %msg%n"
+#  file:
+#    name: log.txt
   level:
     root: error
 
