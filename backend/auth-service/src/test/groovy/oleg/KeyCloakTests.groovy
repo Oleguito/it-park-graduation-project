@@ -3,7 +3,6 @@ package oleg
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery
 import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakClient
 import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakReplacementJwtCreator
-import spock.lang.IgnoreIf
 import spock.lang.Narrative
 import spock.lang.Specification
 
@@ -18,10 +17,13 @@ class KeyCloakTests extends Specification {
     def keycloakClient = new KeycloakClient()
     def userQuery
 
+    def keycloakAdminUsername = "admin"
+    def keycloakAdminPassword = System.getenv("GP_KEYCLOAK_ADMIN_PASSWORD")
+
     def setup() {
         userQuery = new UserQuery()
-        userQuery.setUsername("admin")
-        userQuery.setPassword("12345")
+        userQuery.setUsername(keycloakAdminUsername)
+        userQuery.setPassword(keycloakAdminPassword)
     }
 
     def "Взять замену Keycloak JWT expect 2"() {
@@ -32,7 +34,7 @@ class KeyCloakTests extends Specification {
         2
     }
 
-    @IgnoreIf({env.get("KEYCLOAK_DEAD")})
+//    @IgnoreIf({env.get("KEYCLOAK_DEAD")})
     def "Взять токен по REST Template из KeyCloak"() {
         setup: "KeycloakClient class"
 
@@ -43,7 +45,7 @@ class KeyCloakTests extends Specification {
         response != null
     }
 
-    @IgnoreIf({env.get("KEYCLOAK_DEAD")})
+//    @IgnoreIf({env.get("KEYCLOAK_DEAD")})
     def "Отозвать токен по REST Template из KeyCloak"() {
         given:
         def adminToken = keycloakClient.createUserToken(userQuery as UserQuery)

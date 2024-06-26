@@ -14,14 +14,26 @@ class LearnTestContainersTests extends Specification {
     @Autowired
     DriverManager driverManager
 
+    static PostgreSQLContainer<?> pg
+            = new PostgreSQLContainer<>(
+            DockerImageName.parse("postgres:14.2"))
+            .withDatabaseName("authservicedb")
+            .withUsername("authservice")
+            .withPassword("12345")
+
     @ServiceConnection
     PostgreSQLContainer<?> postgresContainer = new PostgreSQLContainer<>(
             DockerImageName.parse("postgres:14.2"))
             .withExposedPorts(5432)
 
-//    static {
-//        postgresContainer.start()
-//    }
+    static {
+        pg.start()
+    }
+
+    def "postgres testcontainer is not null"() {
+        expect:
+        pg != null
+    }
 
     def "1"() {
         println postgresContainer
