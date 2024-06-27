@@ -2,6 +2,7 @@ server:
   port: 8081
   ssl:
     enabled: true
+    key-alias: "my-cert"
     key-store-type: PKCS12
     key-store: certificate.p12
     key-store-password: ${GP_AUTHSERVICE_KEYSTORE_PASSWORD}

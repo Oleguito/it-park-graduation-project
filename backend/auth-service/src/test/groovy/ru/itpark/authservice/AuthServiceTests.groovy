@@ -1,6 +1,8 @@
 package ru.itpark.authservice
 
+import com.github.dockerjava.zerodep.shaded.org.apache.hc.core5.http.HttpHost
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.ssl.SslBundles
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment
 import org.springframework.boot.test.web.server.LocalServerPort
@@ -13,6 +15,11 @@ import ru.itpark.authservice.presentation.web.users.UsersController
 import spock.lang.Specification
 
 import javax.net.ssl.HttpsURLConnection
+import javax.net.ssl.SSLContext
+import javax.net.ssl.TrustManager
+import javax.net.ssl.X509TrustManager
+import java.security.SecureRandom
+import java.security.cert.X509Certificate
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 // @WithMockUser
@@ -29,8 +36,6 @@ class AuthServiceTests extends Specification {
     @Autowired
     RestClient.Builder restClientBuilder
 
-
-
     RestClient restClient
 
     @Autowired
@@ -38,11 +43,8 @@ class AuthServiceTests extends Specification {
 
     String adminAccessToken
 
-    def setup() {
 
-        // Без этого SSL не будет работать
-        HttpsURLConnection.setDefaultHostnameVerifier(
-                { hostname, session -> true})
+    def setup() {
 
         restClient = restClientBuilder
                 .baseUrl("https://localhost:${port}")
@@ -105,19 +107,19 @@ class AuthServiceTests extends Specification {
         controller != null
     }
 
+    private void disableSslVerification() {
+        TrustManager[] trustAllCerts = [
+                new X509TrustManager() {
+                    X509Certificate[] getAcceptedIssuers() { null }
+                    void checkClientTrusted(X509Certificate[] certs, String authType) { }
+                    void checkServerTrusted(X509Certificate[] certs, String authType) { }
+                }
+        ]
+
+        SSLContext sc = SSLContext.getInstance("TLS")
+        sc.init(null, trustAllCerts, new SecureRandom())
+        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory())
+        HttpsURLConnection.setDefaultHostnameVerifier({ hostname, session -> true })
+    }
 }
 
-//    private void disableSslVerification() {
-//        TrustManager[] trustAllCerts = [
-//                new X509TrustManager() {
-//                    X509Certificate[] getAcceptedIssuers() { null }
-//                    void checkClientTrusted(X509Certificate[] certs, String authType) { }
-//                    void checkServerTrusted(X509Certificate[] certs, String authType) { }
-//                }
-//        ]
-//
-//        SSLContext sc = SSLContext.getInstance("TLS")
-//        sc.init(null, trustAllCerts, new SecureRandom())
-//        HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory())
-//        HttpsURLConnection.setDefaultHostnameVerifier({ hostname, session -> true })
-//    }
