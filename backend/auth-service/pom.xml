@@ -20,6 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <!--        <httpclient5.version>5.0</httpclient5.version>-->
 <!--        <httpclient.version>4.0</httpclient.version>-->
+        <db.url></db.url>
+        <db.driver></db.driver>
+        <db.username></db.username>
+        <db.password></db.password>
     </properties>
     <dependencies>
 <!--        <dependency>-->
