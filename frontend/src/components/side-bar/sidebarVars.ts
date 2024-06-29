@@ -8,7 +8,7 @@ type SidebarMenu = Record<string, SidebarEntry[]>;
 type SidebarVars = Record<string, SidebarMenu>;
 
 export const sidebarVars = {
-    'driver': {
+    'user': {
         '/my': [
             {
                 text: 'Профиль',

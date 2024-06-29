@@ -11,11 +11,12 @@ const isRouteActive = (pathname: string, url: string) => {
 }
 export const SideBar = () => {
     const pathName = usePathname();
+    console.log("pathName:", pathName)
 
     const tokens = getTokens();
 
     const isTokensExists = Object.keys(tokens).length > 0;
-    console.log(getUserRole())
+    console.log("role: ", getUserRole())
     return (
         isTokensExists && (
             <div className='w-[15rem] flex flex-col gap-5 mr-36'>

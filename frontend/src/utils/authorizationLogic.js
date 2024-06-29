@@ -114,6 +114,7 @@ export const getTokens = () => {
 			queryString.stringify({
 				grant_type: 'authorization_code',
 				client_id: 'auth-service',
+				client_secret: '7TCb2UhbgVpyh186oC6VMe9srakq16Bp',
 				redirect_uri: REDIRECT_URI,
 				code_verifier: savedVerifier,
 				code: authorizationCode,
@@ -129,6 +130,8 @@ export const getTokens = () => {
 			.then(({ data }) => {
 				const access_token = data.access_token
 				const refresh_token = data.refresh_token
+				console.log("access token", access_token)
+				console.log("refresh token", refresh_token)
 				saveTokensToLocalStorage(access_token, refresh_token)
 
 				window.localStorage.setItem('id_token', data.id_token)
