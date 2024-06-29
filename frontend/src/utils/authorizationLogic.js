@@ -6,10 +6,10 @@ import queryString from 'query-string'
 
 export const TOKEN_URL =
 	process.env.REACT_APP_TOKEN_URL ||
-	`https://auth.dppmai.ru/realms/lessons/protocol/openid-connect/token`
+	`https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token`
 const KEYCLOACK_AUTH_URL =
 	process.env.REACT_APP_KEYCLOACK_AUTH_URL ||
-	`https://auth.dppmai.ru/realms/lessons/protocol/openid-connect/auth`
+	`https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/auth`
 const FRONTEND_URL = 'localhost:3000'
 
 function generateRandomString(length) {
@@ -46,7 +46,7 @@ async function generateCodeChallenge(codeVerifier) {
 
 async function makeRedirectUrl(codeChallenge, state) {
 	let queryParams = new URLSearchParams({
-		client_id: 'lessons-client',
+		client_id: 'auth-service',
 		response_type: 'code',
 		state: state,
 		scope: 'openid profile email',
@@ -113,7 +113,7 @@ export const getTokens = () => {
 			TOKEN_URL,
 			queryString.stringify({
 				grant_type: 'authorization_code',
-				client_id: 'lessons-client',
+				client_id: 'auth-service',
 				redirect_uri: REDIRECT_URI,
 				code_verifier: savedVerifier,
 				code: authorizationCode,
