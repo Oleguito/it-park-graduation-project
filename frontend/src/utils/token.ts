@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode'
 import queryString from 'query-string'
 import {TOKEN_URL} from './authorizationLogic'
 import {UserRole} from "@/types/user-role";
+import { log } from 'console'
 
 export type TokenType = {
     access_token: string
@@ -89,14 +90,17 @@ export const getOrCreateTokens = (): TokenType | null => {
 export function getUserRole(): UserRole | undefined {
     if (isTokenInLS()) {
         const decodedToken = getDecodedToken()
+        console.log(decodedToken);
+        
         const roles = decodedToken?.resource_access?.['auth-service']?.roles
 
-        if (roles?.includes('client-operator')) return 'operator'
-        if (roles?.includes('client-driver')) return 'driver'
-        if (roles?.includes('client-manager')) return 'manager'
+        if (roles?.includes('user')) return 'user'
+        if (roles?.includes('admin')) return 'admin'
+    } else {
+        console.log("токена нету в localstorage");
+        
     }
 }
-
 
 export function signOut() {
     if (typeof window !== 'undefined') {
