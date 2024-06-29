@@ -1,7 +1,10 @@
+"use client"
 import DoubleList from "@/components/doubleList/doubleList";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Button} from "@/components/ui/button";
 import {SettingsIcon} from "lucide-react";
+import {getUserInfo} from "@/utils/userInfo";
+
 
 const MyPage = () => {
     return (
@@ -14,7 +17,7 @@ const MyPage = () => {
                 <DoubleList listData={[
                     {
                         label: "Фамлия имя отчество",
-                        content: "Пуньк среньк"
+                        content: `${getUserInfo()?.name}`
                     },
                     {
                         label: "Почта",
