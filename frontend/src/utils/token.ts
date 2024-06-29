@@ -66,7 +66,7 @@ export type JwtPayloadType = {
     exp: string
     preferred_username: string
     resource_access: {
-        'lessons-client': {
+        'auth-service': {
             roles: string[]
         }
     }
@@ -89,7 +89,7 @@ export const getOrCreateTokens = (): TokenType | null => {
 export function getUserRole(): UserRole | undefined {
     if (isTokenInLS()) {
         const decodedToken = getDecodedToken()
-        const roles = decodedToken?.resource_access?.['lessons-client']?.roles
+        const roles = decodedToken?.resource_access?.['auth-service']?.roles
 
         if (roles?.includes('client-operator')) return 'operator'
         if (roles?.includes('client-driver')) return 'driver'
@@ -102,7 +102,7 @@ export function signOut() {
     if (typeof window !== 'undefined') {
         let baseUrl
         if (window.location.host == 'localhost:3000') {
-            baseUrl = 'dppmai.ru'
+            baseUrl = 'https://lemur-7.cloud-iam.com'
         } else {
             baseUrl = window.location.host
         }
@@ -113,7 +113,7 @@ export function signOut() {
         let id_token = window.localStorage.getItem('id_token')
         const domain =
             process.env.REACT_APP_KEYCLOACK_LOGOUT_URL ||
-            `https://auth.${baseUrl}/realms/lessons/protocol/openid-connect/logout`
+            `${baseUrl}/auth/realms/grad-project/protocol/openid-connect/logout`
         const KEYCLOACK_LOGOUT_URL = `${domain}?id_token_hint=${id_token}&post_logout_redirect_uri=${window.location.origin}/`
 
         window.location.assign(KEYCLOACK_LOGOUT_URL)

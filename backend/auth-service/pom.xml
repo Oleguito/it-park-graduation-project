@@ -249,9 +249,10 @@
                 <configuration>
                     <jdbc>
                         <driver>org.postgresql.Driver</driver>
-                        <url>jdbc:postgresql://localhost:5432/authservicedb</url>
-                        <user>authservice</user>
-                        <password>12345</password>
+
+                      <url>${GP_AUTHSERVICE_DB_URL}</url>
+                        <username>${GP_AUTHSERVICE_DB_USERNAME}</username>
+                        <password>${GP_AUTHSERVICE_DB_PASSWORD}</password>
                     </jdbc>
                     <generator>
                         <database>
