@@ -249,7 +249,8 @@
                 <configuration>
                     <jdbc>
                         <driver>org.postgresql.Driver</driver>
-                        <url>${GP_AUTHSERVICE_DB_URL}</url>
+
+                      <url>${GP_AUTHSERVICE_DB_URL}</url>
                         <username>${GP_AUTHSERVICE_DB_USERNAME}</username>
                         <password>${GP_AUTHSERVICE_DB_PASSWORD}</password>
                     </jdbc>
