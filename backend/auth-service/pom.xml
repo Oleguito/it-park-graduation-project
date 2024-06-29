@@ -248,10 +248,10 @@
                 </executions>
                 <configuration>
                     <jdbc>
-                        <driver>${db.driver}</driver>
-                        <url>${db.url}</url>
-                        <user>${db.username}</user>
-                        <password>${db.password}</password>
+                        <driver>org.postgresql.Driver</driver>
+                        <url>jdbc:postgresql://localhost:5432/authservicedb</url>
+                        <user>authservice</user>
+                        <password>12345</password>
                     </jdbc>
                     <generator>
                         <database>
@@ -279,10 +279,10 @@
                 </executions>
                 <configuration>
                     <changeLogFile>src/main/resources/db/changelog/db-init.yaml</changeLogFile>
-                    <url>${db.url}</url>
-                    <username>${db.username}</username>
-                    <password>${db.password}</password>
-                    <driver>${db.driver}</driver>
+                    <url>${GP_AUTHSERVICE_DB_URL}</url>
+                    <username>${GP_AUTHSERVICE_DB_USERNAME}</username>
+                    <password>${GP_AUTHSERVICE_DB_PASSWORD}</password>
+                    <driver>org.postgresql.Driver</driver>
                 </configuration>
             </plugin>
             <plugin>

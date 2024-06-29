@@ -2,6 +2,7 @@
 setx GP_AUTHSERVICE_DB_NAME authservicedb
 setx GP_AUTHSERVICE_DB_USERNAME authservice
 setx GP_AUTHSERVICE_DB_PASSWORD 12345
+setx GP_AUTHSERVICE_DB_URL jdbc:postgresql://localhost:5432/authservicedb
 
 setx GP_AUTHSERVICE_KEYSTORE_PASSWORD 1PwCgNAb
 
