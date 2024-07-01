@@ -5,10 +5,9 @@ import { ModeToggle } from '@/components/ui/modeToggle'
 import { signOut } from '@/utils/token'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import {isRouteActive} from '@/utils/utilities/utilities'
 
-const isRouteActive = (pathname: string, url: string) => {
-	return pathname === url
-}
+
 
 export const Header = () => {
 	const pathName = usePathname()

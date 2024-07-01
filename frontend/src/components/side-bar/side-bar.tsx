@@ -6,12 +6,9 @@ import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {getTokens, getUserRole, isTokenInLS} from "@/utils/token";
 import { useEffect, useState } from "react";
+import { isRouteActive } from "@/utils/utilities/utilities";
 
-const isRouteActive = (pathname: string, url: string) => {
-    // return pathname.includes(url)
-    console.log("isRouteActive: ", url.includes(pathname));
-    return url.includes(pathname);
-}
+
 export const SideBar = () => {
 
     const [isTokensExists, setIsTokenExists] = useState(false)
