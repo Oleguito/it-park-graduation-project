@@ -24,11 +24,6 @@ export const Header = () => {
 						Личный кабинет
 					</Button>
 				</Link>
-				<Button
-					variant={isRouteActive(pathName, '/drivers') ? 'outline' : 'ghost'}
-				>
-					Все водители
-				</Button>
 				<Button onClick={signOut}>Выход</Button>
 			</div>
 		</header>
