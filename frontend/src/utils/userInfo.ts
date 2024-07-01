@@ -1,6 +1,7 @@
+import { UserInfo } from '@/types/user-info'
 import jwt_decode from 'jwt-decode'
 
-export function getUserInfo() {
+export function getUserInfo() : UserInfo | null {
     let token = window.localStorage.getItem("id_token")
     // console.log("наш токен")
     // console.log(token)

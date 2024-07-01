@@ -3,10 +3,15 @@ import DoubleList from "@/components/doubleList/doubleList";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Button} from "@/components/ui/button";
 import {SettingsIcon} from "lucide-react";
+import {UserInfo} from '@/types/user-info'
 import {getUserInfo} from "@/utils/userInfo";
+import { useState } from "react";
 
 
 const MyPage = () => {
+
+    const [userInfo, setUserInfo] = useState({} as UserInfo)
+
     return (
         <div className={'flex w-full justify-between items-center h-full'}>
             <Avatar className={'w-[128px] h-[128px] flex justify-center items-center'}>

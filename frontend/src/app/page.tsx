@@ -3,7 +3,7 @@ import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 
 import { authorize } from '@/utils/authorizationLogic'
-import { getTokens, getTokensFromWindow } from '@/utils/token'
+import { getTokens } from '@/utils/token'
 import { useEffect } from 'react'
 
 const fontSans = FontSans({
@@ -16,10 +16,10 @@ export default function RootLayout() {
 
 	useEffect(() => {
 
-		console.log("type of window RootLayout: ", typeof window)
-		console.log(window.localStorage)
+		// console.log("type of window RootLayout: ", typeof window)
+		// console.log(window.localStorage)
 
-		const tokens = getTokensFromWindow(window.localStorage);
+		const tokens = getTokens();
 		if (
             tokens === undefined ||
             tokens === null ||
