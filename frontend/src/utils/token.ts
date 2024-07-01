@@ -78,11 +78,6 @@ export const getTokens = (): TokenType => {
     return isTokenInLS() ? JSON.parse(localStorage.getItem('token')!) : {}
 }
 
-export const getTokensFromWindow = (ls: Storage): TokenType => {
-    console.log("window from getTokensFromWindow:", ls);
-    return isTokenInLS() ? JSON.parse(ls.getItem("token")!) : {};
-};
-
 export const getDecodedToken = (): JwtPayloadType => {
     // @ts-ignore
     return jwt_decode(getTokens().access_token)
