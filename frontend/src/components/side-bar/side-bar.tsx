@@ -14,7 +14,7 @@ export const SideBar = () => {
     const [isTokensExists, setIsTokenExists] = useState(false)
 
     const pathName = usePathname();
-    console.log("pathName:", pathName)
+    // console.log("pathName:", pathName)
 
     useEffect(() => {
          setIsTokenExists(Object.keys(getTokens()).length > 0);

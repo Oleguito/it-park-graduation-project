@@ -91,7 +91,7 @@ export const getOrCreateTokens = (): TokenType | null => {
 export function getUserRole(): UserRole | undefined {
     if (isTokenInLS()) {
         const decodedToken = getDecodedToken()
-        console.log(decodedToken);
+        // console.log(decodedToken);
         
         const roles = decodedToken?.resource_access?.['auth-service']?.roles
 
