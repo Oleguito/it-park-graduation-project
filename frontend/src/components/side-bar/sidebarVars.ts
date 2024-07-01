@@ -11,16 +11,24 @@ export const sidebarVars = {
     'user': {
         '/my': [
             {
-                text: 'Профиль',
-                link: '/my/profile'
+                text: 'Проекты',
+                link: '/my/projects'
             },
             {
-                text: 'Штрафы',
-                link: '/my/fees'
+                text: 'Задачи',
+                link: '/my/tasks'
             },
             {
                 text: 'Документы',
                 link: '/my/documents'
+            },
+            {
+                text: 'Чат',
+                link: '/my/chat'
+            },
+            {
+                text: 'Аналитика',
+                link: '/my/analytics'
             },
             {
                 text: 'Настройки',

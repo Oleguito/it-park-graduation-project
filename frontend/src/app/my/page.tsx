@@ -13,52 +13,66 @@ const MyPage = () => {
     const [userInfo, setUserInfo] = useState({} as UserInfo)
 
     return (
-        <div className={'flex w-full justify-between items-center h-full'}>
-            <Avatar className={'w-[128px] h-[128px] flex justify-center items-center'}>
-                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn"/>
-                <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <div className={'flex justify-around w-full'}>
-                <DoubleList listData={[
-                    {
-                        label: "Фамлия имя отчество",
-                        content: `${getUserInfo()?.name}`
-                    },
-                    {
-                        label: "Почта",
-                        content: "ilublukontour228@mail.ru"
-                    }
-                    ,
-                    {
-                        label: "Логин",
-                        content: "ilublukontour228"
-                    }
-                ]}
-                />
-                <DoubleList listData={[
-                    {
-                        label: "Номер ВУ",
-                        content: "12321321312"
-                    },
-                    {
-                        label: "Телеграмм",
-                        content: "https://t.me/ilublukontour228"
-                    }
-                    ,
-                    {
-                        label: "Телефон",
-                        content: "+7 (960) 558-78-77"
-                    }
-                ]}
-                />
+        <>
+            <div>
+                <p>- Общая информация о пользователе</p>
+                <p>- Список текущих проектов пользователя</p>
+                <p>- Доступ к функциям управления профилем</p>
             </div>
-            <div className={'h-full flex items-start'}>
-                <Button size={'icon'} variant={'outline'}>
-                    <SettingsIcon/>
-                </Button>
+            <div className={"flex w-full justify-between items-center h-full"}>
+                <Avatar
+                    className={
+                        "w-[128px] h-[128px] flex justify-center items-center"
+                    }
+                >
+                    <AvatarImage
+                        src="https://github.com/shadcn.png"
+                        alt="@shadcn"
+                    />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className={"flex justify-around w-full"}>
+                    <DoubleList
+                        listData={[
+                            {
+                                label: "Фамилия имя отчество",
+                                content: `${getUserInfo()?.name}`,
+                            },
+                            {
+                                label: "Почта",
+                                content: `${getUserInfo()?.email}`,
+                            },
+                            {
+                                label: "Логин",
+                                content: `${getUserInfo()?.preferred_username}`,
+                            },
+                        ]}
+                    />
+                    <DoubleList
+                        listData={[
+                            {
+                                label: "Номер ВУ",
+                                content: "12321321312",
+                            },
+                            {
+                                label: "Телеграмм",
+                                content: "https://t.me/ilublukontour228",
+                            },
+                            {
+                                label: "Телефон",
+                                content: "+7 (960) 558-78-77",
+                            },
+                        ]}
+                    />
+                </div>
+                <div className={"h-full flex items-start"}>
+                    <Button size={"icon"} variant={"outline"}>
+                        <SettingsIcon />
+                    </Button>
+                </div>
             </div>
-        </div>
-    )
+        </>
+    );
 }
 
 export default MyPage

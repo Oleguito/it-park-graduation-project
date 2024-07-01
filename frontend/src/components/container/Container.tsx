@@ -7,12 +7,13 @@ export const Container = ({
     children: React.ReactNode
 }>) => {
     return (
-        <div className='flex w-full p-4'>
-            <SideBar/>
+        <div className="flex w-full p-4">
+            <SideBar />
 
-            <div className='w-full flex justify-center'>
-                <Card className='w-3/4 p-4'>{children}</Card>
+            <div className="w-full flex flex-col items-center">
+                {children}
+                {/* <Card className='w-3/4 p-4'>{children}</Card> */}
             </div>
         </div>
-    )
+    );
 }

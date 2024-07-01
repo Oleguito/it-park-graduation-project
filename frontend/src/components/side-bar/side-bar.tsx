@@ -23,7 +23,7 @@ export const SideBar = () => {
     return (
         isTokensExists && (
             <div className="w-[15rem] flex flex-col gap-5 mr-36">
-                {sidebarVars[getUserRole() as string][pathName].map(
+                {sidebarVars[getUserRole() as string]['/my'].map(
                     (value, index) => (
                         <Link href={value.link} key={index}>
                             <Button
