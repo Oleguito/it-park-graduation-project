@@ -11,7 +11,6 @@ export const TOKEN_URL =
 const KEYCLOAK_AUTH_URL =
 	process.env.REACT_APP_KEYCLOAK_AUTH_URL ||
 	Settings.keycloak.authUrl
-const FRONTEND_URL = Settings.frontend.url
 const REDIRECT_URI = Settings.keycloak.redirectUrl
 
 
@@ -114,7 +113,7 @@ export const getTokens = () => {
 			TOKEN_URL,
 			queryString.stringify({
 				grant_type: 'authorization_code',
-				client_id: 'auth-service',
+				client_id: Settings.keycloak.clientId,
 				client_secret: '7TCb2UhbgVpyh186oC6VMe9srakq16Bp',
 				redirect_uri: REDIRECT_URI,
 				code_verifier: savedVerifier,
