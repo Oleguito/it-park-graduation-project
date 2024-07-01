@@ -15,10 +15,6 @@ export default function RootLayout() {
 	
 
 	useEffect(() => {
-
-		// console.log("type of window RootLayout: ", typeof window)
-		// console.log(window.localStorage)
-
 		const tokens = getTokens();
 		if (
             tokens === undefined ||
@@ -26,7 +22,6 @@ export default function RootLayout() {
             Object.keys(tokens).length === 0
         )
 			authorize();
-
 	}, [])
 	
 

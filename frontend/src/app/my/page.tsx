@@ -55,7 +55,7 @@ const MyPage = () => {
                                 content: "12321321312",
                             },
                             {
-                                label: "Телеграмм",
+                                label: "Телеграм",
                                 content: "https://t.me/ilublukontour228",
                             },
                             {

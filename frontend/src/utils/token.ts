@@ -5,21 +5,37 @@ import queryString from 'query-string'
 import {TOKEN_URL} from './authorizationLogic'
 import {UserRole} from "@/types/user-role";
 import { log } from 'console'
+import { Settings } from '@/constants/constants'
 
+const LOCAL_STORAGE_TOKEN_KEY = 'token'
 
 export type TokenType = {
     access_token: string
     refresh_token: string
 }
+
+export type ResourceAccess = {
+    [key: string]: {
+        roles: string[];
+    };
+};
+
+export type JwtPayloadType = {
+    exp: string;
+    preferred_username: string;
+    resource_access: ResourceAccess;
+};
+
+
 export const isTokenInLS = (): boolean => {
-    const token = window.localStorage.getItem('token')
+    const token = window.localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)
     return token !== null && token !== undefined
 }
 
 export const saveTokenInLS = (token: TokenType) => {
     const convertedToken = JSON.stringify(token)
-    window.localStorage.removeItem('token')
-    window.localStorage.setItem('token', convertedToken)
+    window.localStorage.removeItem(LOCAL_STORAGE_TOKEN_KEY)
+    window.localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, convertedToken)
 }
 export const checkIsTokenExpired = (token: string): boolean => {
     const decodedToken: any = jwt_decode(token)
@@ -29,13 +45,13 @@ export const checkIsTokenExpired = (token: string): boolean => {
 }
 
 export const updateToken = async () => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)
 
     if (token) {
         const refreshToken = JSON.parse(token).refresh_token
 
         const body = {
-            client_id: 'spring-client',
+            client_id: Settings.keycloak.clientId,
             grant_type: 'refresh_token',
             refresh_token: refreshToken,
         }
@@ -57,25 +73,17 @@ export const updateToken = async () => {
             .catch(error => {
                 console.error(error)
                 if (error.response.status === 400) {
-                    window.localStorage.removeItem('token')
+                    window.localStorage.removeItem(LOCAL_STORAGE_TOKEN_KEY)
                     // window.location.replace(window.location.origin);
                 }
             })
     }
 }
 
-export type JwtPayloadType = {
-    exp: string
-    preferred_username: string
-    resource_access: {
-        'auth-service': {
-            roles: string[]
-        }
-    }
-}
+
 
 export const getTokens = (): TokenType => {
-    return isTokenInLS() ? JSON.parse(localStorage.getItem('token')!) : {}
+    return isTokenInLS() ? JSON.parse(localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY)!) : {}
 }
 
 export const getDecodedToken = (): JwtPayloadType => {
@@ -91,9 +99,9 @@ export const getOrCreateTokens = (): TokenType | null => {
 export function getUserRole(): UserRole | undefined {
     if (isTokenInLS()) {
         const decodedToken = getDecodedToken()
-        // console.log(decodedToken);
         
-        const roles = decodedToken?.resource_access?.['auth-service']?.roles
+        const roles =
+            decodedToken?.resource_access[Settings.keycloak.clientId]?.roles
 
         if (roles?.includes('user')) return 'user'
         if (roles?.includes('admin')) return 'admin'
@@ -105,19 +113,19 @@ export function getUserRole(): UserRole | undefined {
 export function signOut() {
     if (typeof window !== 'undefined') {
         let baseUrl
-        if (window.location.host == 'localhost:3000') {
-            baseUrl = 'https://lemur-7.cloud-iam.com'
+        if (window.location.host == Settings.frontend.url) {
+            baseUrl = Settings.keycloak.baseUrl
         } else {
             baseUrl = window.location.host
         }
-        window.localStorage.removeItem('token')
+        window.localStorage.removeItem(LOCAL_STORAGE_TOKEN_KEY)
         window.sessionStorage.removeItem('code_verifier')
         window.sessionStorage.removeItem('state')
 
         let id_token = window.localStorage.getItem('id_token')
         const domain =
             process.env.REACT_APP_KEYCLOAK_LOGOUT_URL ||
-            `${baseUrl}/auth/realms/grad-project/protocol/openid-connect/logout`
+            Settings.keycloak.logoutUrl
         const KEYCLOAK_LOGOUT_URL = `${domain}?id_token_hint=${id_token}&post_logout_redirect_uri=${window.location.origin}/`
 
         window.location.assign(KEYCLOAK_LOGOUT_URL)
