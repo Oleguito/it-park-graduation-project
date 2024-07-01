@@ -6,9 +6,10 @@ export const Settings = {
         tokenUrl: `https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token`,
         authUrl: `https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/auth`,
         realm: "grad-project",
-        clientId: "auth-service" as string,
+        clientId: `auth-service` as string,
         redirectUrl: `http://localhost:3000/test/redirect`,
         logoutUrl: `https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/logout`,
+        clientSecret: `7TCb2UhbgVpyh186oC6VMe9srakq16Bp`,
     },
     frontend: {
         url: "localhost:3000",

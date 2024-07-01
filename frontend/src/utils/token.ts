@@ -2,10 +2,8 @@
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import queryString from 'query-string'
-import {TOKEN_URL} from './authorizationLogic'
 import {UserRole} from "@/types/user-role";
-import { log } from 'console'
-import { Settings } from '@/constants/constants'
+import { Settings } from '@/constants/settings'
 import { ResourceAccess } from '@/types/resourceaccess'
 
 const LOCAL_STORAGE_TOKEN_KEY = 'token'
@@ -53,7 +51,7 @@ export const updateToken = async () => {
         console.log('Пытаюсь обновить токены')
 
         await axios
-            .post<TokenType>(TOKEN_URL!, queryString.stringify(body), {
+            .post<TokenType>(Settings.keycloak.tokenUrl!, queryString.stringify(body), {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
@@ -124,5 +122,7 @@ export function signOut() {
         const KEYCLOAK_LOGOUT_URL = `${domain}?id_token_hint=${id_token}&post_logout_redirect_uri=${window.location.origin}/`
 
         window.location.assign(KEYCLOAK_LOGOUT_URL)
+    } else {
+        console.log("Window is undefined: Окна не видно");
     }
 }

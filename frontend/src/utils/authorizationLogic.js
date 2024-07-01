@@ -3,14 +3,10 @@
 import axios from 'axios'
 import forge from 'node-forge'
 import queryString from 'query-string'
-import {Settings} from '@/constants/constants'
+import {Settings} from '@/constants/settings'
 
-export const TOKEN_URL =
-	process.env.REACT_APP_TOKEN_URL ||
-	Settings.keycloak.tokenUrl
-const KEYCLOAK_AUTH_URL =
-	process.env.REACT_APP_KEYCLOAK_AUTH_URL ||
-	Settings.keycloak.authUrl
+const TOKEN_URL = Settings.keycloak.tokenUrl;
+const KEYCLOAK_AUTH_URL = Settings.keycloak.authUrl;
 const REDIRECT_URI = Settings.keycloak.redirectUrl
 
 
@@ -109,12 +105,13 @@ export const getTokens = () => {
 	console.log(savedState)
 	console.log(stateFromURL)
 	if (savedState === stateFromURL) {
+		console.log("We ARE HERE");
 		const response = axios.post(
             TOKEN_URL,
             queryString.stringify({
                 grant_type: "authorization_code",
                 client_id: Settings.keycloak.clientId,
-                client_secret: process.env.GP_AUTHSERVICE_CLIENT_SECRET,
+                client_secret: Settings.keycloak.clientSecret,
                 redirect_uri: REDIRECT_URI,
                 code_verifier: savedVerifier,
                 code: authorizationCode,
@@ -128,6 +125,7 @@ export const getTokens = () => {
         );
 		response
 			.then(({ data }) => {
+				console.log("We ARE NOT HERE")
 				const access_token = data.access_token
 				const refresh_token = data.refresh_token
 				console.log("access token", access_token)
