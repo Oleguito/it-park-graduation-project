@@ -1,3 +1,5 @@
+import { ResourceAccess } from "./resourceaccess";
+
 export type UserInfo = {
   acr: string;
   allowed_origins: string[];
@@ -16,11 +18,7 @@ export type UserInfo = {
   realm_access: {
     roles: string[];
   };
-  resource_access: {
-    'auth-service': {
-      [key: string]: any;
-    };
-  };
+  resource_access: ResourceAccess;
   scope: string;
   session_state: string;
   sid: string;

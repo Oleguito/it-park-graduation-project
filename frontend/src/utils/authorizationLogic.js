@@ -48,7 +48,7 @@ async function generateCodeChallenge(codeVerifier) {
 
 async function makeRedirectUrl(codeChallenge, state) {
 	let queryParams = new URLSearchParams({
-		client_id: 'auth-service',
+		client_id: Settings.keycloak.clientId,
 		response_type: 'code',
 		state: state,
 		scope: 'openid profile email',

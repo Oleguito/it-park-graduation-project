@@ -6,6 +6,7 @@ import {TOKEN_URL} from './authorizationLogic'
 import {UserRole} from "@/types/user-role";
 import { log } from 'console'
 import { Settings } from '@/constants/constants'
+import { ResourceAccess } from '@/types/resourceaccess'
 
 const LOCAL_STORAGE_TOKEN_KEY = 'token'
 
@@ -13,12 +14,6 @@ export type TokenType = {
     access_token: string
     refresh_token: string
 }
-
-export type ResourceAccess = {
-    [key: string]: {
-        roles: string[];
-    };
-};
 
 export type JwtPayloadType = {
     exp: string;
