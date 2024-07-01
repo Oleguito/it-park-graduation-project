@@ -110,22 +110,22 @@ export const getTokens = () => {
 	console.log(stateFromURL)
 	if (savedState === stateFromURL) {
 		const response = axios.post(
-			TOKEN_URL,
-			queryString.stringify({
-				grant_type: 'authorization_code',
-				client_id: Settings.keycloak.clientId,
-				client_secret: '7TCb2UhbgVpyh186oC6VMe9srakq16Bp',
-				redirect_uri: REDIRECT_URI,
-				code_verifier: savedVerifier,
-				code: authorizationCode,
-				scope: 'openid profile email',
-			}),
-			{
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
-				},
-			}
-		)
+            TOKEN_URL,
+            queryString.stringify({
+                grant_type: "authorization_code",
+                client_id: Settings.keycloak.clientId,
+                client_secret: process.env.GP_AUTHSERVICE_CLIENT_SECRET,
+                redirect_uri: REDIRECT_URI,
+                code_verifier: savedVerifier,
+                code: authorizationCode,
+                scope: "openid profile email",
+            }),
+            {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+            }
+        );
 		response
 			.then(({ data }) => {
 				const access_token = data.access_token
