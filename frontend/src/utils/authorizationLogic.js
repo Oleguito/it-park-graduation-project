@@ -3,14 +3,17 @@
 import axios from 'axios'
 import forge from 'node-forge'
 import queryString from 'query-string'
+import {Settings} from '@/constants/constants'
 
 export const TOKEN_URL =
 	process.env.REACT_APP_TOKEN_URL ||
-	`https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token`
-const KEYCLOACK_AUTH_URL =
-	process.env.REACT_APP_KEYCLOACK_AUTH_URL ||
-	`https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/auth`
-const FRONTEND_URL = 'localhost:3000'
+	Settings.keycloak.tokenUrl
+const KEYCLOAK_AUTH_URL =
+	process.env.REACT_APP_KEYCLOAK_AUTH_URL ||
+	Settings.keycloak.authUrl
+const FRONTEND_URL = Settings.frontend.url
+const REDIRECT_URI = Settings.keycloak.redirectUrl
+
 
 function generateRandomString(length) {
 	let text = ''
@@ -55,7 +58,7 @@ async function makeRedirectUrl(codeChallenge, state) {
 		redirect_uri: REDIRECT_URI,
 	})
 
-	let url = new URL(KEYCLOACK_AUTH_URL)
+	let url = new URL(KEYCLOAK_AUTH_URL)
 	url.search = queryParams
 
 	return url.toString()
@@ -80,8 +83,6 @@ const saveTokensToLocalStorage = (access_token, refresh_token) => {
 	window.localStorage.setItem('token', JSON.stringify(tokens))
 }
 // === ! After redirect ! === //
-
-const REDIRECT_URI = `http://localhost:3000/test/redirect`
 
 export const authorize = () => {
 	const codeVerifier = generateRandomString(128)

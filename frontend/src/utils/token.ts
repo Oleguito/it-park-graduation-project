@@ -116,10 +116,10 @@ export function signOut() {
 
         let id_token = window.localStorage.getItem('id_token')
         const domain =
-            process.env.REACT_APP_KEYCLOACK_LOGOUT_URL ||
+            process.env.REACT_APP_KEYCLOAK_LOGOUT_URL ||
             `${baseUrl}/auth/realms/grad-project/protocol/openid-connect/logout`
-        const KEYCLOACK_LOGOUT_URL = `${domain}?id_token_hint=${id_token}&post_logout_redirect_uri=${window.location.origin}/`
+        const KEYCLOAK_LOGOUT_URL = `${domain}?id_token_hint=${id_token}&post_logout_redirect_uri=${window.location.origin}/`
 
-        window.location.assign(KEYCLOACK_LOGOUT_URL)
+        window.location.assign(KEYCLOAK_LOGOUT_URL)
     }
 }

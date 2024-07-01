@@ -10,3 +10,4 @@
 /backend/auth-service/.idea
 /backend/auth-service/log*.txt
 /frontend/node_modules
+/frontend/src/stories
