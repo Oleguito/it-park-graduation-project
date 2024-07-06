@@ -106,12 +106,16 @@ export const getTokens = () => {
 	console.log(stateFromURL)
 	if (savedState === stateFromURL) {
 		console.log("We ARE HERE");
+		console.log(
+            "GP_AUTHSERVICE_CLIENT_SECRET: ",
+            process.env.GP_AUTHSERVICE_CLIENT_SECRET
+        );
 		const response = axios.post(
             TOKEN_URL,
             queryString.stringify({
                 grant_type: "authorization_code",
                 client_id: Settings.keycloak.clientId,
-                client_secret: Settings.keycloak.clientSecret,
+                client_secret: process.env.GP_AUTHSERVICE_CLIENT_SECRET,
                 redirect_uri: REDIRECT_URI,
                 code_verifier: savedVerifier,
                 code: authorizationCode,
