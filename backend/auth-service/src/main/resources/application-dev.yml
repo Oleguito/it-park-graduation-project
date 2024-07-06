@@ -7,6 +7,10 @@ server:
     key-store-password: 1PwCgNAb
 
 spring:
+  kafka:
+    bootstrap-servers: "localhost:9092"
+    consumer:
+      group-id: 'my-group'
   ssl:
     bundle:
       jks:

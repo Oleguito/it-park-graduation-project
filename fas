@@ -1,0 +1,234 @@
+[33mcommit 7601ba47de725ab9257cadf1efb5673a3a9c8504[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 4cbb231 fa1aa58
+Author: Oleguito <42471435+Oleguito@users.noreply.github.com>
+Date:   Thu Jun 27 15:32:45 2024 +0300
+
+    Merge pull request #15 from Oleguito/oleguito
+    
+    Нормально настроил SSL так чтобы не приходилось вставлять сертификат …
+
+[33mcommit fa1aa5880b11d9b59cc6de29836f6a27f91caabc[m[33m ([m[1;31morigin/oleguito[m[33m)[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Thu Jun 27 15:32:15 2024 +0300
+
+    Нормально настроил SSL так чтобы не приходилось вставлять сертификат из нашего хранилища в джавовское
+
+[33mcommit 4cbb231ca5d77d5470cd9c800e4a514023dfc849[m
+Merge: 8136217 457345d
+Author: Oleguito <42471435+Oleguito@users.noreply.github.com>
+Date:   Wed Jun 26 13:08:48 2024 +0300
+
+    Merge pull request #14 from Oleguito/oleguito
+    
+    Отделил тесты от продовой базы данных
+
+[33mcommit 457345d4cbca7ad1d7b43ae7d5d08aa48b9e052f[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Wed Jun 26 13:03:30 2024 +0300
+
+    Отделил тесты от продовой базы данных
+    Теперь они выполняются в тестконтейнерной
+
+[33mcommit 8136217e27802ff39a33b11e3687b1de5b567f82[m
+Merge: 8436fde e266f07
+Author: Oleguito <42471435+Oleguito@users.noreply.github.com>
+Date:   Tue Jun 25 18:21:43 2024 +0300
+
+    Merge pull request #13 from Oleguito/oleguito
+    
+    Выложил все пароли в переменные окружения
+
+[33mcommit e266f0715712866bf3f599641367984cb545a721[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Tue Jun 25 18:20:57 2024 +0300
+
+    Выложил все пароли в переменные окружения
+    Развернул собственный KeyCloak и интегрировал его в приложение
+    Создал батник который задает все нужные переменные окружения
+    Все тесты проходят
+
+[33mcommit 8436fde15568f37228935f0e1ac52ca22f7b2f50[m
+Merge: ab145a1 5e8bc2b
+Author: Oleguito <42471435+Oleguito@users.noreply.github.com>
+Date:   Mon Jun 24 16:29:56 2024 +0300
+
+    Merge pull request #12 from Oleguito/oleguito
+    
+    Чудом нашаманил запуск теста по SSL
+
+[33mcommit 5e8bc2b0951853ccef2094679d366dfb268086c1[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Mon Jun 24 16:27:06 2024 +0300
+
+    Написал пару тестов для сервиса авторизации
+    применил тестконтейнер
+
+[33mcommit 7e253a38c1a778da63efd5eeefabaf39808f6727[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Sun Jun 23 22:05:00 2024 +0300
+
+    Чудом нашаманил запуск теста по SSL
+    мы авторизованы, но еще многое надо узнать
+    версия Для Ивана
+
+[33mcommit ab145a15b62ef99cec1d60c628481c784a932227[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Sun Jun 23 22:01:02 2024 +0300
+
+    Чудом нашаманил запуск теста по SSL
+    мы авторизованы, но еще многое надо узнать
+
+[33mcommit 06df2f25a2c14f72ab8ce2d2d040d5e65fdd7346[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Sun Jun 23 01:21:53 2024 +0300
+
+    MODIFY THE orun.bat BY THE INSERTING AUTO REPEAT INSTRUCTIONS WHILE APP IS NOT AVAILABLE
+
+[33mcommit 452552901888439ffdb7245cb767bf1a92ee498a[m
+Merge: b9c7c78 a79b08b
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Fri Jun 21 14:44:33 2024 +0300
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit b9c7c7802f74001b1a9395b0f6dd924b5b606a40[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Fri Jun 21 14:44:20 2024 +0300
+
+    Added getting the roles in grad-project-oleguito's client in Keycloak
+
+[33mcommit a79b08b9b1788885d98735cdbe283566b49d6b22[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Fri Jun 21 13:06:33 2024 +0300
+
+    Создание юзера в контроллере
+
+[33mcommit dcb9e40ebe80e49e601b1adeab8b774764d61eb1[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Thu Jun 20 17:01:43 2024 +0300
+
+    Using the creds from jooq-config.properties
+
+[33mcommit 4b63f8234efda9097b92603667eac8223b689853[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Thu Jun 20 12:56:47 2024 +0300
+
+    Exception advice
+
+[33mcommit e437b8bbfe2ad240a1f0cac4c1dac35767601d1e[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Thu Jun 20 11:42:00 2024 +0300
+
+    Добавил Swagger и наполнил аннотации
+
+[33mcommit 83159b37d5284451159e2a7d9a7582341679bc36[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 22:34:45 2024 +0300
+
+    FIXED
+
+[33mcommit 5bc8a3ae44c65312a3a0690664072f9c58dd0a68[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:54:16 2024 +0300
+
+    Added the generated classes
+
+[33mcommit 160065a55fed11b842826955047337e5a7177fb7[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:40:11 2024 +0300
+
+    Added the generated classes
+
+[33mcommit 7d92601a94791ab0c89577a91300ff32c3373bc0[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:29:35 2024 +0300
+
+    Added the generated classes
+
+[33mcommit 7b9ca03eac694ea2353894bc76273e6612fec9da[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:26:55 2024 +0300
+
+    Delete the target classes
+
+[33mcommit bf9733a520225cf03f7fc6cffbfebde91109550b[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:25:54 2024 +0300
+
+    Changed the target JOOQ package of generated classes
+
+[33mcommit d7ef007b170722162acd1dd38a4d98b3ca5f354e[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:15:51 2024 +0300
+
+    Added the generated classes
+
+[33mcommit 487dc3c03eeec040fbed7194c5cc4aef67352625[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:09:48 2024 +0300
+
+    Added the generated classes
+
+[33mcommit ed5f2e5a73f699752da3329ef3f2394847b6d43c[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 21:03:48 2024 +0300
+
+    Added the generated classes
+
+[33mcommit 5522b802d6a459e5991a1d2435575b70710338b7[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Wed Jun 19 16:07:21 2024 +0300
+
+    Added Spring profile's
+    Changed the orun.bat script
+    Added filter, that checks the validity of the token
+
+[33mcommit 57c5597acc7b6c30808e2a6e42b5ba576369fb67[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Tue Jun 18 18:01:32 2024 +0300
+
+    Снова запускаем с localhost
+
+[33mcommit 5d6c8a89e0ad439269092653d44756229f3843ea[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Tue Jun 18 18:00:34 2024 +0300
+
+    Снова запускаем с localhost
+
+[33mcommit 7981c56bf67bbb0b3ccec87d6bde3104c1ff8552[m
+Author: etLanaBanana <svetlanaskovoroda@gmail.ru>
+Date:   Sun Jun 16 12:54:49 2024 +0300
+
+    отрефакторили контроллер
+
+[33mcommit 81577ccb42ef9f52f8ffb46ae34ac067a3bbb5e0[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Sat Jun 15 01:25:47 2024 +0300
+
+    added search by JSONB's field
+
+[33mcommit 9e1d71afbae7b546e2d41557552e515f09278cda[m
+Author: bibamet <spr1tee1337@gmail.com>
+Date:   Fri Jun 14 18:37:34 2024 +0300
+
+    MOVES WITH CustomRepository
+
+[33mcommit 87a77398590ccc2d75ab738442c4ceec8fce1ab0[m
+Merge: 927c8cf 43fc7bf
+Author: Oleguito <42471435+Oleguito@users.noreply.github.com>
+Date:   Fri Jun 14 17:43:18 2024 +0300
+
+    Merge pull request #11 from Oleguito/oleguito
+    
+    JOOQ поиск юзеров компилируется
+
+[33mcommit 43fc7bf897b800372321dc4b8f064ff07927a7af[m
+Author: Oleguito <tenzoriator@rambler.ru>
+Date:   Fri Jun 14 17:42:00 2024 +0300
+
+    JOOQ поиск юзеров компилируется
+
+[33mcommit 927c8cfacf63e8a3aa1d93c6201669b58000eb96[m
+Merge: d5ec97b bc98069
+Author: Oleguito <42471435+Oleguito@users.noreply.github.com>
+Date:   Fri
