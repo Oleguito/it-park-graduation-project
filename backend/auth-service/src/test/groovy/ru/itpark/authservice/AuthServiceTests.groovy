@@ -23,8 +23,8 @@ import java.security.cert.X509Certificate
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 // @WithMockUser
-// @TestPropertySource(locations = "classpath:application.yml")
-@Testcontainers
+// @TestPropertySource(locations = "classpath:application.yaml")
+//@Testcontainers
 class AuthServiceTests extends Specification {
 
     @Autowired

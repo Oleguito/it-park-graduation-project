@@ -6,12 +6,12 @@ docker compose up -d
 
 cd ../backend/auth-service
 
-:retry
-call mvnw clean install spring-boot:run -Dspring-boot.run.profiles=dev
+rem :retry
+rem call mvnw clean install spring-boot:run -Dspring-boot.run.profiles=dev
 
-    if %ERRORLEVEL% neq 0 (
-          echo Error occurred during mvnw clean install, but continuing...
-          goto retry
-      )
+rem    if %ERRORLEVEL% neq 0 (
+rem          echo Error occurred during mvnw clean install, but continuing...
+rem          goto retry
+rem      )
 
 rem spring-boot:run

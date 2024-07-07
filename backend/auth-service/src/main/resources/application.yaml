@@ -3,27 +3,37 @@ server:
   ssl:
     enabled: true
     key-store-type: PKCS12
-    key-store: certificate.p12
+    key-store: classpath:certificate.p12
     key-store-password: 1PwCgNAb
 
 spring:
   kafka:
-    bootstrap-servers: "localhost:9092"
+    bootstrap-servers: "kafka:9092"
     consumer:
       group-id: 'my-group'
+  ssl:
+    bundle:
+      jks:
+        keycloak:
+          key:
+            alias: "my-cert"
+          keystore:
+            type: PKCS12
+            location: classpath:certificate.p12
+            password: ${GP_AUTHSERVICE_KEYSTORE_PASSWORD}
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://auth.dppmai.ru/realms/group-1
+          issuer-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project
           jwk-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/certs
   liquibase:
     user: authservice
     password: 12345
-    change-log: 'classpath:db/changelog/db-init.yaml'
-#    change-log: '${project.basedir}/src/main/resources/db/changelog/db-init.yaml'
+    change-log: 'db/changelog/db.changelog-master.yaml'
+#    change-log: '${project.basedir}/src/main/resources/db/changelog/db.changelog-master.yaml'
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
+    url: ${GP_AUTHSERVICE_DB_URL}
 #    url: jdbc:postgresql://localhost:5432/authservicedb
     username: authservice
     password: 12345
@@ -31,13 +41,13 @@ spring:
 
 keycloak:
   serverUrl: https://lemur-7.cloud-iam.com
-  realm: lessons
+  realm: grad-project
   clientId: auth-service
   username: admin
-  password: HVG-Rqf-5PV-Lp6
-  realmName: lessons
+  password: nvwS6vK#IaE@Ds4RveKs
+  realmName: grad-project
   loginUrl: https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token
-  client-secret: "${client-secret}"
+  client-secret: "${GP_AUTHSERVICE_CLIENT_SECRET}"
 
 logging:
   pattern:

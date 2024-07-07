@@ -3,6 +3,7 @@ package ru.itpark.authservice;
 import org.jooq.Record;
 import org.jooq.*;
 import org.jooq.impl.DSL;
+import org.jooq.meta.derby.sys.Sys;
 import org.junit.jupiter.api.Test;
 import org.testcontainers.shaded.com.fasterxml.jackson.databind.ObjectMapper;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
@@ -17,7 +18,8 @@ import static ru.itpark.authservice.Tables.USERS;
 
 class AuthServiceApplicationTests {
 
-    String url = "jdbc:postgresql://localhost:5432/authservicedb";
+    String url = System.getenv("GP_AUTHSERVICE_DB_URL");
+//            "jdbc:postgresql://collaborative-project-postgres-db:5432/authservicedb";
 
     @Test
     void contextLoads() {
@@ -25,8 +27,6 @@ class AuthServiceApplicationTests {
 
     @Test
     public void someTest() {
-
-
 
         if(System.getenv("KEYCLOAK_DEAD").equals(1)) return;
 

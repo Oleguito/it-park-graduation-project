@@ -1,13 +1,41 @@
+version: '3.8'
+
+#services:
+#  project-service:
+#    build:
+#      context: .
+#      args:
+#        DB_URL: jdbc:postgresql://collaborative-project-postgres-db:5432/projectservice
+#        DB_USER: projectservice
+#        DB_PASSWORD: 12345
+#    ports:
+#      - 8087:8087
+#    environment:
+#      DB_NAME: projectservice
+#      DB_PORT: 5432
+#      DB_URL: jdbc:postgresql://collaborative-project-postgres-db:5432/projectservice
+#      DB_USER: projectservice
+#      DB_PASSWORD: 12345
+
 services:
-  postgres:
-    image: 'postgres:latest'
-    environment:
-      - 'POSTGRES_DB=mydatabase'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=myuser'
+  project-service:
+    image: maven:3.8.3-openjdk-17
+    working_dir: /app
+    volumes:
+      - .:/app
+      - $HOME/.m2:/root/.m2
+    command: mvn clean package spring-boot:run
     ports:
-      - '5432'
-
-
-
-
+      - 8087:8087
+    depends_on:
+      - collaborative-project-postgres-db
+      - kafka
+    environment:
+      - DB_NAME=projectservicedb
+      - DB_PORT=5432
+      - DB_URL=jdbc:postgresql://collaborative-project-postgres-db/projectservicedb
+#      ${DB_PORT}/${DB_NAME}
+      - DB_USER=projectservice
+      - DB_PASSWORD=12345
+    networks:
+      backend: {}

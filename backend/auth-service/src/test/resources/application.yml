@@ -4,7 +4,7 @@ server:
     enabled: true
     key-alias: "my-cert"
     key-store-type: PKCS12
-    key-store: certificate.p12
+    key-store: classpath:certificate.p12
     key-store-password: ${GP_AUTHSERVICE_KEYSTORE_PASSWORD}
 
 spring:
@@ -24,16 +24,18 @@ spring:
         jwt:
           issuer-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project
           jwk-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/certs
-  liquibase:
-    enabled: true
-    user: authservice
-    password: ${GP_AUTHSERVICE_DB_PASSWORD}
-    change-log: classpath:db/changelog/db-init.yaml
+#  liquibase:
+#    enabled: true
+#    user: authservice
+#    password: ${GP_AUTHSERVICE_DB_PASSWORD}
+#    change-log: classpath:db/changelog/db.changelog-master.yaml
   datasource:
-    url: jdbc:tc:postgresql:14.2:///authservicedb?TC_REUSABLE=true
+#    url: jdbc:tc:postgresql:14.2:///authservicedb?TC_REUSABLE=true
+    url: '${GP_AUTHSERVICE_DB_URL}'
     username: authservice
     password: ${GP_AUTHSERVICE_DB_PASSWORD}
-    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+#    driverClassName: org.testcontainers.jdbc.ContainerDatabaseDriver
+    driverClassName: org.postgresql.Driver
 
 keycloak:
   serverUrl: https://lemur-7.cloud-iam.com

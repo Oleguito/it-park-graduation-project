@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: project-service
+  kafka:
+    bootstrap-servers: 'kafka:9092'
+    consumer:
+      group-id: "my-group"
+  datasource:
+    url: '${DB_URL:jdbc:postgresql://localhost:5432/projectservicedb}'
+    username: '${DB_USER:projectservice}'
+    password: '${DB_PASSWORD:12345}'
+    driverClassName: org.postgresql.Driver
+  liquibase:
+    user: '${DB_USER:projectservice}'
+    password: '${DB_PASSWORD:12345}'
+    change-log: classpath:db/changelog/db-init.yaml
+    enabled: true
+server:
+  port: 8087

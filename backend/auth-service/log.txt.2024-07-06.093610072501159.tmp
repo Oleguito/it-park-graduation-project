@@ -1,0 +1,1004 @@
+2024-07-07 00:03:53 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 29740 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:03:54 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:03:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:03:54 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interface.
+2024-07-07 00:03:54 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:03:54 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:03:54 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:03:54 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:03:54 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 836 ms
+2024-07-07 00:03:55 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:03:55 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:03:55 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:03:55 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:03:55 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:03:55 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:03:55 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:03:55 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:03:55 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:03:55 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:03:55 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:03:55 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:03:55 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:03:55 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6315bb4
+2024-07-07 00:03:55 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:03:55 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:03:55 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:03:55 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:03:55 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:03:56 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:03:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:03:56 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:03:56 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:03:56 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@438fcca3
+2024-07-07 00:03:56 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:03:57 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:03:57 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17caf362, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c66be14, org.springframework.security.web.context.SecurityContextHolderFilter@6d6c4775, org.springframework.security.web.header.HeaderWriterFilter@3b035d0c, org.springframework.security.web.authentication.logout.LogoutFilter@60232aad, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@6a2d0632, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@251c90f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@344d6bb3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2564410b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e78213c, org.springframework.web.filter.CorsFilter@5d850a25, org.springframework.security.web.session.SessionManagementFilter@3ab26cad, org.springframework.security.web.access.ExceptionTranslationFilter@51ba8929, org.springframework.security.web.access.intercept.AuthorizationFilter@6e56f5d4]
+2024-07-07 00:03:57 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:03:57 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:03:57 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.651 seconds (process running for 3.873)
+2024-07-07 00:03:57 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:03:57 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:03:57 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:03:57 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:03:57 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:03:57 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720299837485
+2024-07-07 00:03:57 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:03:57 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 40001 with epoch 0
+2024-07-07 00:04:31 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:04:31 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:04:31 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:05:13 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 8488 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:05:13 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:05:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:05:13 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-07-07 00:05:13 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:05:13 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:05:13 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:05:13 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:05:13 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 844 ms
+2024-07-07 00:05:14 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:05:14 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:05:14 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:05:14 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:05:14 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:05:14 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:05:14 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:05:14 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:05:14 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:05:14 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:05:14 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:05:14 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:05:14 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:05:14 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ad50b02
+2024-07-07 00:05:14 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:05:14 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:05:14 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:05:14 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:05:14 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:05:15 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:05:15 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:05:15 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:05:15 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:05:15 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@765ccc7a
+2024-07-07 00:05:15 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:05:16 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:05:16 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@380f9c1d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fa81b23, org.springframework.security.web.context.SecurityContextHolderFilter@71120f9a, org.springframework.security.web.header.HeaderWriterFilter@61defefb, org.springframework.security.web.authentication.logout.LogoutFilter@38eb2140, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5c5cd332, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@74f280bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7daecd21, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51ba8929, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@155788a7, org.springframework.web.filter.CorsFilter@23bd0c81, org.springframework.security.web.session.SessionManagementFilter@2f43c73a, org.springframework.security.web.access.ExceptionTranslationFilter@7b2f18cd, org.springframework.security.web.access.intercept.AuthorizationFilter@65c75870]
+2024-07-07 00:05:16 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:05:16 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:05:16 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.677 seconds (process running for 3.895)
+2024-07-07 00:05:16 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:05:16 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:05:16 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:05:16 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:05:16 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:05:16 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720299916628
+2024-07-07 00:05:16 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:05:16 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 41001 with epoch 0
+2024-07-07 00:05:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:05:27 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:05:27 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:06:06 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 4016 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:06:06 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:06:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:06:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interface.
+2024-07-07 00:06:07 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:06:07 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:06:07 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:06:07 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:06:07 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 853 ms
+2024-07-07 00:06:07 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:06:07 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:06:07 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:06:07 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:06:07 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:06:07 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:06:07 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:06:07 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:06:07 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:06:07 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:06:07 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:06:07 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:06:07 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:06:07 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ad50b02
+2024-07-07 00:06:07 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:06:07 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:06:08 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:06:08 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:06:08 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:06:08 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:06:08 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:06:08 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:06:08 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:06:08 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@765ccc7a
+2024-07-07 00:06:08 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:06:09 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:06:09 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@380f9c1d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fa81b23, org.springframework.security.web.context.SecurityContextHolderFilter@71120f9a, org.springframework.security.web.header.HeaderWriterFilter@61defefb, org.springframework.security.web.authentication.logout.LogoutFilter@38eb2140, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5c5cd332, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@74f280bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7daecd21, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51ba8929, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@155788a7, org.springframework.web.filter.CorsFilter@23bd0c81, org.springframework.security.web.session.SessionManagementFilter@2f43c73a, org.springframework.security.web.access.ExceptionTranslationFilter@7b2f18cd, org.springframework.security.web.access.intercept.AuthorizationFilter@65c75870]
+2024-07-07 00:06:09 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:06:10 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:06:10 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.634 seconds (process running for 3.856)
+2024-07-07 00:06:10 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:06:10 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:06:10 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:06:10 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:06:10 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:06:10 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720299970099
+2024-07-07 00:06:10 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:06:10 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 42001 with epoch 0
+2024-07-07 00:06:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:06:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:06:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:07:17 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 14800 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:07:17 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:07:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:07:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interface.
+2024-07-07 00:07:17 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:07:17 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:07:17 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:07:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:07:17 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 881 ms
+2024-07-07 00:07:18 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:07:18 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:07:18 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:07:18 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:07:18 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:07:18 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:07:18 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:07:18 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:07:18 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:07:18 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:07:18 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:07:18 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:07:18 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:07:18 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ad50b02
+2024-07-07 00:07:18 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:07:18 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:07:18 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:07:18 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:07:18 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:07:19 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:07:19 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:07:19 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:07:19 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:07:19 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@765ccc7a
+2024-07-07 00:07:19 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:07:20 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:07:20 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@380f9c1d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fa81b23, org.springframework.security.web.context.SecurityContextHolderFilter@71120f9a, org.springframework.security.web.header.HeaderWriterFilter@61defefb, org.springframework.security.web.authentication.logout.LogoutFilter@38eb2140, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5c5cd332, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@74f280bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7daecd21, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51ba8929, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@155788a7, org.springframework.web.filter.CorsFilter@23bd0c81, org.springframework.security.web.session.SessionManagementFilter@2f43c73a, org.springframework.security.web.access.ExceptionTranslationFilter@7b2f18cd, org.springframework.security.web.access.intercept.AuthorizationFilter@65c75870]
+2024-07-07 00:07:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:07:20 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 4.026 seconds (process running for 4.257)
+2024-07-07 00:07:20 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:07:20 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:07:20 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:08:01 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 8468 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:08:01 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:08:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:08:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2024-07-07 00:08:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:08:02 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:08:02 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:08:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:08:02 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 933 ms
+2024-07-07 00:08:02 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:08:02 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:08:02 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:08:02 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:08:02 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:08:02 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:08:02 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:08:02 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:08:02 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:08:02 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:08:02 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:08:02 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:08:02 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:08:02 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@570299e3
+2024-07-07 00:08:02 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:08:02 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:08:02 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:08:02 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:08:02 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:08:03 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:08:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:08:03 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:08:03 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:08:03 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@57af157c
+2024-07-07 00:08:03 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:08:04 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:08:04 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28f33810, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@476d5f2e, org.springframework.security.web.context.SecurityContextHolderFilter@30b5225b, org.springframework.security.web.header.HeaderWriterFilter@544502d6, org.springframework.security.web.authentication.logout.LogoutFilter@2132629e, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@155788a7, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@252ec02e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@304f4888, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35b97c69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e56f5d4, org.springframework.web.filter.CorsFilter@5fb3111a, org.springframework.security.web.session.SessionManagementFilter@40597c95, org.springframework.security.web.access.ExceptionTranslationFilter@676b85f3, org.springframework.security.web.access.intercept.AuthorizationFilter@1cb58c8a]
+2024-07-07 00:08:04 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:08:04 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:08:04 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.655 seconds (process running for 3.888)
+2024-07-07 00:08:04 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:08:04 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:08:04 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:08:04 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:08:04 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:08:04 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300084688
+2024-07-07 00:08:04 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:08:04 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 44001 with epoch 0
+2024-07-07 00:08:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:08:18 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:08:18 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:08:59 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 36500 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:08:59 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:08:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:08:59 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2024-07-07 00:09:00 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:09:00 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:09:00 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:09:00 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:09:00 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 894 ms
+2024-07-07 00:09:00 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:09:00 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:09:00 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:09:00 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:09:00 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:09:00 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:09:00 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:09:00 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:09:00 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:09:00 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:09:00 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:09:00 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:09:00 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:09:00 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@570299e3
+2024-07-07 00:09:00 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:09:00 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:09:00 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:09:00 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:09:00 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:09:01 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:09:01 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:09:01 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:09:01 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:09:01 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@57af157c
+2024-07-07 00:09:01 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:09:02 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:09:02 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6cd8aee2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28f33810, org.springframework.security.web.context.SecurityContextHolderFilter@51ba8929, org.springframework.security.web.header.HeaderWriterFilter@42fa1554, org.springframework.security.web.authentication.logout.LogoutFilter@40b2aae9, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@2fa81b23, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@252ec02e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b035d0c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@304f4888, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@476d5f2e, org.springframework.web.filter.CorsFilter@5fb3111a, org.springframework.security.web.session.SessionManagementFilter@71120f9a, org.springframework.security.web.access.ExceptionTranslationFilter@648100de, org.springframework.security.web.access.intercept.AuthorizationFilter@43ee585f]
+2024-07-07 00:09:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:09:03 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 4.171 seconds (process running for 4.399)
+2024-07-07 00:09:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:09:03 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:09:03 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:09:03 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:09:43 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 33988 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:09:43 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:09:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:09:44 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interface.
+2024-07-07 00:09:44 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:09:44 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:09:44 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:09:45 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:09:45 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1055 ms
+2024-07-07 00:09:45 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:09:45 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:09:45 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:09:45 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:09:45 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:09:45 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:09:45 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:09:45 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:09:45 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:09:45 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:09:45 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:09:45 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:09:45 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:09:45 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ad50b02
+2024-07-07 00:09:45 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:09:45 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:09:45 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:09:45 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:09:45 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:09:46 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:09:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:09:46 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:09:46 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:09:46 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@765ccc7a
+2024-07-07 00:09:46 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:09:47 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:09:47 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@380f9c1d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fa81b23, org.springframework.security.web.context.SecurityContextHolderFilter@71120f9a, org.springframework.security.web.header.HeaderWriterFilter@61defefb, org.springframework.security.web.authentication.logout.LogoutFilter@38eb2140, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5c5cd332, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@74f280bd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7daecd21, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51ba8929, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@155788a7, org.springframework.web.filter.CorsFilter@23bd0c81, org.springframework.security.web.session.SessionManagementFilter@2f43c73a, org.springframework.security.web.access.ExceptionTranslationFilter@7b2f18cd, org.springframework.security.web.access.intercept.AuthorizationFilter@65c75870]
+2024-07-07 00:09:47 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:09:47 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:09:47 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.792 seconds (process running for 4.02)
+2024-07-07 00:09:47 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:09:47 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:09:47 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:09:47 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:09:47 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:09:47 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300187571
+2024-07-07 00:09:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:09:47 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:09:47 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:10:29 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 19.0.1 with PID 26560 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service)
+2024-07-07 00:10:29 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:10:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:10:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interface.
+2024-07-07 00:10:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:10:30 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:10:30 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:10:30 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:10:30 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 897 ms
+2024-07-07 00:10:31 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:10:31 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:10:31 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:10:31 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:10:31 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:10:31 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:10:31 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:10:31 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:10:31 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:10:31 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:10:31 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:10:31 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:10:31 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:10:31 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@570299e3
+2024-07-07 00:10:31 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:10:31 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:10:31 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:10:31 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:10:31 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:10:32 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:10:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:10:32 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:10:32 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:10:32 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@57af157c
+2024-07-07 00:10:32 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:10:32 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:10:33 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@28f33810, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@476d5f2e, org.springframework.security.web.context.SecurityContextHolderFilter@30b5225b, org.springframework.security.web.header.HeaderWriterFilter@544502d6, org.springframework.security.web.authentication.logout.LogoutFilter@2132629e, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@155788a7, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@252ec02e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@304f4888, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35b97c69, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e56f5d4, org.springframework.web.filter.CorsFilter@5fb3111a, org.springframework.security.web.session.SessionManagementFilter@40597c95, org.springframework.security.web.access.ExceptionTranslationFilter@676b85f3, org.springframework.security.web.access.intercept.AuthorizationFilter@1cb58c8a]
+2024-07-07 00:10:33 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:10:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:10:33 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.601 seconds (process running for 3.84)
+2024-07-07 00:10:33 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:10:33 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:10:33 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:10:33 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:10:33 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:10:33 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300233420
+2024-07-07 00:10:33 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:10:33 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 47001 with epoch 0
+2024-07-07 00:10:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:10:52 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:10:52 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.

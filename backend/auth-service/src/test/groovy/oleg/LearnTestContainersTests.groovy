@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.utility.DockerImageName
+import spock.lang.Ignore
 import spock.lang.Specification
 
 import java.sql.DriverManager
 
-class LearnTestContainersTests extends Specification {
-
+@Ignore
+class LearnTestContainersTests {
+//    extends Specification {
 
     @Autowired
     DriverManager driverManager

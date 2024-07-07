@@ -1,12 +1,12 @@
-2024-06-19 11:26:45 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 14248 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-06-19 11:26:45 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
-2024-06-19 11:26:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-19 11:26:45 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
-2024-06-19 11:26:45 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2024-06-19 11:26:45 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+2024-07-07 00:12:54 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 15600 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-07-07 00:12:54 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-07 00:12:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:12:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2024-07-07 00:12:55 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-07-07 00:12:55 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-06-19 11:26:45 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+2024-07-07 00:12:55 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
 org.springframework.context.ApplicationContextException: Unable to start web server
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
@@ -16,7 +16,7 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:15)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
 Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
 	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
 	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
@@ -45,3 +45,422 @@ Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJA
 	at java.base/java.net.URL.openStream(URL.java:1161)
 	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
 	... 20 common frames omitted
+2024-07-07 00:13:22 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 8372 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-07-07 00:13:22 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-07 00:13:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:13:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2024-07-07 00:13:23 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-07-07 00:13:23 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-07 00:13:23 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
+Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
+	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
+	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
+	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
+	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
+	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
+	... 19 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
+	... 20 common frames omitted
+2024-07-07 00:14:21 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 18768 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-07-07 00:14:21 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:14:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:14:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
+2024-07-07 00:14:22 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-07-07 00:14:22 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-07 00:14:22 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
+Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
+	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
+	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
+	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
+	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
+	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
+	... 19 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
+	... 20 common frames omitted
+2024-07-07 00:15:24 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 19844 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-07-07 00:15:24 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:15:25 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:15:25 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2024-07-07 00:15:25 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-07-07 00:15:25 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-07-07 00:15:25 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
+Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
+	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
+	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
+	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
+	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
+	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
+	... 19 common frames omitted
+Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
+	at java.base/java.net.URL.openStream(URL.java:1161)
+	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
+	... 20 common frames omitted
+2024-07-07 00:15:57 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 12936 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-07-07 00:15:57 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:15:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:15:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-07-07 00:15:58 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:15:58 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:15:58 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:15:58 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:15:58 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
+2024-07-07 00:15:58 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:15:58 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:15:58 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:15:58 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:15:58 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:15:58 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:15:58 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:15:58 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:15:58 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:15:58 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:15:58 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:15:58 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:15:58 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:15:58 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@361f1647
+2024-07-07 00:15:58 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:15:58 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:15:58 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:15:58 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:15:58 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:15:59 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:15:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:15:59 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:15:59 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:15:59 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@397a70d8
+2024-07-07 00:15:59 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:16:00 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:16:00 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d4f0fd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2092b072, org.springframework.security.web.context.SecurityContextHolderFilter@17c95612, org.springframework.security.web.header.HeaderWriterFilter@223c42b0, org.springframework.security.web.authentication.logout.LogoutFilter@71737478, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5634c26c, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@7d25913, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@92a584f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e23af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@504521ae, org.springframework.web.filter.CorsFilter@20a3e10c, org.springframework.security.web.session.SessionManagementFilter@6bac199f, org.springframework.security.web.access.ExceptionTranslationFilter@6ff5eeed, org.springframework.security.web.access.intercept.AuthorizationFilter@6bdc984]
+2024-07-07 00:16:01 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:16:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:16:01 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.867 seconds (process running for 4.228)
+2024-07-07 00:16:01 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:16:01 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:16:01 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:16:01 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:16:01 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:16:01 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300561166
+2024-07-07 00:16:01 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:16:01 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 47002 with epoch 0
+2024-07-07 00:16:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:16:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:16:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-07 00:16:37 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 15740 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-07-07 00:16:37 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
+2024-07-07 00:16:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-07 00:16:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-07-07 00:16:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
+2024-07-07 00:16:38 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-07 00:16:38 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-07 00:16:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-07 00:16:38 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 838 ms
+2024-07-07 00:16:38 INFO  liquibase.database log - Set default schema name to public
+2024-07-07 00:16:38 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:16:38 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-07 00:16:38 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-07 00:16:38 INFO  liquibase.util log - Run:                          0
+2024-07-07 00:16:38 INFO  liquibase.util log - Previously run:               3
+2024-07-07 00:16:38 INFO  liquibase.util log - Filtered out:                 0
+2024-07-07 00:16:38 INFO  liquibase.util log - -------------------------------
+2024-07-07 00:16:38 INFO  liquibase.util log - Total change sets:            3
+2024-07-07 00:16:38 INFO  liquibase.util log - Update summary generated
+2024-07-07 00:16:38 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-07 00:16:38 INFO  liquibase.command log - Command execution complete
+2024-07-07 00:16:38 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-07 00:16:38 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@361f1647
+2024-07-07 00:16:38 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-07 00:16:38 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-07 00:16:38 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-07 00:16:38 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-07 00:16:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-07 00:16:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-07 00:16:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:16:39 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-07 00:16:39 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-07 00:16:39 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@397a70d8
+2024-07-07 00:16:39 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-07 00:16:40 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-07 00:16:40 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d4f0fd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2092b072, org.springframework.security.web.context.SecurityContextHolderFilter@17c95612, org.springframework.security.web.header.HeaderWriterFilter@223c42b0, org.springframework.security.web.authentication.logout.LogoutFilter@71737478, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5634c26c, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@7d25913, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@92a584f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e23af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@504521ae, org.springframework.web.filter.CorsFilter@20a3e10c, org.springframework.security.web.session.SessionManagementFilter@6bac199f, org.springframework.security.web.access.ExceptionTranslationFilter@6ff5eeed, org.springframework.security.web.access.intercept.AuthorizationFilter@6bdc984]
+2024-07-07 00:16:40 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
+2024-07-07 00:16:40 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
+2024-07-07 00:16:40 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.702 seconds (process running for 4.062)
+2024-07-07 00:16:40 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:29092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-07-07 00:16:40 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-07 00:16:40 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-07 00:16:40 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-07 00:16:40 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-07 00:16:40 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300600670
+2024-07-07 00:16:40 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
+2024-07-07 00:16:40 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 47003 with epoch 0
+2024-07-07 00:17:07 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-07 00:17:07 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-07 00:17:07 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
