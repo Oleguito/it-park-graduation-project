@@ -34,7 +34,7 @@ spring:
     change-log: 'db/changelog/db.changelog-master.yaml'
 #    change-log: '${project.basedir}/src/main/resources/db/changelog/db.changelog-master.yaml'
   datasource:
-    url: jdbc:postgresql://collaborative-project-postgres-db:5432/authservicedb
+    url: ${GP_AUTHSERVICE_DB_URL}
 #    url: ${GP_AUTHSERVICE_DB_URL}
 #    url: jdbc:postgresql://localhost:5432/authservicedb
     username: authservice
