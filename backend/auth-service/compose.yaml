@@ -1,6 +1,7 @@
 version: '3'
 services:
   maven:
+    restart: always
     ports:
       - "8088:8088"
     image: maven:3.8.3-openjdk-17

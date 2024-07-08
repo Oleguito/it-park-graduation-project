@@ -1,3 +1,0 @@
-databaseChangeLog:
-  - include:
-      file: db/changelog/2024-07-06/db-cumulative-changelog.yaml

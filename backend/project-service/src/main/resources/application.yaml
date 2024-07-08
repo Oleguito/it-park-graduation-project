@@ -13,7 +13,9 @@ spring:
   liquibase:
     user: '${DB_USER:projectservice}'
     password: '${DB_PASSWORD:12345}'
-    change-log: classpath:db/changelog/db-init.yaml
+    change-log: classpath:db/changelog/db.changelog-master.yaml
     enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 8087

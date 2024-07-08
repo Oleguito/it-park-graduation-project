@@ -4,4 +4,6 @@ databaseChangeLog:
       author: KPV
       changes:
         - sqlFile:
-            path: db/changelog/2024-07-06/init-schema.sql
+#            path: db/changelog/2024-07-06/init-schema.sql
+            path: ./init-schema.sql
+            relativeToChangelogFile: true

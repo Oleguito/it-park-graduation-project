@@ -3,6 +3,6 @@ include:
   - path: ./db/docker-compose.yaml
   - path: ./../backend/project-service/compose.yaml
   - path: ../backend/auth-service/compose.yaml
-
 networks:
-  backend: {}
+  backend:
+    driver: bridge
