@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   collaborative-project-postgres-db:
+    container_name: collaborative-project-postgres-db
     image: postgres:14.2
     restart: unless-stopped
     ports:
@@ -21,6 +22,3 @@ services:
 
 volumes:
   postgres_data: {}
-
-networks:
-  backend: {}

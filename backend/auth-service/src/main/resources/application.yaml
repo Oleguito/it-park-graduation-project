@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8088
   ssl:
     enabled: true
     key-store-type: PKCS12
@@ -28,12 +28,14 @@ spring:
           issuer-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project
           jwk-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/certs
   liquibase:
+#    enabled: false
     user: authservice
     password: 12345
     change-log: 'db/changelog/db.changelog-master.yaml'
 #    change-log: '${project.basedir}/src/main/resources/db/changelog/db.changelog-master.yaml'
   datasource:
-    url: ${GP_AUTHSERVICE_DB_URL}
+    url: jdbc:postgresql://collaborative-project-postgres-db:5432/authservicedb
+#    url: ${GP_AUTHSERVICE_DB_URL}
 #    url: jdbc:postgresql://localhost:5432/authservicedb
     username: authservice
     password: 12345

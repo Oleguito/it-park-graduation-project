@@ -299,9 +299,9 @@
                 </executions>
                 <configuration>
                     <changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
-                    <url>${GP_AUTHSERVICE_DB_URL}</url>
-                    <username>${GP_AUTHSERVICE_DB_USERNAME}</username>
-                    <password>${GP_AUTHSERVICE_DB_PASSWORD}</password>
+                    <url>jdbc:postgresql://collaborative-project-postgres-db/authservicedb</url>
+                    <username>authservice</username>
+                    <password>12345</password>
                     <driver>org.postgresql.Driver</driver>
                 </configuration>
             </plugin>

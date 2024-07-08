@@ -26,6 +26,9 @@ public class AuthServiceApplication {
     @Bean
     CommandLineRunner commandLineRunner(KafkaTemplate<String, String> template) {
         return args -> {
+
+            System.out.println("env: " + System.getenv("GP_AUTHSERVICE_DB_URL"));
+
             template.send("test", "biba!");
             System.out.println("Hello World!");
         };

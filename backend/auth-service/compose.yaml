@@ -4,7 +4,7 @@ services:
     ports:
       - "8088:8088"
     image: maven:3.8.3-openjdk-17
-    command: mvn package spring-boot:run
+    command: mvn clean package spring-boot:run
 #    command: mvn package
     volumes:
       - .:/usr/src/mymaven
@@ -26,9 +26,6 @@ services:
       - kafka
     networks:
       backend: {}
-
-networks:
-  backend: {}
 
 # version: '3'
 # services:
