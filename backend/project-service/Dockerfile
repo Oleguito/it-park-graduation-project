@@ -26,7 +26,7 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 
 # Сборка проекта с использованием Maven и передача аргументов сборки
-RUN mvn clean package
+RUN mvn clean protobuf:compile protobuf:compile-custom package
 #    -DskipTests
 
 # Этап 2: Создание финального образа
@@ -36,7 +36,8 @@ FROM eclipse-temurin:17-alpine
 WORKDIR /app
 
 # Копирование JAR файла из предыдущего этапа
-COPY --from=builder /app/target/*.jar ./myapp.jar
+COPY --from=builder /app/target/*.jar ./app/myapp.jar
+COPY --from=builder /app/target ./app/target
 
 # Команда для запуска приложения
 ENTRYPOINT ["java", "-jar", "myapp.jar"]

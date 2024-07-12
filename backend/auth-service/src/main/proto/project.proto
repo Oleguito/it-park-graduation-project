@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "ru.itpark.authservice";
+option java_outer_classname = "ProjectProto";
+
+message ProjectRequest {
+  int64 projectId = 1;
+}
+
+message ProjectResponse {
+  int64 id = 1;
+  string name = 2;
+  google.protobuf.Timestamp startDate = 3;
+  google.protobuf.Timestamp endDate = 4;
+  Status status = 5;
+  int64 ownerId = 6;
+  DateInfo dateInfo = 7;
+}
+
+message DateInfo {
+  google.protobuf.Timestamp createdAt = 1;
+  google.protobuf.Timestamp deletedAt = 2;
+}
+
+enum Status {
+  NEW = 0;
+  PLANNED = 1;
+  STARTED = 2;
+  CONFIRMATION = 3;
+  CONFIRMED = 4;
+  CANCELLED = 5;
+}
+
+service ProjectService {
+  rpc getProjectInfo (ProjectRequest) returns (ProjectResponse) {};
+}

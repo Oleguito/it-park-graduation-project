@@ -6,6 +6,7 @@ server:
     key-store: classpath:certificate.p12
     key-store-password: 1PwCgNAb
 
+
 spring:
   kafka:
     bootstrap-servers: "kafka:9092"
@@ -59,3 +60,9 @@ logging:
     name: log.txt
   level:
     root: info
+
+grpc:
+  client:
+    GLOBAL:
+      address: static://localhost:9090
+      negotiation-type: plaintext

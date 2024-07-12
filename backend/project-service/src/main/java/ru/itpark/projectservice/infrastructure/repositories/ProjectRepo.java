@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import ru.itpark.projectservice.domain.Project;
 
 @Repository
-public interface ProjectRepo extends JpaRepository<Project, Integer> {
+public interface ProjectRepo extends JpaRepository<Project, Long> {
 
 }
