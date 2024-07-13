@@ -64,5 +64,5 @@ logging:
 grpc:
   client:
     GLOBAL:
-      address: static://localhost:9090
+      address: static://project-service:9090
       negotiation-type: plaintext

@@ -1,5 +1,5 @@
 
-CREATE SEQUENCE proj_seq_gen;
+CREATE SEQUENCE IF NOT EXISTS proj_seq_gen;
 CREATE TABLE IF NOT EXISTS projects
 (
     id bigint primary key default nextval('proj_seq_gen'),

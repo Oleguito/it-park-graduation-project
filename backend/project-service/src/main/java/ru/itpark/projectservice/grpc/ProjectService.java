@@ -5,7 +5,6 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import lombok.RequiredArgsConstructor;
-import net.devh.boot.grpc.server.advice.GrpcAdvice;
 import net.devh.boot.grpc.server.service.GrpcService;
 import ru.itpark.projectservice.DateInfo;
 import ru.itpark.projectservice.ProjectRequest;
