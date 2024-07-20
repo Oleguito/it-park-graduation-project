@@ -42,7 +42,7 @@ public class ProjectService extends ProjectServiceGrpc.ProjectServiceImplBase {
                     .setOwnerId(project.getOwnerId())
                     .setDateInfo(DateInfo.newBuilder()
                             .setCreatedAt(Timestamp.newBuilder().setNanos(project.getDateInfo().getCreatedAt().getNano()))
-                            .setDeletedAt(Timestamp.newBuilder().setNanos(project.getDateInfo().getDeletedAt().getNano()))
+//                            .setDeletedAt(Timestamp.newBuilder().setNanos(project.getDateInfo().getDeletedAt().getNano()))
                                     .build())
                     .build());
         } else {

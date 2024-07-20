@@ -1,8 +1,8 @@
 # Этап 1: Сборка проекта с использованием Maven
 FROM eclipse-temurin:17-alpine AS builder
 
-# Установка Maven
-RUN apk add --no-cache maven
+# Установка необходимых зависимостей
+RUN apk add --no-cache maven protobuf protobuf-dev libc6-compat
 
 # Установка рабочей директории
 WORKDIR /app
@@ -13,12 +13,14 @@ ARG DB_USER
 ARG DB_PASSWORD
 ARG DB_NAME
 ARG DB_PORT
+ARG KAFKA_BOOTSTRAP_SERVER
 
 ENV DB_NAME=projectservicedb
 ENV DB_PORT=5432
 ENV DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/projectservicedb
 ENV DB_USER=projectservice
 ENV DB_PASSWORD=12345
+ENV KAFKA_BOOTSTRAP_SERVER=kafka:9092
 
 # Копирование файлов проекта
 COPY pom.xml ./
@@ -33,11 +35,13 @@ RUN mvn clean protobuf:compile protobuf:compile-custom package
 FROM eclipse-temurin:17-alpine
 
 # Установка рабочей директории
-WORKDIR /app
+WORKDIR /apps
 
 # Копирование JAR файла из предыдущего этапа
-COPY --from=builder /app/target/*.jar ./app/myapp.jar
-COPY --from=builder /app/target ./app/target
+COPY --from=builder /app/target/*.jar ./myapp.jar
+COPY --from=builder /app/target ./target
+
+RUN #chmod +x ./myapp.jar
 
 # Команда для запуска приложения
 ENTRYPOINT ["java", "-jar", "myapp.jar"]

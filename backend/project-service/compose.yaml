@@ -12,15 +12,18 @@ services:
         - DB_PASSWORD=12345
     ports:
       - 8087:8087
+#      - 9090:9090
     environment:
       - DB_NAME=projectservicedb
       - DB_PORT=5432
       - DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/projectservicedb
       - DB_USER=projectservice
       - DB_PASSWORD=12345
+      - KAFKA_BOOTSTRAP_SERVER=kafka:9092
     depends_on:
       - collaborative-project-postgres-db
       - kafka
+      - zookeeper
     networks:
       backend: {}
 

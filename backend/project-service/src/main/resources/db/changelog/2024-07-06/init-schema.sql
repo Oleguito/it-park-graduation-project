@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS projects
     name varchar(500) not null,
     start_date timestamp,
     end_date timestamp,
-    status varchar(60) check ( status in ('Новый', 'Запланирован', 'В работе', 'На подтверждении', 'Подтвержден', 'Отменен')),
-    owner_id bigint,
+    status varchar(60) check ( status in ('NEW', 'PLANNED', 'STARTED', 'CONFIRMATION', 'CONFIRMED', 'CANCELLED')),
+    user_id bigint,
     created_at timestamp,
     deleted_at timestamp
 

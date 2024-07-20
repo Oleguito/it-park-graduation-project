@@ -5,17 +5,17 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum Status {
 
-    NEW("Новый"),
-    PLANNED("Запланирован"),
-    STARTED("В работе"),
-    CONFIRMATION("На подтверждении"),
-    CONFIRMED("Подтвержден"),
-    CANCELLED("Отменен");
+    NEW,
+    PLANNED,
+    STARTED,
+    CONFIRMATION,
+    CONFIRMED,
+    CANCELLED
 
-    private String name;
-
-    @Override
-    public String toString() {
-        return name;
-    }
+//    private String name;
+//
+//    @Override
+//    public String toString() {
+//        return name;
+//    }
 }

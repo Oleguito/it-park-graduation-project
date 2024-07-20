@@ -1,8 +1,9 @@
 name: our-grad-project
 include:
   - path: ./db/docker-compose.yaml
-  - path: ./../backend/project-service/compose.yaml
   - path: ../backend/auth-service/compose.yaml
+  - path: ./../backend/project-service/compose.yaml
+
 networks:
   backend:
     driver: bridge

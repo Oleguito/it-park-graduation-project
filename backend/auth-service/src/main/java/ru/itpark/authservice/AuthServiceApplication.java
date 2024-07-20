@@ -15,6 +15,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.UUID;
 
 @SpringBootApplication
 public class AuthServiceApplication {
@@ -29,7 +30,7 @@ public class AuthServiceApplication {
 
             System.out.println("env: " + System.getenv("GP_AUTHSERVICE_DB_URL"));
 
-            template.send("test", "biba!");
+            template.send("test", "fass","biba!");
             System.out.println("Hello World!");
         };
     }

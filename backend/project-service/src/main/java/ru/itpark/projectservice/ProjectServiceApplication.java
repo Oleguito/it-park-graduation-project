@@ -13,8 +13,4 @@ public class ProjectServiceApplication {
 		SpringApplication.run(ProjectServiceApplication.class, args);
 	}
 
-	@KafkaListener(topics = {"test"}, groupId = "my-group", containerFactory = "kafkaListenerContainerFactory")
-	public void listen(@Payload ConsumerRecord<String, String> message) {
-		System.out.println("Received: " + message.value());
-	}
 }

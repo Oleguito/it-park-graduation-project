@@ -13,6 +13,7 @@ services:
       backend: {}
 
   kafka:
+    container_name: kafka
     restart: always
     image: confluentinc/cp-kafka:latest
     depends_on:
