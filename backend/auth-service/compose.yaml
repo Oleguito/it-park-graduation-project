@@ -22,6 +22,7 @@ services:
       - GP_KEYCLOAK_ADMIN_PASSWORD=nvwS6vK#IaE@Ds4RveKs
       - GP_AUTHSERVICE_CLIENT_SECRET=7TCb2UhbgVpyh186oC6VMe9srakq16Bp
       - KEYCLOAK_DEAD=0
+      - KAFKA_BOOTSTRAP_SERVER=kafka:9092
     depends_on:
       - collaborative-project-postgres-db
       - kafka

@@ -9,7 +9,7 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: "localhost:29092"
+    bootstrap-servers: "${KAFKA_BOOTSTRAP_SERVER:localhost:29092}"
     consumer:
       group-id: 'my-group'
   ssl:
@@ -35,9 +35,7 @@ spring:
     change-log: 'db/changelog/db.changelog-master.yaml'
 #    change-log: '${project.basedir}/src/main/resources/db/changelog/db.changelog-master.yaml'
   datasource:
-    url: ${GP_AUTHSERVICE_DB_URL}
-#    url: ${GP_AUTHSERVICE_DB_URL}
-#    url: jdbc:postgresql://localhost:5432/authservicedb
+    url: ${GP_AUTHSERVICE_DB_URL:jdbc:postgresql://localhost:5432/authservicedb}
     username: authservice
     password: 12345
     driverClassName: org.postgresql.Driver
