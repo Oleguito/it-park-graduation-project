@@ -1,16 +1,25 @@
 "use client"
+
+
 import DoubleList from "@/components/doubleList/doubleList";
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Button} from "@/components/ui/button";
 import {SettingsIcon} from "lucide-react";
 import {UserInfo} from '@/types/user-info'
 import {getUserInfo} from "@/utils/userInfo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const MyPage = () => {
 
     const [userInfo, setUserInfo] = useState({} as UserInfo)
+
+    useEffect(() => {
+        const ui = getUserInfo();
+        ui && setUserInfo(ui);
+    }, [])
+
+    
 
     return (
         <>
@@ -36,15 +45,15 @@ const MyPage = () => {
                         listData={[
                             {
                                 label: "Фамилия имя отчество",
-                                content: `${getUserInfo()?.name}`,
+                                content: `${userInfo.name}`,
                             },
                             {
                                 label: "Почта",
-                                content: `${getUserInfo()?.email}`,
+                                content: `${userInfo.email}`,
                             },
                             {
                                 label: "Логин",
-                                content: `${getUserInfo()?.preferred_username}`,
+                                content: `${userInfo.preferred_username}`,
                             },
                         ]}
                     />

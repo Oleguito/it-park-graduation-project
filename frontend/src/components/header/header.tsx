@@ -13,18 +13,22 @@ export const Header = () => {
 	const pathName = usePathname()
 
 	return (
-		<header className='flex justify-between sticky w-full p-4'>
-			<ModeToggle />
-			<div className='flex gap-5'>
-				<Link href={'/my'}>
-					<Button
-						variant={isRouteActive(pathName, '/my') ? 'outline' : 'ghost'}
-					>
-						Личный кабинет
-					</Button>
-				</Link>
-				<Button onClick={signOut}>Выход</Button>
-			</div>
-		</header>
-	)
+        <header className="flex justify-between sticky w-full p-4">
+            <ModeToggle />
+            <div className="flex gap-5">
+                <Button>Добавить проект</Button>
+                <Button>Мои проекты</Button>
+                <Link href={"/my"}>
+                    <Button
+                        variant={
+                            isRouteActive(pathName, "/my") ? "outline" : "ghost"
+                        }
+                    >
+                        Личный кабинет
+                    </Button>
+                </Link>
+                <Button onClick={signOut}>Выход</Button>
+            </div>
+        </header>
+    );
 }

@@ -116,9 +116,7 @@ export function signOut() {
         window.sessionStorage.removeItem('state')
 
         let id_token = window.localStorage.getItem('id_token')
-        const domain =
-            process.env.REACT_APP_KEYCLOAK_LOGOUT_URL ||
-            Settings.keycloak.logoutUrl
+        const domain = Settings.keycloak.logoutUrl
         const KEYCLOAK_LOGOUT_URL = `${domain}?id_token_hint=${id_token}&post_logout_redirect_uri=${window.location.origin}/`
 
         window.location.assign(KEYCLOAK_LOGOUT_URL)
