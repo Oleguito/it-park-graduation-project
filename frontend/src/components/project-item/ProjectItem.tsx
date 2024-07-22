@@ -20,9 +20,13 @@ const ProjectItem = ({ props }: { props: Props }) => {
       <>
           <div>
               <div>ProjectItem</div>
-              <div className={css['project-item-upper-part']}>
+              <div className={css["project-item-upper-part"]}>
                   <div>Project #{props.projectId}</div>
-                  <textarea readOnly={true} value={props.projectDescription} className={css['description-box']} />
+                  <textarea
+                      value={props.projectDescription}
+                      className={css["description-box"]}
+                      readOnly={true}
+                  />
               </div>
           </div>
       </>
