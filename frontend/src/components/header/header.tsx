@@ -7,6 +7,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {isRouteActive} from '@/utils/utilities/utilities'
 
+const addProjectHandler = () => {
+    window.location.replace("/my/projects/add")
+};
 
 
 export const Header = () => {
@@ -16,7 +19,7 @@ export const Header = () => {
         <header className="flex justify-between sticky w-full p-4">
             <ModeToggle />
             <div className="flex gap-5">
-                <Button>Добавить проект</Button>
+                <Button onClick={addProjectHandler}>Добавить проект</Button>
                 <Button>Мои проекты</Button>
                 <Button>Приглашения</Button>
                 <Link href={"/my"}>
