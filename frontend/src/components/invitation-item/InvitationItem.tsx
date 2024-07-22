@@ -27,8 +27,8 @@ const InvitationItem = () => {
             <div>
                 <ProjectItem props={props} />
                 <div>
-                    <Button onClick={acceptInvitationHandler}>Принять приглашение</Button>
-                    <Button onClick={rejectInvitationHandler}>Отклонить приглашение</Button>
+                    <Button className="m-1" onClick={acceptInvitationHandler}>Принять приглашение</Button>
+                    <Button className="m-1" onClick={rejectInvitationHandler}>Отклонить приглашение</Button>
                 </div>
             </div>
         </>
