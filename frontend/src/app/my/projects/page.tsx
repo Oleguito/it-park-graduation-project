@@ -1,7 +1,20 @@
 //'use client'
+import ProjectItem from '@/components/project-item/ProjectItem';
 import React from 'react'
+import { Props } from "@/components/project-item/ProjectItem";
+
+
 
 const ProjectsPage = () => {
+
+    const props: Props = {
+        projectId: 2934804023,
+        projectDescription: `Описание проекта \n Это страница с ПРОЕКТАМИ!!
+▬ Сервис Управления Проектами
+Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
+Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).`,
+    };
+
   return (
       <>
           <div>Это страница с ПРОЕКТАМИ!!</div>
@@ -14,6 +27,7 @@ const ProjectsPage = () => {
               Технологии: gRPC, база данных для хранения информации о проектах и
               задачах (например, MongoDB).
           </div>
+          <ProjectItem props={props} />
       </>
   );
 }

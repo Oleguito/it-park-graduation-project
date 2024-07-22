@@ -1,10 +1,10 @@
-import {SideBar} from '@/components/side-bar/side-bar'
-import {Card} from '@/components/ui/card'
+import { SideBar } from "@/components/side-bar/side-bar";
+import { Card } from "@/components/ui/card";
 
 export const Container = ({
-                              children,
-                          }: Readonly<{
-    children: React.ReactNode
+    children,
+}: Readonly<{
+    children: React.ReactNode;
 }>) => {
     return (
         <div className="flex w-full p-4">
@@ -16,4 +16,4 @@ export const Container = ({
             </div>
         </div>
     );
-}
+};

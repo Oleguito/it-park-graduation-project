@@ -18,6 +18,7 @@ export const Header = () => {
             <div className="flex gap-5">
                 <Button>Добавить проект</Button>
                 <Button>Мои проекты</Button>
+                <Button>Приглашения</Button>
                 <Link href={"/my"}>
                     <Button
                         variant={
