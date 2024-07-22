@@ -8,9 +8,16 @@ import { usePathname } from 'next/navigation'
 import {isRouteActive} from '@/utils/utilities/utilities'
 
 const addProjectHandler = () => {
-    window.location.replace("/my/projects/add")
+    window.location.href = "/my/projects/add"
 };
 
+const myProjectsHandler = () => {
+    window.location.href = "/my/projects"
+};
+
+const invitationsHandler = () => {
+    window.location.href = "/my/projects/invitations"
+};
 
 export const Header = () => {
 	const pathName = usePathname()
@@ -20,8 +27,8 @@ export const Header = () => {
             <ModeToggle />
             <div className="flex gap-5">
                 <Button onClick={addProjectHandler}>Добавить проект</Button>
-                <Button>Мои проекты</Button>
-                <Button>Приглашения</Button>
+                <Button onClick={myProjectsHandler}>Мои проекты</Button>
+                <Button onClick={invitationsHandler}>Приглашения</Button>
                 <Link href={"/my"}>
                     <Button
                         variant={

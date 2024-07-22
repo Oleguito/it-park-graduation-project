@@ -1,0 +1,6 @@
+/* flex, aligned to the left */ 
+.project-item-lower-part {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
