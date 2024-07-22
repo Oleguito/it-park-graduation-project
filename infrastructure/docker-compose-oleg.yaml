@@ -1,0 +1,7 @@
+name: our-grad-project
+include:
+  - path: ./db/docker-compose.yaml
+
+networks:
+  backend:
+    driver: bridge

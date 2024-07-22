@@ -16,7 +16,8 @@ services:
       - ./dbdata:/var/lib/postgresql/data
       - ./dbroot:/root
       - ./dbroot/pssqldump.sql:/docker-entrypoint-initdb.d/dump.sql
-      - ./dbroot/init.sql:/docker-entrypoint-initdb.d/db.sql
+      - ./dbroot/init.sql:/docker-entrypoint-initdb.d/init.sql
+
     networks:
       - backend
 

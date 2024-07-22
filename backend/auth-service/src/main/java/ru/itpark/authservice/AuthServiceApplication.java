@@ -31,7 +31,7 @@ public class AuthServiceApplication {
             System.out.println("env: " + System.getenv("GP_AUTHSERVICE_DB_URL"));
 
             template.send("test", "fass","biba!");
-            System.out.println("Hello World!");
+            System.out.println("Seems like AUTH-SERVICE successfully started");
         };
     }
 

@@ -311,9 +311,9 @@
                     <jdbc>
                         <driver>org.postgresql.Driver</driver>
 
-                      <url>${GP_AUTHSERVICE_DB_URL}</url>
-                        <username>${GP_AUTHSERVICE_DB_USERNAME}</username>
-                        <password>${GP_AUTHSERVICE_DB_PASSWORD}</password>
+                      <url>${env.GP_AUTHSERVICE_DB_URL}</url>
+                        <username>${env.GP_AUTHSERVICE_DB_USERNAME}</username>
+                        <password>${env.GP_AUTHSERVICE_DB_PASSWORD}</password>
                     </jdbc>
                     <generator>
                         <database>
@@ -325,26 +325,6 @@
                             <directory>target/generated-sources/jooq</directory>
                         </target>
                     </generator>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.liquibase</groupId>
-                <artifactId>liquibase-maven-plugin</artifactId>
-                <version>4.28.0</version>
-                <executions>
-                    <execution>
-                        <phase>process-resources</phase> <!-- или другой подходящий этап -->
-                        <goals>
-                            <goal>update</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
-                    <url>${GP_AUTHSERVICE_DB_URL}</url>
-                    <username>${GP_AUTHSERVICE_DB_USERNAME}</username>
-                    <password>${GP_AUTHSERVICE_DB_PASSWORD}</password>
-                    <driver>org.postgresql.Driver</driver>
                 </configuration>
             </plugin>
             <plugin>
@@ -379,5 +359,38 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>include-liquibase-plugin</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.liquibase</groupId>
+                        <artifactId>liquibase-maven-plugin</artifactId>
+                        <version>4.28.0</version>
+                        <executions>
+                            <execution>
+                                <phase>process-resources</phase> <!-- или другой подходящий этап -->
+                                <goals>
+                                    <goal>update</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <changeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</changeLogFile>
+                            <url>${env.GP_AUTHSERVICE_DB_URL}</url>
+                            <username>${env.GP_AUTHSERVICE_DB_USERNAME}</username>
+                            <password>${env.GP_AUTHSERVICE_DB_PASSWORD}</password>
+                            <driver>org.postgresql.Driver</driver>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
