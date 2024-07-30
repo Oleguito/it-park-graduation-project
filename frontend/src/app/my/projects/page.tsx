@@ -1,21 +1,17 @@
-'use client'
-import ProjectItem from '@/components/project-item/ProjectItem';
-import React, { useEffect, useState } from 'react'
+"use client";
+import ProjectItem from "@/components/project-item/ProjectItem";
+import React, { useEffect, useState } from "react";
 import { Props } from "@/components/project-item/ProjectItem";
-import { Button } from '@/components/ui/button';
-import MyButton from '@/stories/components/MyButton';
-import css from './page.module.css'
-import { Settings } from '@/constants/settings';
-import axios from 'axios';
-
-
+import { Button } from "@/components/ui/button";
+import MyButton from "@/stories/components/MyButton";
+import css from "./page.module.css";
+import { Settings } from "@/constants/settings";
+import axios from "axios";
 
 const ProjectsPage = () => {
+    const [projects, setProjects] = useState([]);
 
-    const [projects, setProjects] = useState([])
-
-    useEffect (() => {
-
+    useEffect(() => {
         console.log("id_token: ", localStorage.getItem("id_token"));
 
         getProjectsFromBackend()
@@ -26,7 +22,7 @@ const ProjectsPage = () => {
             .catch((error) => {
                 console.log(`getProjectsFromBackend: ${error}`);
             });
-    }, [])
+    }, []);
 
     const props: Props = {
         id: 2934804023,
@@ -41,7 +37,7 @@ const ProjectsPage = () => {
     };
 
     const addMemberHandler = () => {
-        window.location.href = "/my/participants/add"
+        window.location.href = "/my/participants/add";
     };
 
     const deleteMemberHandler = () => {
@@ -58,51 +54,51 @@ const ProjectsPage = () => {
             }
         );
         console.log("response: ", response);
-        return response
-    }
-    
+        return response;
+    };
+
     console.log(
         `Settings: `,
         Settings.backend.projectService.getAllProjectsUrl()
     );
     console.log("projects: ", projects);
 
-  return (
-      <>
-          <div>Это страница с ПРОЕКТАМИ!!</div>
-          <div>▬ Сервис Управления Проектами</div>
-          <div>
-              Функционал: Создание, редактирование и удаление проектов,
-              управление задачами, назначение ответственных.
-          </div>
-          <div>
-              Технологии: gRPC, база данных для хранения информации о проектах и
-              задачах (например, MongoDB).
-          </div>
-          <div>
-              {/* <ProjectItem props={props} /> */}
+    return (
+        <>
+            <div>Это страница с ПРОЕКТАМИ!!</div>
+            <div>▬ Сервис Управления Проектами</div>
+            <div>
+                Функционал: Создание, редактирование и удаление проектов,
+                управление задачами, назначение ответственных.
+            </div>
+            <div>
+                Технологии: gRPC, база данных для хранения информации о проектах
+                и задачах (например, MongoDB).
+            </div>
+            <div>
+                {projects.map((project) => (
+                    <ProjectItem
+                        key={project.id}
+                        props={{
+                            id: project.id,
+                            title: project.name,
+                            status: project.status,
+                            description: project.description,
+                        }}
+                    />
+                ))}
 
-              { projects[0] &&
-                  <ProjectItem
-                      props={{
-                          id: projects[0].id,
-                          title: projects[0].name,
-                          status: projects[0].status,
-                          description: projects[0].description,
-                      }}
-                  />
-              }
-              <div className="project-item-lower-part">
-                  <Button onClick={addMemberHandler} className="m-1">
-                      Добавить участника
-                  </Button>
-                  <Button onClick={deleteMemberHandler}>
-                      Удалить участника
-                  </Button>
-              </div>
-          </div>
-      </>
-  );
-}
+                <div className="project-item-lower-part">
+                    <Button onClick={addMemberHandler} className="m-1">
+                        Добавить участника
+                    </Button>
+                    <Button onClick={deleteMemberHandler}>
+                        Удалить участника
+                    </Button>
+                </div>
+            </div>
+        </>
+    );
+};
 
 export default ProjectsPage;
