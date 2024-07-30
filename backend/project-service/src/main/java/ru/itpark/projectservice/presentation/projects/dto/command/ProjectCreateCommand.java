@@ -1,4 +1,4 @@
-package ru.itpark.projectservice.presentation.projects.dto.query;
+package ru.itpark.projectservice.presentation.projects.dto.command;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,20 +13,20 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ProjectQuery {
+public class ProjectCreateCommand {
     private Long id;
-    
+
     private String name;
-    
+
     private String description;
-    
+
     private LocalDateTime startDate;
-    
+
     private LocalDateTime endDate;
-    
+
     private Status status;
-    
+
     private Long ownerId;
-    
+
     private DateInfo dateInfo;
 }

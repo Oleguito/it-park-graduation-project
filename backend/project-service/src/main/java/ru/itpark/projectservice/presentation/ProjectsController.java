@@ -1,17 +1,17 @@
 package ru.itpark.projectservice.presentation;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import ru.itpark.projectservice.application.service.ProjectService;
 import ru.itpark.projectservice.domain.Project;
 import ru.itpark.projectservice.domain.valueobjects.DateInfo;
 import ru.itpark.projectservice.domain.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
+import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 import ru.itpark.projectservice.presentation.projects.dto.query.ProjectQuery;
 
+import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -40,6 +40,14 @@ public class ProjectsController {
                         .endDate(LocalDateTime.now().plusDays(3L))
                         .ownerId(987564321L)
                 .build()
+        );
+    }
+
+    @PostMapping("/add")
+    public ProjectQuery createProject(@RequestBody ProjectCreateCommand projectCreateCommand) {
+
+        return projectMapper.toQuery(
+                projectService.save(projectMapper.toProject(projectCreateCommand))
         );
     }
 

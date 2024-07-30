@@ -19,8 +19,8 @@ import java.time.LocalDateTime;
 public class Project {
 
     @Id
-    @GeneratedValue(generator = "project_seq_gen", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(sequenceName = "project_seq_gen", name = "proj_seq_gen", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "proj_seq_gen", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "proj_seq_gen", name = "proj_seq_gen", initialValue = 1, allocationSize = 1)
     private Long id;
 
     @Column(name = "name", length = 500, nullable = false)

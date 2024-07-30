@@ -19,6 +19,9 @@ export const Settings = {
             baseUrl: "http://localhost:8087",
             getAllProjectsUrl: function() {
                 return this.baseUrl + "/projects/all";
+            },
+            createProjectUrl: function() {
+                return this.baseUrl + "/projects/add";
             } 
         },
     },
