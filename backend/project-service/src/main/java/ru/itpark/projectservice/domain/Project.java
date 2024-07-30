@@ -26,6 +26,9 @@ public class Project {
     @Column(name = "name", length = 500, nullable = false)
     private String name;
 
+    @Column(name = "description", length = 5000, nullable = false)
+    private String description;
+
     @Column(name = "start_date")
     private LocalDateTime startDate;
 

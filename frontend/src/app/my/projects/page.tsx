@@ -1,20 +1,43 @@
 'use client'
 import ProjectItem from '@/components/project-item/ProjectItem';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Props } from "@/components/project-item/ProjectItem";
 import { Button } from '@/components/ui/button';
-
+import MyButton from '@/stories/components/MyButton';
+import css from './page.module.css'
+import { Settings } from '@/constants/settings';
+import axios from 'axios';
 
 
 
 const ProjectsPage = () => {
 
+    const [projects, setProjects] = useState([])
+
+    useEffect (() => {
+
+        console.log("id_token: ", localStorage.getItem("id_token"));
+
+        getProjectsFromBackend()
+            .then((response) => {
+                console.log("we are providing data");
+                setProjects(response.data);
+            })
+            .catch((error) => {
+                console.log(`getProjectsFromBackend: ${error}`);
+            });
+    }, [])
+
     const props: Props = {
-        projectId: 2934804023,
-        projectDescription: `Описание проекта \n Это страница с ПРОЕКТАМИ!!
-▬ Сервис Управления Проектами
-Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
-Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).`,
+        id: 2934804023,
+        title: "Название проекта",
+        status: "SOME STATUS",
+        description: `Это мок проекта из фронтэнда \n 
+        Описание проекта \n 
+        Это страница с ПРОЕКТАМИ!!
+        ▬ Сервис Управления Проектами
+        Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
+        Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).`,
     };
 
     const addMemberHandler = () => {
@@ -24,6 +47,25 @@ const ProjectsPage = () => {
     const deleteMemberHandler = () => {
         window.location.href = "/my/participants/delete";
     };
+
+    const getProjectsFromBackend = async () => {
+        const response = await axios.get(
+            Settings.backend.projectService.getAllProjectsUrl(),
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("id_token")}`,
+                },
+            }
+        );
+        console.log("response: ", response);
+        return response
+    }
+    
+    console.log(
+        `Settings: `,
+        Settings.backend.projectService.getAllProjectsUrl()
+    );
+    console.log("projects: ", projects);
 
   return (
       <>
@@ -38,9 +80,22 @@ const ProjectsPage = () => {
               задачах (например, MongoDB).
           </div>
           <div>
-              <ProjectItem props={props} />
+              {/* <ProjectItem props={props} /> */}
+
+              { projects[0] &&
+                  <ProjectItem
+                      props={{
+                          id: projects[0].id,
+                          title: projects[0].name,
+                          status: projects[0].status,
+                          description: projects[0].description,
+                      }}
+                  />
+              }
               <div className="project-item-lower-part">
-                  <Button onClick={addMemberHandler} className='m-1'>Добавить участника</Button>
+                  <Button onClick={addMemberHandler} className="m-1">
+                      Добавить участника
+                  </Button>
                   <Button onClick={deleteMemberHandler}>
                       Удалить участника
                   </Button>

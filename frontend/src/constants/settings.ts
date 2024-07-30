@@ -14,4 +14,12 @@ export const Settings = {
     frontend: {
         url: "localhost:3000",
     },
+    backend: {
+        projectService: {
+            baseUrl: "http://localhost:8087",
+            getAllProjectsUrl: function() {
+                return this.baseUrl + "/projects/all";
+            } 
+        },
+    },
 };

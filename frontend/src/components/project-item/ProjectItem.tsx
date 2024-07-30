@@ -6,9 +6,10 @@ import { Button } from '../ui/button';
 import css from './styles.module.css'
 
 export type Props = {
-
-    projectId: number;
-    projectDescription: string;
+    id: number;
+    title: string;
+    description: string;
+    status: String
 }
 
 const addMemberHandler = () => {};
@@ -20,11 +21,15 @@ const ProjectItem = ({ props }: { props: Props }) => {
       <>
           <div>
               <div>ProjectItem</div>
+              <span>
+                  Title: <span className="italic">{props.title}</span>
+              </span>
+              <div>Status: <span>{props.status}</span></div>
               <div className={css["project-item-upper-part"]}>
-                  <div>Project #{props.projectId}</div>
+                  <div>Project #{props.id}</div>
                   <textarea
-                      value={props.projectDescription}
-                      className={css["description-box"]}
+                      value={props.description}
+                      className={`${css["description-box"]} italic`}
                       readOnly={true}
                   />
               </div>

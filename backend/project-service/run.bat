@@ -1,11 +1,17 @@
 chcp 65001
+
 cls
-rem call mvn clean
-rem call mvn -P include-liquibase-plugin liquibase:update
+call mvn clean
+
 cls
-call mvn protobuf:compile
-cls
-call mvn protobuf:compile-custom
+call mvn -P include-liquibase-plugin liquibase:update
+
+rem cls
+rem call mvn protobuf:compile
+rem
+rem cls
+rem call mvn protobuf:compile-custom
+
 cls
 call mvn spring-boot:run
 
