@@ -7,34 +7,48 @@ import MyButton from "@/stories/components/MyButton";
 import css from "./page.module.css";
 import { Settings } from "@/constants/settings";
 import axios from "axios";
+import { fetchUserInfo } from "@/utils/auth-service/user-service";
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
+    const [userId, setUserId] = useState(0);
 
     useEffect(() => {
-        console.log("id_token: ", localStorage.getItem("id_token"));
+        // console.log("id_token: ", localStorage.getItem("id_token"));
 
         getProjectsFromBackend()
-            .then((response) => {
-                console.log("we are providing data");
-                setProjects(response.data);
-            })
-            .catch((error) => {
-                console.log(`getProjectsFromBackend: ${error}`);
-            });
+        .then((response) => {
+            // console.log("we are providing data");
+            setProjects(response.data);
+        })
+        .catch((error) => {
+            console.log(`getProjectsFromBackend: ${error}`);
+        });
+        
+        fetchUserInfo()
+        .then((response) => {   
+            console.log("fetchUserInfo: ", response.data);
+            setUserId(response.data.id);
+        })
+        .catch((error) => {
+            console.log(`fetchUserInfo: ${error}`);
+        });
+        
+        
+        
     }, []);
 
-    const props: Props = {
-        id: 2934804023,
-        title: "Название проекта",
-        status: "SOME STATUS",
-        description: `Это мок проекта из фронтэнда \n 
-        Описание проекта \n 
-        Это страница с ПРОЕКТАМИ!!
-        ▬ Сервис Управления Проектами
-        Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
-        Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).`,
-    };
+    // const props: Props = {
+    //     id: 2934804023,
+    //     title: "Название проекта",
+    //     status: "SOME STATUS",
+    //     description: `Это мок проекта из фронтэнда \n 
+    //     Описание проекта \n 
+    //     Это страница с ПРОЕКТАМИ!!
+    //     ▬ Сервис Управления Проектами
+    //     Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
+    //     Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).`,
+    // };
 
     const addMemberHandler = () => {
         window.location.href = "/my/participants/add";
@@ -53,15 +67,15 @@ const ProjectsPage = () => {
                 },
             }
         );
-        console.log("response: ", response);
+        // console.log("response: ", response);
         return response;
     };
 
-    console.log(
-        `Settings: `,
-        Settings.backend.projectService.getAllProjectsUrl()
-    );
-    console.log("projects: ", projects);
+    // console.log(
+    //     `Settings: `,
+    //     Settings.backend.projectService.getAllProjectsUrl()
+    // );
+    // console.log("projects: ", projects);
 
     return (
         <>
@@ -76,16 +90,20 @@ const ProjectsPage = () => {
                 и задачах (например, MongoDB).
             </div>
             <div>
-                {projects.map((project) => (
-                    <ProjectItem
-                        key={project.id}
-                        props={{
-                            id: project.id,
-                            title: project.name,
-                            status: project.status,
-                            description: project.description,
-                        }}
-                    />
+                {projects
+                    .filter((project) => {
+                        return project.userId === 1
+                    })
+                    .map((project) => (
+                        <ProjectItem
+                            key={project.id}
+                            props={{
+                                id: project.id,
+                                title: project.name,
+                                status: project.status,
+                                description: project.description,
+                            }}
+                        />
                 ))}
 
                 <div className="project-item-lower-part">

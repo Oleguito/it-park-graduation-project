@@ -3,19 +3,21 @@ package ru.itpark.authservice.presentation.web.users;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import ru.itpark.authservice.application.user.facade.UserCommandFacade;
 import ru.itpark.authservice.application.user.facade.UserQueryFacade;
 import ru.itpark.authservice.application.user.impl.UsersService;
-import ru.itpark.authservice.application.user.query.UserQueryService;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
 import ru.itpark.authservice.presentation.web.users.dto.command.UserCommand;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +25,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 @RequestMapping("/api/users")
 @Slf4j
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*", exposedHeaders = "*", maxAge = 3600)
 public class UsersController {
 
     private final UsersService usersService;
@@ -54,10 +57,11 @@ public class UsersController {
         return usersService.login(user);
     }
 
-    @PostMapping("/search")
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
     @PreAuthorize("isAuthenticated()")
     @Operation(summary = "Найти пользователя по одному или нескольким параметрам", description =
             "Например, те кто владеет английским и учетка создана вчера")
+    @CrossOrigin(origins = {"http://localhost:3000"}, allowedHeaders = "*", methods = {RequestMethod.POST})
     public List<User> findUser(@RequestBody UserSearchParams userSearchParams) {
         log.info("Searching user with query {}", userSearchParams.getLanguages());
         return userQueryFacade.search(userSearchParams);

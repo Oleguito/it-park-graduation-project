@@ -1,6 +1,8 @@
 chcp 65001
+
 cls
 call mvn clean
+
 rem call mvn protobuf:compile
 rem call mvn protobuf:compile-custom
 call mvn spring-boot:run

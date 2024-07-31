@@ -15,14 +15,23 @@ export const Settings = {
         url: "localhost:3000",
     },
     backend: {
+        userService: {
+            baseUrl: "https://localhost:8088",
+            getUserInfoUrl: function () {
+                return this.baseUrl + "/api/users/all";
+            },
+            getUserSearchUrl: function () {
+                return this.baseUrl + "/api/users/search";  
+            }
+        },
         projectService: {
             baseUrl: "http://localhost:8087",
-            getAllProjectsUrl: function() {
+            getAllProjectsUrl: function () {
                 return this.baseUrl + "/projects/all";
             },
-            createProjectUrl: function() {
+            createProjectUrl: function () {
                 return this.baseUrl + "/projects/add";
-            } 
+            },
         },
     },
 };

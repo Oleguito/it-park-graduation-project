@@ -215,7 +215,11 @@
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.63.0</version>
         </dependency>
-<!--        <dependency>-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+        <!--        <dependency>-->
 <!--            <groupId>io.grpc</groupId>-->
 <!--            <artifactId>grpc-bom</artifactId>-->
 <!--            <version>1.62.2</version>-->

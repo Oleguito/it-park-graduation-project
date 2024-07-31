@@ -30,29 +30,33 @@ public class KeycloakConfiguration {
     private final JwtAuthConverter jwtAuthConverter;
     private final JwtTokenValidatorFilter jwtTokenValidatorFilter;
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        var configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Указываем конкретный источник для доступа
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type")); // Явно указываем разрешенные заголовки
-        configuration.setAllowCredentials(true); // Разрешаем куки с других доменов
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        var configuration = new CorsConfiguration();
+//        configuration.applyPermitDefaultValues();
+////        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Указываем конкретный источник для доступа
+////        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+////        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type")); // Явно указываем разрешенные заголовки
+////        configuration.setAllowCredentials(true); // Разрешаем куки с других доменов
+//
+//        var source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", configuration);
+//        return source;
+//    }
 
-        var source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-
-    @Bean
-    public CorsFilter corsFilter() {
-        return new CorsFilter(corsConfigurationSource());
-    }
+//    @Bean
+//    public CorsFilter corsFilter() {
+//        System.out.println("is returned");
+//        var filter =  new CorsFilter(corsConfigurationSource());
+//        System.out.println(filter);
+//        return filter;
+//    }
 
     @Bean
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
-        http.addFilterBefore(corsFilter(), SessionManagementFilter.class).csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(authz -> {
-
-        });
+//        http.addFilterBefore(corsFilter(), SessionManagementFilter.class).csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests(authz -> {
+//
+//        });
 
         http
                 .authorizeHttpRequests(
