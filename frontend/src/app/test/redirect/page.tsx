@@ -1,8 +1,8 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const DynamicRedirect = dynamic(() => import('@/app/redirect/redirect'), {
-	ssr: false,
-})
+const DynamicRedirect = dynamic(() => import("@/app/redirect/redirect"), {
+    ssr: false,
+});
 export default function Page() {
-	return <DynamicRedirect />
+    return <DynamicRedirect />;
 }

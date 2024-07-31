@@ -20,7 +20,6 @@ public class UserQueryFacade {
 
     @PostMapping("/search")
     public List<User> search(@RequestBody UserSearchParams userSearchParams) {
-        log.info("Searching user with query {}", userSearchParams.getLanguages());
         return userQueryService.search(userSearchParams);
     }
 }

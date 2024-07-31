@@ -6,13 +6,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jooq.Condition;
 import org.jooq.DSLContext;
+import org.jooq.JSONB;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
+import ru.itpark.authservice.domain.user.Role;
 import ru.itpark.authservice.domain.user.User;
+import ru.itpark.authservice.domain.user.valueobjects.DateInfo;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
 import ru.itpark.authservice.tables.records.UsersRecord;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,6 +30,48 @@ public class CustomUserRepository {
     private final ObjectMapper objectMapper;
 
     private final DSLContext dsl;
+
+    /*
+    *   Does check for existence
+    * */
+    public User create(
+        String fullName,
+        String email,
+        String login,
+        List<Language> languages,
+        Role role
+    ) throws JsonProcessingException {
+
+        if(dsl.selectFrom(USERS)
+                .where(USERS.EMAIL.eq(email))
+                .stream().findAny().isPresent()) return null;
+
+        User user = dsl.insertInto(USERS)
+                .columns(USERS.FULL_NAME, USERS.EMAIL, USERS.LOGIN, USERS.LANGUAGES, USERS.ROLE, USERS.CREATED_AT, USERS.DELETED_AT)
+                .values(
+                        fullName,
+                        email,
+                        login,
+                        JSONB.valueOf(objectMapper.writeValueAsString(
+                                languages
+                        )),
+                        role.toString(),
+                        LocalDateTime.now(),
+                        null
+                )
+                .returningResult(USERS.ID, USERS.FULL_NAME, USERS.EMAIL, USERS.LOGIN, USERS.LANGUAGES, USERS.ROLE, USERS.CREATED_AT, USERS.DELETED_AT)
+                .fetchOne()
+                .into(User.class);
+
+        user.setDateInfo(DateInfo.builder()
+                .createdAt(LocalDateTime.now())
+                .deletedAt(null)
+                .build());
+
+        return user;
+    }
+
+
 
     public List<User> search(UserSearchParams searchParams) {
 

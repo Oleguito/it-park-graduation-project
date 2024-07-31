@@ -6,6 +6,10 @@ import { useEffect } from 'react'
 export default function Redirect() {
 	useEffect(() => {
 		getTokens()
+
+		
+
+		
 	}, [])
 	return <Card>Загрузка...</Card>
 }

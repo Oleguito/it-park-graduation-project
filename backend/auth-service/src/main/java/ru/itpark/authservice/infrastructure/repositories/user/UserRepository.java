@@ -16,7 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
   @Transactional
   @Query(value = "INSERT INTO users (full_name, email, login, languages, role, created_at, deleted_at) " +
           "VALUES (:fullName, :email, :login, cast(:languages as jsonb), :role, :createdAt,  :deletedAt)", nativeQuery = true)
-  void saveUser(@Param("fullName") String fullName,
+  User saveUser(@Param("fullName") String fullName,
                 @Param("email") String email,
                 @Param("login") String login,
                 @Param("languages") String languages,
