@@ -2,7 +2,6 @@ package oleg
 
 import ru.itpark.authservice.domain.user.dto.queries.UserQuery
 import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakClient
-import ru.itpark.authservice.infrastructure.config.security.keycloak.KeycloakReplacementJwtCreator
 import spock.lang.Narrative
 import spock.lang.Specification
 
@@ -11,8 +10,6 @@ import spock.lang.Specification
     который подробно объясняет че за херня тут творится
 """)
 class KeyCloakTests extends Specification {
-
-    def keycloakReplacer = new KeycloakReplacementJwtCreator()
 
     def keycloakClient = new KeycloakClient()
     def userQuery
@@ -24,14 +21,6 @@ class KeyCloakTests extends Specification {
         userQuery = new UserQuery()
         userQuery.setUsername(keycloakAdminUsername)
         userQuery.setPassword(keycloakAdminPassword)
-    }
-
-    def "Взять замену Keycloak JWT expect 2"() {
-        def jwt = keycloakReplacer.create()
-        println "замена: ${jwt}"
-        keycloakReplacer.verify(jwt)
-        expect:
-        2
     }
 
 //    @IgnoreIf({env.get("KEYCLOAK_DEAD")})

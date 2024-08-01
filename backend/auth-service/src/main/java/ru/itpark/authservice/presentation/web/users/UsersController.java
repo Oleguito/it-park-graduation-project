@@ -39,7 +39,7 @@ public class UsersController {
     private final UserMapper userMapper;
 
     @RequestMapping(("/create"))
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
     @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*", exposedHeaders = "*", maxAge = 3600)
     public ResponseEntity<UserQuery> createUser(@RequestBody UserCommand userCommand) throws Exception {
 

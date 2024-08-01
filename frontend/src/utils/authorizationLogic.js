@@ -75,7 +75,7 @@ const getAuthorizationCode = () => {
 const saveTokensToLocalStorage = (access_token, refresh_token) => {
 	const tokens = { access_token, refresh_token }
 
-	window.localStorage.setItem('token', JSON.stringify(tokens))
+	window.localStorage.setItem(`auth-tokens-${process.env.NODE_ENV}`, JSON.stringify(tokens))
 }
 // === ! After redirect ! === //
 

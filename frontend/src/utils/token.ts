@@ -8,7 +8,7 @@ import { ResourceAccess } from '@/types/resourceaccess'
 import JwtParseData from '@/types/jwt';
 
 
-const LOCAL_STORAGE_TOKEN_KEY = 'token'
+const LOCAL_STORAGE_TOKEN_KEY = `auth-tokens-${process.env.NODE_ENV}`
 
 export type TokenType = {
     access_token: string

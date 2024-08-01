@@ -1,21 +1,27 @@
 package ru.itpark.authservice.presentation.web.users.dto.command;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
-import lombok.Getter;
+import lombok.*;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
+@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserCommand {
 
-    String fullName;
-    String email;
-    String login;
-    List<Language> languages;
-    String role;
-    LocalDateTime createdAt;
-    LocalDateTime deletedAt;
+    public String fullName;
+    public String email;
+    public String login;
+    public List<Language> languages;
+    public String role;
+    @JsonIgnore
+    public LocalDateTime createdAt;
+    @JsonIgnore
+    public LocalDateTime deletedAt;
 
 }

@@ -2,6 +2,7 @@ package ru.itpark.authservice.domain.jwt;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.springframework.security.core.Authentication;
 
 import java.util.List;
 
@@ -49,82 +50,6 @@ public class JwtDefinition {
     private String familyName;
     @JsonProperty("email")
     private String email;
-
-    public long getExp() {
-        return exp;
-    }
-
-    public long getIat() {
-        return iat;
-    }
-
-    public String getJti() {
-        return jti;
-    }
-
-    public String getIss() {
-        return iss;
-    }
-
-    public String getSub() {
-        return sub;
-    }
-
-    public String getTyp() {
-        return typ;
-    }
-
-    public String getAzp() {
-        return azp;
-    }
-
-    public String getSid() {
-        return sid;
-    }
-
-    public String getAcr() {
-        return acr;
-    }
-
-    public List<String> getAllowedOrigins() {
-        return allowedOrigins;
-    }
-
-    public RealmAccess getRealmAccess() {
-        return realmAccess;
-    }
-
-    public ResourceAccess getResourceAccess() {
-        return resourceAccess;
-    }
-
-    public String getScope() {
-        return scope;
-    }
-
-    public boolean isEmailVerified() {
-        return emailVerified;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPreferredUsername() {
-        return preferredUsername;
-    }
-
-    public String getGivenName() {
-        return givenName;
-    }
-
-    public String getFamilyName() {
-        return familyName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
 
     public static class RealmAccess {
         @JsonProperty("roles")
