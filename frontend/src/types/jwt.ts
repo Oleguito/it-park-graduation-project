@@ -25,3 +25,7 @@ export default interface JwtParseData {
     family_name: string;
     email: string;
 }
+
+export type JwtIntrospectParseData = JwtParseData & {
+    active: boolean;
+}

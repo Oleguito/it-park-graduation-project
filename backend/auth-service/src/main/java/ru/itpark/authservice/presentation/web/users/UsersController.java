@@ -38,8 +38,9 @@ public class UsersController {
 
     private final UserMapper userMapper;
 
-    @PostMapping("/create")
+    @RequestMapping(("/create"))
     @PreAuthorize("isAuthenticated()")
+    @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*", exposedHeaders = "*", maxAge = 3600)
     public ResponseEntity<UserQuery> createUser(@RequestBody UserCommand userCommand) throws Exception {
 
         final List<User> foundUsers = userQueryFacade.search(

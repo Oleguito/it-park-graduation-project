@@ -5,6 +5,7 @@ export const Settings = {
         baseUrl: `https://lemur-7.cloud-iam.com`,
         tokenUrl: `https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token`,
         authUrl: `https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/auth`,
+        introspectUrl: `https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token/introspect`,
         realm: "grad-project",
         clientId: `auth-service` as string,
         redirectUrl: `http://localhost:3000/test/redirect`,
@@ -17,6 +18,9 @@ export const Settings = {
     backend: {
         userService: {
             baseUrl: "https://localhost:8088",
+            getUserCreateUrl: function () {
+                return this.baseUrl + "/api/users/create";
+            },
             getUserInfoUrl: function () {
                 return this.baseUrl + "/api/users/all";
             },

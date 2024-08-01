@@ -109,7 +109,7 @@ export const getTokens = () => {
 		console.log("We ARE HERE");
 		console.log(
             "NEXT_PUBLIC_GP_AUTHSERVICE_CLIENT_SECRET: ",
-            process.env
+            process.env.NEXT_PUBLIC_GP_AUTHSERVICE_CLIENT_SECRET
         );
 		const response = axios.post(
             TOKEN_URL,

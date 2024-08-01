@@ -26,6 +26,7 @@ public class JwtTokenValidatorFilter extends OncePerRequestFilter {
 
         if (authorization != null && authorization.startsWith("Bearer ")) {
             String token = authorization.substring(7);
+            System.out.println(token);
             isActive = keycloakClient.validateToken(token);
             System.out.println("is active: " +isActive);
 

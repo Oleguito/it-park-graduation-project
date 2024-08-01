@@ -22,6 +22,8 @@ export default function RootLayout() {
             Object.keys(tokens).length === 0
         )
 			authorize();
+
+		
 	}, [])
 	
 

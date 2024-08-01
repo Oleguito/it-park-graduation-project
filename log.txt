@@ -1,231 +1,102 @@
-2024-07-07 00:12:54 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 15600 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-07-07 00:12:54 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
-2024-07-07 00:12:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-07 00:12:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
-2024-07-07 00:12:55 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2024-07-07 00:12:55 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+2024-07-31 16:02:46 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.2 with PID 10072 (C:\Users\1\Desktop\1\11\it-park-graduation-project\backend\auth-service\target\classes started by 1 in C:\Users\1\Desktop\1\11\it-park-graduation-project)
+2024-07-31 16:02:46 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-31 16:02:46 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-31 16:02:47 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 91 ms. Found 1 JPA repository interface.
+2024-07-31 16:02:48 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8088 (https)
+2024-07-31 16:02:48 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-31 16:02:48 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-31 16:02:48 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-31 16:02:48 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2071 ms
+2024-07-31 16:02:48 INFO  liquibase.database log - Set default schema name to public
+2024-07-31 16:02:49 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-31 16:02:49 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-31 16:02:49 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-31 16:02:49 INFO  liquibase.util log - Run:                          0
+2024-07-31 16:02:49 INFO  liquibase.util log - Previously run:               3
+2024-07-31 16:02:49 INFO  liquibase.util log - Filtered out:                 0
+2024-07-31 16:02:49 INFO  liquibase.util log - -------------------------------
+2024-07-31 16:02:49 INFO  liquibase.util log - Total change sets:            3
+2024-07-31 16:02:49 INFO  liquibase.util log - Update summary generated
+2024-07-31 16:02:49 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-31 16:02:49 INFO  liquibase.command log - Command execution complete
+2024-07-31 16:02:49 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-31 16:02:49 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@55b45ea1
+2024-07-31 16:02:49 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-31 16:02:49 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-31 16:02:49 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-31 16:02:49 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-31 16:02:49 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-31 16:02:50 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-31 16:02:50 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31 16:02:51 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-31 16:02:51 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-31 16:02:51 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@6ddccee4
+2024-07-31 16:02:51 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-31 16:02:52 WARN  r.i.a.i.c.kafka.DefaultKafkaConfig getProducerProps - Бутстрапик: localhost:29092
+2024-07-31 16:02:52 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-31 16:02:52 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@323dd422, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f229f60, org.springframework.security.web.context.SecurityContextHolderFilter@59e02113, org.springframework.security.web.header.HeaderWriterFilter@28b995b8, org.springframework.web.filter.CorsFilter@3cdf8aa5, org.springframework.security.web.csrf.CsrfFilter@75f67ea7, org.springframework.security.web.authentication.logout.LogoutFilter@76b49d0, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@775c865f, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@4c635edc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a77d2a5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2de57397, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6dc010a2, org.springframework.security.web.session.SessionManagementFilter@420849f6, org.springframework.security.web.access.ExceptionTranslationFilter@73032867, org.springframework.security.web.access.intercept.AuthorizationFilter@67a6f2c4]
+2024-07-31 16:02:53 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-07-31 16:02:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31 16:02:53 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-31 16:02:53 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-31 16:02:53 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-07-07 00:12:55 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
-Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
-	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
-	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
-	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
-	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
-	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
-	... 8 common frames omitted
-Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
-	... 19 common frames omitted
-Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
-	at java.base/java.net.URL.openStream(URL.java:1161)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
-	... 20 common frames omitted
-2024-07-07 00:13:22 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 8372 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-07-07 00:13:22 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
-2024-07-07 00:13:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-07 00:13:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
-2024-07-07 00:13:23 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2024-07-07 00:13:23 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+2024-07-31 16:02:53 ERROR o.s.b.d.LoggingFailureAnalysisReporter report - 
 
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-07-07 00:13:23 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
-Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
-	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
-	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
-	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
-	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
-	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
-	... 8 common frames omitted
-Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
-	... 19 common frames omitted
-Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
-	at java.base/java.net.URL.openStream(URL.java:1161)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
-	... 20 common frames omitted
-2024-07-07 00:14:21 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 18768 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-07-07 00:14:21 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
-2024-07-07 00:14:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-07 00:14:22 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 35 ms. Found 1 JPA repository interface.
-2024-07-07 00:14:22 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2024-07-07 00:14:22 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+***************************
+APPLICATION FAILED TO START
+***************************
 
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-07-07 00:14:22 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
-Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
-	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
-	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
-	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
-	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
-	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
-	... 8 common frames omitted
-Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
-	... 19 common frames omitted
-Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
-	at java.base/java.net.URL.openStream(URL.java:1161)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
-	... 20 common frames omitted
-2024-07-07 00:15:24 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 19844 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-07-07 00:15:24 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
-2024-07-07 00:15:25 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-07 00:15:25 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
-2024-07-07 00:15:25 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
-2024-07-07 00:15:25 INFO  o.s.b.a.l.ConditionEvaluationReportLogger logMessage - 
+Description:
 
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-07-07 00:15:25 ERROR o.s.boot.SpringApplication reportFailure - Application run failed
-org.springframework.context.ApplicationContextException: Unable to start web server
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at ru.itpark.authservice.AuthServiceApplication.main(AuthServiceApplication.java:23)
-Caused by: java.lang.IllegalStateException: Unable to create key store: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:94)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.<init>(JksSslStoreBundle.java:57)
-	at org.springframework.boot.web.server.WebServerSslBundle.createJksKeyStoreBundle(WebServerSslBundle.java:90)
-	at org.springframework.boot.web.server.WebServerSslBundle.createKeyStore(WebServerSslBundle.java:189)
-	at org.springframework.boot.web.server.WebServerSslBundle.createStoreBundle(WebServerSslBundle.java:179)
-	at org.springframework.boot.web.server.WebServerSslBundle.get(WebServerSslBundle.java:174)
-	at org.springframework.boot.web.server.AbstractConfigurableWebServerFactory.getSslBundle(AbstractConfigurableWebServerFactory.java:225)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeSsl(TomcatServletWebServerFactory.java:373)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.customizeConnector(TomcatServletWebServerFactory.java:349)
-	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:210)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
-	... 8 common frames omitted
-Caused by: java.lang.IllegalStateException: Could not load store from 'certificate.p12'
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:123)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.createKeyStore(JksSslStoreBundle.java:89)
-	... 19 common frames omitted
-Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\certificate.p12 (Не удается найти указанный файл)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
-	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:189)
-	at java.base/java.net.URL.openStream(URL.java:1161)
-	at org.springframework.boot.ssl.jks.JksSslStoreBundle.loadKeyStore(JksSslStoreBundle.java:118)
-	... 20 common frames omitted
-2024-07-07 00:15:57 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 12936 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-07-07 00:15:57 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
-2024-07-07 00:15:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-07 00:15:57 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
-2024-07-07 00:15:58 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
-2024-07-07 00:15:58 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
-2024-07-07 00:15:58 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-07-07 00:15:58 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
-2024-07-07 00:15:58 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 812 ms
-2024-07-07 00:15:58 INFO  liquibase.database log - Set default schema name to public
-2024-07-07 00:15:58 INFO  liquibase.changelog log - Reading from public.databasechangelog
-2024-07-07 00:15:58 INFO  liquibase.changelog log - Reading from public.databasechangelog
-2024-07-07 00:15:58 INFO  liquibase.util log - UPDATE SUMMARY
-2024-07-07 00:15:58 INFO  liquibase.util log - Run:                          0
-2024-07-07 00:15:58 INFO  liquibase.util log - Previously run:               3
-2024-07-07 00:15:58 INFO  liquibase.util log - Filtered out:                 0
-2024-07-07 00:15:58 INFO  liquibase.util log - -------------------------------
-2024-07-07 00:15:58 INFO  liquibase.util log - Total change sets:            3
-2024-07-07 00:15:58 INFO  liquibase.util log - Update summary generated
-2024-07-07 00:15:58 INFO  liquibase.lockservice log - Successfully released change log lock
-2024-07-07 00:15:58 INFO  liquibase.command log - Command execution complete
-2024-07-07 00:15:58 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
-2024-07-07 00:15:58 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@361f1647
-2024-07-07 00:15:58 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
-2024-07-07 00:15:58 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-07 00:15:58 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-07-07 00:15:58 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
-2024-07-07 00:15:58 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-07 00:15:59 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-07 00:15:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-07 00:15:59 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-07 00:15:59 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
-2024-07-07 00:15:59 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@397a70d8
-2024-07-07 00:15:59 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
-2024-07-07 00:16:00 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-07 00:16:00 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d4f0fd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2092b072, org.springframework.security.web.context.SecurityContextHolderFilter@17c95612, org.springframework.security.web.header.HeaderWriterFilter@223c42b0, org.springframework.security.web.authentication.logout.LogoutFilter@71737478, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5634c26c, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@7d25913, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@92a584f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e23af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@504521ae, org.springframework.web.filter.CorsFilter@20a3e10c, org.springframework.security.web.session.SessionManagementFilter@6bac199f, org.springframework.security.web.access.ExceptionTranslationFilter@6ff5eeed, org.springframework.security.web.access.intercept.AuthorizationFilter@6bdc984]
-2024-07-07 00:16:01 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
-2024-07-07 00:16:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
-2024-07-07 00:16:01 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.867 seconds (process running for 4.228)
-2024-07-07 00:16:01 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+Web server failed to start. Port 8088 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8088 or configure this application to listen on another port.
+
+2024-07-31 16:03:13 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.2 with PID 19848 (C:\Users\1\Desktop\1\11\it-park-graduation-project\backend\auth-service\target\classes started by 1 in C:\Users\1\Desktop\1\11\it-park-graduation-project)
+2024-07-31 16:03:13 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-31 16:03:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-31 16:03:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interface.
+2024-07-31 16:03:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8088 (https)
+2024-07-31 16:03:15 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-31 16:03:15 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-31 16:03:15 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-31 16:03:15 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1957 ms
+2024-07-31 16:03:15 INFO  liquibase.database log - Set default schema name to public
+2024-07-31 16:03:16 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-31 16:03:16 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-31 16:03:16 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-31 16:03:16 INFO  liquibase.util log - Run:                          0
+2024-07-31 16:03:16 INFO  liquibase.util log - Previously run:               3
+2024-07-31 16:03:16 INFO  liquibase.util log - Filtered out:                 0
+2024-07-31 16:03:16 INFO  liquibase.util log - -------------------------------
+2024-07-31 16:03:16 INFO  liquibase.util log - Total change sets:            3
+2024-07-31 16:03:16 INFO  liquibase.util log - Update summary generated
+2024-07-31 16:03:16 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-31 16:03:16 INFO  liquibase.command log - Command execution complete
+2024-07-31 16:03:16 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-31 16:03:16 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@127d2aee
+2024-07-31 16:03:16 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-31 16:03:16 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-31 16:03:16 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-31 16:03:16 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-31 16:03:16 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-31 16:03:17 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-31 16:03:17 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31 16:03:18 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-31 16:03:18 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-31 16:03:18 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@e00f822
+2024-07-31 16:03:18 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-31 16:03:19 WARN  r.i.a.i.c.kafka.DefaultKafkaConfig getProducerProps - Бутстрапик: localhost:29092
+2024-07-31 16:03:19 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-31 16:03:19 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f05d5f2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3acae925, org.springframework.security.web.context.SecurityContextHolderFilter@4e6f3d08, org.springframework.security.web.header.HeaderWriterFilter@1bd98c48, org.springframework.web.filter.CorsFilter@67a6f2c4, org.springframework.security.web.csrf.CsrfFilter@49442e03, org.springframework.security.web.authentication.logout.LogoutFilter@38300447, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@311d8595, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@79cb8ffa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18f6ccf4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72dc9f9d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6bac199f, org.springframework.security.web.session.SessionManagementFilter@39bbe17c, org.springframework.security.web.access.ExceptionTranslationFilter@549561ab, org.springframework.security.web.access.intercept.AuthorizationFilter@7952348f]
+2024-07-31 16:03:20 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8088], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\1\.keystore] using alias [tomcat] with trust store [null]
+2024-07-31 16:03:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8088 (https) with context path ''
+2024-07-31 16:03:20 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 7.722 seconds (process running for 8.203)
+2024-07-31 16:03:20 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
 	acks = -1
 	auto.include.jmx.reporter = true
 	batch.size = 16384
@@ -315,56 +186,63 @@ Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJA
 	transactional.id = null
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-2024-07-07 00:16:01 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
-2024-07-07 00:16:01 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
-2024-07-07 00:16:01 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
-2024-07-07 00:16:01 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
-2024-07-07 00:16:01 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300561166
-2024-07-07 00:16:01 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
-2024-07-07 00:16:01 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 47002 with epoch 0
-2024-07-07 00:16:35 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-07 00:16:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
-2024-07-07 00:16:35 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
-2024-07-07 00:16:37 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.5 with PID 15740 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
-2024-07-07 00:16:37 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - The following 1 profile is active: "dev"
-2024-07-07 00:16:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-07 00:16:37 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
-2024-07-07 00:16:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8081 (https)
-2024-07-07 00:16:38 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
-2024-07-07 00:16:38 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-07-07 00:16:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
-2024-07-07 00:16:38 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 838 ms
-2024-07-07 00:16:38 INFO  liquibase.database log - Set default schema name to public
-2024-07-07 00:16:38 INFO  liquibase.changelog log - Reading from public.databasechangelog
-2024-07-07 00:16:38 INFO  liquibase.changelog log - Reading from public.databasechangelog
-2024-07-07 00:16:38 INFO  liquibase.util log - UPDATE SUMMARY
-2024-07-07 00:16:38 INFO  liquibase.util log - Run:                          0
-2024-07-07 00:16:38 INFO  liquibase.util log - Previously run:               3
-2024-07-07 00:16:38 INFO  liquibase.util log - Filtered out:                 0
-2024-07-07 00:16:38 INFO  liquibase.util log - -------------------------------
-2024-07-07 00:16:38 INFO  liquibase.util log - Total change sets:            3
-2024-07-07 00:16:38 INFO  liquibase.util log - Update summary generated
-2024-07-07 00:16:38 INFO  liquibase.lockservice log - Successfully released change log lock
-2024-07-07 00:16:38 INFO  liquibase.command log - Command execution complete
-2024-07-07 00:16:38 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
-2024-07-07 00:16:38 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@361f1647
-2024-07-07 00:16:38 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
-2024-07-07 00:16:38 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-07 00:16:38 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-07-07 00:16:38 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
-2024-07-07 00:16:38 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-07 00:16:39 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-07 00:16:39 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-07 00:16:39 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
-2024-07-07 00:16:39 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
-2024-07-07 00:16:39 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@397a70d8
-2024-07-07 00:16:39 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
-2024-07-07 00:16:40 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-07 00:16:40 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d4f0fd5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2092b072, org.springframework.security.web.context.SecurityContextHolderFilter@17c95612, org.springframework.security.web.header.HeaderWriterFilter@223c42b0, org.springframework.security.web.authentication.logout.LogoutFilter@71737478, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@5634c26c, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@7d25913, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@92a584f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36e23af, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@504521ae, org.springframework.web.filter.CorsFilter@20a3e10c, org.springframework.security.web.session.SessionManagementFilter@6bac199f, org.springframework.security.web.access.ExceptionTranslationFilter@6ff5eeed, org.springframework.security.web.access.intercept.AuthorizationFilter@6bdc984]
-2024-07-07 00:16:40 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8081], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\bibamet\.keystore] using alias [tomcat] with trust store [null]
-2024-07-07 00:16:40 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8081 (https) with context path ''
-2024-07-07 00:16:40 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 3.702 seconds (process running for 4.062)
-2024-07-07 00:16:40 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
+2024-07-31 16:03:20 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-31 16:03:20 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-31 16:03:20 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-31 16:03:20 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-31 16:03:20 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1722431000499
+2024-07-31 16:03:20 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: 65mjp055TsOdssymOdnBTQ
+2024-07-31 16:03:20 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 1014 with epoch 0
+2024-07-31 16:03:27 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-31 16:03:27 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Initializing Servlet 'dispatcherServlet'
+2024-07-31 16:03:27 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Completed initialization in 1 ms
+2024-07-31 16:04:06 WARN  com.zaxxer.hikari.pool.HikariPool run - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=47s642ms357µs700ns).
+2024-07-31 16:04:06 WARN  com.zaxxer.hikari.pool.HikariPool run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s669ms8µs900ns).
+2024-07-31 16:04:28 ERROR r.i.a.i.exceptions.ExceptionAdvice handleException - exception caught by advice Access Denied 
+2024-07-31 16:05:23 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31 16:05:23 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-31 16:05:23 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-31 16:05:42 INFO  r.i.a.AuthServiceApplication logStarting - Starting AuthServiceApplication using Java 17.0.2 with PID 13696 (C:\Users\1\Desktop\1\11\it-park-graduation-project\backend\auth-service\target\classes started by 1 in C:\Users\1\Desktop\1\11\it-park-graduation-project)
+2024-07-31 16:05:42 INFO  r.i.a.AuthServiceApplication logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+2024-07-31 16:05:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-31 16:05:43 INFO  o.s.d.r.c.RepositoryConfigurationDelegate registerRepositoriesIn - Finished Spring Data repository scanning in 87 ms. Found 1 JPA repository interface.
+2024-07-31 16:05:44 INFO  o.s.b.w.e.tomcat.TomcatWebServer initialize - Tomcat initialized with port 8088 (https)
+2024-07-31 16:05:44 INFO  o.a.catalina.core.StandardService log - Starting service [Tomcat]
+2024-07-31 16:05:44 INFO  o.a.catalina.core.StandardEngine log - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-07-31 16:05:44 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring embedded WebApplicationContext
+2024-07-31 16:05:44 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2036 ms
+2024-07-31 16:05:44 INFO  liquibase.database log - Set default schema name to public
+2024-07-31 16:05:45 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-31 16:05:45 INFO  liquibase.changelog log - Reading from public.databasechangelog
+2024-07-31 16:05:45 INFO  liquibase.util log - UPDATE SUMMARY
+2024-07-31 16:05:45 INFO  liquibase.util log - Run:                          0
+2024-07-31 16:05:45 INFO  liquibase.util log - Previously run:               3
+2024-07-31 16:05:45 INFO  liquibase.util log - Filtered out:                 0
+2024-07-31 16:05:45 INFO  liquibase.util log - -------------------------------
+2024-07-31 16:05:45 INFO  liquibase.util log - Total change sets:            3
+2024-07-31 16:05:45 INFO  liquibase.util log - Update summary generated
+2024-07-31 16:05:45 INFO  liquibase.lockservice log - Successfully released change log lock
+2024-07-31 16:05:45 INFO  liquibase.command log - Command execution complete
+2024-07-31 16:05:45 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Starting...
+2024-07-31 16:05:45 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1253b822
+2024-07-31 16:05:45 INFO  com.zaxxer.hikari.HikariDataSource getConnection - HikariPool-1 - Start completed.
+2024-07-31 16:05:45 INFO  o.h.jpa.internal.util.LogHelper logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-31 16:05:45 INFO  org.hibernate.Version logVersion - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-31 16:05:45 INFO  o.h.c.i.RegionFactoryInitiator initiateService - HHH000026: Second-level cache disabled
+2024-07-31 16:05:45 INFO  o.s.o.j.p.SpringPersistenceUnitInfo addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-31 16:05:47 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-31 16:05:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31 16:05:47 INFO  o.s.d.j.r.query.QueryEnhancerFactory <clinit> - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-07-31 16:05:47 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Starting...
+2024-07-31 16:05:47 INFO  com.zaxxer.hikari.pool.HikariPool checkFailFast - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@28e12bc5
+2024-07-31 16:05:47 INFO  com.zaxxer.hikari.HikariDataSource <init> - HikariPool-2 - Start completed.
+2024-07-31 16:05:48 WARN  r.i.a.i.c.kafka.DefaultKafkaConfig getProducerProps - Бутстрапик: localhost:29092
+2024-07-31 16:05:48 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-31 16:05:49 INFO  o.s.s.web.DefaultSecurityFilterChain <init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@688c914e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6f05d5f2, org.springframework.security.web.context.SecurityContextHolderFilter@73032867, org.springframework.security.web.header.HeaderWriterFilter@785aeba9, org.springframework.web.filter.CorsFilter@3acae925, org.springframework.security.web.csrf.CsrfFilter@793f2b41, org.springframework.security.web.authentication.logout.LogoutFilter@c7ec499, org.springframework.security.oauth2.server.resource.web.authentication.BearerTokenAuthenticationFilter@67c64b9c, ru.itpark.authservice.infrastructure.config.security.filters.JwtTokenValidatorFilter@42cf6349, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28b995b8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18f6ccf4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67a6f2c4, org.springframework.security.web.session.SessionManagementFilter@2c7e2c5, org.springframework.security.web.access.ExceptionTranslationFilter@75f67ea7, org.springframework.security.web.access.intercept.AuthorizationFilter@685f43ca]
+2024-07-31 16:05:49 INFO  o.a.t.u.net.NioEndpoint.certificate log - Connector [https-jsse-nio-8088], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\1\.keystore] using alias [tomcat] with trust store [null]
+2024-07-31 16:05:49 INFO  o.s.b.w.e.tomcat.TomcatWebServer start - Tomcat started on port 8088 (https) with context path ''
+2024-07-31 16:05:49 INFO  r.i.a.AuthServiceApplication logStarted - Started AuthServiceApplication in 8.213 seconds (process running for 8.686)
+2024-07-31 16:05:49 INFO  o.a.k.c.producer.ProducerConfig logAll - ProducerConfig values: 
 	acks = -1
 	auto.include.jmx.reporter = true
 	batch.size = 16384
@@ -454,13 +332,21 @@ Caused by: java.io.FileNotFoundException: C:\Users\bibamet\IdeaProjects\CourseJA
 	transactional.id = null
 	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
 
-2024-07-07 00:16:40 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
-2024-07-07 00:16:40 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
-2024-07-07 00:16:40 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
-2024-07-07 00:16:40 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
-2024-07-07 00:16:40 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1720300600670
-2024-07-07 00:16:40 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: u19whu_rQaqDRYLUux5ioA
-2024-07-07 00:16:40 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 47003 with epoch 0
-2024-07-07 00:17:07 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-07-07 00:17:07 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
-2024-07-07 00:17:07 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
+2024-07-31 16:05:49 INFO  o.a.k.clients.producer.KafkaProducer configureTransactionState - [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-07-31 16:05:50 INFO  o.a.k.c.producer.ProducerConfig logUnused - These configurations '[group.id]' were supplied but are not used yet.
+2024-07-31 16:05:50 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka version: 3.6.2
+2024-07-31 16:05:50 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka commitId: c4deed513057c94e
+2024-07-31 16:05:50 INFO  o.a.kafka.common.utils.AppInfoParser <init> - Kafka startTimeMs: 1722431150001
+2024-07-31 16:05:50 INFO  org.apache.kafka.clients.Metadata update - [Producer clientId=producer-1] Cluster ID: 65mjp055TsOdssymOdnBTQ
+2024-07-31 16:05:50 INFO  o.a.k.c.p.i.TransactionManager setProducerIdAndEpoch - [Producer clientId=producer-1] ProducerId set to 1015 with epoch 0
+2024-07-31 16:05:53 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-07-31 16:05:53 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Initializing Servlet 'dispatcherServlet'
+2024-07-31 16:05:53 INFO  o.s.web.servlet.DispatcherServlet initServletBean - Completed initialization in 2 ms
+2024-07-31 17:53:12 WARN  com.zaxxer.hikari.pool.HikariPool run - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=1h46m51s962ms611µs400ns).
+2024-07-31 17:53:12 WARN  com.zaxxer.hikari.pool.HikariPool run - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h46m51s962ms611µs600ns).
+2024-07-31 17:53:12 INFO  o.apache.kafka.clients.NetworkClient handleDisconnections - [Producer clientId=producer-1] Node -1 disconnected.
+2024-07-31 17:53:12 INFO  o.apache.kafka.clients.NetworkClient handleDisconnections - [Producer clientId=producer-1] Node 1 disconnected.
+2024-07-31 17:53:12 ERROR r.i.a.i.exceptions.ExceptionAdvice handleException - exception caught by advice Access Denied 
+2024-07-31 17:53:12 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-07-31 17:53:12 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown initiated...
+2024-07-31 17:53:12 INFO  com.zaxxer.hikari.HikariDataSource close - HikariPool-1 - Shutdown completed.
