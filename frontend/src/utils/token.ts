@@ -11,8 +11,8 @@ import JwtParseData from '@/types/jwt';
 const LOCAL_STORAGE_TOKEN_KEY = `auth-tokens-${process.env.NODE_ENV}`
 
 export type TokenType = {
-    access_token: string
-    refresh_token: string
+    accessToken: string
+    refreshToken: string
 }
 
 export type JwtPayloadType = {
@@ -57,7 +57,7 @@ export const updateToken = async () => {
         console.log('Пытаюсь обновить токены')
 
         await axios
-            .post<TokenType>(
+            .post<{access_token: string, refresh_token: string}>(
                 Settings.keycloak.tokenUrl, 
                 body, 
                 {
@@ -67,8 +67,8 @@ export const updateToken = async () => {
                 })
             .then(data => {
                 const tokens: TokenType = {
-                    access_token: data.data.access_token,
-                    refresh_token: data.data.refresh_token,
+                    accessToken: data.data.access_token,
+                    refreshToken: data.data.refresh_token,
                 }
                 saveTokenInLS(tokens)
             })
@@ -90,7 +90,7 @@ export const getTokens = (): TokenType => {
 
 export const getDecodedToken = (): JwtPayloadType => {
     // @ts-ignore
-    return jwt_decode(getTokens().access_token)
+    return jwt_decode(getTokens().accessToken)
 }
 
 export const getOrCreateTokens = (): TokenType | null => {
@@ -135,7 +135,7 @@ export function signOut() {
 }
 
 // export function introspectTokenIsActive(): boolean {
-//     const accessToken = getTokens().access_token
+//     const accessToken = getTokens().accessToken
     
 //     return false
 // }
@@ -169,7 +169,7 @@ export function signOut() {
 // export function getAccessTokenAndRefreshIfExpired(): string {
 
 
-//     const accessToken = getTokens().access_token
+//     const accessToken = getTokens().accessToken
 //     const active = introspectTokenIsActive()
 //     // console.log(`active: ${active}`);
     
@@ -181,5 +181,5 @@ export function signOut() {
 //     //     updateToken();
 //     // }
 
-//     return getTokens().access_token
+//     return getTokens().accessToken
 // }

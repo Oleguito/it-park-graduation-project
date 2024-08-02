@@ -73,7 +73,7 @@ const getAuthorizationCode = () => {
 }
 
 const saveTokensToLocalStorage = (access_token, refresh_token) => {
-	const tokens = { access_token, refresh_token }
+	const tokens = { accessToken: access_token, refreshToken: refresh_token }
 
 	window.localStorage.setItem(`auth-tokens-${process.env.NODE_ENV}`, JSON.stringify(tokens))
 }

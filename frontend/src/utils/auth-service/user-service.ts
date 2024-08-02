@@ -1,3 +1,5 @@
+"use client";
+
 import { Settings } from "@/constants/settings";
 import axios, { AxiosInstance } from "axios";
 import https from "https";
@@ -5,14 +7,18 @@ import { TokenType, getDecodedToken } from "../token";
 import { UserCreateQuery, UserQuery } from "@/types/UserQuery";
 import jwt_decode from "jwt-decode";
 import JwtParseData from "@/types/jwt";
-import axiosInstance, { getAxiosInstance } from "../utilities/axiosInstance";
+import { getAxiosInstance } from "../utilities/axiosInstance";
 
 const myhttpsAgent = new https.Agent({
   rejectUnauthorized: false,
 });
 
 export const createUserInBackend = () => {
-  const token = (JSON.parse(localStorage.getItem(`auth-tokens-${process.env.NODE_ENV}`)) as TokenType).access_token;
+  const token = (
+    JSON.parse(
+      localStorage.getItem(`auth-tokens-${process.env.NODE_ENV}`)
+    ) as TokenType
+  ).accessToken;
   const tokenData: JwtParseData = jwt_decode(token);
 
   console.log("tokenData: ", tokenData);
@@ -24,40 +30,23 @@ export const createUserInBackend = () => {
     role: "user",
   };
 
-//   var tokens: TokenType = JSON.parse(localStorage.getItem("token"));
-//   var axiosInstance: AxiosInstance = getAxiosInstance(Settings.backend.userService.getUserCreateUrl());
-//   console.log("Axios instance:", axiosInstance.interceptors)
-//   console.log("Axios request:", axiosInstance.)
-  const response = axiosInstance.post("", userQuery,
-    // {
-    // httpsAgent: myhttpsAgent,
-    // headers: {
-    //   "Content-Type": "application/json",
-    // //   Authorization: `Bearer ${token}`,
-    // }
-    // ,
-//   }
-).then((response) => {
-    console.log("createUserInBackend: ", response);
-  })
-  .catch((error) => {
-    console.log(`createUserInBackend: ${error}`);
-  });;
+  var axiosInstance: AxiosInstance = getAxiosInstance(
+    Settings.backend.userService.getUserCreateUrl()
+  );
+  const response = axiosInstance
+    .post("", userQuery, {
+      httpsAgent: myhttpsAgent,
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .then((response) => {
+      console.log("createUserInBackend: ", response);
+    })
+    .catch((error) => {
+      console.log(`createUserInBackend: ${error}`);
+    });
 
-//   const response = axios
-//     .post(Settings.backend.userService.getUserCreateUrl(), userQuery, {
-//       httpsAgent: myhttpsAgent,
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${tokens.access_token}`,
-//       },
-//     })
-//     .then((response) => {
-//       console.log("createUserInBackend: ", response);
-//     })
-//     .catch((error) => {
-//       console.log(`createUserInBackend: ${error}`);
-//     });
   return response;
 };
 
