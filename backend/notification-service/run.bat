@@ -10,5 +10,5 @@ set GP_NOTIFICATION_SERVICE_DB_PASSWORD=12345
 rem mvn liquibase:update -P include-liquibase-plugin
 
 rem cls
-call mvn clean package
+rem call mvn clean package
 call mvn spring-boot:run

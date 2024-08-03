@@ -2,7 +2,7 @@ CREATE SEQUENCE IF NOT EXISTS notifications_id_seq;
 
 CREATE TABLE notifications (
   id bigint PRIMARY KEY default nextval('notifications_id_seq'),
-  user_id INT NOT NULL,
+  user_id bigint NOT NULL,
   title VARCHAR(255) NOT NULL,
   message TEXT NOT NULL,
   type VARCHAR(50) NOT NULL,
