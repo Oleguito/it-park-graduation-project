@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: OlSwag
+      changes:
+        - sqlFile:
+            path: db/changelog/2024-08-01/init-schema.sql

@@ -8,6 +8,7 @@ import { UserCreateQuery, UserQuery } from "@/types/UserQuery";
 import jwt_decode from "jwt-decode";
 import JwtParseData from "@/types/jwt";
 import { getAxiosInstance } from "../utilities/axiosInstance";
+import { dumbAxiosInstance } from "../utilities/axiosInstance";
 
 const myhttpsAgent = new https.Agent({
   rejectUnauthorized: false,
@@ -22,6 +23,7 @@ export const createUserInBackend = () => {
   const tokenData: JwtParseData = jwt_decode(token);
 
   console.log("tokenData: ", tokenData);
+  console.log(tokenData.exp * 1000 - new Date().getTime());
 
   const userQuery: UserCreateQuery = {
     fullName: tokenData.name,
@@ -33,6 +35,7 @@ export const createUserInBackend = () => {
   var axiosInstance: AxiosInstance = getAxiosInstance(
     Settings.backend.userService.getUserCreateUrl()
   );
+
   const response = axiosInstance
     .post("", userQuery, {
       httpsAgent: myhttpsAgent,
@@ -48,6 +51,43 @@ export const createUserInBackend = () => {
     });
 
   return response;
+};
+
+export const createUserInBackend2 = () => {
+    const token = (
+        JSON.parse(
+            localStorage.getItem(`auth-tokens-${process.env.NODE_ENV}`)
+        ) as TokenType
+    ).accessToken;
+    const tokenData: JwtParseData = jwt_decode(token);
+
+    console.log("tokenData: ", tokenData);
+    console.log(tokenData.exp * 1000 - new Date().getTime());
+
+    const userQuery: UserCreateQuery = {
+        fullName: tokenData.name,
+        email: tokenData.email,
+        login: tokenData.preferred_username,
+        role: "user",
+    };
+
+    var axiosInstance: AxiosInstance = dumbAxiosInstance;
+
+    const response = axiosInstance
+        .post("", userQuery, {
+            httpsAgent: myhttpsAgent,
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then((response) => {
+            console.log("createUserInBackend: ", response);
+        })
+        .catch((error) => {
+            console.log(`createUserInBackend: ${error}`);
+        });
+
+    return response;
 };
 
 export const fetchUserInfo = () => {

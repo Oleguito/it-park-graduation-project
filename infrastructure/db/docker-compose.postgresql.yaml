@@ -17,7 +17,6 @@ services:
       - ./dbroot:/root
       - ./dbroot/pssqldump.sql:/docker-entrypoint-initdb.d/dump.sql
       - ./dbroot/init.sql:/docker-entrypoint-initdb.d/init.sql
-
     networks:
       - backend
 

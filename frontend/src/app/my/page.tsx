@@ -14,7 +14,7 @@ import { Settings } from "@/constants/settings";
 import axios from "axios";
 //import {UserQuery} from "@/types/UserQuery";
 import { ContextMenuSeparator } from "@radix-ui/react-context-menu";
-import { createUserInBackend } from "@/utils/auth-service/user-service";
+import { createUserInBackend, createUserInBackend2 } from "@/utils/auth-service/user-service";
 
 
 const MyPage = () => {
@@ -87,7 +87,7 @@ const MyPage = () => {
                     </Button>
                 </div>
             </div>
-            <Button onClick={(e) => { createUserInBackend(); }}>Сделать что-то</Button>
+            <Button onClick={(e) => { createUserInBackend2(); }}>Сделать что-то</Button>
         </>
     );
 }

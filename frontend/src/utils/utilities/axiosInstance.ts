@@ -13,11 +13,6 @@ import { Token } from "axios-jwt/dist/src/Token";
 import { Settings } from "@/constants/settings";
 import { TokenType } from "../token";
 
-// const axiosInstance = axios.create({
-//   //   baseURL: Settings.backend.userService.getUserCreateUrl(),
-//   baseURL: "https://localhost:8088"
-// });
-
 export type AuthConfig = {
   grant_type: string;
   refresh_token: string;
@@ -71,27 +66,14 @@ export function getAxiosInstance(baseURL: string): AxiosInstance {
 
 }
 
-// applyAuthTokenInterceptor(axiosInstance, {
-//   getStorage: getBrowserLocalStorage,
-//   header: "Authorization",
-//   headerPrefix: "Bearer ",
-//   tokenExpireFudge: 1,
-//   requestRefresh: refreshTokens,
-// });
+export const dumbAxiosInstance: AxiosInstance = axios.create({
+    baseURL: Settings.backend.userService.getUserCreateUrl(),
+});
 
-// axiosInstance.interceptors.request.use(
-//   (config) => {
-//     const tokens = JSON.parse(
-//       localStorage.getItem(`auth-tokens-${process.env.NODE_ENV}`)
-//     ) as TokenType;
-//     console.log("Request config перед отправкой:", config);
-//     console.log("Токен перед отправкой:", tokens?.accessToken);
-//     return config;
-//   },
-//   (error) => {
-//     console.error("Request error:", error);
-//     return Promise.reject(error);
-//   }
-// );
-
-// export default axiosInstance;
+applyAuthTokenInterceptor(dumbAxiosInstance, {
+    getStorage: getBrowserLocalStorage,
+    header: "Authorization",
+    headerPrefix: "Bearer ",
+    tokenExpireFudge: 1,
+    requestRefresh: refreshTokens,
+});

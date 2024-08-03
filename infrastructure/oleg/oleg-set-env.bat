@@ -17,3 +17,7 @@ setx KEYCLOAK_DEAD 1
 setx GP_PROJECTSERVICE_DB_URL jdbc:postgresql://localhost:5432/projectservicedb
 setx GP_PROJECTSERVICE_DB_USERNAME projectservice
 setx GP_PROJECTSERVICE_DB_PASSWORD 12345
+
+setx GP_NOTIFICATION_SERVICE_DB_URL jdbc:postgresql://localhost:5432/notificationservicedb
+setx GP_NOTIFICATION_SERVICE_DB_USERNAME notificationservice
+setx GP_NOTIFICATION_SERVICE_DB_PASSWORD 12345
