@@ -8,10 +8,6 @@ server:
 
 
 spring:
-  kafka:
-    bootstrap-servers: "${KAFKA_BOOTSTRAP_SERVER:localhost:29092}"
-    consumer:
-      group-id: 'my-group'
   ssl:
     bundle:
       jks:
@@ -29,7 +25,7 @@ spring:
           issuer-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project
           jwk-uri: https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/certs
   liquibase:
-#    enabled: false
+    enabled: false
     user: authservice
     password: 12345
     change-log: 'db/changelog/db.changelog-master.yaml'

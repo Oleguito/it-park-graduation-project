@@ -4,4 +4,5 @@ databaseChangeLog:
       author: oleguitoswagbucks
       changes:
         - sqlFile:
-            path: db/changelog/2024-05-27/init-schema.sql
+            path: ./init-schema.sql
+            relativeToChangelogFile: true

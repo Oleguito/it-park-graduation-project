@@ -1,35 +1,34 @@
-version: '3'
+version: '3.8'
+
 services:
-  maven:
+  notification-service:
     restart: always
+    build:
+      context: .
+      args:
+        - DB_NAME=notificationservicedb
+        - DB_PORT=5432
+        - DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/notificationservicedb
+        - DB_USER=notificationservice
+        - DB_PASSWORD=12345
     ports:
-      - "8088:8088"
-    image: maven:3.8.3-openjdk-17
-    command: mvn clean protobuf:compile protobuf:compile-custom package spring-boot:run -DskipTests
-#    command: mvn package
-    volumes:
-      - .:/usr/src/mymaven
-      - $HOME/.m2:/root/.m2
-#      - ./target:/usr/src/mymaven/target
-    working_dir: /usr/src/mymaven
-    stdin_open: true
-    tty: true
+      - 8089:8089
     environment:
-      - GP_AUTHSERVICE_DB_URL=jdbc:postgresql://collaborative-project-postgres-db/authservicedb
-      - GP_AUTHSERVICE_DB_USERNAME=authservice
-      - GP_AUTHSERVICE_DB_PASSWORD=12345
-      - GP_AUTHSERVICE_KEYSTORE_PASSWORD=1PwCgNAb
-      - GP_KEYCLOAK_ADMIN_PASSWORD=nvwS6vK#IaE@Ds4RveKs
-      - GP_AUTHSERVICE_CLIENT_SECRET=7TCb2UhbgVpyh186oC6VMe9srakq16Bp
-      - KEYCLOAK_DEAD=0
+      - DB_NAME=notificationservicedb
+      - DB_PORT=5432
+      - DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/notificationservicedb
+      - DB_USER=notificationservice
+      - DB_PASSWORD=12345
       - KAFKA_BOOTSTRAP_SERVER=kafka:9092
+      - GP_NOTIFICATION_SERVICE_DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/notificationservicedb
     depends_on:
       - collaborative-project-postgres-db
       - kafka
+      - zookeeper
     networks:
       backend: {}
 
-  liquibase-auth:
+  liquibase-notification:
     image: liquibase/liquibase:alpine
     working_dir: /liquibase/changelog
     depends_on:
@@ -38,8 +37,8 @@ services:
     entrypoint: [ "sh", "-c", "sleep 5 && echo \"DB_URL=$LIQUIBASE_COMMAND_URL\" && echo \"DB_USER=${LIQUIBASE_COMMAND_USERNAME}\" && echo \"DB_PASSWORD=${LIQUIBASE_COMMAND_PASSWORD}\" && liquibase --url=${LIQUIBASE_COMMAND_URL} --changeLogFile=${LIQUIBASE_COMMAND_CHANGELOG_FILE} --username=${LIQUIBASE_COMMAND_USERNAME} --password=${LIQUIBASE_COMMAND_PASSWORD} --log-level=INFO update" ]
     environment:
       - LIQUIBASE_COMMAND_CHANGELOG_FILE=db.changelog-master.yaml
-      - LIQUIBASE_COMMAND_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/authservicedb
-      - LIQUIBASE_COMMAND_USERNAME=authservice
+      - LIQUIBASE_COMMAND_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/notificationservicedb
+      - LIQUIBASE_COMMAND_USERNAME=notificationservice
       - LIQUIBASE_COMMAND_PASSWORD=12345
     volumes:
       - ./src/main/resources/db/changelog:/liquibase/changelog

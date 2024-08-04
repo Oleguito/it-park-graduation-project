@@ -1,7 +1,10 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/2024-05-27/db-cumulative-changelog.yaml
+      file: ./2024-05-27/db-cumulative-changelog.yaml
+      relativeToChangelogFile: true
   - include:
-      file: db/changelog/2024-06-09/db-cumulative-changelog.yaml
+      file: ./2024-06-09/db-cumulative-changelog.yaml
+      relativeToChangelogFile: true
   - include:
-      file: db/changelog/2024-06-21/db-cumulative-changelog.yaml
+      file: ./2024-06-21/db-cumulative-changelog.yaml
+      relativeToChangelogFile: true

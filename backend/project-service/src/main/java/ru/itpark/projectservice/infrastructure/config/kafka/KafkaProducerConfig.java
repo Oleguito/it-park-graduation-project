@@ -1,4 +1,4 @@
-package ru.itpark.authservice.infrastructure.config.kafka;
+package ru.itpark.projectservice.infrastructure.config.kafka;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
