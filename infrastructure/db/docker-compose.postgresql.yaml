@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   collaborative-project-postgres-db:
     container_name: collaborative-project-postgres-db

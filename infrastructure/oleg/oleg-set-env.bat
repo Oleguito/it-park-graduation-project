@@ -12,7 +12,7 @@ rem setx GP_KEYCLOAK_ADMIN_PASSWORD HVG-Rqf-5PV-Lp6 dppmai
 setx GP_AUTHSERVICE_CLIENT_SECRET 7TCb2UhbgVpyh186oC6VMe9srakq16Bp
 rem setx GP_AUTHSERVICE_CLIENT_SECRET HmdTDuZWiH39jZlFsXPwuHqUcqgdXcV9 dppmai
 
-setx KEYCLOAK_DEAD 1
+rem setx KEYCLOAK_DEAD 1
 
 setx GP_PROJECTSERVICE_DB_URL jdbc:postgresql://localhost:5432/projectservicedb
 setx GP_PROJECTSERVICE_DB_USERNAME projectservice
