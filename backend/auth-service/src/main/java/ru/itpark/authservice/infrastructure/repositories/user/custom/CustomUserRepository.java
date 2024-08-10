@@ -1,26 +1,28 @@
 package ru.itpark.authservice.infrastructure.repositories.user.custom;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import static ru.itpark.authservice.Tables.USERS;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.jooq.Condition;
 import org.jooq.DSLContext;
 import org.jooq.JSONB;
 import org.jooq.impl.DSL;
 import org.springframework.stereotype.Repository;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import ru.itpark.authservice.domain.user.Role;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.valueobjects.DateInfo;
 import ru.itpark.authservice.domain.user.valueobjects.Language;
 import ru.itpark.authservice.presentation.web.users.dto.query.contracts.UserSearchParams;
 import ru.itpark.authservice.tables.records.UsersRecord;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static ru.itpark.authservice.Tables.USERS;
 
 @Repository
 @RequiredArgsConstructor

@@ -1,19 +1,22 @@
 package ru.itpark.projectservice.presentation;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import ru.itpark.projectservice.application.service.ProjectService;
-import ru.itpark.projectservice.domain.Project;
 import ru.itpark.projectservice.domain.valueobjects.DateInfo;
 import ru.itpark.projectservice.domain.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 import ru.itpark.projectservice.presentation.projects.dto.query.ProjectQuery;
-
-import java.net.URI;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @RestController
 @RequestMapping("/projects")

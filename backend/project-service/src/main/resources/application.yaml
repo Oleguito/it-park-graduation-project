@@ -32,3 +32,9 @@ server:
 grpc:
   server:
     port: 9090
+
+logging:
+  level:
+    root: 'INFO'
+    # org.springframework.web: 'DEBUG'
+    # ru.itpark.projectservice: 'DEBUG'

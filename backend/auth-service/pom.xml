@@ -201,6 +201,12 @@
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+
 
 
         <!--        <dependency>-->
@@ -304,8 +310,7 @@
                 <configuration>
                     <jdbc>
                         <driver>org.postgresql.Driver</driver>
-
-                      <url>${env.GP_AUTHSERVICE_DB_URL}</url>
+                        <url>${env.GP_AUTHSERVICE_DB_URL}</url>
                         <username>${env.GP_AUTHSERVICE_DB_USERNAME}</username>
                         <password>${env.GP_AUTHSERVICE_DB_PASSWORD}</password>
                     </jdbc>
@@ -382,6 +387,25 @@
                     </execution>
                 </executions>
             </plugin>
+             <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.6.0</version>
+            <executions>
+            <execution>
+                <id>add-source</id>
+                <phase>generate-sources</phase>
+                <goals>
+                <goal>add-source</goal>
+                </goals>
+                <configuration>
+                <sources>
+                    <source>${project.basedir}/target/generate-sources/jooq</source>
+                </sources>
+                </configuration>
+            </execution>
+            </executions>
+        </plugin>
         </plugins>
     </build>
 

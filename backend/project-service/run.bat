@@ -1,10 +1,16 @@
 chcp 65001
 
-cls
-call mvn clean
 
-cls
+
+call mvn clean 
+
+rem call mvn clean package -P skip-kafka-tests
+rem -DskipTests
+
+
 call mvn -P include-liquibase-plugin liquibase:update
+
+
 
 rem cls
 rem call mvn protobuf:compile
@@ -13,6 +19,7 @@ rem cls
 rem call mvn protobuf:compile-custom
 
 cls
+
 call mvn spring-boot:run
 
 rem mvn jooq-codegen:generate

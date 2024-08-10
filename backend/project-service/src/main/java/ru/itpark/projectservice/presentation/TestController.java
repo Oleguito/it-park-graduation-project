@@ -1,7 +1,13 @@
 package ru.itpark.projectservice.presentation;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import ru.itpark.projectservice.application.service.KafkaService;
 
 @RestController
@@ -14,8 +20,15 @@ public class TestController {
 
 
     @PostMapping
-    public void kafkaWorks(@RequestParam(name = "message") String message) {
+    public void kafkaWorks(@RequestBody String message) {
 
+        System.out.println("\n\n\nmessage = " + message);
         kafkaService.sendMessage("notification-topic", message);
+    }
+
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @CrossOrigin
+    public String helloWorld() {
+        return "Hello, World!";
     }
 }

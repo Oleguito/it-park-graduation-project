@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/backend/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/backend/auth-service/auth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/it-park-graduation-project.iml" filepath="$PROJECT_DIR$/.idea/it-park-graduation-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/backend/project-service/project-service.iml" filepath="$PROJECT_DIR$/backend/project-service/project-service.iml" />
     </modules>
   </component>
 </project>

@@ -1,10 +1,6 @@
 package ru.itpark.notificationservice.application.service.kafka;
 
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.Value;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
