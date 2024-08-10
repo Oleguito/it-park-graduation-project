@@ -33,6 +33,9 @@ grpc:
   server:
     port: 9090
 
+services:
+  auth-service:
+    addr: ${AUTH_SERVICE_URL:localhost:8088}
 logging:
   level:
     root: 'INFO'

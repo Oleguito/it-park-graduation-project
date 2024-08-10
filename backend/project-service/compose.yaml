@@ -10,6 +10,7 @@ services:
         - DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/projectservicedb
         - DB_USER=projectservice
         - DB_PASSWORD=12345
+        - AUTH_SERVICE_URL=auth-service
     ports:
       - 8087:8087
 #      - 9090:9090
@@ -20,6 +21,7 @@ services:
       - DB_USER=projectservice
       - DB_PASSWORD=12345
       - KAFKA_BOOTSTRAP_SERVER=kafka:9092
+      - AUTH_SERVICE_URL=auth-service
     depends_on:
       - collaborative-project-postgres-db
       - kafka
