@@ -1,6 +1,7 @@
 package ru.itpark.projectservice.application.service;
 
 import lombok.*;
+import ru.itpark.sharedlib.InvitationMessage;
 import ru.itpark.sharedlib.NotificationMessage;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -21,11 +22,12 @@ public class KafkaService {
     private String notificationGroup;
 
     private final KafkaTemplate<String, String> kafkaTemplate;
+    private final MessageConstructor messageConstructor;
+    private final KafkaTemplate<String, InvitationMessage> kafkaTemplateNM;
 
-    private final KafkaTemplate<String, NotificationMessage> kafkaTemplateNM;
-
-    public void sendNotificationMessage(String topic, NotificationMessage message) {
+    public void sendNotificationMessage(String topic, InvitationMessage message) {
         int hash = Objects.hash(message);
+        messageConstructor.processNotification(message);
         kafkaTemplate.send(notificationTopic, 
             String.valueOf(hash), 
             "Message was: " + message.toString());

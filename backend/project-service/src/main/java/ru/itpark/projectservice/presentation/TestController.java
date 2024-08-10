@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import ru.itpark.projectservice.application.service.KafkaService;
+import ru.itpark.sharedlib.InvitationMessage;
 import ru.itpark.sharedlib.NotificationMessage;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,8 +38,8 @@ public class TestController {
     }
 
     @RequestMapping(value = "/message", method=RequestMethod.POST)
-    public void requestMethodName(@RequestBody NotificationMessage notificationMessage) {
-        kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
+    public void requestMethodName(@RequestBody InvitationMessage invitationMessage) {
+        kafkaService.sendNotificationMessage("notification-topic", invitationMessage);
     }
     
 }

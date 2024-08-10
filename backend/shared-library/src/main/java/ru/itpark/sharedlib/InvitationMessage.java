@@ -18,11 +18,11 @@ public class InvitationMessage {
     private String projectCreatorEmail;
     private String invitedUserEmail;
     private String invitationMessage;
+    private String type;
     
     private Long projectId;
     private String projectTitle;
     private String projectStatus;
     private String projectDescription;
 
-    generateMessage();
 }
