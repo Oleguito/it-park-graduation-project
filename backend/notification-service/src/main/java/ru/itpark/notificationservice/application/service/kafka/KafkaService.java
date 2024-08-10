@@ -6,6 +6,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
+import ru.itpark.sharedlib.NotificationMessage;
+
 @Service
 @EnableKafka
 public class KafkaService {
@@ -16,6 +18,11 @@ public class KafkaService {
     @KafkaListener(topics = topic, groupId = groupId)
     public void receiveNotification(@Payload ConsumerRecord<String, String> msg) {
         System.out.println(String.format("Полученное сообщение: %s", msg));
+    }
+
+    @KafkaListener(topics = topic, groupId = groupId)
+    public void receiveNotificationMessage(@Payload ConsumerRecord<String, NotificationMessage> msg) {
+        System.out.println(String.format("Полученное сообщение (объект): %s", msg));
     }
 
 }

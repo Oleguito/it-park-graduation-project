@@ -3,12 +3,15 @@ package ru.itpark.notificationservice.presentation.notification;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import ru.itpark.notificationservice.application.service.kafka.KafkaService;
 import ru.itpark.notificationservice.application.service.notification.NotificationService;
 import ru.itpark.notificationservice.domain.notification.Notification;
 import ru.itpark.notificationservice.infrastructure.config.mapper.mapstruct.NotificationMapper;
 import ru.itpark.notificationservice.presentation.notification.dto.command.NotificationCreateCommand;
 import ru.itpark.notificationservice.presentation.notification.dto.command.NotificationUpdateCommand;
 import ru.itpark.notificationservice.presentation.notification.dto.query.NotificationQuery;
+import ru.itpark.sharedlib.NotificationMessage;
 
 import java.util.List;
 
@@ -20,8 +23,8 @@ public class NotificationController {
     private final NotificationService notificationService;
 
     private final NotificationMapper notificationMapper;
-
-
+    
+    
     public NotificationController(NotificationService notificationService, NotificationMapper notificationMapper) {
         this.notificationService = notificationService;
         this.notificationMapper = notificationMapper;

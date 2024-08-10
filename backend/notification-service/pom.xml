@@ -92,7 +92,16 @@
 		</dependency>
 
 
+		<!-- Shared library to be used by kafka services
+			 Or maybe something else -->
 
+		<dependency>
+            <groupId>ru.itpark.sharedlib</groupId>
+            <artifactId>shared-library</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+		
 
 	</dependencies>
 

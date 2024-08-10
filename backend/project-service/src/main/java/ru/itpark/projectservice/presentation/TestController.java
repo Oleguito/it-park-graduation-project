@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import ru.itpark.projectservice.application.service.KafkaService;
+import ru.itpark.sharedlib.NotificationMessage;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/kafka")
@@ -31,4 +35,10 @@ public class TestController {
     public String helloWorld() {
         return "Hello, World!";
     }
+
+    @RequestMapping(value = "/message", method=RequestMethod.POST)
+    public void requestMethodName(@RequestBody NotificationMessage notificationMessage) {
+        kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
+    }
+    
 }
