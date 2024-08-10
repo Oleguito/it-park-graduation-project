@@ -9,8 +9,10 @@ import { Button } from "../ui/button";
 
 const InvitationItem = () => {
     const props: Props = {
-        projectId: 2934804023,
-        projectDescription: `Описание проекта \n Это страница с ПРОЕКТАМИ!!`,
+        id: 2934804023,
+        description: `Описание проекта \n Это страница с ПРОЕКТАМИ!!`,
+        title: "Вот такое название мзфк",
+        status: "NEW"
     };
 
 

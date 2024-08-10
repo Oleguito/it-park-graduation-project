@@ -1,6 +1,6 @@
 package ru.itpark.projectservice.infrastructure.config.kafka;
 
-import ru.itpark.sharedlib.NotificationMessage;
+import ru.itpark.sharedlib.InvitationMessage;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +20,11 @@ public class KafkaProducerConfig extends DefaultKafkaConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, NotificationMessage> kafkaTemplateNM() {
+    public KafkaTemplate<String, InvitationMessage> kafkaTemplateNM() {
         return new KafkaTemplate<>(producerFactoryNM());
     }
 
-    public DefaultKafkaProducerFactory<String, NotificationMessage> producerFactoryNM() {
+    public DefaultKafkaProducerFactory<String, InvitationMessage> producerFactoryNM() {
         return new DefaultKafkaProducerFactory<>(getProducerProps());
     }
 }

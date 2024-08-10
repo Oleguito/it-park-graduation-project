@@ -6,7 +6,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
-import ru.itpark.sharedlib.NotificationMessage;
+import ru.itpark.sharedlib.InvitationMessage;
 
 @Configuration
 public class KafkaConsumer extends DefaultKafkaConfig {
@@ -26,7 +26,7 @@ public class KafkaConsumer extends DefaultKafkaConfig {
     }
 
     @Bean
-    public ConsumerFactory<String, NotificationMessage> consumerFactoryNM() {
+    public ConsumerFactory<String, InvitationMessage> consumerFactoryNM() {
         return new DefaultKafkaConsumerFactory<>(getConsumerPropsNM());
     }
 

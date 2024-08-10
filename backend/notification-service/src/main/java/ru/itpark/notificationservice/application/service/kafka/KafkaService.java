@@ -6,7 +6,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
-import ru.itpark.sharedlib.NotificationMessage;
+import ru.itpark.sharedlib.InvitationMessage;
 
 @Service
 @EnableKafka
@@ -21,7 +21,7 @@ public class KafkaService {
     }
 
     @KafkaListener(topics = topic, groupId = groupId)
-    public void receiveNotificationMessage(@Payload ConsumerRecord<String, NotificationMessage> msg) {
+    public void receiveNotificationMessage(@Payload ConsumerRecord<String, InvitationMessage> msg) {
         System.out.println(String.format("Полученное сообщение (объект): %s", msg));
     }
 

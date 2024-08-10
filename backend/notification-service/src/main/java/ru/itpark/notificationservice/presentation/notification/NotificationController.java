@@ -1,19 +1,26 @@
 package ru.itpark.notificationservice.presentation.notification;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import ru.itpark.notificationservice.application.service.kafka.KafkaService;
 import ru.itpark.notificationservice.application.service.notification.NotificationService;
 import ru.itpark.notificationservice.domain.notification.Notification;
 import ru.itpark.notificationservice.infrastructure.config.mapper.mapstruct.NotificationMapper;
 import ru.itpark.notificationservice.presentation.notification.dto.command.NotificationCreateCommand;
 import ru.itpark.notificationservice.presentation.notification.dto.command.NotificationUpdateCommand;
 import ru.itpark.notificationservice.presentation.notification.dto.query.NotificationQuery;
-import ru.itpark.sharedlib.NotificationMessage;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/notifications")
