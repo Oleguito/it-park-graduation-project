@@ -1,20 +1,26 @@
 package ru.itpark.projectservice.application.service.notificationproc;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
+import org.apache.kafka.common.errors.AuthenticationException;
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.util.MultiValueMap;
+import org.springframework.util.MultiValueMapAdapter;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import ru.itpark.authdto.dto.command.UserCommand;
 import ru.itpark.authdto.dto.query.contracts.UserSearchParams;
 import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
 import ru.itpark.sharedlib.InvitationMessage;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Component("invite")
 public class InviteNotificationProcessor implements NotificationProcessor {
@@ -30,13 +36,33 @@ public class InviteNotificationProcessor implements NotificationProcessor {
             return;
         }
 
+        HttpServletRequest req = null;
+
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes != null) {
+            req = attributes.getRequest();
+        }
+
+        String authorization = req.getHeader("Authorization");
+
+        if (!authorization.startsWith("Bearer ")) {
+            throw new AuthenticationException("Authorization header is incorrect");
+        }
+
         UserSearchParams byEmail = UserSearchParams.builder()
                 .email(notification.getInvitedUserEmail())
                 .build();
 
-        ResponseEntity<List<UserCommand>> findedUser = restTemplate.exchange(authUrl + "/search",
+        List<String> header = List.of(authorization);
+
+        Map<String, List<String>> headers = new HashMap<>();
+        headers.put("Authorization", header);
+
+        MultiValueMap<String, String > headersToRequest = new MultiValueMapAdapter<>(headers);
+
+        ResponseEntity<List<UserCommand>> findedUser = restTemplate.exchange(authUrl + "/api/users/search",
                 HttpMethod.POST,
-                new HttpEntity<>(byEmail),
+                new HttpEntity<>(byEmail, headersToRequest),
                 new ParameterizedTypeReference<List<UserCommand>>() {
                 });
 

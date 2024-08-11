@@ -59,6 +59,7 @@ public class KeycloakConfiguration {
 //        });
 
         http
+                .csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable())
                 .authorizeHttpRequests(
                         authorize -> authorize
                                 .anyRequest().permitAll()
