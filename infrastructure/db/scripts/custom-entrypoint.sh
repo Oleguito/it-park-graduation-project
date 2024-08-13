@@ -28,7 +28,7 @@ sleep 20
 
 # Create Kafka topic
 echo "Creating Kafka topic 'notification-topic'..."
-kafka-topics --create --topic notification-topic --partitions 10 --replication-factor 1 --if-not-exists --bootstrap-server localhost:9092
+kafka-topics --create --topic notification-topic --partitions 10 --replication-factor 1 --if-not-exists --bootstrap-server kafka:9092
 
 echo "Debug: Kafka topic creation command issued."
 

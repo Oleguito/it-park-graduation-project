@@ -5,12 +5,12 @@ services:
     ports:
       - "8088:8088"
     image: maven:3.8.3-openjdk-17
-    command: mvn clean protobuf:compile protobuf:compile-custom package spring-boot:run -DskipTests
-#    command: mvn package
+    command: mvn clean protobuf:compile protobuf:compile-custom package spring-boot:run -DskipTests jooq-codegen:generate
+    #    command: mvn package
     volumes:
       - .:/usr/src/mymaven
       - $HOME/.m2:/root/.m2
-#      - ./target:/usr/src/mymaven/target
+    #      - ./target:/usr/src/mymaven/target
     working_dir: /usr/src/mymaven
     stdin_open: true
     tty: true
