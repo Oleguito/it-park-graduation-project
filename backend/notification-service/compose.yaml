@@ -33,8 +33,7 @@ services:
     working_dir: /liquibase/changelog
     depends_on:
       - collaborative-project-postgres-db
-      - notification-service
-    entrypoint: [ "sh", "-c", "sleep 5 && echo \"DB_URL=$LIQUIBASE_COMMAND_URL\" && echo \"DB_USER=${LIQUIBASE_COMMAND_USERNAME}\" && echo \"DB_PASSWORD=${LIQUIBASE_COMMAND_PASSWORD}\" && liquibase --url=${LIQUIBASE_COMMAND_URL} --changeLogFile=${LIQUIBASE_COMMAND_CHANGELOG_FILE} --username=${LIQUIBASE_COMMAND_USERNAME} --password=${LIQUIBASE_COMMAND_PASSWORD} --log-level=INFO update" ]
+    entrypoint: [ "sh", "-c", "sleep 30 && echo \"DB_URL=$LIQUIBASE_COMMAND_URL\" && echo \"DB_USER=${LIQUIBASE_COMMAND_USERNAME}\" && echo \"DB_PASSWORD=${LIQUIBASE_COMMAND_PASSWORD}\" && liquibase --url=${LIQUIBASE_COMMAND_URL} --changeLogFile=${LIQUIBASE_COMMAND_CHANGELOG_FILE} --username=${LIQUIBASE_COMMAND_USERNAME} --password=${LIQUIBASE_COMMAND_PASSWORD} --log-level=INFO update" ]
     environment:
       - LIQUIBASE_COMMAND_CHANGELOG_FILE=db.changelog-master.yaml
       - LIQUIBASE_COMMAND_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/notificationservicedb
