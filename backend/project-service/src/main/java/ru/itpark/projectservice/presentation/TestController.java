@@ -1,9 +1,15 @@
 package ru.itpark.projectservice.presentation;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
 import ru.itpark.projectservice.application.service.KafkaService;
-import ru.itpark.sharedlib.InvitationMessage;
+import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 
 @RestController

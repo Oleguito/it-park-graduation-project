@@ -1,10 +1,11 @@
 package ru.itpark.projectservice.application.service.notificationproc;
 
-import org.springframework.stereotype.Component;
-import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
-import ru.itpark.sharedlib.InvitationMessage;
-
 import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+
+import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
+import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 @Component("exclude")
 public class ExcludeNotificationProcessor implements NotificationProcessor {

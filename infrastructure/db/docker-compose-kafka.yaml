@@ -28,10 +28,10 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
-    volumes:
-      - ./scripts/custom-entrypoint.sh:/scripts/custom-entrypoint.sh:ro
-    entrypoint: >
-        sh -c "echo 'Running custom entrypoint'; ls -la /scripts; /scripts/custom-entrypoint.sh"
+    # volumes:
+    #   - ./scripts/custom-entrypoint.sh:/scripts/custom-entrypoint.sh:ro
+    # entrypoint: >
+    #     bash -c "echo 'Running custom entrypoint'; ls -la /scripts; /scripts/custom-entrypoint.sh"
     networks:
       backend: {}
 

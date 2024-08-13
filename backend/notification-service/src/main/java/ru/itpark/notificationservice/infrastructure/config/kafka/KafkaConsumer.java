@@ -6,7 +6,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
-import ru.itpark.sharedlib.InvitationMessage;
+import ru.itpark.notificationservice.infrastructure.kafka.InvitationMessage;
 
 @Configuration
 public class KafkaConsumer extends DefaultKafkaConfig {

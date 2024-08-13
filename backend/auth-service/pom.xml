@@ -24,6 +24,8 @@
         <db.driver></db.driver>
         <db.username></db.username>
         <db.password></db.password>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
     <dependencies>
 <!--        <dependency>-->
@@ -63,11 +65,11 @@
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>3.0.0</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -79,15 +81,20 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>1.4.2.Final</version>
+            <version>${mapstruct.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <version>1.4.2.Final</version>
+            <version>${mapstruct.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -206,11 +213,6 @@
             <artifactId>build-helper-maven-plugin</artifactId>
             <version>3.6.0</version>
         </dependency>
-        <dependency>
-            <groupId>ru.itpark</groupId>
-            <artifactId>auth-dto</artifactId>
-            <version>v1.0</version>
-        </dependency>
 
 
 
@@ -222,11 +224,7 @@
 <!--            <scope>import</scope>-->
 <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>org.mapstruct</groupId>-->
-<!--            <artifactId>mapstruct</artifactId>-->
-<!--            <version>1.6.0.Beta1</version>-->
-<!--        </dependency>-->
+
     </dependencies>
 
     <build>
@@ -331,46 +329,49 @@
                     </generator>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-compiler-plugin</artifactId>-->
-<!--                <configuration>-->
-<!--                    <source>${java.version}</source>-->
-<!--                    <target>${java.version}</target>-->
-<!--                    <encoding>UTF-8</encoding>-->
-<!--                    <annotationProcessorPaths>-->
-<!--                        <path>-->
-<!--                            <groupId>org.mapstruct</groupId>-->
-<!--                            <artifactId>mapstruct-processor</artifactId>-->
-<!--                            <version>1.6.0.Beta1</version>-->
-<!--                        </path>-->
-<!--                        <path>-->
-<!--                            <groupId>org.projectlombok</groupId>-->
-<!--                            <artifactId>lombok</artifactId>-->
-<!--                            <version>1.18.30</version>-->
-<!--                        </path>-->
-<!--                        <path>-->
-<!--                            <groupId>org.projectlombok</groupId>-->
-<!--                            <artifactId>lombok-mapstruct-binding</artifactId>-->
-<!--                            <version>0.2.0</version>-->
-<!--                        </path>-->
-<!--                    </annotationProcessorPaths>-->
-<!--                    <compilerArgs>-->
-<!--                        <arg>-->
-<!--                            -Amapstruct.defaultComponentModel=spring-->
-<!--                        </arg>-->
-<!--                        <arg>-->
-<!--                            -Amapstruct.unmappedSourcePolicy=IGNORE-->
-<!--                        </arg>-->
-<!--                        <arg>-->
-<!--                            -Amapstruct.verbose=true-->
-<!--                        </arg>-->
-<!--                        <arg>-->
-<!--                            -Amapstruct.suppressGeneratorTimestamp=true-->
-<!--                        </arg>-->
-<!--                    </compilerArgs>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <useIncrementalCompilation>
+                        false
+                    </useIncrementalCompilation>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.30</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>
+                            -Amapstruct.defaultComponentModel=spring
+                        </arg>
+                        <arg>
+                            -Amapstruct.unmappedSourcePolicy=IGNORE
+                        </arg>
+                        <arg>
+                            -Amapstruct.verbose=true
+                        </arg>
+                        <arg>
+                            -Amapstruct.suppressGeneratorTimestamp=true
+                        </arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
@@ -405,7 +406,8 @@
                 </goals>
                 <configuration>
                 <sources>
-                    <source>${project.basedir}/target/generate-sources/jooq</source>
+                    <source>${project.basedir}/target/generated-sources/jooq</source>
+                    <source>${project.basedir}/target/generated-sources/annotations/ru/itpark/authservice/application/user/mapper</source>
                 </sources>
                 </configuration>
             </execution>

@@ -1,13 +1,13 @@
 package ru.itpark.projectservice.application.service;
 
-import lombok.RequiredArgsConstructor;
-import org.apache.coyote.BadRequestException;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
-import ru.itpark.sharedlib.InvitationMessage;
 
-import java.util.Map;
+import lombok.RequiredArgsConstructor;
+import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
+import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 @Service
 @RequiredArgsConstructor

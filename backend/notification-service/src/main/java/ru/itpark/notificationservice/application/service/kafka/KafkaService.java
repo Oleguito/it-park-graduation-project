@@ -6,7 +6,9 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
-import ru.itpark.sharedlib.InvitationMessage;
+import ru.itpark.notificationservice.infrastructure.kafka.InvitationMessage;
+
+
 
 @Service
 @EnableKafka

@@ -1,14 +1,15 @@
 package ru.itpark.projectservice.application.service;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import java.util.Objects;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import ru.itpark.sharedlib.InvitationMessage;
 
-import java.util.Objects;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 @Component
 @Getter

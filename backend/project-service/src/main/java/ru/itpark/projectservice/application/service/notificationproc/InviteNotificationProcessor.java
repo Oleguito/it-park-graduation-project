@@ -1,9 +1,11 @@
 package ru.itpark.projectservice.application.service.notificationproc;
 
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.apache.kafka.common.errors.AuthenticationException;
-import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -15,12 +17,13 @@ import org.springframework.util.MultiValueMapAdapter;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import ru.itpark.authdto.dto.command.UserCommand;
-import ru.itpark.authdto.dto.query.contracts.UserSearchParams;
-import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
-import ru.itpark.sharedlib.InvitationMessage;
 
-import java.util.*;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
+import ru.itpark.projectservice.application.service.notificationproc.iface.NotificationProcessor;
+import ru.itpark.projectservice.infrastructure.authservice.dto.command.UserCommand;
+import ru.itpark.projectservice.infrastructure.authservice.dto.query.contracts.UserSearchParams;
+import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 @Component("invite")
 public class InviteNotificationProcessor implements NotificationProcessor {

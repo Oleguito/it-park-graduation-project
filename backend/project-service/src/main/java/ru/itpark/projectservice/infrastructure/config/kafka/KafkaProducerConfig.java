@@ -1,11 +1,11 @@
 package ru.itpark.projectservice.infrastructure.config.kafka;
 
-import ru.itpark.sharedlib.InvitationMessage;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+
+import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 @Configuration
 public class KafkaProducerConfig extends DefaultKafkaConfig {
