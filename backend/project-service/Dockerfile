@@ -30,7 +30,7 @@ RUN mvn dependency:go-offline -B
 COPY src ./src
 
 # Сборка проекта с использованием Maven и передача аргументов сборки
-RUN mvn clean protobuf:compile protobuf:compile-custom package -Pskip-kafka-tests
+RUN mvn clean package -Pskip-kafka-tests
 #    -DskipTests
 
 # Этап 2: Создание финального образа
