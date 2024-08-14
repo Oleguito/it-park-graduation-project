@@ -2,14 +2,16 @@ cls
 chcp 65001
 
 cls
-call mvn clean 
+rmdir /s /q target 
 
 rem cls
 call mvn -P include-liquibase-plugin liquibase:update
 
 rem cls
-call mvn spring-boot:run
+call mvn jooq-codegen:generate
 
+rem cls
+call mvn spring-boot:run
 
 rem cls
 rem call mvn jooq-codegen:generate

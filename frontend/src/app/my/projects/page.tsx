@@ -1,13 +1,10 @@
 "use client";
 import ProjectItem from "@/components/project-item/ProjectItem";
-import React, { useEffect, useState } from "react";
-import { Props } from "@/components/project-item/ProjectItem";
 import { Button } from "@/components/ui/button";
-import MyButton from "@/stories/components/MyButton";
-import css from "./page.module.css";
 import { Settings } from "@/constants/settings";
-import axios from "axios";
 import { fetchUserInfo } from "@/utils/auth-service/user-service";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
@@ -92,28 +89,32 @@ const ProjectsPage = () => {
             <div>
                 {projects
                     .filter((project) => {
-                        return project.userId === 1
+                        return project.userId === 1;
                     })
                     .map((project) => (
-                        <ProjectItem
-                            key={project.id}
-                            props={{
-                                id: project.id,
-                                title: project.name,
-                                status: project.status,
-                                description: project.description,
-                            }}
-                        />
-                ))}
-
-                <div className="project-item-lower-part">
-                    <Button onClick={addMemberHandler} className="m-1">
-                        Добавить участника
-                    </Button>
-                    <Button onClick={deleteMemberHandler}>
-                        Удалить участника
-                    </Button>
-                </div>
+                        <>
+                            <ProjectItem
+                                key={project.id}
+                                props={{
+                                    id: project.id,
+                                    title: project.name,
+                                    status: project.status,
+                                    description: project.description,
+                                }}
+                            />
+                            <div className="project-item-lower-part">
+                                <Button
+                                    onClick={addMemberHandler}
+                                    className="m-1"
+                                >
+                                    Добавить участника
+                                </Button>
+                                <Button onClick={deleteMemberHandler}>
+                                    Удалить участника
+                                </Button>
+                            </div>
+                        </>
+                    ))}
             </div>
         </>
     );

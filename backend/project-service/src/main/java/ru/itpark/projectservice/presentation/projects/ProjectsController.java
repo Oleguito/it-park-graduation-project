@@ -38,17 +38,17 @@ public class ProjectsController {
     @GetMapping("/alltest")
     public List<ProjectQuery> getAllTest() {
         return List.of(
-                ProjectQuery.builder()
-                        .id(123456789L)
-                        .name("project name")
-                        .description("project description\n Этот проект реально пришел из сервера")
-                        .status(Status.NEW)
-                        .dateInfo(DateInfo.builder()
-                                        .createdAt(LocalDateTime.now())
-                                .build())
-                        .endDate(LocalDateTime.now().plusDays(3L))
-                        .ownerId(987564321L)
-                .build()
+            ProjectQuery.builder()
+                .id(123456789L)
+                .name("project name")
+                .description("project description\n Этот проект реально пришел из сервера")
+                .status(Status.NEW)
+                .dateInfo(DateInfo.builder()
+                                .createdAt(LocalDateTime.now())
+                        .build())
+                .endDate(LocalDateTime.now().plusDays(3L))
+                .ownerId(987564321L)
+            .build()
         );
     }
 
@@ -56,7 +56,7 @@ public class ProjectsController {
     public ProjectQuery createProject(@RequestBody ProjectCreateCommand projectCreateCommand) {
 
         return projectMapper.toQuery(
-                projectService.save(projectMapper.toProject(projectCreateCommand))
+                projectService.save(projectCreateCommand)
         );
     }
 

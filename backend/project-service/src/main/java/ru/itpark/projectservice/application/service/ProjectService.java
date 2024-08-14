@@ -1,14 +1,17 @@
 package ru.itpark.projectservice.application.service;
 
-import jakarta.persistence.EntityNotFoundException;
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import jakarta.persistence.EntityNotFoundException;
 import ru.itpark.projectservice.domain.Project;
 import ru.itpark.projectservice.domain.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.repositories.ProjectRepo;
-
-import java.time.LocalDateTime;
-import java.util.List;
+import ru.itpark.projectservice.infrastructure.repositories.project.custom.CustomProjectsRepository;
+import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 
 @Service
 public class ProjectService {
@@ -16,8 +19,11 @@ public class ProjectService {
     @Autowired
     ProjectRepo projectRepository;
 
-    public Project save (Project project) {
-        return projectRepository.save(project);
+    @Autowired
+    CustomProjectsRepository customProjectsRepository;
+
+    public Project save (ProjectCreateCommand projectCreateCommand) {
+        return customProjectsRepository.createProject(projectCreateCommand);
     }
 
     public List<Project> getAll() {
