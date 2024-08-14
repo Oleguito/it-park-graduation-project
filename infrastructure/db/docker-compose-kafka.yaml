@@ -15,6 +15,8 @@ services:
     container_name: kafka
     restart: always
     image: confluentinc/cp-kafka:latest
+    # user: 1000
+    # group: 1000
     depends_on:
       - zookeeper
     ports:
@@ -28,10 +30,20 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
+      # Logging
+      KAFKA_LOG4J_LOGGERS: "kafka=OFF,org.apache.kafka=OFF"
+      KAFKA_LOG4J_ROOT_LOGLEVEL: OFF
+      CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+      KAFKA_OPTS: "-Dlog4j.configuration=file:/etc/kafka/log4j.properties"
+      # KAFKA_LOG4J_LOGGERS: "kafka=OFF,kafka.controller=OFF,kafka.log.LogCleaner=OFF,state.change.logger=OFF,kafka.producer.async.DefaultEventHandler=OFF"
+      # KAFKA_LOG4J_ROOT_LOGLEVEL: OFF
+      # KAFKA_LOG4J_TOOLS_LOGLEVEL: OFF
+
     volumes:
       - ./scripts/custom-entrypoint.sh:/scripts/custom-entrypoint.sh:ro
-    entrypoint: >
-      bash -c "echo 'Running custom entrypoint'; ls -la /scripts; /scripts/custom-entrypoint.sh"
+      - ./log4j.properties:/etc/kafka/log4j.properties
+    entrypoint: > 
+      sh -c "echo 'Running custom entrypoint'; ls -la /scripts; /scripts/custom-entrypoint.sh"
     networks:
       backend: {}
 

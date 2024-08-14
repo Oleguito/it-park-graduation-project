@@ -1,23 +1,26 @@
 spring:
   application:
     name: project-service
+
   kafka:
     notification:
       topic: notification-topic
       group: notification-group
     bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVER:localhost:29092}
+
   datasource:
     url: '${DB_URL:jdbc:postgresql://localhost:5432/projectservicedb}'
     username: '${DB_USER:projectservice}'
     password: '${DB_PASSWORD:12345}'
     driverClassName: org.postgresql.Driver
+
   liquibase:
     user: '${DB_USER:projectservice}'
     password: '${DB_PASSWORD:12345}'
     change-log: classpath:db/changelog/db.changelog-master.yaml
     enabled: false
+  
   jpa:
-
     hibernate:
       properties:
         hibernate:
@@ -26,6 +29,7 @@ spring:
           show_sql: true
       ddl-auto: none
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 server:
   port: 8087
 

@@ -407,7 +407,7 @@
                 <configuration>
                 <sources>
                     <source>${project.basedir}/target/generated-sources/jooq</source>
-                    <source>${project.basedir}/target/generated-sources/annotations/ru/itpark/authservice/application/user/mapper</source>
+                    <source>${project.basedir}/target/generated-sources/annotations</source>
                 </sources>
                 </configuration>
             </execution>

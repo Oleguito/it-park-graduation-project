@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 set -e
 
 echo "Debug: Starting custom entrypoint script execution..."
