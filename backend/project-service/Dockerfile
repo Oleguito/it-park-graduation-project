@@ -15,14 +15,21 @@ ARG DB_NAME
 ARG DB_PORT
 ARG KAFKA_BOOTSTRAP_SERVER
 ARG AUTH_SERVICE_URL
+ARG GP_PROJECTSERVICE_DB_URL
+ARG GP_PROJECTSERVICE_DB_USERNAME
+ARG GP_PROJECTSERVICE_DB_PASSWORD
 
 ENV DB_NAME=projectservicedb
 ENV DB_PORT=5432
-ENV DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/projectservicedb
+ENV DB_URL=jdbc:postgresql://localhost:5432/projectservicedb
+#ENV DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/projectservicedb
 ENV DB_USER=projectservice
 ENV DB_PASSWORD=12345
 ENV KAFKA_BOOTSTRAP_SERVER=kafka:9092
 ENV AUTH_SERVICE_URL=auth-service
+ENV GP_PROJECTSERVICE_DB_URL=jdbc:postgresql://localhost:5432/projectservicedb
+ENV GP_PROJECTSERVICE_DB_USERNAME=projectservice
+ENV GP_PROJECTSERVICE_DB_PASSWORD=12345
 
 # Копирование файлов проекта
 COPY pom.xml ./
