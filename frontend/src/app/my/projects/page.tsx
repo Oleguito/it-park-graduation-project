@@ -2,6 +2,7 @@
 import ProjectItem from "@/components/project-item/ProjectItem";
 import { Button } from "@/components/ui/button";
 import { Settings } from "@/constants/settings";
+import { UserQuery } from "@/types/UserQuery";
 import { fetchUserInfo } from "@/utils/auth-service/user-service";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -10,38 +11,31 @@ import { useEffect, useState } from "react";
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
-    const [userId, setUserId] = useState(0);
+    const [user, setUser] = useState({} as UserQuery);
 
     useEffect(() => {
         // console.log("id_token: ", localStorage.getItem("id_token"));
 
-        // getProjectsFromBackend()
-        // .then((response) => {
-        //     console.log("we are providing data", response.data);
-        //     setProjects(response.data);
-        // })
-        // .catch((error) => {
-        //     console.log(`getProjectsFromBackend: ${error}`);
-        // });
+        getProjectsFromBackend()
+        .then((response) => {
+            console.log("we are providing PROJECTS data", response.data);
+            setProjects(response.data);
+        })
+        .catch((error) => {
+            console.log(`getProjectsFromBackend: ${error}`);
+        });
         
-        fetchUserInfo();
-        
-        
-        
-        
+        fetchUserInfo()
+        .then((response) => {
+            console.log("we are providing USER data: ", response[0]);
+            console.log("length: ", response.length);
+            setUser(response[0]);
+            console.log(`userID: ${user}`, user)
+        })
+        .catch((error) => {
+            console.log(`fetchUserInfo: ${error}`);
+        });
     }, []);
-
-    // const props: Props = {
-    //     id: 2934804023,
-    //     title: "Название проекта",
-    //     status: "SOME STATUS",
-    //     description: `Это мок проекта из фронтэнда \n 
-    //     Описание проекта \n 
-    //     Это страница с ПРОЕКТАМИ!!
-    //     ▬ Сервис Управления Проектами
-    //     Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
-    //     Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).`,
-    // };
 
     const addMemberHandler = () => {
         window.location.href = "/my/participants/add";
@@ -85,7 +79,8 @@ const ProjectsPage = () => {
             <div>
                 {projects
                     .filter((project) => {
-                        return project.userId === 1;
+                        console.log(`project.userId: ${project.userId} user.id: ${user.id}`);
+                        return project.ownerId === user.id;
                     })
                     .map((project) => (
                         <>

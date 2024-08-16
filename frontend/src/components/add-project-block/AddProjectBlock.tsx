@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useRef } from "react";
-import { Button } from "../ui/button";
+import { UserQuery } from "@/types/UserQuery";
+import { fetchUserInfo } from "@/utils/auth-service/user-service";
+import { createProjectOnBackend } from "@/utils/project-service/project-service";
+import React, { useEffect, useRef, useState } from "react";
 import { z } from "zod";
-import { Project } from "@/types/project";
-import axios from "axios";
-import { Settings } from "@/constants/settings";
+import { Button } from "../ui/button";
+
 
 
 const projectSchema = z.object({
@@ -24,20 +25,23 @@ const AddProjectBlock = () => {
 
     const formdata = useRef(null);
 
-    async function sendProjectDataToBackend(projectData) {
-        console.log("AddProjectBlock: sendProjectDataToBackend: ", projectData);
+    const [user, setUser] = useState({} as UserQuery);
 
-        const response = axios.post(
-            Settings.backend.projectService.createProjectUrl(),
-            projectData,
-            {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem("id_token")}`,
-                },
-            }
-        )
-        return response;
-    }
+
+    useEffect(() => {
+        // console.log("id_token: ", localStorage.getItem("id_token"));
+
+        fetchUserInfo()
+            .then((response) => {
+                console.log("we are providing USER data: ", response[0]);
+                console.log("length: ", response.length);
+                setUser(response[0]);
+                console.log(`userID: ${user}`, user);
+            })
+            .catch((error) => {
+                console.log(`fetchUserInfo: ${error}`);
+            });
+    }, []);
 
     function submitHandler(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -60,11 +64,17 @@ const AddProjectBlock = () => {
             console.log("Validated data:", validatedData);
             
 
-            sendProjectDataToBackend({
+            createProjectOnBackend({
                 name: validatedData["project-title"],
                 description: validatedData["project-description"],
+                startDate: new Date(),
+                endDate: validatedData["project-due"],
                 status: "NEW",
-                due: validatedData["project-due"].toString(),
+                ownerId: user.id,
+                dateInfo: {
+                    createdAt: new Date(),
+                    deletedAt: null,
+                }
             })
             .then((response) => {
                 console.log("response: ", response);

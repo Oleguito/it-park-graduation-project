@@ -92,11 +92,10 @@ export const createUserInBackend2 = () => {
     return response;
 };
 
-export const fetchUserInfo = (): UserQuery[] => {
-
-	 const myhttpsAgent = new https.Agent({
-         rejectUnauthorized: false,
-     });
+export const fetchUserInfo = async function () : Promise<UserQuery[]> {
+    const myhttpsAgent = new https.Agent({
+        rejectUnauthorized: false,
+    });
 
     const token = (
         JSON.parse(
@@ -112,22 +111,24 @@ export const fetchUserInfo = (): UserQuery[] => {
         email: tokenData.email,
     };
 
-    let result;
-    getAxiosInstance(Settings.backend.userService.getUserSearchUrl())
-        .post("", {
-            email: tokenData?.email,
-        }, {
-			httpsAgent: myhttpsAgent,
-			headers: {
-				"Content-Type": "application/json",
-			},
-		})
+    return await getAxiosInstance(Settings.backend.userService.getUserSearchUrl())
+        .post(
+            "",
+            {
+                email: tokenData?.email,
+            },
+            {
+                httpsAgent: myhttpsAgent,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        )
         .then((response) => {
             console.log("fetchUserInfo inside: ", response);
-            result = response.data;
+			return response.data;
         })
         .catch((error) => {
             console.log(`fetchUserInfo: ${error}`, error);
         });
-    return result;
 };
