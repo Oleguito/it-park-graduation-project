@@ -1,4 +1,3 @@
-version: '3'
 services:
   auth-service:
     restart: always
@@ -30,6 +29,8 @@ services:
       backend: {}
 
   liquibase-auth:
+    restart: on-failure
+    container_name: liquibase-auth
     image: liquibase/liquibase:alpine
     working_dir: /liquibase/changelog
     depends_on:
