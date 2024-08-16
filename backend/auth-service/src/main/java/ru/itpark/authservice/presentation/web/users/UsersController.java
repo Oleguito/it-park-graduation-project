@@ -27,7 +27,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 @RequestMapping("/api/users")
 @Slf4j
-@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*", exposedHeaders = "*", maxAge = 3600)
 public class UsersController {
 
     private final UsersService usersService;
@@ -39,8 +38,8 @@ public class UsersController {
     private final UserMapper userMapper;
 
     @RequestMapping(("/create"))
-    @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
-    @CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*", exposedHeaders = "*", maxAge = 3600)
+//    @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<UserQuery> createUser(@RequestBody UserCommand userCommand) throws Exception {
 
         final List<User> foundUsers = userQueryFacade.search(
@@ -87,9 +86,9 @@ public class UsersController {
     @PreAuthorize("isAuthenticated()")
     @Operation(summary = "Найти пользователя по одному или нескольким параметрам", description =
             "Например, те кто владеет английским и учетка создана вчера")
-    @CrossOrigin(origins = {"http://localhost:3000"}, allowedHeaders = "*", methods = {RequestMethod.POST})
+    @CrossOrigin
     public List<User> findUser(@RequestBody UserSearchParams userSearchParams) {
-        log.info("Searching user with query {}", userSearchParams.getLanguages());
+        log.info("Searching user with query {}", userSearchParams.toString());
         return userQueryFacade.search(userSearchParams);
     }
 

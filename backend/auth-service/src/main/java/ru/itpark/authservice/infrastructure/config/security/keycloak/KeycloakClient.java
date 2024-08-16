@@ -94,8 +94,6 @@ public class KeycloakClient {
                         requestEntity,
                         Map.class);
 
-
-
         return (boolean) responseEntity.getBody().get("active");
 
     }

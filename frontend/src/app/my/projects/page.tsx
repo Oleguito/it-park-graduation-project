@@ -6,6 +6,8 @@ import { fetchUserInfo } from "@/utils/auth-service/user-service";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
+
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([]);
     const [userId, setUserId] = useState(0);
@@ -13,23 +15,17 @@ const ProjectsPage = () => {
     useEffect(() => {
         // console.log("id_token: ", localStorage.getItem("id_token"));
 
-        getProjectsFromBackend()
-        .then((response) => {
-            // console.log("we are providing data");
-            setProjects(response.data);
-        })
-        .catch((error) => {
-            console.log(`getProjectsFromBackend: ${error}`);
-        });
+        // getProjectsFromBackend()
+        // .then((response) => {
+        //     console.log("we are providing data", response.data);
+        //     setProjects(response.data);
+        // })
+        // .catch((error) => {
+        //     console.log(`getProjectsFromBackend: ${error}`);
+        // });
         
-        fetchUserInfo()
-        .then((response) => {   
-            console.log("fetchUserInfo: ", response.data);
-            setUserId(response.data.id);
-        })
-        .catch((error) => {
-            console.log(`fetchUserInfo: ${error}`);
-        });
+        fetchUserInfo();
+        
         
         
         
