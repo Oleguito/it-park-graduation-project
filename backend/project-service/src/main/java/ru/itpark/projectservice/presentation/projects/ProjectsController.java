@@ -68,7 +68,7 @@ public class ProjectsController {
 
     
     @RequestMapping(value = "/message", method=RequestMethod.POST)
-    public void requestMethodName(@RequestBody InvitationMessage notificationMessage) {
+    public void sendNotification(@RequestBody InvitationMessage notificationMessage) {
 
         kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
     }

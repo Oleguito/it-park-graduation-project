@@ -1,6 +1,12 @@
 spring:
   application:
     name: project-service
+  ssl:
+    enabled: true
+    key-alias: "my-cert"
+    key-store-type: PKCS12
+    key-store: classpath:certificate.p12
+    key-store-password: ${GP_PROJECTSERVICE_KEYSTORE_PASSWORD:1PwCgNAb}
 
   kafka:
     notification:
@@ -39,7 +45,7 @@ grpc:
 
 services:
   auth-service:
-    addr: ${AUTH_SERVICE_URL:http://localhost:8088}
+    addr: ${AUTH_SERVICE_URL:https://localhost:8088}
 logging:
   level:
     root: 'INFO'

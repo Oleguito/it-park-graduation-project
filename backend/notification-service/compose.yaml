@@ -21,6 +21,8 @@ services:
       - DB_PASSWORD=12345
       - KAFKA_BOOTSTRAP_SERVER=kafka:9092
       - GP_NOTIFICATION_SERVICE_DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/notificationservicedb
+      - GP_NOTIFICATION_SERVICE_SERVER=projectsitpark@gmail.com # TODO: пока не будет работать
+      - GP_NOTIFICATIONSERVICE_SERVER_PASS=#PC7+G!T#AQFtvq
     depends_on:
       - collaborative-project-postgres-db
       - kafka

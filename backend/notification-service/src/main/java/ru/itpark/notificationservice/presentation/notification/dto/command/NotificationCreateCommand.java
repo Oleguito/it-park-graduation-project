@@ -16,6 +16,7 @@ public class NotificationCreateCommand {
     private Long userId;
     private String title;
     private String message;
+    private String email;
     private String type;
     private Boolean read;
     private LocalDateTime createdAt;

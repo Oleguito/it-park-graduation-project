@@ -22,6 +22,7 @@ services:
       - DB_PASSWORD=12345
       - KAFKA_BOOTSTRAP_SERVER=kafka:9092
       - AUTH_SERVICE_URL=auth-service
+      - GP_PROJECTSERVICE_KEYSTORE_PASSWORD=1PwCgNAb
     depends_on:
       - collaborative-project-postgres-db
       - kafka

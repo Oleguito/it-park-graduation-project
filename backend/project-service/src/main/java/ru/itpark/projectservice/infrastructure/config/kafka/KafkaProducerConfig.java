@@ -25,6 +25,6 @@ public class KafkaProducerConfig extends DefaultKafkaConfig {
     }
 
     public DefaultKafkaProducerFactory<String, InvitationMessage> producerFactoryNM() {
-        return new DefaultKafkaProducerFactory<>(getProducerProps());
+        return new DefaultKafkaProducerFactory<>(getProducerPropsNM());
     }
 }
