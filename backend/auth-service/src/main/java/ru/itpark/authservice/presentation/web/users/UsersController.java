@@ -38,8 +38,8 @@ public class UsersController {
     private final UserMapper userMapper;
 
     @RequestMapping(("/create"))
-//    @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
+//    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<UserQuery> createUser(@RequestBody UserCommand userCommand) throws Exception {
 
         final List<User> foundUsers = userQueryFacade.search(
