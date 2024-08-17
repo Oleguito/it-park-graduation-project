@@ -1,34 +1,41 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { useRef } from 'react';
+import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 import { z } from "zod";
-import css from './styles.module.css';
+import css from "./styles.module.css";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/components/ui/use-toast";
 
 const schema = z.object({
-    email_input_box: z
-		.string()
-		.email()
+    email_input_box: z.string().email(),
 });
 
 const AddParticipantPage = () => {
+    const { toast } = useToast();
 
-	const emailRef = useRef(null);
+    const emailRef = useRef(null);
 
-	const handleAddParticipant = (event) => {
-		event.preventDefault();
-		let parsed;
-		try {
-			parsed = schema.parse({
-            email_input_box: emailRef.current.value,
-        });	
-		} catch (error) {
-			console.log(error);
-			emailRef.current.value = '';
-		}
-		console.log(emailRef.current.value);
-		console.log(parsed);
-	}
+    const handleAddParticipant = (event) => {
+        event.preventDefault();
+        let parsed;
+        try {
+            parsed = schema.parse({
+                email_input_box: emailRef.current.value,
+            });
+        } catch (error) {
+            console.log(error);
+            emailRef.current.value = "";
+			toast({
+				title: "Неправильный адрес электронной почты",
+				description: "Пожалуйста, введите правильный адрес электронной почты",
+				duration: 3000,
+				variant: "destructive",
+			})
+        }
+        console.log(emailRef.current.value);
+        console.log(parsed);
+    };
 
     return (
         <>
@@ -56,6 +63,7 @@ const AddParticipantPage = () => {
                     </Button>
                 </div>
             </div>
+            <Toaster />
         </>
     );
 };
