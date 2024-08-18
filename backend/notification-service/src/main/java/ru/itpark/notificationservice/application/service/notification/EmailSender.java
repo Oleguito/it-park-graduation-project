@@ -27,6 +27,7 @@ import static jakarta.mail.Message.RecipientType.TO;
 
 @Service
 public class EmailSender {
+
     @Value("${notification.emails.server}")
     private String emailServer;
     @Value("${notification.emails.password}")
