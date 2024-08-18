@@ -20,11 +20,11 @@ public class KafkaProducerConfig extends DefaultKafkaConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, InvitationMessage> kafkaTemplateNM() {
-        return new KafkaTemplate<>(producerFactoryNM());
+    public KafkaTemplate<String, InvitationMessage> kafkaTemplateNotificationMessage() {
+        return new KafkaTemplate<>(producerFactoryNotificationMessage());
     }
 
-    public DefaultKafkaProducerFactory<String, InvitationMessage> producerFactoryNM() {
-        return new DefaultKafkaProducerFactory<>(getProducerPropsNM());
+    public DefaultKafkaProducerFactory<String, InvitationMessage> producerFactoryNotificationMessage() {
+        return new DefaultKafkaProducerFactory<>(getProducerPropsNotificationMessage());
     }
 }

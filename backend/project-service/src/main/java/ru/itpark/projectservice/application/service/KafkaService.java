@@ -24,7 +24,7 @@ public class KafkaService {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final MessageConstructor messageConstructor;
-    private final KafkaTemplate<String, InvitationMessage> kafkaTemplateNM;
+    private final KafkaTemplate<String, InvitationMessage> kafkaTemplateNotificationMessage;
     private final Gson gson = new Gson();
 
     public void sendNotificationMessage(String topic, InvitationMessage message) {

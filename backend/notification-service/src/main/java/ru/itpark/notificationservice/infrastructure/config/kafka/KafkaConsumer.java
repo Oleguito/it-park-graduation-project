@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import ru.itpark.notificationservice.infrastructure.kafka.InvitationMessage;
 
 @Configuration
 public class KafkaConsumer extends DefaultKafkaConfig {
@@ -15,7 +14,7 @@ public class KafkaConsumer extends DefaultKafkaConfig {
         ConcurrentKafkaListenerContainerFactory<String, String> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConcurrency(1);
-        factory.setConsumerFactory(consumerFactoryNM());
+        factory.setConsumerFactory(consumerFactoryNotificationMessage());
         return factory;
     }
 
@@ -25,8 +24,8 @@ public class KafkaConsumer extends DefaultKafkaConfig {
     }
 
     @Bean
-    public ConsumerFactory<String, String> consumerFactoryNM() {
-        return new DefaultKafkaConsumerFactory<>(getConsumerPropsNM());
+    public ConsumerFactory<String, String> consumerFactoryNotificationMessage() {
+        return new DefaultKafkaConsumerFactory<>(getConsumerPropsNotificationMessage());
     }
 
 }

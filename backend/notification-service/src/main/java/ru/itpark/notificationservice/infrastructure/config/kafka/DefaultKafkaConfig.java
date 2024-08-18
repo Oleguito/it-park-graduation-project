@@ -34,7 +34,7 @@ public class DefaultKafkaConfig {
         return props;
     }
 
-    protected Map<String, Object> getConsumerPropsNM() {
+    protected Map<String, Object> getConsumerPropsNotificationMessage() {
         log.info("Бутстрап NotificationMessage: {}", bootstrap);
         
         Map<String, Object> props = new HashMap<>();
