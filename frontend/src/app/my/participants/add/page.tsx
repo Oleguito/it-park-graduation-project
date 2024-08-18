@@ -1,11 +1,11 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/toaster";
+import { useToast } from "@/components/ui/use-toast";
 import { useRef } from "react";
 import { z } from "zod";
 import css from "./styles.module.css";
-import { Toaster } from "@/components/ui/toaster";
-import { useToast } from "@/components/ui/use-toast";
 
 const schema = z.object({
     email_input_box: z.string().email(),
@@ -23,6 +23,9 @@ const AddParticipantPage = () => {
             parsed = schema.parse({
                 email_input_box: emailRef.current.value,
             });
+
+			
+
         } catch (error) {
             console.log(error);
             emailRef.current.value = "";
