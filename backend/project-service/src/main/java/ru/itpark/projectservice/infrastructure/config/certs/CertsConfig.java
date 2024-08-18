@@ -6,14 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.net.ssl.*;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.security.*;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 
 @Configuration
 public class CertsConfig {
@@ -25,7 +19,7 @@ public class CertsConfig {
     public void configurateCerts() {
 
         KeyStore keyStore = null;
-        try (InputStream inputStream = new FileInputStream("backend/project-service/certificate.p12")) {
+        try (InputStream inputStream = new FileInputStream("certificate.p12")) {
             keyStore = KeyStore.getInstance("PKCS12");
             keyStore.load(inputStream, certPassword.toCharArray());
 

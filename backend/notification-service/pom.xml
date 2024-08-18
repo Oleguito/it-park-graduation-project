@@ -102,24 +102,13 @@
 			<version>2.10.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
-			<version>3.2.5</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.google.api-client</groupId>-->
+<!--			<artifactId>google-api-client</artifactId>-->
+<!--			<version>1.32.2</version>-->
+<!--		</dependency>-->
 
-		<dependency>
-			<groupId>com.google.api-client</groupId>
-			<artifactId>google-api-client</artifactId>
-			<version>1.32.2</version>
-		</dependency>
 
-		<!-- Gmail API Client -->
-		<dependency>
-			<groupId>com.google.apis</groupId>
-			<artifactId>google-api-services-gmail</artifactId>
-			<version>v1-rev20240520-2.0.0</version>
-		</dependency>
 
 		<!-- Google OAuth Client Library -->
 		<dependency>
@@ -157,6 +146,12 @@
 			<artifactId>google-api-services-gmail</artifactId>
 			<version>v1-rev20220404-2.0.0</version>
 		</dependency>
+<!--		&lt;!&ndash; Gmail API Client &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>com.google.apis</groupId>-->
+<!--			<artifactId>google-api-services-gmail</artifactId>-->
+<!--			<version>v1-rev20240520-2.0.0</version>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
