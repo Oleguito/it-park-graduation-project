@@ -32,8 +32,6 @@ public class EmailSender {
     @Value("${notification.emails.password}")
     private String pass;
 
-    private static final String SERVICE_ACCOUNT_KEY_FILE = "backend/notification-service/it-park-projects-e0684d96205b.json";
-    private static final String DELEGATED_USER_EMAIL = "emailsender@it-park-projects.iam.gserviceaccount.com";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final NetHttpTransport HTTP_TRANSPORT;
 
