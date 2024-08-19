@@ -9,12 +9,19 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 import ru.itpark.notificationservice.application.service.notification.EmailSender;
+import ru.itpark.notificationservice.application.service.notification.NotificationService;
+import ru.itpark.notificationservice.domain.notification.Notification;
 import ru.itpark.notificationservice.infrastructure.kafka.InvitationMessage;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
 @EnableKafka
 @RequiredArgsConstructor
 public class KafkaService {
+
+    private final NotificationService notificationService;
 
     private final String topic = "notification-topic";
     private final String groupId = "notification-group";
@@ -31,8 +38,25 @@ public class KafkaService {
 
         InvitationMessage msg = gson.fromJson(kafkaMessage.value(), InvitationMessage.class);
 
+        final var foundMessage = notificationService.getByKey(msg.getKey());
+
+        if (foundMessage != null) return;
+
         System.out.println(String.format("Полученное сообщение (объект): %s", msg));
         emailSender.sendEmail(msg);
+
+        Notification built = Notification.builder()
+                .title(msg.getProjectTitle())
+                .userId(234L)
+                .message(msg.getInvitationMessage())
+                .type(msg.getType())
+                .read(false)
+                .createdAt(LocalDateTime.now())
+                .idempotentKey(msg.getKey())
+                .build();
+        notificationService.createNotification(built);
+
+        System.out.println();
     }
 
 }

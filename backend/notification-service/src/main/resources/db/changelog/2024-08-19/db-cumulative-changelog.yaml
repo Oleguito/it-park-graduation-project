@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: OlSwag
+      changes:
+        - sqlFile:
+            path: ./init-schema.sql
+            relativeToChangelogFile: true

@@ -1,6 +1,7 @@
 package ru.itpark.notificationservice.domain.notification;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,7 +28,10 @@ public class Notification {
     @SequenceGenerator(name = "notifications_id_seq", sequenceName = "notifications_id_seq", allocationSize = 1)
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "key", nullable = false)
+    private UUID idempotentKey;
+
+    @Column(name = "user_id")
     private Long userId;
 
     @Column(name = "title", nullable = false)
@@ -53,7 +57,7 @@ public class Notification {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
 }

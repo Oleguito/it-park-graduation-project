@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 
 import java.util.Objects;
+import java.util.UUID;
 
 @Component
 @Getter
@@ -30,6 +31,7 @@ public class KafkaService {
     public void sendNotificationMessage(String topic, InvitationMessage message) {
         int hash = Objects.hash(message);
         messageConstructor.processNotification(message);
+        message.setKey(UUID.randomUUID());
         kafkaTemplate.send(notificationTopic,
                 String.valueOf(hash),
                 gson.toJson(message));

@@ -5,6 +5,7 @@ import ru.itpark.notificationservice.domain.notification.Notification;
 import ru.itpark.notificationservice.infrastructure.repository.NotificationRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class NotificationService {
@@ -22,6 +23,10 @@ public class NotificationService {
     public Notification getNotification(Long id, Long userId) {
         return notificationRepository.findByIdAndUserId(id, userId)
                 .orElseThrow(() -> new RuntimeException("Notification not found"));
+    }
+
+    public Notification getByKey(UUID key) {
+        return notificationRepository.findByIdempotentKey(key);
     }
 
     public Notification createNotification(Notification notification) {

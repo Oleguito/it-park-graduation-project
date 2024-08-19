@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <!-- Define log pattern -->
+    <Properties>
+        <!-- Log pattern with date, log level, logger name, thread, and message -->
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{1} - %m%n</Property>
+    </Properties>
+
+    <!-- Console appender for logging to the console -->
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- Rolling file appender for writing logs to file, with rotation based on size -->
+        <RollingFile name="FileAppender" fileName="logs/app.log"
+                     filePattern="logs/app-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <!-- Roll over on 10MB file size -->
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <!-- Roll over daily -->
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+            <DefaultRolloverStrategy max="7"/> <!-- Keep a maximum of 7 backup files -->
+        </RollingFile>
+    </Appenders>
+
+    <!-- Logger configuration -->
+    <Loggers>
+        <!-- Root logger which logs everything to both console and file -->
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+
+        <!-- Spring-specific loggers for more detailed logging -->
+        <Logger name="org.springframework" level="warn" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- Hibernate logs (if using Hibernate in the application) -->
+        <Logger name="org.hibernate" level="error" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <Logger name="org.jooq" level="error" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>

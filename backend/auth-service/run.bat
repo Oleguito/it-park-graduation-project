@@ -1,9 +1,9 @@
-chcp 65001
-
-cls
+rem chcp 65001
 
 rem cls
-rem call mvn clean
+
+rem cls
+call mvn clean
 
 rem rem cls
 rem call mvn compile

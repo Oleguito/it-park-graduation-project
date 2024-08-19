@@ -2,6 +2,7 @@ package ru.itpark.notificationservice.infrastructure.repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -20,5 +21,6 @@ public interface NotificationRepository extends JpaRepository<Notification, Long
     @Transactional
     void deleteByIdAndUserId(Long id, Long userId);
 
+    Notification findByIdempotentKey(UUID key);
 }
 

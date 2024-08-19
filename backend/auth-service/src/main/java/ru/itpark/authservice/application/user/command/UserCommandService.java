@@ -1,14 +1,15 @@
 package ru.itpark.authservice.application.user.command;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+import lombok.RequiredArgsConstructor;
 import ru.itpark.authservice.application.user.mapper.UserMapper;
 import ru.itpark.authservice.domain.user.Role;
 import ru.itpark.authservice.domain.user.User;
 import ru.itpark.authservice.domain.user.converters.LanguageConverter;
-import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
 import ru.itpark.authservice.infrastructure.repositories.user.UserRepository;
 import ru.itpark.authservice.infrastructure.repositories.user.custom.CustomUserRepository;
 import ru.itpark.authservice.presentation.web.users.dto.command.UserCommand;

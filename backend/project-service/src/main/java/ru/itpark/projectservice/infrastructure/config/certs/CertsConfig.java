@@ -19,7 +19,7 @@ public class CertsConfig {
     public void configurateCerts() {
 
         KeyStore keyStore = null;
-        try (InputStream inputStream = new FileInputStream("certificate.p12")) {
+        try (InputStream inputStream = new FileInputStream("src/main/resources/certificate.p12")) {
             keyStore = KeyStore.getInstance("PKCS12");
             keyStore.load(inputStream, certPassword.toCharArray());
 

@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Data
 @Setter
 @Getter
@@ -19,6 +21,8 @@ public class InvitationMessage {
     private String invitedUserEmail;
     private String invitationMessage;
     private String type;
+
+    private UUID key;
     
     private Long projectId;
     private String projectTitle;

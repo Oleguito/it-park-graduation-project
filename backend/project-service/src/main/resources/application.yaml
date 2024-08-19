@@ -46,8 +46,8 @@ grpc:
 services:
   auth-service:
     addr: ${AUTH_SERVICE_URL:https://localhost:8088}
-logging:
-  level:
-    root: 'INFO'
-    # org.springframework.web: 'DEBUG'
-    # ru.itpark.projectservice: 'DEBUG'
+# logging:
+#   level:
+#     root: 'INFO'
+#     # org.springframework.web: 'DEBUG'
+#     # ru.itpark.projectservice: 'DEBUG'
