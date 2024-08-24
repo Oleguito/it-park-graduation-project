@@ -1,6 +1,7 @@
 package ru.itpark.authservice.domain.user.dto.queries;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.itpark.authservice.domain.user.valueobjects.DateInfo;
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UserQuery {
     private Long id;
     private String fullName;

@@ -1,4 +1,4 @@
-package ru.itpark.projectservice.domain.valueobjects;
+package ru.itpark.projectservice.domain.project.valueobjects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

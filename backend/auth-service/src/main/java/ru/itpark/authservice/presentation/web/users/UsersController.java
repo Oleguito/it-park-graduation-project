@@ -37,9 +37,10 @@ public class UsersController {
 
     private final UserMapper userMapper;
 
-    @RequestMapping(("/create"))
-    @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
-//    @PreAuthorize("isAuthenticated()")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @CrossOrigin
+    // @PreAuthorize("isAuthenticated() && #userCommand.email == authentication.principal.claims['email']")
+    @PreAuthorize("isAuthenticated()")
     public ResponseEntity<UserQuery> createUser(@RequestBody UserCommand userCommand) throws Exception {
 
         final List<User> foundUsers = userQueryFacade.search(
@@ -70,6 +71,7 @@ public class UsersController {
     @PreAuthorize("isAuthenticated()")
     @Operation(summary = "Получить список всех пользователей микросервиса")
     public ResponseEntity<List<User>> getUsers() {
+        
         return ResponseEntity.ok(usersService.getAllUsers());
     }
 

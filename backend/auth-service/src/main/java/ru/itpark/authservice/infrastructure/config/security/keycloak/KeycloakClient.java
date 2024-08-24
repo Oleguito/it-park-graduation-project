@@ -1,5 +1,6 @@
 package ru.itpark.authservice.infrastructure.config.security.keycloak;
 
+import lombok.Getter;
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
@@ -10,6 +11,7 @@ import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
 import java.util.Map;
 
 @Component
+@Getter
 public class KeycloakClient {
 
     private final String clientSecret = System.getenv("GP_AUTHSERVICE_CLIENT_SECRET");

@@ -1,24 +1,27 @@
 package ru.itpark.projectservice.infrastructure.repositories.project.custom;
 
-import java.time.LocalDateTime;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
-
-import ru.itpark.projectservice.domain.Project;
-import ru.itpark.projectservice.domain.valueobjects.DateInfo;
+import ru.itpark.projectservice.domain.project.Project;
+import ru.itpark.projectservice.domain.project.valueobjects.DateInfo;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 import ru.itpark.projectservice.tables.Projects;
 
+import java.time.LocalDateTime;
+
 @Repository
 public class CustomProjectsRepository {
-     private final DSLContext dsl;
+    private final DSLContext dsl;
+
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     public CustomProjectsRepository(DSLContext dsl) {
         this.dsl = dsl;
     }
 
-     public Project createProject(ProjectCreateCommand command) {
+    public Project createProject(Project project) {
         LocalDateTime now = LocalDateTime.now();
 
         LocalDateTime startDate = null;
@@ -26,53 +29,54 @@ public class CustomProjectsRepository {
         LocalDateTime dateInfoCreatedAt = null;
         LocalDateTime dateInfoDeletedAt = null;
 
-        startDate = command.getStartDate() != null 
-            ? command.getStartDate() 
-            : now;
+        startDate = project.getStartDate() != null
+                ? project.getStartDate()
+                : now;
 
-        endDate = command.getEndDate();
+        endDate = project.getEndDate();
 
-        if(command.getDateInfo() == null) {
+        if (project.getDateInfo() == null) {
 
             dateInfoCreatedAt = now;
         } else {
 
-            dateInfoCreatedAt = command.getDateInfo().getCreatedAt();
-            dateInfoDeletedAt = command.getDateInfo().getDeletedAt();
+            dateInfoCreatedAt = project.getDateInfo().getCreatedAt();
+            dateInfoDeletedAt = project.getDateInfo().getDeletedAt();
         }
 
-        DateInfo dateInfo = command.getDateInfo();
+        DateInfo dateInfo = project.getDateInfo();
         if (dateInfo == null) {
             dateInfo = DateInfo.builder()
-                               .createdAt(now)
-                               .build();
+                    .createdAt(now)
+                    .build();
         }
 
         Long projectId = dsl.insertInto(Projects.PROJECTS)
-                .set(Projects.PROJECTS.NAME, command.getName())
-                .set(Projects.PROJECTS.DESCRIPTION, command.getDescription())
+                .set(Projects.PROJECTS.NAME, project.getName())
+                .set(Projects.PROJECTS.DESCRIPTION, project.getDescription())
                 .set(Projects.PROJECTS.START_DATE, startDate)
-                .set(Projects.PROJECTS.END_DATE, command.getEndDate())
-                .set(Projects.PROJECTS.STATUS, command.getStatus().name())
-                .set(Projects.PROJECTS.USER_ID, command.getOwnerId())
+                .set(Projects.PROJECTS.END_DATE, project.getEndDate())
+                .set(Projects.PROJECTS.STATUS, project.getStatus().name())
+                .set(Projects.PROJECTS.USER_ID, project.getOwnerId())
                 .set(Projects.PROJECTS.CREATED_AT, dateInfoCreatedAt)
                 .set(Projects.PROJECTS.DELETED_AT, dateInfoDeletedAt)
+
                 .returning(Projects.PROJECTS.ID)
                 .fetchOne()
                 .getValue(Projects.PROJECTS.ID);
 
         return Project.builder()
                 .id(projectId)
-                .name(command.getName())
-                .description(command.getDescription())
+                .name(project.getName())
+                .description(project.getDescription())
                 .startDate(startDate)
-                .endDate(command.getEndDate())
-                .status(command.getStatus())
-                .ownerId(command.getOwnerId())
+                .endDate(project.getEndDate())
+                .status(project.getStatus())
+                .ownerId(project.getOwnerId())
                 .dateInfo(DateInfo.builder()
-                    .createdAt(dateInfoCreatedAt)
-                    .deletedAt(dateInfoDeletedAt)
-                    .build())
+                        .createdAt(dateInfoCreatedAt)
+                        .deletedAt(dateInfoDeletedAt)
+                        .build())
                 .build();
     }
 }

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ru.itpark.projectservice.application.service.KafkaService;
 import ru.itpark.projectservice.application.service.ProjectService;
-import ru.itpark.projectservice.domain.valueobjects.DateInfo;
-import ru.itpark.projectservice.domain.valueobjects.Status;
+import ru.itpark.projectservice.domain.project.valueobjects.DateInfo;
+import ru.itpark.projectservice.domain.project.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
@@ -35,13 +35,13 @@ public class ProjectsController {
     @Autowired
     KafkaService kafkaService;
 
-    @GetMapping("/alltest")
+    @RequestMapping("/alltest")
     public List<ProjectQuery> getAllTest() {
         return List.of(
             ProjectQuery.builder()
                 .id(123456789L)
                 .name("project name")
-                .description("project description\n Этот проект реально пришел из сервера")
+                .description("project description\n Этот мок проект реально пришел из сервера")
                 .status(Status.NEW)
                 .dateInfo(DateInfo.builder()
                                 .createdAt(LocalDateTime.now())

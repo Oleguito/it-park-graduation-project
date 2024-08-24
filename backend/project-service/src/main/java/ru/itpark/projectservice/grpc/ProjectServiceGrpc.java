@@ -1,7 +1,7 @@
 package ru.itpark.projectservice.grpc;
 
 import lombok.RequiredArgsConstructor;
-import net.devh.boot.grpc.server.service.GrpcService;
+//import net.devh.boot.grpc.server.service.GrpcService;
 
 //@GrpcService
 @RequiredArgsConstructor

@@ -27,7 +27,9 @@ class MyGlobalExtension implements IGlobalExtension {
         TrustManager[] trustAllCerts = [
                 new X509TrustManager() {
                     X509Certificate[] getAcceptedIssuers() {
-                        keyStore.getCertificate("my-cert") as X509Certificate[]
+                        X509Certificate[] certs = new X509Certificate[1];
+                        certs[0] = keyStore.getCertificate("your-alias") as X509Certificate;
+                        return certs;
                     }
                     void checkClientTrusted(X509Certificate[] certs, String authType) { }
                     void checkServerTrusted(X509Certificate[] certs, String authType) { }

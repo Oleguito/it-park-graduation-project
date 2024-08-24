@@ -2,17 +2,17 @@ rem chcp 65001
 
 rem cls
 
-rem cls
-call mvn clean
+cls
+del /s /q target
 
 rem rem cls
 rem call mvn compile
 
-rem rem cls
-rem call mvn -P include-liquibase-plugin -Dspring.profiles.active=oleg liquibase:update
+cls
+call mvn -P include-liquibase-plugin -Dspring.profiles.active=oleg liquibase:update
 
 rem rem cls
-rem call mvn jooq-codegen:generate
+call mvn jooq-codegen:generate
 
 rem cls
 rem call mvn package

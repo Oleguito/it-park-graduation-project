@@ -6,7 +6,6 @@ server:
     key-store: classpath:certificate.p12
     key-store-password: 1PwCgNAb
 
-
 spring:
   ssl:
     bundle:

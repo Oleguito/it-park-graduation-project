@@ -58,12 +58,6 @@ const ProjectsPage = () => {
         return response;
     };
 
-    // console.log(
-    //     `Settings: `,
-    //     Settings.backend.projectService.getAllProjectsUrl()
-    // );
-    // console.log("projects: ", projects);
-
     return (
         <>
             <div>Это страница с ПРОЕКТАМИ!!</div>
@@ -79,7 +73,9 @@ const ProjectsPage = () => {
             <div>
                 {projects
                     .filter((project) => {
-                        console.log(`project.userId: ${project.userId} user.id: ${user.id}`);
+                        console.log(
+                            `project.userId: ${project.userId} user.id: ${user.id}`
+                        );
                         return project.ownerId === user.id;
                     })
                     .map((project) => (
@@ -93,16 +89,21 @@ const ProjectsPage = () => {
                                     description: project.description,
                                 }}
                             />
-                            <div className="project-item-lower-part">
-                                <Button
-                                    onClick={addMemberHandler}
-                                    className="m-1"
-                                >
-                                    Добавить участника
-                                </Button>
-                                <Button onClick={deleteMemberHandler}>
-                                    Удалить участника
-                                </Button>
+                            <div>
+                                <div className="project-item-participants-list">
+                                    
+                                </div>
+                                <div className="project-item-participants-list-buttons">
+                                    <Button
+                                        onClick={addMemberHandler}
+                                        className="m-1"
+                                    >
+                                        Добавить участника
+                                    </Button>
+                                    <Button onClick={deleteMemberHandler}>
+                                        Удалить участника
+                                    </Button>
+                                </div>
                             </div>
                         </>
                     ))}

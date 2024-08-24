@@ -1,5 +1,5 @@
 /* flex, aligned to the left */ 
-.project-item-lower-part {
+.project-item-participants-list-buttons {
     display: flex;
     justify-content: flex-end;
     align-items: center;

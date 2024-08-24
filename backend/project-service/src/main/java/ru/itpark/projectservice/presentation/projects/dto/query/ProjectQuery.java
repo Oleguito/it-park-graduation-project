@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.itpark.projectservice.domain.valueobjects.DateInfo;
-import ru.itpark.projectservice.domain.valueobjects.Status;
+import ru.itpark.projectservice.domain.project.valueobjects.DateInfo;
+import ru.itpark.projectservice.domain.project.valueobjects.Status;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class ProjectQuery {
+    
     private Long id;
     
     private String name;
@@ -29,4 +30,5 @@ public class ProjectQuery {
     private Long ownerId;
     
     private DateInfo dateInfo;
+
 }

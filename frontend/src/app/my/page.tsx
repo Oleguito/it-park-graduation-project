@@ -87,7 +87,7 @@ const MyPage = () => {
                     </Button>
                 </div>
             </div>
-            <Button onClick={(e) => { createUserInBackend2(); }}>Сделать что-то</Button>
+            <Button onClick={(e) => { createUserInBackend(); }}>Сделать что-то</Button>
         </>
     );
 }

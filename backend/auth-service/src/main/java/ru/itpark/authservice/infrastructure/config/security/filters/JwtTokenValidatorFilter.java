@@ -24,6 +24,8 @@ public class JwtTokenValidatorFilter extends OncePerRequestFilter {
 
     private final KeycloakClient keycloakClient;
 
+    private final UserCommandFacade userCommandFacade;
+    
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
@@ -39,7 +41,7 @@ public class JwtTokenValidatorFilter extends OncePerRequestFilter {
 
             if (!isActive) {
                 SecurityContextHolder.getContext().setAuthentication(null);
-            }
+            } 
         }
 
         filterChain.doFilter(request, response);

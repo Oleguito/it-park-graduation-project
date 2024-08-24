@@ -2,8 +2,8 @@ package ru.itpark.projectservice.infrastructure.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.itpark.projectservice.domain.Project;
-import ru.itpark.projectservice.domain.valueobjects.Status;
+import ru.itpark.projectservice.domain.project.Project;
+import ru.itpark.projectservice.domain.project.valueobjects.Status;
 
 import java.time.LocalDateTime;
 import java.util.List;

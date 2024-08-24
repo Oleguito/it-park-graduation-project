@@ -4,6 +4,7 @@ import axios from 'axios'
 import forge from 'node-forge'
 import queryString from 'query-string'
 import {Settings} from '@/constants/settings'
+import { createUserInBackend } from './auth-service/user-service'
 
 const TOKEN_URL = Settings.keycloak.tokenUrl;
 const KEYCLOAK_AUTH_URL = Settings.keycloak.authUrl;
@@ -136,6 +137,8 @@ export const getTokens = () => {
 				console.log("access token", access_token)
 				console.log("refresh token", refresh_token)
 				saveTokensToLocalStorage(access_token, refresh_token)
+				
+				createUserInBackend()
 
 				window.localStorage.setItem('id_token', data.id_token)
 				window.location.replace('/my')

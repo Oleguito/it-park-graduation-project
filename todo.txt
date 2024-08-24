@@ -7,3 +7,5 @@
 
 Backend:
     сделать так чтобы из project service можно было ходить по https на authservice
+
+    добавить Swagger во все микросервисы
