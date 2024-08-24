@@ -1,0 +1,41 @@
+<Configuration status="info">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{ABSOLUTE} %5p [%-50c{4}] - %m%n}{INFO=blue, WARN=yellow, ERROR=red}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+
+        <Logger name="ru.itpark" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="org.springframework" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="org.apache.coyote" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="org.apache.catalina" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="org.apache" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="com.zaxxer.hikari" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="org.hibernate" level="error">
+            <AppenderRef ref="Console"/>
+        </Logger>
+    </Loggers>
+</Configuration>

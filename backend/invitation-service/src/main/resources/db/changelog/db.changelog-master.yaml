@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: ./2024-08-24/db-cumulative-changelog.yaml
+      relativeToChangelogFile: true

@@ -1,0 +1,24 @@
+2024-08-19 20:43:58 [main] INFO  AuthServiceApplication - Starting AuthServiceApplication using Java 17.0.5 with PID 20780 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-08-19 20:43:58 [main] INFO  AuthServiceApplication - The following 1 profile is active: "dev"
+2024-08-19 20:43:59 [main] INFO  HikariDataSource - HikariPool-1 - Starting...
+2024-08-19 20:43:59 [main] INFO  HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f2c995b
+2024-08-19 20:43:59 [main] INFO  HikariDataSource - HikariPool-1 - Start completed.
+2024-08-19 20:44:00 [main] INFO  HikariDataSource - HikariPool-2 - Starting...
+2024-08-19 20:44:00 [main] INFO  HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@51d26fed
+2024-08-19 20:44:00 [main] INFO  HikariDataSource - HikariPool-2 - Start completed.
+2024-08-19 20:44:00 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-19 20:44:00 [main] INFO  AuthServiceApplication - Started AuthServiceApplication in 3.041 seconds (process running for 3.584)
+2024-08-19 20:44:21 [SpringApplicationShutdownHook] INFO  HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-19 20:44:21 [SpringApplicationShutdownHook] INFO  HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-08-19 20:44:24 [main] INFO  AuthServiceApplication - Starting AuthServiceApplication using Java 17.0.5 with PID 20860 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\auth-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-08-19 20:44:24 [main] INFO  AuthServiceApplication - The following 1 profile is active: "dev"
+2024-08-19 20:44:25 [main] INFO  HikariDataSource - HikariPool-1 - Starting...
+2024-08-19 20:44:25 [main] INFO  HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f2c995b
+2024-08-19 20:44:25 [main] INFO  HikariDataSource - HikariPool-1 - Start completed.
+2024-08-19 20:44:26 [main] INFO  HikariDataSource - HikariPool-2 - Starting...
+2024-08-19 20:44:26 [main] INFO  HikariPool - HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@51d26fed
+2024-08-19 20:44:26 [main] INFO  HikariDataSource - HikariPool-2 - Start completed.
+2024-08-19 20:44:26 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-19 20:44:27 [main] INFO  AuthServiceApplication - Started AuthServiceApplication in 2.95 seconds (process running for 3.513)
+2024-08-19 20:45:53 [SpringApplicationShutdownHook] INFO  HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-08-19 20:45:53 [SpringApplicationShutdownHook] INFO  HikariDataSource - HikariPool-1 - Shutdown completed.

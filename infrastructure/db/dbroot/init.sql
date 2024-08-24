@@ -31,13 +31,12 @@ ALTER USER NotificationService WITH ENCRYPTED PASSWORD '12345';
 CREATE DATABASE NotificationServiceDB;
 GRANT ALL PRIVILEGES ON DATABASE NotificationServiceDB TO NotificationService;
 
-BEGIN;
-CREATE USER NotificationService WITH ENCRYPTED PASSWORD '12345';
-CREATE DATABASE NotificationServiceDB;
-GRANT ALL PRIVILEGES ON DATABASE NotificationServiceDB TO NotificationService;
-COMMIT;
-
 CREATE USER AnalyticsService;
 ALTER USER AnalyticsService WITH ENCRYPTED PASSWORD '12345';
 CREATE DATABASE AnalyticsServiceDB;
 GRANT ALL PRIVILEGES ON DATABASE AnalyticsServiceDB TO AnalyticsService;
+
+CREATE USER InvitationService;
+ALTER USER InvitationService WITH ENCRYPTED PASSWORD '12345';
+CREATE DATABASE InvitationServiceDB;
+GRANT ALL PRIVILEGES ON DATABASE InvitationServiceDB TO InvitationService;
