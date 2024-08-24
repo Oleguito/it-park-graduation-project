@@ -20,6 +20,7 @@ export type ProjectCreateCommand = {
     status: string;
     ownerId: number;
     dateInfo: DateInfo;
+    creatorEmail: string;
 };
 
 

@@ -22,5 +22,5 @@ public class ProjectCreateCommand {
     private Status status;
     private Long ownerId;
     private DateInfo dateInfo;
-    private String[] participantsEmails;
+    private String creatorEmail;
 }

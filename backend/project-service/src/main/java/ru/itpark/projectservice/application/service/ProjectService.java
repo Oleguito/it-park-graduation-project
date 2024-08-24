@@ -2,96 +2,53 @@ package ru.itpark.projectservice.application.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import ru.itpark.projectservice.application.service.userproject.UserProjectService;
 import ru.itpark.projectservice.domain.participantproject.UserProject;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
-import ru.itpark.projectservice.infrastructure.authservice.dto.query.UserQuery;
-import ru.itpark.projectservice.infrastructure.authservice.dto.query.contracts.UserSearchParams;
 import ru.itpark.projectservice.infrastructure.repositories.ProjectRepo;
 import ru.itpark.projectservice.infrastructure.repositories.project.custom.CustomProjectsRepository;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class ProjectService {
     
     @Autowired
     ProjectRepo projectRepository;
-
-//    @Autowired
-//    SslBundles sslBundles;
-
-//    @Autowired
-//    ProjectMapper projectMapper;
     
-    // RestClient restClient;
+    @Autowired
+    UserProjectService userProjectService;
     
-    RestTemplate restTemplate = new RestTemplate();
+    // RestTemplate restTemplate = new RestTemplate();
     
     @Autowired
     CustomProjectsRepository customProjectsRepository;
     
     public Project save(ProjectCreateCommand projectCreateCommand) {
         
-        final Set<UserProject> participants = new HashSet<>();
-        // "https://localhost:8088/api/users"
-        
-        
-        // получить пользователей по email из user-service
-        List<UserQuery> users = new ArrayList<>();
-        Arrays.stream(projectCreateCommand.getParticipantsEmails()).forEach(
-        email -> {
-            String url = "https://localhost:8088/api/users/search";
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-            
-            UserSearchParams searchParams = UserSearchParams.builder()
-                                            .email(email)
-                                            .build();
-            
-            HttpEntity<UserSearchParams> requestEntity = new HttpEntity<>(searchParams, headers);
-            
-            ResponseEntity<UserQuery> responseEntity = restTemplate.exchange(
-            url,
-            HttpMethod.POST,
-            requestEntity,
-            UserQuery.class
-            );
-            
-            UserQuery response = responseEntity.getBody();
-            users.add(response);
-        }
-        );
-        
-        System.out.println();
-        
-//        Arrays.stream(projectCreateCommand.getParticipantsEmails()).forEach(email -> {
-//            participants.add(
-//            UserProject.builder()
-//            .id(ParticipantProjectId.builder()
-//
-//                .build())
-//            .build()
-//            );
-//        });
-        
         final Project project = Project.builder()
-                                .name(projectCreateCommand.getName())
-                                .description(projectCreateCommand.getDescription())
-                                .startDate(projectCreateCommand.getStartDate())
-                                .endDate(projectCreateCommand.getEndDate())
-                                .status(projectCreateCommand.getStatus())
-                                .ownerId(projectCreateCommand.getOwnerId())
-                                .dateInfo(projectCreateCommand.getDateInfo())
-//                                .participants(participants)
-                                .build();
+                          .name(projectCreateCommand.getName())
+                          .description(projectCreateCommand.getDescription())
+                          .startDate(projectCreateCommand.getStartDate())
+                          .endDate(projectCreateCommand.getEndDate())
+                          .status(projectCreateCommand.getStatus())
+                          .ownerId(projectCreateCommand.getOwnerId())
+                          .dateInfo(projectCreateCommand.getDateInfo())
+                          .build();
         
-        return customProjectsRepository.createProject(project);
+        Project saved = customProjectsRepository.createProject(project);
+        
+        userProjectService.save(UserProject.builder()
+                                .project_id(saved.getId())
+                                .email(projectCreateCommand.getCreatorEmail())
+                                .build());
+        
+        return saved;
     }
     
     public List<Project> getAll() {

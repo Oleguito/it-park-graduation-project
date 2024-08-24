@@ -74,7 +74,8 @@ const AddProjectBlock = () => {
                 dateInfo: {
                     createdAt: new Date(),
                     deletedAt: null,
-                }
+                },
+                creatorEmail: user.email,
             })
             .then((response) => {
                 console.log("response: ", response);
