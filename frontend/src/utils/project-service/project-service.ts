@@ -47,13 +47,30 @@ export const addParticipantToProject = async (
             Settings.backend.projectService.addParticipantToProjectUrl(), 
             userProjecCreateCommand,
             {
-                
+
             }
         )
         .then((response) => {
-            console.log("findUsersForProject: SUCCESS");
+            console.log("addParticipantToProject: SUCCESS");
         })
         .catch((error) => {
-            console.log(`findUsersForProject error: `, error);
+            console.log(`addParticipantToProject error: `, error);
         });
 }
+
+export const removeParticipantFromProject = async (
+    userProjecDeleteCommand: UserProjectCreateCommand
+): Promise<void> => {
+    return await axios
+        .post(
+            Settings.backend.projectService.removeParticipantToProjectUrl(),
+            userProjecDeleteCommand,
+            {}
+        )
+        .then((response) => {
+            console.log("removeParticipantFromProject: SUCCESS");
+        })
+        .catch((error) => {
+            console.log(`removeParticipantFromProject error: `, error);
+        });
+};

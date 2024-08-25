@@ -111,7 +111,7 @@ const ProjectsPage = () => {
                                     }
                                     <div className="flex flex-wrap">
                                         {participants.map(participant => {
-                                            console.log(participant)
+                                            // console.log(participant)
                                             return (
                                                 <span className="italic">
                                                     {participant.email}
