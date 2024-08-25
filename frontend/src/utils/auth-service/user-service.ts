@@ -8,7 +8,8 @@ import https from "https";
 import jwt_decode from "jwt-decode";
 import { TokenType } from "../token";
 import {
-    getAxiosInstance, dumbAxiosInstance
+    dumbAxiosInstance,
+    getAxiosInstance
 } from "../utilities/axiosInstance";
 
 const myhttpsAgent = new https.Agent({
@@ -126,8 +127,8 @@ export const fetchUserInfo = async function () : Promise<UserQuery[]> {
     ).accessToken;
     const tokenData: JwtParseData = jwt_decode(token);
 
-    console.log("tokenData: ", tokenData);
-    console.log(tokenData.exp * 1000 - new Date().getTime());
+    // console.log("tokenData: ", tokenData);
+    // console.log(tokenData.exp * 1000 - new Date().getTime());
 
     const userQuery: UserCreateQuery = {
         email: tokenData.email,
@@ -147,7 +148,7 @@ export const fetchUserInfo = async function () : Promise<UserQuery[]> {
             }
         )
         .then((response) => {
-            console.log("fetchUserInfo inside: ", response);
+            // console.log("fetchUserInfo inside: ", response);
 			return response.data;
         })
         .catch((error) => {

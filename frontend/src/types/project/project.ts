@@ -35,3 +35,15 @@ export type ProjectQuery = {
     ownerId: number;    
     dateInfo: DateInfo;
 }
+
+// Этот тип респонса содержит электронный адрес пользователя и его проект
+export type UserProjectResponse = {
+    id?: string
+    email?: string,
+    project_id?: number
+}
+
+// Этот тип респонса содержит электронный адрес пользователя 
+export type UserResponse = {
+    email: string
+}

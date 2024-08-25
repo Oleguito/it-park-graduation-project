@@ -25,8 +25,8 @@ export const Settings = {
                 return this.baseUrl + "/api/users/all";
             },
             getUserSearchUrl: function () {
-                return this.baseUrl + "/api/users/search";  
-            }
+                return this.baseUrl + "/api/users/search";
+            },
         },
         projectService: {
             baseUrl: "http://localhost:8087",
@@ -35,6 +35,9 @@ export const Settings = {
             },
             createProjectUrl: function () {
                 return this.baseUrl + "/projects/add";
+            },
+            findUsersForProjectUrl: function (projectId: number) {
+                return this.baseUrl + `/projects/all/${projectId}`;
             },
         },
     },

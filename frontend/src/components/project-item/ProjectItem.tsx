@@ -1,9 +1,7 @@
 'use client'
 
-import React from 'react'
-import { Button } from '../ui/button';
 
-import css from './styles.module.css'
+import css from './styles.module.css';
 
 export type Props = {
     id: number;
@@ -26,7 +24,7 @@ const ProjectItem = ({ props }: { props: Props }) => {
               </span>
               <div>Status: <span>{props.status}</span></div>
               <div className={css["project-item-upper-part"]}>
-                  <div>Project #{props.id}</div>
+                  <div>Project id: {props.id}</div>
                   <textarea
                       value={props.description}
                       className={`${css["description-box"]} italic`}

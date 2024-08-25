@@ -75,7 +75,7 @@ public class ProjectsController {
      * @return список объектов, содержащих электронные адреса участников
      */
     @GetMapping("/all/{projectId}")
-    public List<UserResponse> getUsersForProjectId(@PathVariable long projectId) {
+    public List<UserResponse> getUsersForProjectId(@PathVariable Long projectId) {
         
         return userProjectService.getAllForProjectId(projectId)
                .stream()
@@ -83,6 +83,9 @@ public class ProjectsController {
                                    .email(userProject.getEmail())
                                    .build())
                .toList();
+//        return List.of( UserResponse.builder()
+//                                   .email("tebziroator@rambler.ru")
+//                                   .build());
     }
     
     @RequestMapping(value = "/message", method=RequestMethod.POST)
