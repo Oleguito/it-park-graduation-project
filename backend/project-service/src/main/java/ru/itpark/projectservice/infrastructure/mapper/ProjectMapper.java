@@ -3,18 +3,18 @@ package ru.itpark.projectservice.infrastructure.mapper;
 import org.mapstruct.Mapper;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
-import ru.itpark.projectservice.presentation.projects.dto.query.ProjectQuery;
+import ru.itpark.projectservice.presentation.projects.dto.query.ProjectResponse;
 
 import java.util.List;
 
 @Mapper
 public interface ProjectMapper {
     
-    ProjectQuery toQuery(Project project);
+    ProjectResponse toResponse(Project project);
     
-    ProjectQuery toQuery(ProjectCreateCommand projectCreateCommand);
+    ProjectResponse toResponse(ProjectCreateCommand projectCreateCommand);
     
-    List<ProjectQuery> toListQuery(List<Project> projects);
+    List<ProjectResponse> toListResponse(List<Project> projects);
     
     // Project toProject(ProjectCreateCommand projectCreateCommand);
     

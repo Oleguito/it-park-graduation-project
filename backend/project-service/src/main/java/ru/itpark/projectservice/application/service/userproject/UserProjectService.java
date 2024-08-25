@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import ru.itpark.projectservice.domain.participantproject.UserProject;
 import ru.itpark.projectservice.infrastructure.repositories.UserProjectRepo;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserProjectService {
@@ -14,5 +16,9 @@ public class UserProjectService {
     public UserProject save(UserProject userProject){
         
         return userProjectRepo.save(userProject);
+    }
+    
+    public List<UserProject> getAllForProjectId(Long projectId) {
+        return userProjectRepo.findByProject_id(projectId);
     }
 }
