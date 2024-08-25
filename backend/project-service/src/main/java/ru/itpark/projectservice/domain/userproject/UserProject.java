@@ -1,4 +1,4 @@
-package ru.itpark.projectservice.domain.participantproject;
+package ru.itpark.projectservice.domain.userproject;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import ru.itpark.projectservice.domain.project.Project;
 
 import java.util.UUID;
 

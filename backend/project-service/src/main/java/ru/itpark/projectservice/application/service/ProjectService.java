@@ -4,7 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.itpark.projectservice.application.service.userproject.UserProjectService;
-import ru.itpark.projectservice.domain.participantproject.UserProject;
+import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.repositories.ProjectRepo;
@@ -12,7 +12,6 @@ import ru.itpark.projectservice.infrastructure.repositories.project.custom.Custo
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 @Service

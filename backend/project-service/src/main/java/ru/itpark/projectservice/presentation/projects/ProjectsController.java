@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.*;
 import ru.itpark.projectservice.application.service.KafkaService;
 import ru.itpark.projectservice.application.service.ProjectService;
 import ru.itpark.projectservice.application.service.userproject.UserProjectService;
-import ru.itpark.projectservice.domain.UserProjectCreateCommand;
+import ru.itpark.projectservice.presentation.userproject.dto.command.create.UserProjectCreateCommand;
 import ru.itpark.projectservice.domain.UserResponse;
-import ru.itpark.projectservice.domain.participantproject.UserProject;
+import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.domain.project.valueobjects.DateInfo;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
 import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 import ru.itpark.projectservice.presentation.projects.dto.query.ProjectResponse;
+import ru.itpark.projectservice.presentation.userproject.dto.command.delete.UserProjectDeleteCommand;
 
 @RestController
 @RequestMapping("/projects")
@@ -100,5 +101,14 @@ public class ProjectsController {
                                 .email(userProjectCreateCommand.getEmail())
                                 .project_id(userProjectCreateCommand.getProjectId())
                                 .build());
+    }
+    
+    @RequestMapping(path = "/remove-participant", method = RequestMethod.POST)
+    @CrossOrigin
+    public void removeParticipant(@RequestBody UserProjectDeleteCommand userProjectDeleteCommand) {
+        
+        userProjectService.delete(
+            userProjectDeleteCommand
+        );
     }
 }

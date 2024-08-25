@@ -2,12 +2,10 @@ package ru.itpark.projectservice.domain.project;
 
 import jakarta.persistence.*;
 import lombok.*;
-import ru.itpark.projectservice.domain.participantproject.UserProject;
 import ru.itpark.projectservice.domain.project.valueobjects.DateInfo;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
 
 import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @Getter

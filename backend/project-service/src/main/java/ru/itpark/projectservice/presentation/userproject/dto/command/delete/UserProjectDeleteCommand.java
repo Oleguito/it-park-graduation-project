@@ -1,4 +1,4 @@
-package ru.itpark.projectservice.domain;
+package ru.itpark.projectservice.presentation.userproject.dto.command.delete;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserProjectCreateCommand {
+public class UserProjectDeleteCommand {
     
     private String email;
     

@@ -2,8 +2,9 @@ package ru.itpark.projectservice.application.service.userproject;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.itpark.projectservice.domain.participantproject.UserProject;
+import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.infrastructure.repositories.UserProjectRepo;
+import ru.itpark.projectservice.presentation.userproject.dto.command.delete.UserProjectDeleteCommand;
 
 import java.util.List;
 
@@ -22,4 +23,11 @@ public class UserProjectService {
         return userProjectRepo.findByProject_id(projectId);
     }
     
+    public void delete(UserProjectDeleteCommand userProjectDeleteCommand) {
+        
+        userProjectRepo.deleteByEmailAndProjectId(
+            userProjectDeleteCommand.getEmail(),
+            userProjectDeleteCommand.getProjectId()
+        );
+    }
 }
