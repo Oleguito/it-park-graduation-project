@@ -39,6 +39,12 @@ export const Settings = {
             findUsersForProjectUrl: function (projectId: number) {
                 return this.baseUrl + `/projects/all/${projectId}`;
             },
+            addParticipantToProjectUrl: function () {
+                return this.baseUrl + "/projects/add-participant";
+            },
+            removeParticipantToProjectUrl: function () {
+                return this.baseUrl + "/projects/remove-participant";
+            },
         },
     },
 };

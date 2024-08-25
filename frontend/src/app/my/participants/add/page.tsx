@@ -3,17 +3,22 @@
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
+import { addParticipantToProject } from "@/utils/project-service/project-service";
+import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { z } from "zod";
 import css from "./styles.module.css";
+
+// free@sex.com
 
 const schema = z.object({
     email_input_box: z.string().email(),
 });
 
 const AddParticipantPage = () => {
-    const { toast } = useToast();
 
+    const searchParams = useSearchParams();
+    const { toast } = useToast();
     const emailRef = useRef(null);
 
     const handleAddParticipant = (event) => {
@@ -38,6 +43,31 @@ const AddParticipantPage = () => {
         }
         console.log(emailRef.current.value);
         console.log(parsed);
+        
+        const forProject = searchParams.get('forProject');
+        console.log("forProject: ", forProject);
+
+        addParticipantToProject({
+            email: emailRef.current.value,
+            projectId: Number(forProject),
+        })
+        .then(response => {
+            console.log("handleAddParticipant SUCCESS!");
+            toast({
+                title: "Участник добавлен",
+                description: "Участник добавлен",
+                duration: 3000,
+                variant: "default",
+            })
+        }).catch (error => {
+            console.log("handleAddParticipant error: ", error);
+            toast({
+                title: "Произошла ошибка!",
+                description: "Участник НЕ добавлен",
+                duration: 3000,
+                variant: "default",
+            });
+        });
     };
 
     return (

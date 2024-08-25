@@ -2,7 +2,7 @@
 import ProjectItem from "@/components/project-item/ProjectItem";
 import { Button } from "@/components/ui/button";
 import { Settings } from "@/constants/settings";
-import { UserResponse } from "@/types/project/project";
+import { ProjectResponse, UserResponse } from "@/types/project/project";
 import { UserQuery } from "@/types/UserQuery";
 import { fetchUserInfo } from "@/utils/auth-service/user-service";
 import { findUsersForProject } from "@/utils/project-service/project-service";
@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 
 const ProjectsPage = () => {
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState([] as ProjectResponse[]);
     const [user, setUser] = useState({} as UserQuery);
     const [participants, setParticipants] = useState([] as UserResponse[]);
 
@@ -50,12 +50,12 @@ const ProjectsPage = () => {
 
     }, []);
 
-    const addMemberHandler = () => {
-        window.location.href = "/my/participants/add";
+    const addMemberHandler = (project: ProjectResponse) => {
+        window.location.href = `/my/participants/add?forProject=${project.id}`;
     };
 
-    const deleteMemberHandler = () => {
-        window.location.href = "/my/participants/delete";
+    const deleteMemberHandler = (project: ProjectResponse) => {
+        window.location.href = `/my/participants/remove?forProject=${project.id}`;
     };
 
     const getProjectsFromBackend = async () => {
@@ -122,12 +122,12 @@ const ProjectsPage = () => {
                                 </div>
                                 <div className="project-item-participants-list-buttons">
                                     <Button
-                                        onClick={addMemberHandler}
+                                        onClick={() => {addMemberHandler(project)}}
                                         className="m-1"
                                     >
                                         Добавить участника
                                     </Button>
-                                    <Button onClick={deleteMemberHandler}>
+                                    <Button onClick={() => {deleteMemberHandler(project);}}>
                                         Удалить участника
                                     </Button>
                                 </div>

@@ -1,5 +1,5 @@
 import { Settings } from "@/constants/settings";
-import { ProjectCreateCommand, ProjectQuery, UserResponse } from "@/types/project/project";
+import { ProjectCreateCommand, ProjectQuery, UserProjectCreateCommand, UserResponse } from "@/types/project/project";
 import axios from "axios";
 import { getAxiosInstance } from "../utilities/axiosInstance";
 
@@ -37,3 +37,23 @@ export const findUsersForProject = async (
             console.log(`findUsersForProject error: `, error);
         });
 };
+
+export const addParticipantToProject = async (
+    userProjecCreateCommand: UserProjectCreateCommand
+): Promise<void> => {
+
+    return await axios
+        .post(
+            Settings.backend.projectService.addParticipantToProjectUrl(), 
+            userProjecCreateCommand,
+            {
+                
+            }
+        )
+        .then((response) => {
+            console.log("findUsersForProject: SUCCESS");
+        })
+        .catch((error) => {
+            console.log(`findUsersForProject error: `, error);
+        });
+}
