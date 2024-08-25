@@ -2,7 +2,6 @@ package ru.itpark.projectservice.presentation.projects;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import ru.itpark.projectservice.application.service.KafkaService;
 import ru.itpark.projectservice.application.service.ProjectService;
 import ru.itpark.projectservice.application.service.userproject.UserProjectService;
+import ru.itpark.projectservice.domain.UserProjectCreateCommand;
 import ru.itpark.projectservice.domain.UserResponse;
+import ru.itpark.projectservice.domain.participantproject.UserProject;
 import ru.itpark.projectservice.domain.project.valueobjects.DateInfo;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
 import ru.itpark.projectservice.infrastructure.kafka.InvitationMessage;
@@ -83,14 +84,21 @@ public class ProjectsController {
                                    .email(userProject.getEmail())
                                    .build())
                .toList();
-//        return List.of( UserResponse.builder()
-//                                   .email("tebziroator@rambler.ru")
-//                                   .build());
     }
     
     @RequestMapping(value = "/message", method=RequestMethod.POST)
     public void sendNotification(@RequestBody InvitationMessage notificationMessage) {
 
         kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
+    }
+    
+    @RequestMapping(path = "/add-participant", method = RequestMethod.POST)
+    @CrossOrigin
+    public void addParticipant(@RequestBody UserProjectCreateCommand userProjectCreateCommand) {
+
+        userProjectService.save(UserProject.builder()
+                                .email(userProjectCreateCommand.getEmail())
+                                .project_id(userProjectCreateCommand.getProjectId())
+                                .build());
     }
 }

@@ -21,4 +21,5 @@ public class UserProjectService {
     public List<UserProject> getAllForProjectId(Long projectId) {
         return userProjectRepo.findByProject_id(projectId);
     }
+    
 }
