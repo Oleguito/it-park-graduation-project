@@ -20,18 +20,19 @@ public class MinioService {
     @Autowired
     private MinioClient minioClient;
     
-    public void uploadFile(MultipartFile file) throws Exception {
+    public void uploadFile(String userId, String projectId, MultipartFile file) throws Exception {
         
         createBucketIfNotExists();
         
         String fileName = file.getOriginalFilename();
+        String objectName = "u" + userId + "/" + "p" + projectId + "/" + fileName;
         InputStream fileInputStream = file.getInputStream();
         
         // Upload the file to specified bucket with original name
         minioClient.putObject(
             PutObjectArgs.builder()
                 .bucket(bucketName)
-                .object(fileName)
+                .object(objectName)
                 .stream(fileInputStream, fileInputStream.available(), -1)
                 .contentType(file.getContentType())
             .build()
