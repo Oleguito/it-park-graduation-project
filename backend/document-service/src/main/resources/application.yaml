@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: document-service
+  datasource:
+    url: ${GP_DOCUMENT_SERVICE_DB_URL:jdbc:postgresql://localhost:5432/documentservicedb}
+    username: documentservice
+    password: 12345
+    driverClassName: org.postgresql.Driver

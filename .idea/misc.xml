@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/backend/auth-service/pom.xml" />
         <option value="$PROJECT_DIR$/backend/auth-service/dto/pom.xml" />
         <option value="$PROJECT_DIR$/backend/invitation-service/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/document-service/document-service/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/document-service/pom.xml" />
       </list>
     </option>
   </component>

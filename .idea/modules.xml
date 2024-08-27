@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/backend/auth-service/dto/auth-dto.iml" filepath="$PROJECT_DIR$/backend/auth-service/dto/auth-dto.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/it-park-graduation-project.iml" filepath="$PROJECT_DIR$/.idea/it-park-graduation-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/project-service/project-service.iml" filepath="$PROJECT_DIR$/backend/project-service/project-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend/shared-library/shared-library.iml" filepath="$PROJECT_DIR$/backend/shared-library/shared-library.iml" />
     </modules>
   </component>
