@@ -1,12 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import FileUploadComponent from "@/components/file-upload/FileUploadComponent";
 
 const DocumentsPage = () => {
-
-	const handleUploadDocument = () => {
-		console.log("Uploading document to backend...")
-	}
 
 	return (
         <>
@@ -26,14 +22,7 @@ const DocumentsPage = () => {
                         <li>Документ3.excalidraw</li>
                     </ul>
                 </div>
-                <Button
-                    variant="outline"
-                    onClick={() => {
-                        handleUploadDocument();
-                    }}
-                >
-                    <div>Загрузить документ</div>
-                </Button>
+				<FileUploadComponent />
             </div>
         </>
     );

@@ -46,5 +46,11 @@ export const Settings = {
                 return this.baseUrl + "/projects/remove-participant";
             },
         },
+        documentService: {
+            baseUrl: "http://localhost:8080",
+            fileUploadUrl: function () {
+                return this.baseUrl + "/api/files/upload";
+            }
+        },
     },
 };
