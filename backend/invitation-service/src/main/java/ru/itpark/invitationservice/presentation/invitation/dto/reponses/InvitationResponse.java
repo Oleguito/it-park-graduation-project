@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import ru.itpark.invitationservice.domain.invitations.VO.enums.Status;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,4 +16,6 @@ public class InvitationResponse {
     public String emailFrom;
     public Long projectId;
     public Status status;
+    public UUID invUUID;
+
 }

@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: kpv
+      changes:
+        - sqlFile:
+            path: ./add-new-unique-identifier.sql
+            relativeToChangelogFile: true

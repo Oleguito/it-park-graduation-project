@@ -25,7 +25,7 @@ public class CertsConfig {
         KeyStore keyStore;
         try {
             keyStore = KeyStore.getInstance("PKCS12");
-            try (InputStream inputStream = new FileInputStream("src/main/resources/certificate.p12")) {
+            try (InputStream inputStream = new FileInputStream("certificate.p12")) {
                 keyStore.load(inputStream, certPasswordEnv.toCharArray());
             }
             TrustManager[] trustAllCerts = new TrustManager[]{
@@ -72,7 +72,7 @@ public class CertsConfig {
         System.out.println("PostConstruct certs config BEGIN");
         
         KeyStore keyStore = null;
-        try (InputStream inputStream = new FileInputStream("src/main/resources/certificate.p12")) {
+        try (InputStream inputStream = new FileInputStream("certificate.p12")) {
             keyStore = KeyStore.getInstance("PKCS12");
             keyStore.load(inputStream, certPasswordEnv.toCharArray());
 

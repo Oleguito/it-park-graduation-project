@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import ru.itpark.invitationservice.domain.invitations.Invitation;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,6 +22,8 @@ public class InvitationSearchQuery implements Specification<Invitation> {
     public String emailTo;
     public String emailFrom;
     public String status;
+    public Long projectId;
+    public UUID invUUID;
 
     @Override
     public Predicate toPredicate(Root<Invitation> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -35,6 +39,14 @@ public class InvitationSearchQuery implements Specification<Invitation> {
 
         if (status != null) {
             predicate = cb.and(predicate, cb.equal(root.get("status"), status));
+        }
+
+        if (projectId != null) {
+            predicate = cb.equal(root.get("project_id"), projectId);
+        }
+
+        if (invUUID != null) {
+            predicate = cb.equal(root.get("invUUID"), invUUID);
         }
 
         return predicate;

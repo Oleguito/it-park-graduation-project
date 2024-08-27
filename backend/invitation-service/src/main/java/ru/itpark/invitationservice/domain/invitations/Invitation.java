@@ -1,13 +1,18 @@
 package ru.itpark.invitationservice.domain.invitations;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import ru.itpark.invitationservice.domain.invitations.VO.enums.Status;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "invitations")
+@Getter
+@Setter
 public class Invitation {
 
     @Id
@@ -30,5 +35,8 @@ public class Invitation {
 
     @Column(name = "created_at")
     public LocalDateTime created_at = LocalDateTime.now();
+
+    @Column(name = "inv_uuid")
+    public UUID invUUID = UUID.randomUUID();
 
 }

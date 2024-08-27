@@ -1,6 +1,6 @@
 CREATE SEQUENCE IF NOT EXISTS invitations_seq_gen;
 
-CREATE TABLE invitations
+CREATE TABLE IF NOT EXISTS invitations
 (
     id         bigint PRIMARY KEY,
     email_to   VARCHAR(255),
