@@ -36,7 +36,7 @@ public class ProjectsController {
 
     @Autowired
     KafkaService kafkaService;
-
+    
     @RequestMapping("/alltest")
     public List<ProjectResponse> getAllTest() {
         return List.of(
@@ -88,6 +88,7 @@ public class ProjectsController {
     }
     
     @RequestMapping(value = "/message", method=RequestMethod.POST)
+    @CrossOrigin
     public void sendNotification(@RequestBody InvitationMessage notificationMessage) {
 
         kafkaService.sendNotificationMessage("notification-topic", notificationMessage);

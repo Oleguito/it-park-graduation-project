@@ -1,10 +1,10 @@
 cls
 
-rmdir db\dbdata /s /q
+rem rmdir db\dbdata /s /q
 
-docker compose down -v --remove-orphans --volumes 
+docker compose -f docker-compose-oleg.yaml down -v --remove-orphans --volumes
 
-docker system prune -a -q
+rem docker system prune -a -q
 
-docker compose up
+docker compose -f docker-compose-oleg.yaml up
 

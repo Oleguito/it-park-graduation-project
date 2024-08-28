@@ -6,3 +6,8 @@ Backend:
     сделать так чтобы из project service можно было ходить по https на authservice
 
     добавить Swagger во все микросервисы?
+
+Докер:
+    при создании db_data в hba.conf появляется вот такая строчка по умолчанию
+    host all all all all scram-sha-256
+    которая не дает подключится к базе извне

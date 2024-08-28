@@ -50,7 +50,22 @@ export const Settings = {
             baseUrl: "http://localhost:8080",
             fileUploadUrl: function () {
                 return this.baseUrl + "/api/files/upload";
-            }
+            },
+        },
+        invitationService: {
+            baseUrl: "http://localhost:8082",
+            createInvitationUrl: function () {
+                return this.baseUrl + "/api/invitations";
+            },
+            findInvitationUrl: function () {
+                return this.baseUrl + "/api/invitations/find";
+            },
+            acceptInvitationUrl: function () {
+                return this.baseUrl + "/api/invitations";
+            },
+            declineInvitationUrl: function () {
+                return this.baseUrl + "/api/invitations";
+            },
         },
     },
 };

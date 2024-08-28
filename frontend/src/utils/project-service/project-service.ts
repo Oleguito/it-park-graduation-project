@@ -13,7 +13,7 @@ export const createProjectOnBackend = async function (
             },
         })
         .then((response) => {
-            console.log("createProjectOnBackend: ", response);
+            // console.log("createProjectOnBackend: ", response);
             return response.data;
         })
         .catch((error) => {
@@ -29,12 +29,12 @@ export const findUsersForProject = async (
     return await axios
         .get(Settings.backend.projectService.findUsersForProjectUrl(projectId))
         .then((response) => {
-            console.log("findUsersForProject: ", response);
+            // console.log("findUsersForProject: ", response);
             return response.data;
         })
         .catch((error) => {
-            return "ERROR";
             console.log(`findUsersForProject error: `, error);
+            return "ERROR";
         });
 };
 
@@ -51,7 +51,7 @@ export const addParticipantToProject = async (
             }
         )
         .then((response) => {
-            console.log("addParticipantToProject: SUCCESS");
+            // console.log("addParticipantToProject: SUCCESS");
         })
         .catch((error) => {
             console.log(`addParticipantToProject error: `, error);
@@ -68,7 +68,7 @@ export const removeParticipantFromProject = async (
             {}
         )
         .then((response) => {
-            console.log("removeParticipantFromProject: SUCCESS");
+            // console.log("removeParticipantFromProject: SUCCESS");
         })
         .catch((error) => {
             console.log(`removeParticipantFromProject error: `, error);

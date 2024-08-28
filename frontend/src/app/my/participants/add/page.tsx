@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/toaster";
 import { useToast } from "@/components/ui/use-toast";
-import { addParticipantToProject } from "@/utils/project-service/project-service";
+import { sendNotification } from "@/utils/project-service/project-controller";
 import { useSearchParams } from "next/navigation";
 import { useRef } from "react";
 import { z } from "zod";
@@ -46,27 +46,48 @@ const AddParticipantPage = () => {
         const forProject = searchParams.get('forProject');
         console.log("forProject: ", forProject);
 
-        addParticipantToProject({
-            email: emailRef.current.value,
+        sendNotification({
+            projectCreatorEmail: "tenzoriator@rambler.ru",
+            invitedUserEmail: emailRef.current.value,
+            invitationMessage: "ХЕЛО МАЗАФАКА",
+            type: "invite",
+            key: "9b5e159b-fac5-42e2-ae45-4c91e90ec8c3",
             projectId: Number(forProject),
-        })
-        .then(response => {
-            console.log("handleAddParticipant SUCCESS!");
-            toast({
-                title: "Участник добавлен",
-                description: "Участник добавлен",
-                duration: 3000,
-                variant: "default",
-            })
-        }).catch (error => {
-            console.log("handleAddParticipant error: ", error);
-            toast({
-                title: "Произошла ошибка!",
-                description: "Участник НЕ добавлен",
-                duration: 3000,
-                variant: "default",
-            });
+            projectTitle: "специально не записал имя",
+            projectStatus: "специально не записал статус",
+            projectDescription: "специально не записал описание",
+        }).then(response => {
+            toast(
+                {
+                    title: "Участник приглашен",
+                    description: "Оповещение участнику отправлено",
+                    duration: 3000,
+                    variant: "default",
+                }
+            )
         });
+        
+        // addParticipantToProject({
+        //     email: emailRef.current.value,
+        //     projectId: Number(forProject),
+        // })
+        // .then(response => {
+        //     console.log("handleAddParticipant SUCCESS!");
+        //     toast({
+        //         title: "Участник добавлен",
+        //         description: "Участник добавлен",
+        //         duration: 3000,
+        //         variant: "default",
+        //     })
+        // }).catch (error => {
+        //     console.log("handleAddParticipant error: ", error);
+        //     toast({
+        //         title: "Произошла ошибка!",
+        //         description: "Участник НЕ добавлен",
+        //         duration: 3000,
+        //         variant: "default",
+        //     });
+        // });
     };
 
     return (
@@ -91,7 +112,7 @@ const AddParticipantPage = () => {
                         onClick={handleAddParticipant}
                         className="m-1 bg-slate-500 text-white font-bold rounded-sm"
                     >
-                        Добавить участника
+                        Отправить приглашение
                     </Button>
                 </div>
             </div>

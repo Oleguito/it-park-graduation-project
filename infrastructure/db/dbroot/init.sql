@@ -37,6 +37,6 @@ CREATE DATABASE AnalyticsServiceDB;
 GRANT ALL PRIVILEGES ON DATABASE AnalyticsServiceDB TO AnalyticsService;
 
 CREATE USER InvitationService;
-ALTER USER InvitationService WITH ENCRYPTED PASSWORD '12345';
+ALTER USER InvitationService WITH PASSWORD '12345';
 CREATE DATABASE InvitationServiceDB;
 GRANT ALL PRIVILEGES ON DATABASE InvitationServiceDB TO InvitationService;

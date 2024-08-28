@@ -41,7 +41,7 @@ const ProjectsPage = () => {
 
         findUsersForProject(1)
         .then(response => {
-            console.log("findUsersForProject response: ", response);
+            // console.log("findUsersForProject response: ", response);
             setParticipants(response)
         })
         .catch(error => {
@@ -83,7 +83,7 @@ const ProjectsPage = () => {
                 Технологии: gRPC, база данных для хранения информации о проектах
                 и задачах (например, MongoDB).
             </div>
-            <div className="w-[95%]">
+            <div className="w-full">
                 {projects
                     .filter((project) => {
                         // console.log(
@@ -103,9 +103,9 @@ const ProjectsPage = () => {
                             />
                             <div key={project.id * 2}>
                                 <div>
-                                    <span className="font-bold">
+                                    <div className="font-bold">
                                         Приглашения от Вас в данный проект:
-                                    </span>
+                                    </div>
                                     <div>
                                         <ul>
                                             <li>
@@ -113,13 +113,21 @@ const ProjectsPage = () => {
                                                 <div>
                                                     {/* эта показывает поле КОМУ */}
                                                     <div className="flex">
-                                                        <span>Кому:</span>
-                                                        <span>vasya123@gmail.com</span>
+                                                        <div className="w-1/5">
+                                                            Кому:
+                                                        </div>
+                                                        <div className="italic">
+                                                            vasya123@gmail.com
+                                                        </div>
                                                     </div>
                                                     {/* а эта - СТАТУС */}
                                                     <div className="flex">
-                                                        <span>Статус:</span>
-                                                        <span>SENT</span>
+                                                        <div className="w-1/5">
+                                                            Статус:
+                                                        </div>
+                                                        <div className="italic">
+                                                            SENT
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -128,16 +136,20 @@ const ProjectsPage = () => {
                                 </div>
                                 <div className="project-item-participants-list">
                                     {
-                                        <span className="font-bold">
-                                            Участники:
-                                        </span>
+                                        <div>
+                                            <span className="font-bold">
+                                                Участники уже принявшие Ваше
+                                                приглашение:
+                                            </span>
+                                            <p>(Включая Вас)</p>
+                                        </div>
                                     }
                                     <div className="flex flex-wrap">
                                         {participants.map((participant) => {
                                             // console.log(participant)
                                             return (
                                                 <span
-                                                    className="italic"
+                                                    className="italic mr-1"
                                                     key={participant.email}
                                                 >
                                                     {participant.email}
@@ -147,6 +159,7 @@ const ProjectsPage = () => {
                                     </div>
                                 </div>
                                 <div className="project-item-participants-list-buttons">
+                                    <p>Отправить приглашение:</p>
                                     <Button
                                         onClick={() => {
                                             addMemberHandler(project);
@@ -155,6 +168,10 @@ const ProjectsPage = () => {
                                     >
                                         Добавить участника
                                     </Button>
+                                    <p>
+                                        Удалить участника, принявшего
+                                        приглашение:
+                                    </p>
                                     <Button
                                         onClick={() => {
                                             deleteMemberHandler(project);

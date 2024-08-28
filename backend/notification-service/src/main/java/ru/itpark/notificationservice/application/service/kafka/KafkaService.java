@@ -33,7 +33,11 @@ public class KafkaService {
 //        System.out.println(String.format("Полученное сообщение: %s", msg));
 //    }
 
-    @KafkaListener(topics = topic, containerFactory = "kafkaListenerContainerFactory", groupId = groupId)
+    @KafkaListener(
+        topics = topic,
+        containerFactory = "kafkaListenerContainerFactory",
+        groupId = groupId
+    )
     public void receiveNotificationMessage(@Payload ConsumerRecord<String, String> kafkaMessage) {
 
         InvitationMessage msg = gson.fromJson(kafkaMessage.value(), InvitationMessage.class);
@@ -45,16 +49,16 @@ public class KafkaService {
         System.out.println(String.format("Полученное сообщение (объект): %s", msg));
         emailSender.sendEmail(msg);
 
-        Notification built = Notification.builder()
-                .title(msg.getProjectTitle())
-                .userId(234L)
-                .message(msg.getInvitationMessage())
-                .type(msg.getType())
-                .read(false)
-                .createdAt(LocalDateTime.now())
-                .idempotentKey(msg.getKey())
-                .build();
-        notificationService.createNotification(built);
+//        Notification built = Notification.builder()
+//                .title(msg.getProjectTitle())
+//                .userId(234L)
+//                .message(msg.getInvitationMessage())
+//                .type(msg.getType())
+//                .read(false)
+//                .createdAt(LocalDateTime.now())
+//                .idempotentKey(msg.getKey())
+//                .build();
+//        notificationService.createNotification(built);
 
         System.out.println();
     }

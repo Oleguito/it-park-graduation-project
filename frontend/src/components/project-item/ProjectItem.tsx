@@ -20,15 +20,17 @@ const ProjectItem = ({ props }: { props: Props }) => {
           <div>
               <div>ProjectItem</div>
               <div>
-                  <span className="font-bold">Title:</span>
-                  <span className="italic">{props.title}</span>
+                  <div className="font-bold w-1/5 inline-block">Title:</div>
+                  <div className="italic inline-block">{props.title}</div>
               </div>
               <div>
-                  <span className="font-bold">Status:</span>
-                  <span>{props.status}</span>
+                  <div className="font-bold w-1/5 inline-block">Status:</div>
+                  <div className="inline-block">{props.status}</div>
               </div>
               <div className={css["project-item-upper-part"]}>
-                  <div className="font-bold w-1/5">Project id: {props.id}</div>
+                  <div className="font-bold w-1/4">
+                      Project id: {props.id}
+                  </div>
                   <textarea
                       value={props.description}
                       className={`${css["description-box"]} italic`}

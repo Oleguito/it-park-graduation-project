@@ -6,4 +6,6 @@ cls
 
 del /s /q target
 
+call mvnw liquibase:update -P include-liquibase-plugin
+
 mvnw spring-boot:run
