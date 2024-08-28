@@ -83,7 +83,7 @@ const ProjectsPage = () => {
                 Технологии: gRPC, база данных для хранения информации о проектах
                 и задачах (например, MongoDB).
             </div>
-            <div>
+            <div className="w-[95%]">
                 {projects
                     .filter((project) => {
                         // console.log(
@@ -102,6 +102,30 @@ const ProjectsPage = () => {
                                 }}
                             />
                             <div key={project.id * 2}>
+                                <div>
+                                    <span className="font-bold">
+                                        Приглашения от Вас в данный проект:
+                                    </span>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                {/* эта дивка показывает одно приглашение */}
+                                                <div>
+                                                    {/* эта показывает поле КОМУ */}
+                                                    <div className="flex">
+                                                        <span>Кому:</span>
+                                                        <span>vasya123@gmail.com</span>
+                                                    </div>
+                                                    {/* а эта - СТАТУС */}
+                                                    <div className="flex">
+                                                        <span>Статус:</span>
+                                                        <span>SENT</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div className="project-item-participants-list">
                                     {
                                         <span className="font-bold">
@@ -112,7 +136,10 @@ const ProjectsPage = () => {
                                         {participants.map((participant) => {
                                             // console.log(participant)
                                             return (
-                                                <span className="italic" key={participant.email}>
+                                                <span
+                                                    className="italic"
+                                                    key={participant.email}
+                                                >
                                                     {participant.email}
                                                 </span>
                                             );

@@ -1,12 +1,12 @@
 'use client'
 
-import {sidebarVars} from "@/components/side-bar/sidebarVars";
-import {usePathname} from "next/navigation";
-import {Button} from "@/components/ui/button";
-import Link from "next/link";
-import {getTokens, getUserRole, isTokenInLS} from "@/utils/token";
-import { useEffect, useState } from "react";
+import { sidebarVars } from "@/components/side-bar/sidebarVars";
+import { Button } from "@/components/ui/button";
+import { getTokens, getUserRole } from "@/utils/token";
 import { isRouteActive } from "@/utils/utilities/utilities";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 
 export const SideBar = () => {
@@ -22,7 +22,7 @@ export const SideBar = () => {
 
     return (
         isTokensExists && (
-            <div className="w-[15rem] flex flex-col gap-5 mr-36">
+            <div className="w-[15rem] flex flex-col gap-5">
                 {sidebarVars[getUserRole() as string]['/my'].map(
                     (value, index) => (
                         <Link href={value.link} key={index}>
