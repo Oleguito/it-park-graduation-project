@@ -92,9 +92,8 @@ const ProjectsPage = () => {
                         return project.ownerId === user.id;
                     })
                     .map((project) => (
-                        <>
+                        <div key={project.id}>
                             <ProjectItem
-                                key={project.id}
                                 props={{
                                     id: project.id,
                                     title: project.name,
@@ -102,7 +101,7 @@ const ProjectsPage = () => {
                                     description: project.description,
                                 }}
                             />
-                            <div>
+                            <div key={project.id * 2}>
                                 <div className="project-item-participants-list">
                                     {
                                         <span className="font-bold">
@@ -110,10 +109,10 @@ const ProjectsPage = () => {
                                         </span>
                                     }
                                     <div className="flex flex-wrap">
-                                        {participants.map(participant => {
+                                        {participants.map((participant) => {
                                             // console.log(participant)
                                             return (
-                                                <span className="italic">
+                                                <span className="italic" key={participant.email}>
                                                     {participant.email}
                                                 </span>
                                             );
@@ -122,17 +121,23 @@ const ProjectsPage = () => {
                                 </div>
                                 <div className="project-item-participants-list-buttons">
                                     <Button
-                                        onClick={() => {addMemberHandler(project)}}
+                                        onClick={() => {
+                                            addMemberHandler(project);
+                                        }}
                                         className="m-1"
                                     >
                                         Добавить участника
                                     </Button>
-                                    <Button onClick={() => {deleteMemberHandler(project);}}>
+                                    <Button
+                                        onClick={() => {
+                                            deleteMemberHandler(project);
+                                        }}
+                                    >
                                         Удалить участника
                                     </Button>
                                 </div>
                             </div>
-                        </>
+                        </div>
                     ))}
             </div>
         </>

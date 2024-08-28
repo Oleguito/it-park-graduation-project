@@ -77,7 +77,7 @@ class AuthServiceTests extends Specification {
                 HttpMethod.GET,
                 entity,
                 new ParameterizedTypeReference<List<User>>() {}
-        ).getBody();
+        ).getBody()
 
         println users
 

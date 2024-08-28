@@ -25,7 +25,12 @@ public class InvitationController {
     public void createInvitation(@Valid @RequestBody CreateInvitationCommand createInvitationCommand) {
         invitationService.createInvitation(createInvitationCommand);
     }
-
+    
+    /**
+     *
+     * @param query
+     * @return
+     */
     @PostMapping("/find")
     @ResponseBody
     public List<InvitationResponse> getInvitations(@RequestBody InvitationSearchQuery query) {
