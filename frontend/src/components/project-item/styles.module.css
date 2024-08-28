@@ -6,7 +6,7 @@
 
 /* vertical scrollbar */
 .description-box {
-    width: 500px;
+    width: 100%;
     overflow-y: scroll;
 }
 
