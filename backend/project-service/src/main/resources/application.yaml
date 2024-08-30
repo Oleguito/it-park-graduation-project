@@ -34,7 +34,8 @@ spring:
     password: '${DB_PASSWORD:12345}'
     change-log: classpath:db/changelog/db.changelog-master.yaml
     enabled: false
-  
+
+
   jpa:
     hibernate:
       properties:
