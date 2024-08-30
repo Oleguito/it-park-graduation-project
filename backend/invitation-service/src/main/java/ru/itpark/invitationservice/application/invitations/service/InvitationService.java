@@ -1,21 +1,18 @@
 package ru.itpark.invitationservice.application.invitations.service;
 
-import com.sun.jdi.VoidType;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import ru.itpark.invitationservice.domain.invitations.Invitation;
 import ru.itpark.invitationservice.domain.invitations.VO.enums.Status;
+import ru.itpark.invitationservice.infrastructure.exceptions.exceptions.UserWasAlreadyInvitedException;
 import ru.itpark.invitationservice.infrastructure.mappers.InvitationMapper;
 import ru.itpark.invitationservice.infrastructure.projectservice.UserProjectCreateCommand;
 import ru.itpark.invitationservice.infrastructure.repositories.invitations.InvitationsRepo;
@@ -40,6 +37,14 @@ public class InvitationService {
     private String projectServiceURL;
 
     public void createInvitation(CreateInvitationCommand createInvitationCommand) {
+        if(invitationsRepo.existsByEmailToAndProjectId(
+            createInvitationCommand.getEmailTo(),
+            createInvitationCommand.getProjectId()
+        )) {
+            throw new UserWasAlreadyInvitedException(
+                "Приглашение пользователю уже было отправлено"
+            );
+        };
         Invitation invitation = invitationMapper.toEntity(createInvitationCommand);
         invitationsRepo.save(invitation);
     }

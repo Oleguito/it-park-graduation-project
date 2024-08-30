@@ -23,8 +23,6 @@ public class FileController {
         @RequestParam("userId") String userId,
         @RequestParam("projectId") String projectId,
         @RequestParam("file") MultipartFile file
-        
-        
     ) {
         System.out.println("we are in controller, uploading files...");
         try {

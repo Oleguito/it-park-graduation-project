@@ -60,3 +60,8 @@ services:
 #     root: 'INFO'
 #     # org.springframework.web: 'DEBUG'
 #     # ru.itpark.projectservice: 'DEBUG'
+
+
+invitation-service:
+  user-already-invited-error-message: "Приглашение пользователю уже было отправлено"
+  create-invitation: "http://localhost:8082/api/invitations"

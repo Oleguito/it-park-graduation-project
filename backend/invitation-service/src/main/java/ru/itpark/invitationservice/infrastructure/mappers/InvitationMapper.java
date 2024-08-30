@@ -8,12 +8,12 @@ import ru.itpark.invitationservice.presentation.invitation.dto.reponses.Invitati
 
 import java.util.List;
 
-import static ru.itpark.invitationservice.domain.invitations.VO.enums.Status.SENDED;
+import static ru.itpark.invitationservice.domain.invitations.VO.enums.Status.SENT;
 
 @Mapper(componentModel = "spring")
 public interface InvitationMapper {
 
-    @Mapping(target = "status", expression = "java(ru.itpark.invitationservice.domain.invitations.VO.enums.Status.SENDED)")
+    @Mapping(target = "status", expression = "java(ru.itpark.invitationservice.domain.invitations.VO.enums.Status.SENT)")
     Invitation toEntity(CreateInvitationCommand command);
 
     InvitationResponse toResponse(Invitation invitation);

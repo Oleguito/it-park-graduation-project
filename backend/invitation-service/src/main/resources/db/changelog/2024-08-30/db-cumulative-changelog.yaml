@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: kpv
+      changes:
+        - sqlFile:
+            path: ./add-type-and-message.sql
+            relativeToChangelogFile: true

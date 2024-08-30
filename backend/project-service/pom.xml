@@ -215,8 +215,14 @@
             <version>${spock.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+            <version>9.24.4</version>
+            <scope>compile</scope>
+        </dependency>
 
-<!--        &lt;!&ndash; Spock Testcontainers Integration &ndash;&gt;-->
+        <!--        &lt;!&ndash; Spock Testcontainers Integration &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.testcontainers</groupId>-->
 <!--            <artifactId>spock</artifactId>-->

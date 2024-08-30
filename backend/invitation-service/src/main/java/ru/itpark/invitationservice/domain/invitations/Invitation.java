@@ -17,15 +17,16 @@ public class Invitation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "invitations_seq_gen")
-    @SequenceGenerator(name = "invitations_seq_gen", sequenceName = "invitations_seq_gen", allocationSize = 1)
+    @SequenceGenerator(name = "invitations_seq_gen", sequenceName = "invitations_seq_gen",
+                                                     allocationSize = 1)
     public Long id;
-
-    @Column(name = "email_to")
-    public String emailTo;
-
+    
     @Column(name = "email_from")
     public String emailFrom;
 
+    @Column(name = "email_to")
+    public String emailTo;
+    
     @Column(name = "project_id")
     public Long projectId;
 
@@ -38,5 +39,15 @@ public class Invitation {
 
     @Column(name = "inv_uuid")
     public UUID invUUID = UUID.randomUUID();
-
+    
+    /**
+     * на этапе создания комментария может быть
+     * "invite" или "exclude"
+     */
+    @Column(name = "type")
+    public String type;
+    
+    @Column(name = "message")
+    public String invitationMessage;
+    
 }

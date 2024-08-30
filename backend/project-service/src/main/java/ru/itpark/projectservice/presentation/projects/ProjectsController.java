@@ -1,14 +1,25 @@
 package ru.itpark.projectservice.presentation.projects;
 
+import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.RestTemplate;
 import ru.itpark.projectservice.application.service.KafkaService;
 import ru.itpark.projectservice.application.service.ProjectService;
 import ru.itpark.projectservice.application.service.userproject.UserProjectService;
+import ru.itpark.projectservice.infrastructure.exceptions.ApiError;
+import ru.itpark.projectservice.infrastructure.exceptions.exceptions.UserWasAlreadyInvitedException;
+import ru.itpark.projectservice.infrastructure.invitationservice.invitation.dto.command.CreateInvitationCommand;
 import ru.itpark.projectservice.presentation.userproject.dto.command.create.UserProjectCreateCommand;
 import ru.itpark.projectservice.domain.UserResponse;
 import ru.itpark.projectservice.domain.userproject.UserProject;
@@ -19,12 +30,20 @@ import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
 import ru.itpark.projectservice.presentation.projects.dto.query.ProjectResponse;
 import ru.itpark.projectservice.presentation.userproject.dto.command.delete.UserProjectDeleteCommand;
+import ru.itpark.projectservice.infrastructure.invitationservice.invitationstatus.InvitationStatus;
+import com.nimbusds.jose.shaded.gson.Gson;
 
 @RestController
 @RequestMapping("/projects")
 @CrossOrigin
 public class ProjectsController {
 
+    @Value("${invitation-service.user-already-invited-error-message}")
+    private String userAlreadyInvitedErrorMessage;
+    
+    @Value("${invitation-service.create-invitation}")
+    private String createInvitationUrl;
+    
     @Autowired
     ProjectService projectService;
     
@@ -36,6 +55,10 @@ public class ProjectsController {
 
     @Autowired
     KafkaService kafkaService;
+    
+    RestTemplate restTemplate = new RestTemplate();
+    
+    Gson gson = new Gson();
     
     @RequestMapping("/alltest")
     public List<ProjectResponse> getAllTest() {
@@ -89,9 +112,51 @@ public class ProjectsController {
     
     @RequestMapping(value = "/message", method=RequestMethod.POST)
     @CrossOrigin
+    // @Transactional
     public void sendNotification(@RequestBody InvitationMessage notificationMessage) {
 
-        kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
+        // kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
+        
+        
+        System.out.println("url: " + createInvitationUrl);
+        
+        // Create the request body (CreateInvitationCommand)
+        CreateInvitationCommand command = CreateInvitationCommand.builder()
+                          .emailTo(notificationMessage.getInvitedUserEmail())
+                          .emailFrom(notificationMessage.getProjectCreatorEmail())
+                          .projectId(notificationMessage.getProjectId())
+                          .invitationStatus(InvitationStatus.SENT)
+                          .type(notificationMessage.getType())
+                          .invitationMessage(notificationMessage.getInvitationMessage())
+                          .build();
+
+        // Create the request entity
+        HttpEntity<CreateInvitationCommand> requestEntity = new HttpEntity<>(command);
+    
+        // Make the POST request using exchange()
+        ResponseEntity<Void> responseEntity;
+        try {
+            responseEntity= restTemplate.exchange(
+                createInvitationUrl,
+                HttpMethod.POST,
+                requestEntity,
+                Void.class
+            );
+        } catch (RestClientException e) {
+            
+            final var json = e.getMessage()
+                             .substring(0, e.getMessage().length() - 1)
+                             .substring(7);
+            final ApiError parsed = gson.fromJson(json,ApiError.class);
+            
+            if(parsed.getMessage().contains(userAlreadyInvitedErrorMessage)) {
+                throw new UserWasAlreadyInvitedException("Пользователя уже пригласили");
+            }
+            
+            throw new RuntimeException(e);
+        }
+        
+        System.out.println();
     }
     
     @RequestMapping(path = "/add-participant", method = RequestMethod.POST)

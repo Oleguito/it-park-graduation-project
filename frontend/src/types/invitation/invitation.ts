@@ -7,11 +7,17 @@ export type SetInvitationStatusCommand = {
 
 }
 
+export type InvitationType = "invite" | "exclude"
+
+export type InvitationStatus = "sent" | "accepted" | "rejected"
 
 export type CreateInvitationCommand = {
     emailTo?: string
     emailFrom?: string
     projectId?: number
+    status?:InvitationStatus
+    type?:InvitationType
+    invitationMessage?:string
 }
 
 export type InvitationSearchQuery = {

@@ -65,6 +65,15 @@ const AddParticipantPage = () => {
                     variant: "default",
                 }
             )
+        })
+        .catch (error => {
+            console.log("handleAddParticipant error: ", error);
+            toast({
+                title: "Произошла ошибка!",
+                description: error.response.data.message,
+                duration: 3000,
+                variant: "default",
+            });
         });
         
         // addParticipantToProject({

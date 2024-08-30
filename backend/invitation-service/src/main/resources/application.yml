@@ -36,3 +36,8 @@ server:
 services:
   project-service:
     url: ${GP_PROJECTSERIVCE_URL:http://localhost:8087}
+
+logging:
+  level:
+    root: DEBUG
+    ru.itpark.invitationservice: DEBUG

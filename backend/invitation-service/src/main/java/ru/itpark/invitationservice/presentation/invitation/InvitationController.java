@@ -21,8 +21,13 @@ public class InvitationController {
 
     private final InvitationService invitationService;
 
-    @PostMapping
-    public void createInvitation(@Valid @RequestBody CreateInvitationCommand createInvitationCommand) {
+    @RequestMapping()
+    @CrossOrigin
+    public void createInvitation(
+        @Valid
+        @RequestBody
+        CreateInvitationCommand createInvitationCommand
+    ) {
         invitationService.createInvitation(createInvitationCommand);
     }
     
@@ -56,5 +61,7 @@ public class InvitationController {
     public void deleteInvitation(@RequestBody DeleteInvitationCommand deleteInvitationCommand) {
         invitationService.deleteInvitation(deleteInvitationCommand);
     }
+    
+    
 
 }

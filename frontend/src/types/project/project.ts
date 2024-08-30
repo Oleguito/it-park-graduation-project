@@ -40,7 +40,7 @@ export type InvitationMessage = {
     invitedUserEmail: string;
     invitationMessage: string;
     type: InvitationMessageType;
-    key: string; // Assuming UUID will be a string, adjust if needed
+    key?: string; // Assuming UUID will be a string, adjust if needed
     projectId: number;
     projectTitle: string;
     projectStatus: string;
