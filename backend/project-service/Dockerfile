@@ -30,11 +30,13 @@ ENV AUTH_SERVICE_URL=auth-service
 ENV GP_PROJECTSERVICE_DB_URL=jdbc:postgresql://localhost:5432/projectservicedb
 ENV GP_PROJECTSERVICE_DB_USERNAME=projectservice
 ENV GP_PROJECTSERVICE_DB_PASSWORD=12345
+ENV GP_PROJECTSERVICE_KEYSTORE_PASSWORD=1PwCgNAb
 
 # Копирование файлов проекта
 COPY pom.xml ./
 RUN mvn dependency:go-offline -B
 COPY src ./src
+COPY certificate.p12 ./
 
 # Сборка проекта с использованием Maven и передача аргументов сборки
 RUN mvn clean package -Pskip-kafka-tests
@@ -49,6 +51,8 @@ WORKDIR /apps
 # Копирование JAR файла из предыдущего этапа
 COPY --from=builder /app/target/*.jar ./myapp.jar
 COPY --from=builder /app/target ./target
+COPY --from=builder /app/certificate.p12 ./
+
 
 RUN #chmod +x ./myapp.jar
 

@@ -35,4 +35,8 @@ public class UserCommandService {
                 Role.valueOf(Strings.toRootUpperCase(userCommand.getRole()))
         );
     }
+
+    public boolean userExists(String email) {
+        return userRepository.existsByEmail(email);
+    }
 }

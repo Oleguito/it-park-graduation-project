@@ -15,7 +15,7 @@ spring:
           keystore:
             type: PKCS12
             location: classpath:certificate.p12
-            password: ${GP_AUTHSERVICE_KEYSTORE_PASSWORD}
+            password: ${GP_PROJECTSERVICE_KEYSTORE_PASSWORD:1PwCgNAb}
 
   kafka:
     notification:

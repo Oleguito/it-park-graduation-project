@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.itpark.authservice.application.user.command.UserCommandService;
 import ru.itpark.authservice.application.user.mapper.UserMapper;
 import ru.itpark.authservice.domain.user.User;
-import ru.itpark.authservice.domain.user.dto.queries.UserQuery;
 import ru.itpark.authservice.presentation.web.users.dto.command.UserCommand;
 
 @Service
@@ -20,4 +19,9 @@ public class UserCommandFacade {
     public User createUser(UserCommand userCommand) throws JsonProcessingException {
         return userCommandService.createUser(userCommand);
     }
+
+    public boolean userExists(String email) {
+        return userCommandService.userExists(email);
+    }
+
 }

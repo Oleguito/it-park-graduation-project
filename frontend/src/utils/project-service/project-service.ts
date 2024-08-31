@@ -1,7 +1,9 @@
 import { Settings } from "@/constants/settings";
-import { ProjectCreateCommand, ProjectQuery, UserProjectCreateCommand, UserResponse } from "@/types/project/project";
-import axios from "axios";
+import { ProjectCreateCommand, ProjectQuery, ProjectResponse, UserProjectCreateCommand, UserResponse } from "@/types/project/project";
+import axios, { AxiosError, AxiosResponse } from "axios";
 import { getAxiosInstance } from "../utilities/axiosInstance";
+import { ProjectSearchQuery } from "@/types/project/projectsearchquery";
+import { error } from "console";
 
 export const createProjectOnBackend = async function (
     projectCreateCommand: ProjectCreateCommand
@@ -22,6 +24,16 @@ export const createProjectOnBackend = async function (
     return {} as ProjectQuery;
 };
 
+export const getProjectsFromBackend = async (query: ProjectSearchQuery): Promise<ProjectResponse[]> => {
+    let instance = getAxiosInstance(
+        Settings.backend.projectService.findProjectByQuery());
+    return await instance.post("",
+        query,
+    ).then((response: AxiosResponse<ProjectResponse[]>) => {
+        console.log("getProjectsFromBackend: ", response.data)
+        return response.data
+    });
+};
 
 export const findUsersForProject = async (
     projectId: number

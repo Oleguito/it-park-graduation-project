@@ -25,4 +25,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
                 @Param("deletedAt") LocalDateTime deletedAt);
 
   Optional<User> findByEmail(String login);
+
+  boolean existsByEmail(String email);
+
 }

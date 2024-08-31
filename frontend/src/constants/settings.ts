@@ -45,6 +45,9 @@ export const Settings = {
             removeParticipantToProjectUrl: function () {
                 return this.baseUrl + "/projects/remove-participant";
             },
+            findProjectByQuery: function () {
+                return this.baseUrl + "/projects/find";
+            },
         },
         documentService: {
             baseUrl: "http://localhost:8080",

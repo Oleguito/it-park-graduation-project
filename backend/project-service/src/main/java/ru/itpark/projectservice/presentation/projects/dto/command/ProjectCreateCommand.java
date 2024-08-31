@@ -20,7 +20,7 @@ public class ProjectCreateCommand {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private Status status;
-    private Long ownerId;
+    private String ownerEmail;
     private DateInfo dateInfo;
     private String creatorEmail;
 }

@@ -7,18 +7,17 @@ export type ProjectResponse = {
     startDate?: string;
     endDate: string;
     status: string; // assuming this to be a string, adapt as needed
-    ownerId: number;
+    ownerEmail: string;
     dateInfo: DateInfo;
 };
 
 export type ProjectCreateCommand = {
-    id: number;
     name: string;
     description: string;
-    startDate?: string;
-    endDate: string;
+    startDate?: Date;
+    endDate: Date;
     status: string;
-    ownerId: number;
+    ownerEmail: string;
     dateInfo: DateInfo;
     creatorEmail: string;
 };
@@ -71,7 +70,7 @@ export type ProjectQuery = {
     startDate: Date;
     endDate: Date;
     status: string;
-    ownerId: number;
+    ownerEmail: string;
     dateInfo: DateInfo;
 };
 

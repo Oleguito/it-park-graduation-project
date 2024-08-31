@@ -1,6 +1,7 @@
 package ru.itpark.projectservice.infrastructure.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
@@ -10,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ProjectRepo extends JpaRepository<Project, Long> {
+public interface ProjectRepo extends JpaRepository<Project, Long>, JpaSpecificationExecutor<Project> {
 
     List<Project> findAll();
 
@@ -22,7 +23,7 @@ public interface ProjectRepo extends JpaRepository<Project, Long> {
 
     void deleteById(Long id);
 
-    List<Project> findByNameContainingIgnoreCaseAndDescriptionContainingIgnoreCaseAndStatusAndStartDateBetweenAndEndDateBetweenAndOwnerId(
+    List<Project> findByNameContainingIgnoreCaseAndDescriptionContainingIgnoreCaseAndStatusAndStartDateBetweenAndEndDateBetweenAndOwnerEmail(
             String nameContains,
             String descriptionContains,
             Status status,
@@ -30,7 +31,7 @@ public interface ProjectRepo extends JpaRepository<Project, Long> {
             LocalDateTime startDateTo,
             LocalDateTime endDateFrom,
             LocalDateTime endDateTo,
-            Long ownerId
+            String ownerEmail
     );
 
 

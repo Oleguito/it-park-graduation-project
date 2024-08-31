@@ -40,8 +40,8 @@ public class Project {
     /**
      * Идентификатор пользователя, который создал проект
      */
-    @Column(name = "user_id")
-    private Long ownerId;
+    @Column(name = "owner_email")
+    private String ownerEmail;
     
     @Embedded
     private DateInfo dateInfo;

@@ -7,9 +7,12 @@ import ru.itpark.projectservice.application.service.userproject.UserProjectServi
 import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
+import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
 import ru.itpark.projectservice.infrastructure.repositories.ProjectRepo;
 import ru.itpark.projectservice.infrastructure.repositories.project.custom.CustomProjectsRepository;
 import ru.itpark.projectservice.presentation.projects.dto.command.ProjectCreateCommand;
+import ru.itpark.projectservice.presentation.projects.dto.query.ProjectResponse;
+import ru.itpark.projectservice.presentation.projects.dto.query.ProjectsSearchQuery;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -27,7 +30,9 @@ public class ProjectService {
     
     @Autowired
     CustomProjectsRepository customProjectsRepository;
-    
+    @Autowired
+    private ProjectMapper projectMapper;
+
     public Project save(ProjectCreateCommand projectCreateCommand) {
         
         final Project project = Project.builder()
@@ -36,7 +41,7 @@ public class ProjectService {
                           .startDate(projectCreateCommand.getStartDate())
                           .endDate(projectCreateCommand.getEndDate())
                           .status(projectCreateCommand.getStatus())
-                          .ownerId(projectCreateCommand.getOwnerId())
+                          .ownerEmail(projectCreateCommand.getOwnerEmail())
                           .dateInfo(projectCreateCommand.getDateInfo())
                           .build();
         
@@ -70,7 +75,18 @@ public class ProjectService {
         projectRepository.deleteById(id);
     }
     
-    public List<Project> searchProjects(String nameContains, String descriptionContains, Status status, LocalDateTime startDateFrom, LocalDateTime startDateTo, LocalDateTime endDateFrom, LocalDateTime endDateTo, Long ownerId) {
-        return projectRepository.findByNameContainingIgnoreCaseAndDescriptionContainingIgnoreCaseAndStatusAndStartDateBetweenAndEndDateBetweenAndOwnerId(nameContains, descriptionContains, status, startDateFrom, startDateTo, endDateFrom, endDateTo, ownerId);
+    public List<Project> searchProjects(String nameContains, String descriptionContains, Status status, LocalDateTime startDateFrom, LocalDateTime startDateTo, LocalDateTime endDateFrom, LocalDateTime endDateTo, String ownerEmail) {
+        return projectRepository.findByNameContainingIgnoreCaseAndDescriptionContainingIgnoreCaseAndStatusAndStartDateBetweenAndEndDateBetweenAndOwnerEmail(nameContains, descriptionContains, status, startDateFrom, startDateTo, endDateFrom, endDateTo, ownerEmail);
+    }
+
+    public List<ProjectResponse> findProjects(ProjectsSearchQuery projectsSearchQuery) {
+        List<Project> findedProjects = projectRepository.findAll(projectsSearchQuery);
+
+        if (findedProjects.isEmpty()) {
+            throw new EntityNotFoundException("Проекты не найдены");
+        }
+
+        return projectMapper.toListResponse(findedProjects);
+
     }
 }

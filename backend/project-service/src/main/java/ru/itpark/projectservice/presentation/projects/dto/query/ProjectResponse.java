@@ -26,9 +26,9 @@ public class ProjectResponse {
     private LocalDateTime endDate;
     
     private Status status;
-    
-    private Long ownerId;
-    
+
+    private String ownerEmail;
+
     private DateInfo dateInfo;
 
 }

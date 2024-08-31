@@ -1,5 +1,5 @@
-2024-08-27 21:21:25 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-27 21:21:25 [main] ERROR SpringApplication - Application run failed
+2024-08-31 13:55:17 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
+2024-08-31 13:55:17 [main] ERROR SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
@@ -20,7 +20,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
 	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
 	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:99) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
@@ -30,12 +30,8 @@ Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\r
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:75) ~[classes/:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:77) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -44,8 +40,8 @@ Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (С
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-2024-08-27 21:22:55 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-27 21:22:55 [main] ERROR SpringApplication - Application run failed
+2024-08-31 13:56:51 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
+2024-08-31 13:56:51 [main] ERROR SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
@@ -66,8 +62,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
 	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:99) ~[classes/:?]
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:100) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -76,12 +72,8 @@ Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\r
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:75) ~[classes/:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:78) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -90,8 +82,8 @@ Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (С
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-2024-08-27 21:23:10 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-27 21:23:10 [main] ERROR SpringApplication - Application run failed
+2024-08-31 13:58:33 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
+2024-08-31 13:58:33 [main] ERROR SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
@@ -112,8 +104,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
 	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:99) ~[classes/:?]
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:100) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -122,12 +114,8 @@ Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\r
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:75) ~[classes/:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:78) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -136,8 +124,8 @@ Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (С
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-2024-08-27 21:23:30 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-27 21:23:30 [main] ERROR SpringApplication - Application run failed
+2024-08-31 13:59:16 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
+2024-08-31 13:59:16 [main] ERROR SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
@@ -158,8 +146,8 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
 	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:99) ~[classes/:?]
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:100) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -168,12 +156,8 @@ Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\r
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:75) ~[classes/:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
+	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:78) ~[classes/:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -182,112 +166,3 @@ Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (С
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-2024-08-27 21:24:02 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-27 21:24:02 [main] ERROR SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
-	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:99) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:75) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-2024-08-27 21:24:51 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-27 21:24:51 [main] ERROR SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
-	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:99) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-Caused by: java.io.FileNotFoundException: src\main\resources\certificate.p12 (Системе не удается найти указанный путь)
-	at java.base/java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:75) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-2024-08-27 21:27:48 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-27 21:27:48 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2024-08-27 21:27:48 [main] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8087 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8087 or configure this application to listen on another port.
-
-2024-08-27 21:28:16 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning

@@ -1,6 +1,5 @@
 package ru.itpark.projectservice.presentation.projects;
 
-import java.lang.reflect.Field;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.client.RestClientException;
@@ -20,6 +18,7 @@ import ru.itpark.projectservice.application.service.userproject.UserProjectServi
 import ru.itpark.projectservice.infrastructure.exceptions.ApiError;
 import ru.itpark.projectservice.infrastructure.exceptions.exceptions.UserWasAlreadyInvitedException;
 import ru.itpark.projectservice.infrastructure.invitationservice.invitation.dto.command.CreateInvitationCommand;
+import ru.itpark.projectservice.presentation.projects.dto.query.ProjectsSearchQuery;
 import ru.itpark.projectservice.presentation.userproject.dto.command.create.UserProjectCreateCommand;
 import ru.itpark.projectservice.domain.UserResponse;
 import ru.itpark.projectservice.domain.userproject.UserProject;
@@ -34,7 +33,7 @@ import ru.itpark.projectservice.infrastructure.invitationservice.invitationstatu
 import com.nimbusds.jose.shaded.gson.Gson;
 
 @RestController
-@RequestMapping("/projects")
+@RequestMapping(value = "/projects")
 @CrossOrigin
 public class ProjectsController {
 
@@ -60,7 +59,7 @@ public class ProjectsController {
     
     Gson gson = new Gson();
     
-    @RequestMapping("/alltest")
+    @RequestMapping(value = "/alltest")
     public List<ProjectResponse> getAllTest() {
         return List.of(
             ProjectResponse.builder()
@@ -72,7 +71,7 @@ public class ProjectsController {
                                 .createdAt(LocalDateTime.now())
                         .build())
                 .endDate(LocalDateTime.now().plusDays(3L))
-                .ownerId(987564321L)
+                .ownerEmail("bla@gmail.com")
             .build()
         );
     }
@@ -89,6 +88,12 @@ public class ProjectsController {
     public List<ProjectResponse> getAll() {
 
         return projectMapper.toListResponse(projectService.getAll());
+    }
+
+    @PostMapping("/find")
+    @ResponseBody
+    public List<ProjectResponse> getProjectsByFilter(@RequestBody ProjectsSearchQuery projectsSearchQuery) {
+        return projectService.findProjects(projectsSearchQuery);
     }
     
     

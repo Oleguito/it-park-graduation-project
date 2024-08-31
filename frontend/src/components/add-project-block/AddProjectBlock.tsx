@@ -70,7 +70,7 @@ const AddProjectBlock = () => {
                 startDate: new Date(),
                 endDate: validatedData["project-due"],
                 status: "NEW",
-                ownerId: user.id,
+                ownerEmail: user.email,
                 dateInfo: {
                     createdAt: new Date(),
                     deletedAt: null,

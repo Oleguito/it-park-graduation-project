@@ -57,7 +57,7 @@ public class CustomProjectsRepository {
                 .set(Projects.PROJECTS.START_DATE, startDate)
                 .set(Projects.PROJECTS.END_DATE, project.getEndDate())
                 .set(Projects.PROJECTS.STATUS, project.getStatus().name())
-                .set(Projects.PROJECTS.USER_ID, project.getOwnerId())
+                .set(Projects.PROJECTS.OWNER_EMAIL, project.getOwnerEmail())
                 .set(Projects.PROJECTS.CREATED_AT, dateInfoCreatedAt)
                 .set(Projects.PROJECTS.DELETED_AT, dateInfoDeletedAt)
 
@@ -72,7 +72,7 @@ public class CustomProjectsRepository {
                 .startDate(startDate)
                 .endDate(project.getEndDate())
                 .status(project.getStatus())
-                .ownerId(project.getOwnerId())
+                .ownerEmail(project.getOwnerEmail())
                 .dateInfo(DateInfo.builder()
                         .createdAt(dateInfoCreatedAt)
                         .deletedAt(dateInfoDeletedAt)
