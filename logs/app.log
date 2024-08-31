@@ -166,3 +166,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" 
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
+2024-08-31 14:00:01 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-31 14:05:51 [http-nio-8087-exec-7] ERROR ExceptionAdvice - exception caught by advice Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "ru.itpark.projectservice.infrastructure.exceptions.ApiError.getMessage()" is null 
+2024-08-31 14:08:53 [http-nio-8087-exec-5] ERROR ExceptionAdvice - exception caught by advice Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "ru.itpark.projectservice.infrastructure.exceptions.ApiError.getMessage()" is null 
+2024-08-31 14:08:53 [http-nio-8087-exec-9] ERROR ExceptionAdvice - exception caught by advice Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "ru.itpark.projectservice.infrastructure.exceptions.ApiError.getMessage()" is null 

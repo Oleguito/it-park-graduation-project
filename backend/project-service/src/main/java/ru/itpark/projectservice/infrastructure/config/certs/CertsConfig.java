@@ -19,8 +19,7 @@ public class CertsConfig {
     @Value("${spring.ssl.key-store-password}")
     private String certPassword;
     
-//    private final String certPasswordEnv = System.getenv("GP_PROJECTSERVICE_KEYSTORE_PASSWORD");
-    private final String certPasswordEnv = "1PwCgNAb";
+    private final String certPasswordEnv = System.getenv("GP_PROJECTSERVICE_KEYSTORE_PASSWORD");
 
     public void configureCerts() {
         KeyStore keyStore;
