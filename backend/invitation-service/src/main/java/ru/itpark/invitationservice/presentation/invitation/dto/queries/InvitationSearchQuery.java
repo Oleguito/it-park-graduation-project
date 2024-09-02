@@ -42,7 +42,7 @@ public class InvitationSearchQuery implements Specification<Invitation> {
         }
 
         if (projectId != null) {
-            predicate = cb.equal(root.get("project_id"), projectId);
+            predicate = cb.equal(root.get("projectId"), projectId);
         }
 
         if (invUUID != null) {

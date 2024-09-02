@@ -1,68 +1,98 @@
 "use client";
 import ProjectItem from "@/components/project-item/ProjectItem";
 import { Button } from "@/components/ui/button";
-import { Settings } from "@/constants/settings";
+import { InvitationSearchResponse } from "@/types/invitation/invitation";
 import { ProjectResponse, UserResponse } from "@/types/project/project";
-import { ProjectSearchQuery } from "@/types/project/projectsearchquery";
 import { UserQuery } from "@/types/UserQuery";
 import { fetchUserInfo } from "@/utils/auth-service/user-service";
-import { findUsersForProject, getProjectsFromBackend } from "@/utils/project-service/project-service";
-import axios from "axios";
+import { getInvitations } from "@/utils/invitation-service/invitation-service";
+import {
+	findUsersForProject,
+	getProjectsFromBackend,
+} from "@/utils/project-service/project-service";
 import { useEffect, useState } from "react";
 
 type MapProjectsAndUsers = {
-    projectId: number,
-    participants: UserResponse[]
-}
+    projectId: number;
+    participants: UserResponse[];
+    invitations?: InvitationSearchResponse[];
+};
 
 const ProjectsPage = () => {
     const [projects, setProjects] = useState([] as ProjectResponse[]);
     const [user, setUser] = useState({} as UserQuery);
     const [participants, setParticipants] = useState([] as UserResponse[]);
-    const projectsAndUsers: MapProjectsAndUsers[] = []
+    const [projectsAndUsers, setProjectsAndUsers] = useState(
+        [] as MapProjectsAndUsers[]
+    );
 
     useEffect(() => {
-        // console.log("id_token: ", localStorage.getItem("id_token"));
-
         fetchUserInfo()
             .then((response) => {
-                // console.log("we are providing USER data: ", response[0]);
-                // console.log("length: ", response.length);
+                console.log("we are providing USER data: ", response[0]);
                 setUser(response[0]);
-                // console.log(`userID: ${user}`, user)
             })
             .catch((error) => {
                 console.log(`fetchUserInfo: ${error}`);
             });
+    }, []); // Это вызовется только один раз при монтировании компонента
 
-        let query: ProjectSearchQuery = {
-            ownerEmail: user.email,
-        }
+    useEffect(() => {
+        if (user.email) {
+            getProjectsFromBackend({ ownerEmail: user.email })
+                .then((data: ProjectResponse[]) => {
+                    setProjects(data);
 
-        getProjectsFromBackend(query)
-            .then((data: ProjectResponse[]) => {
-                setProjects(data)
-                // console.log("Fetched data: ", projects)
-                data.map((project: ProjectResponse) => {
-                    console.log("BEFORE FETCHIND PROJECT USERS INFO")
-                    findUsersForProject(project.id)
-                        .then(response => {
-                            console.log("Participants response: ", response)
-        
-                            projectsAndUsers.push({ projectId: project.id, participants: response })
-                            console.log("USERS: ", projectsAndUsers)
-                            setParticipants(response)
+                    // Массив обещаний для всех проектов
+                    const projectPromises = data.map(
+                        async (project: ProjectResponse) => {
+                            try {
+                                const participants = await findUsersForProject(
+                                    project.id
+                                );
+
+                                const invitations = await getInvitations({
+                                    emailFrom: user.email,
+                                    projectId: project.id,
+                                    status: "SENT",
+                                }).catch(() => undefined); // если случилась ошибка, вернем undefined
+
+                                return {
+                                    projectId: project.id,
+                                    participants,
+                                    invitations,
+                                };
+                            } catch (error) {
+                                console.error(
+                                    `Ошибка при обработке проекта ${project.id}: `,
+                                    error
+                                );
+                                return {
+                                    projectId: project.id,
+                                    participants: [],
+                                    invitations: [],
+                                };
+                            }
+                        }
+                    );
+
+                    // Ждем завершения всех обещаний и обновляем состояние
+                    Promise.all(projectPromises)
+                        .then((results: MapProjectsAndUsers[]) => {
+                            setProjectsAndUsers(results);
                         })
-                        .catch(error => {
-                            console.log("findUsersForProject error: ", error);
-                        })
+                        .catch((error) => {
+                            console.error(
+                                "Ошибка при обработке проектов: ",
+                                error
+                            );
+                        });
                 })
-            })
-            .catch(error => {
-                console.log("getProjectsFromBackend: ", error)
-            })
-
-        }, []);
+                .catch((error) => {
+                    console.log("getProjectsFromBackend: ", error);
+                });
+        }
+    }, [user]);
 
     const addMemberHandler = (project: ProjectResponse) => {
         window.location.href = `/my/participants/add?forProject=${project.id}`;
@@ -87,10 +117,10 @@ const ProjectsPage = () => {
             <div className="w-full">
                 {projects
                     .filter((project) => {
+                        console.log(project);
                         return project.ownerEmail === user.email;
                     })
                     .map((project) => {
-
                         return (
                             <div key={project.id}>
                                 <ProjectItem
@@ -109,27 +139,51 @@ const ProjectsPage = () => {
                                         <div>
                                             <ul>
                                                 <li>
-                                                    {/* эта дивка показывает одно приглашение */}
-                                                    <div>
-                                                        {/* эта показывает поле КОМУ */}
-                                                        <div className="flex">
-                                                            <div className="w-1/5">
-                                                                Кому:
-                                                            </div>
-                                                            <div className="italic">
-                                                                vasya123@gmail.com
-                                                            </div>
-                                                        </div>
-                                                        {/* а эта - СТАТУС */}
-                                                        <div className="flex">
-                                                            <div className="w-1/5">
-                                                                Статус:
-                                                            </div>
-                                                            <div className="italic">
-                                                                SENT
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    {projectsAndUsers
+                                                        .filter((item) => {
+                                                            return (
+                                                                item.projectId ===
+                                                                project.id
+                                                            );
+                                                        })
+                                                        .map((item) => {
+                                                            console.log(
+                                                                "item: ",
+                                                                item
+                                                            );
+                                                            return item.invitations?.map(
+                                                                (
+                                                                    invitation
+                                                                ) => {
+                                                                    return (
+                                                                        <div
+                                                                            key={
+                                                                                invitation.invUUID
+                                                                            }
+                                                                        >
+                                                                            {/* эта показывает поле КОМУ */}
+                                                                            <div className="flex">
+                                                                                <div className="w-1/5">
+                                                                                    Кому:
+                                                                                </div>
+                                                                                <div className="italic">
+                                                                                    {invitation.emailTo}
+                                                                                </div>
+                                                                            </div>
+                                                                            {/* а эта - СТАТУС */}
+                                                                            <div className="flex">
+                                                                                <div className="w-1/5">
+                                                                                    Статус:
+                                                                                </div>
+                                                                                <div className="italic">
+                                                                                    {invitation.status}
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    );
+                                                                }
+                                                            );
+                                                        })}
                                                 </li>
                                             </ul>
                                         </div>
@@ -145,17 +199,44 @@ const ProjectsPage = () => {
                                             </div>
                                         }
                                         <div className="flex flex-wrap">
-                                            {projects.map((participant) => {
-                                                // console.log(participant)
-                                                return (
-                                                    <span
-                                                        className="italic mr-1"
-                                                        key={participant.ownerEmail}
-                                                    >
-                                                        {participant.ownerEmail}
-                                                    </span>
-                                                );
-                                            })}
+                                            <div>
+                                                {projectsAndUsers
+                                                    .filter((item) => {
+                                                        console.log(
+                                                            "item: ",
+                                                            item
+                                                        );
+                                                        console.log(
+                                                            "project: ",
+                                                            project
+                                                        );
+                                                        return (
+                                                            item.projectId ===
+                                                            project.id
+                                                        );
+                                                    })
+                                                    .map((item) => {
+                                                        // console.log(participant)
+                                                        return (
+                                                            <span
+                                                                className="italic mr-1"
+                                                                key={
+                                                                    item.projectId
+                                                                }
+                                                            >
+                                                                {item.participants
+                                                                    .map(
+                                                                        (
+                                                                            participant
+                                                                        ) => {
+                                                                            return participant.email;
+                                                                        }
+                                                                    )
+                                                                    .join(", ")}
+                                                            </span>
+                                                        );
+                                                    })}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="project-item-participants-list-buttons">
@@ -182,7 +263,7 @@ const ProjectsPage = () => {
                                     </div>
                                 </div>
                             </div>
-                        )
+                        );
                     })}
             </div>
         </>

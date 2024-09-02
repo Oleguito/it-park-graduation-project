@@ -2,6 +2,7 @@ import { Settings } from "@/constants/settings";
 import {
     CreateInvitationCommand,
     InvitationSearchQuery,
+    InvitationSearchResponse,
     SetInvitationStatusCommand,
 } from "@/types/invitation/invitation";
 import { getAxiosInstance } from "../utilities/axiosInstance";
@@ -26,7 +27,7 @@ export const createInvitation = async (
 
 /* ПОИСК ПРИГЛАШЕНИЙ */
 
-export const getInvitations = async (query: InvitationSearchQuery) => {
+export const getInvitations = async (query: InvitationSearchQuery): Promise<InvitationSearchResponse[]> => {
     const axios = getAxiosInstance(
         Settings.backend.invitationService.findInvitationUrl()
     );

@@ -38,6 +38,7 @@ public class InvitationController {
      */
     @PostMapping("/find")
     @ResponseBody
+    @CrossOrigin
     public List<InvitationResponse> getInvitations(@RequestBody InvitationSearchQuery query) {
         return invitationService.getInvitations(query);
     }

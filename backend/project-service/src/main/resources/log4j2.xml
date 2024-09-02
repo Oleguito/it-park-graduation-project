@@ -29,20 +29,33 @@
 
     <!-- Logger configuration -->
     <Loggers>
-        <!-- Root logger which logs everything to both console and file -->
-        <Root level="error">
+
+
+<!--        &lt;!&ndash; Root logger which logs everything to both console and file &ndash;&gt;-->
+<!--        <Root level="debug">-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--            <AppenderRef ref="FileAppender"/>-->
+<!--        </Root>-->
+
+        <Logger name="ru.itpark" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileAppender"/>
-        </Root>
+        </Logger>
 
         <!-- Spring-specific loggers for more detailed logging -->
-        <Logger name="org.springframework" level="warn" additivity="false">
+        <Logger name="org.springframework" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <!-- Spring-specific loggers for more detailed logging -->
+        <Logger name="org.springframework.kafka.KafkaListenerEndpointContainer" level="error" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileAppender"/>
         </Logger>
 
         <!-- Hibernate logs (if using Hibernate in the application) -->
-        <Logger name="org.hibernate" level="error" additivity="false">
+        <Logger name="org.hibernate" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="FileAppender"/>
         </Logger>

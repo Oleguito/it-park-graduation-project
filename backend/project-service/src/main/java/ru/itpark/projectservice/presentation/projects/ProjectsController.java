@@ -120,7 +120,7 @@ public class ProjectsController {
     // @Transactional
     public void sendNotification(@RequestBody InvitationMessage notificationMessage) {
 
-        // kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
+        kafkaService.sendNotificationMessage("notification-topic", notificationMessage);
         
         
         System.out.println("url: " + createInvitationUrl);
@@ -134,7 +134,9 @@ public class ProjectsController {
                           .type(notificationMessage.getType())
                           .invitationMessage(notificationMessage.getInvitationMessage())
                           .build();
-
+        
+        System.out.println("command: " + command);
+        
         // Create the request entity
         HttpEntity<CreateInvitationCommand> requestEntity = new HttpEntity<>(command);
     

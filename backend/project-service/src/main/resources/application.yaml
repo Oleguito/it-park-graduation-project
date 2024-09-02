@@ -37,6 +37,9 @@ spring:
 
 
   jpa:
+    properties:
+      hibernate:
+        format_sql: true
     hibernate:
       properties:
         hibernate:
@@ -56,11 +59,11 @@ grpc:
 services:
   auth-service:
     addr: ${AUTH_SERVICE_URL:https://localhost:8088}
-# logging:
-#   level:
-#     root: 'INFO'
-#     # org.springframework.web: 'DEBUG'
-#     # ru.itpark.projectservice: 'DEBUG'
+logging:
+  level:
+    org.hibernate: ERROR
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: DEBUG
 
 
 invitation-service:

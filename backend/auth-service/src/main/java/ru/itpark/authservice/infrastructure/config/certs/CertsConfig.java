@@ -19,7 +19,7 @@ public class CertsConfig {
 //    private String certPassword;
     
     private final String certPasswordEnv = System.getenv("GP_AUTHSERVICE_KEYSTORE_PASSWORD");
-   
+    
     
 //    @PostConstruct
     public void configurateCerts() {

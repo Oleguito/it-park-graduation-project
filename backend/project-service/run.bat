@@ -1,3 +1,6 @@
+
+set GP_PROJECTSERVICE_KEYSTORE_PASSWORD=1PwCgNAb
+
 rem cls
 chcp 65001
 
@@ -5,7 +8,7 @@ cls
 del /s /q target
 
 rem cls
-call mvn -P include-liquibase-plugin liquibase:update
+call mvn -P include-liquibase-plugin liquibase:dropAll liquibase:update
 
 rem cls
 call mvn jooq-codegen:generate
