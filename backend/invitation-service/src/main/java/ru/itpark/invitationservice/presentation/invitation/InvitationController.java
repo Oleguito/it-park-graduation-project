@@ -17,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api/invitations")
 @RequiredArgsConstructor
 @Validated
+@CrossOrigin(origins = "*")
 public class InvitationController {
 
     private final InvitationService invitationService;
@@ -30,13 +31,13 @@ public class InvitationController {
     ) {
         invitationService.createInvitation(createInvitationCommand);
     }
-    
+
     /**
      *
      * @param query
      * @return
      */
-    @PostMapping("/find")
+    @RequestMapping(path = "/find", method = RequestMethod.POST)
     @ResponseBody
     @CrossOrigin
     public List<InvitationResponse> getInvitations(@RequestBody InvitationSearchQuery query) {
@@ -49,7 +50,7 @@ public class InvitationController {
       * @param acceptInvitation - содержит информацию о приглашении
      */
     @PatchMapping()
-    public void acceptInvitation(@RequestBody SetInvitationStatusCommand acceptInvitation) {
+    public void changeInvitation(@RequestBody SetInvitationStatusCommand acceptInvitation) {
         invitationService.setInvitationStatus(acceptInvitation);
     }
 
@@ -62,7 +63,5 @@ public class InvitationController {
     public void deleteInvitation(@RequestBody DeleteInvitationCommand deleteInvitationCommand) {
         invitationService.deleteInvitation(deleteInvitationCommand);
     }
-    
-    
 
 }

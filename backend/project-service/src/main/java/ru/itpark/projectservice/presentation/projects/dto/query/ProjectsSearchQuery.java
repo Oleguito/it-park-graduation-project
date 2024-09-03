@@ -23,6 +23,7 @@ public class ProjectsSearchQuery implements Specification<Project> {
     private String projectName;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+    private Long projectId;
 
     @Override
     public Predicate toPredicate(Root<Project> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -43,6 +44,10 @@ public class ProjectsSearchQuery implements Specification<Project> {
 
         if (endDate != null) {
             predicate = cb.and(predicate, cb.equal(root.get("endDate"), endDate));
+        }
+
+        if (projectId != null) {
+            predicate = cb.and(predicate, cb.equal(root.get("id"), projectId));
         }
 
         return predicate;

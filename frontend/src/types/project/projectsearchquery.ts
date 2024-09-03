@@ -3,4 +3,5 @@ export type ProjectSearchQuery = {
     projectName?: string;
     startDate?: Date;
     endDate?: Date;
+    projectId?: number;
 };

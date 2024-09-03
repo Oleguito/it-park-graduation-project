@@ -34,7 +34,7 @@ import com.nimbusds.jose.shaded.gson.Gson;
 
 @RestController
 @RequestMapping(value = "/projects")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class ProjectsController {
 
     @Value("${invitation-service.user-already-invited-error-message}")
@@ -90,8 +90,9 @@ public class ProjectsController {
         return projectMapper.toListResponse(projectService.getAll());
     }
 
-    @PostMapping("/find")
+    @RequestMapping(method = RequestMethod.POST, path = "/find")
     @ResponseBody
+    @CrossOrigin
     public List<ProjectResponse> getProjectsByFilter(@RequestBody ProjectsSearchQuery projectsSearchQuery) {
         return projectService.findProjects(projectsSearchQuery);
     }

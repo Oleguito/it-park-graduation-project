@@ -1,5 +1,24 @@
-2024-08-31 13:55:17 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-31 13:55:17 [main] ERROR SpringApplication - Application run failed
+2024-09-03 08:52:13 [http-nio-8087-exec-8] ERROR ExceptionAdvice - exception caught by advice Пользователя уже пригласили 
+2024-09-03 08:52:32 [http-nio-8087-exec-6] ERROR ExceptionAdvice - exception caught by advice No static resource favicon.ico. 
+2024-09-03 08:52:38 [http-nio-8087-exec-3] ERROR ExceptionAdvice - exception caught by advice Проекты не найдены 
+2024-09-03 09:24:51 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.5 with PID 31660 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\project-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-09-03 09:24:51 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 09:24:51 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 09:24:52 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 09:24:52 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2024-09-03 09:24:52 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 09:24:52 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 800 ms
+2024-09-03 09:24:53 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 09:24:53 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:24:53 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:24:53 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 09:24:54 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 09:24:54 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
+2024-09-03 09:24:54 [main] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:24:54 [main] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-09-03 09:24:54 [main] ERROR SpringApplication - Application run failed
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
@@ -40,133 +59,66 @@ Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" 
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
 	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
 	... 18 more
-2024-08-31 13:56:51 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-31 13:56:51 [main] ERROR SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
-	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:100) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:78) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-2024-08-31 13:58:33 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-31 13:58:33 [main] ERROR SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
-	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:100) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:78) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-2024-08-31 13:59:16 [main] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-2024-08-31 13:59:16 [main] ERROR SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'certsConfig': Invocation of init method failed
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:222) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:422) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.10.jar:6.1.10]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) [spring-boot-3.3.1.jar:3.3.1]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) [spring-boot-3.3.1.jar:3.3.1]
-	at ru.itpark.projectservice.ProjectServiceApplication.main(ProjectServiceApplication.java:17) [classes/:?]
-Caused by: java.lang.RuntimeException: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:100) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-Caused by: java.lang.NullPointerException: Cannot invoke "String.toCharArray()" because "this.certPasswordEnv" is null
-	at ru.itpark.projectservice.infrastructure.config.certs.CertsConfig.configurateCerts(CertsConfig.java:78) ~[classes/:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMethod.invoke(InitDestroyAnnotationBeanPostProcessor.java:457) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:401) ~[spring-beans-6.1.10.jar:6.1.10]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:219) ~[spring-beans-6.1.10.jar:6.1.10]
-	... 18 more
-2024-08-31 14:00:01 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-31 14:05:51 [http-nio-8087-exec-7] ERROR ExceptionAdvice - exception caught by advice Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "ru.itpark.projectservice.infrastructure.exceptions.ApiError.getMessage()" is null 
-2024-08-31 14:08:53 [http-nio-8087-exec-5] ERROR ExceptionAdvice - exception caught by advice Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "ru.itpark.projectservice.infrastructure.exceptions.ApiError.getMessage()" is null 
-2024-08-31 14:08:53 [http-nio-8087-exec-9] ERROR ExceptionAdvice - exception caught by advice Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "ru.itpark.projectservice.infrastructure.exceptions.ApiError.getMessage()" is null 
+2024-09-03 09:49:01 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.5 with PID 36640 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\project-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-09-03 09:49:01 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 09:49:01 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 09:49:01 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 09:49:01 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2024-09-03 09:49:02 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 09:49:02 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 794 ms
+2024-09-03 09:49:02 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 09:49:03 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:49:03 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:49:03 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 09:49:03 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 09:49:03 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:49:03 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 09:49:04 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 09:49:04 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 3.181 seconds (process running for 3.812)
+2024-09-03 09:49:07 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 09:49:17 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 09:49:17 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 09:49:18 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:49:21 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.5 with PID 18664 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\project-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-09-03 09:49:21 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 09:49:21 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 09:49:21 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 09:49:21 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2024-09-03 09:49:21 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 09:49:21 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 803 ms
+2024-09-03 09:49:22 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 09:49:22 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:49:22 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:49:22 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 09:49:23 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 09:49:23 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:49:23 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 09:49:23 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 09:49:24 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 3.262 seconds (process running for 3.895)
+2024-09-03 09:49:27 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 09:51:45 [http-nio-8087-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 09:51:45 [http-nio-8087-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-09-03 09:51:45 [http-nio-8087-exec-1] ERROR ExceptionAdvice - exception caught by advice No static resource favicon.ico. 
+2024-09-03 09:52:49 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 09:52:50 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 09:52:50 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:53:02 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.5 with PID 20612 (C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project\backend\project-service\target\classes started by bibamet in C:\Users\bibamet\IdeaProjects\CourseJAVA2024\it-park-graduation-project)
+2024-09-03 09:53:02 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 09:53:02 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 09:53:03 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 09:53:03 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 2 JPA repository interfaces.
+2024-09-03 09:53:03 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 09:53:03 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 800 ms
+2024-09-03 09:53:03 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 09:53:04 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 09:53:04 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:53:04 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 09:53:04 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 09:53:05 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 09:53:05 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 09:53:05 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 09:53:05 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 3.232 seconds (process running for 3.854)
+2024-09-03 09:53:08 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 09:58:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 09:58:40 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 09:58:40 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

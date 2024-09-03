@@ -1,21 +1,11 @@
 'use client'
 
-import React from "react";
-
-import css from "./styles.module.css";
+import { InvitationSearchResponse } from "@/types/invitation/invitation";
 import ProjectItem from "../project-item/ProjectItem";
-import { Props } from "../project-item/ProjectItem";
 import { Button } from "../ui/button";
 
-const InvitationItem = () => {
-    const props: Props = {
-        id: 2934804023,
-        description: `Описание проекта \n Это страница с ПРОЕКТАМИ!!`,
-        title: "Вот такое название мзфк",
-        status: "NEW"
-    };
-
-
+const InvitationItem = (data: InvitationSearchResponse) => {
+ 
     const acceptInvitationHandler = () => {
         console.log("InvitationItem: acceptInvitationHandler: accept invitation");
     };
@@ -27,7 +17,7 @@ const InvitationItem = () => {
     return (
         <>
             <div>
-                <ProjectItem props={props} />
+                <ProjectItem props={data} />
                 <div>
                     <Button className="m-1" onClick={acceptInvitationHandler}>Принять приглашение</Button>
                     <Button className="m-1" onClick={rejectInvitationHandler}>Отклонить приглашение</Button>

@@ -1,45 +1,52 @@
 'use client'
 
 
-import css from './styles.module.css';
+import { InvitationSearchResponse } from '@/types/invitation/invitation';
+import { ProjectResponse } from '@/types/project/project';
+import { getProjectsFromBackend } from '@/utils/project-service/project-service';
+import { useEffect, useState } from 'react';
+import styles from './styles.module.css';
 
-export type Props = {
-    id: number;
-    title: string;
-    description: string;
-    status: String
-}
+const ProjectItem = ({ props }: { props: InvitationSearchResponse }) => {
 
-const addMemberHandler = () => {};
+    const [project, setProject] = useState({} as ProjectResponse)
 
-const deleteMemberHandler = () => {};
+    useEffect(() => {
+        getProjectsFromBackend({
+            projectId: props.projectId,
+        })
+            .then((response: ProjectResponse[]) => {
+                response.length > 0 ? setProject(response[0]) : null
+            })
+            .catch(error => console.log("Error occuring while fetching Project info: ", error))
 
-const ProjectItem = ({ props }: { props: Props }) => {
-  return (
-      <>
-          <div>
-              <div>ProjectItem</div>
-              <div>
-                  <div className="font-bold w-1/5 inline-block">Title:</div>
-                  <div className="italic inline-block">{props.title}</div>
-              </div>
-              <div>
-                  <div className="font-bold w-1/5 inline-block">Status:</div>
-                  <div className="inline-block">{props.status}</div>
-              </div>
-              <div className={css["project-item-upper-part"]}>
-                  <div className="font-bold w-1/4">
-                      Project id: {props.id}
-                  </div>
-                  <textarea
-                      value={props.description}
-                      className={`${css["description-box"]} italic`}
-                      readOnly={true}
-                  />
-              </div>
-          </div>
-      </>
-  );
+    }, [props.projectId])
+
+    return (
+        <>
+            <div>
+                <div>ProjectItem</div>
+                <div>
+                    <div className="font-bold w-1/5 inline-block">Title:</div>
+                    <div className="italic inline-block">{project.name}</div>
+                </div>
+                <div>
+                    <div className="font-bold w-1/5 inline-block">Status:</div>
+                    <div className="inline-block">{project.status}</div>
+                </div>
+                <div className={styles["project-item-upper-part"]}>
+                    <div className="font-bold w-1/4">
+                        Project id: {project.id}
+                    </div>
+                    <textarea
+                        value={project.description}
+                        className={`${styles["description-box"]} italic`}
+                        readOnly={true}
+                    />
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default ProjectItem
