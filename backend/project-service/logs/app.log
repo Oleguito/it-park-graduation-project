@@ -531,3 +531,3758 @@
     where
         1=1 
         and p1_0.id=?
+2024-09-03 11:02:30 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.owner_email=?
+2024-09-03 11:02:30 [http-nio-8087-exec-3] ERROR ExceptionAdvice - exception caught by advice Проекты не найдены 
+2024-09-03 11:38:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 11:38:58 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 11:38:58 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:39:24 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.2 with PID 14828 (C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service\target\classes started by 1 in C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service)
+2024-09-03 11:39:24 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 11:39:24 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 11:39:25 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 11:39:25 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72 ms. Found 2 JPA repository interfaces.
+2024-09-03 11:39:26 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 11:39:26 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1226 ms
+2024-09-03 11:39:26 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 11:39:27 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:39:27 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:39:27 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 11:39:27 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 11:39:28 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:39:28 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 11:39:28 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 11:39:29 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 4.648 seconds (process running for 5.348)
+2024-09-03 11:39:32 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 11:42:58 [http-nio-8087-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 11:42:58 [http-nio-8087-exec-1] INFO  DispatcherServlet - Completed initialization in 2 ms
+2024-09-03 11:42:58 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.owner_email=?
+2024-09-03 11:42:58 [http-nio-8087-exec-2] ERROR ExceptionAdvice - exception caught by advice Проекты не найдены 
+2024-09-03 11:46:34 [http-nio-8087-exec-5] ERROR ExceptionAdvice - exception caught by advice jOOQ; SQL [insert into "public"."projects" ("name", "description", "start_date", "end_date", "status", "owner_email", "created_at", "deleted_at") values (?, ?, cast(? as timestamp(6)), cast(? as timestamp(6)), ?, ?, cast(? as timestamp(6)), cast(? as timestamp(6))) returning "public"."projects"."id"]; ERROR: null value in column "owner_email" of relation "projects" violates not-null constraint
+  Detail: Failing row contains (1, Проект Светланы, ОПисание длинное очень, 2024-09-03 08:46:34.123, 2024-10-06 00:00:00, NEW, 2024-09-03 08:46:34.123, null, null). 
+2024-09-03 11:46:41 [http-nio-8087-exec-6] ERROR ExceptionAdvice - exception caught by advice Request method 'GET' is not supported 
+2024-09-03 11:46:41 [http-nio-8087-exec-7] ERROR ExceptionAdvice - exception caught by advice No static resource favicon.ico. 
+2024-09-03 11:47:21 [http-nio-8087-exec-9] DEBUG SQL - 
+    insert 
+    into
+        participant_project
+        (user_email, project_id, id) 
+    values
+        (?, ?, ?)
+2024-09-03 11:48:42 [http-nio-8087-exec-3] ERROR ExceptionAdvice - exception caught by advice No static resource . 
+2024-09-03 11:48:42 [http-nio-8087-exec-4] ERROR ExceptionAdvice - exception caught by advice No static resource favicon.ico. 
+2024-09-03 11:50:09 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 11:50:10 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 11:50:10 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:50:29 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.2 with PID 7956 (C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service\target\classes started by 1 in C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service)
+2024-09-03 11:50:29 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 11:50:29 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 11:50:29 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 11:50:30 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 2 JPA repository interfaces.
+2024-09-03 11:50:31 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 11:50:31 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1902 ms
+2024-09-03 11:50:31 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 11:50:33 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:50:33 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:50:33 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 11:50:33 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 11:50:34 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:50:34 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 11:50:35 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 11:50:35 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 6.911 seconds (process running for 8.536)
+2024-09-03 11:50:39 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 11:50:52 [http-nio-8087-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 11:50:52 [http-nio-8087-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-09-03 11:51:02 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 11:51:02 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:52:03 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 11:52:03 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:52:03 [http-nio-8087-exec-3] ERROR ExceptionAdvice - exception caught by advice Проекты не найдены 
+2024-09-03 11:52:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 11:52:03 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 11:52:03 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:52:07 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.2 with PID 6048 (C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service\target\classes started by 1 in C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service)
+2024-09-03 11:52:07 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 11:52:07 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 11:52:07 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 11:52:08 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 2 JPA repository interfaces.
+2024-09-03 11:52:08 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 11:52:09 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1807 ms
+2024-09-03 11:52:09 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 11:52:11 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:52:11 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:52:11 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 11:52:11 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 11:52:12 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:52:12 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 11:52:13 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 11:52:13 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 6.594 seconds (process running for 7.598)
+2024-09-03 11:52:16 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 11:52:20 [http-nio-8087-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 11:52:20 [http-nio-8087-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-09-03 11:52:20 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 11:52:20 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:52:47 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 11:52:47 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:53:15 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 11:53:37 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 11:54:01 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:55:25 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:58:59 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:59:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions lost: [test-0]
+2024-09-03 11:59:41 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 11:59:41 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 11:59:44 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 11:59:44 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:59:48 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.2 with PID 18744 (C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service\target\classes started by 1 in C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service)
+2024-09-03 11:59:48 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 11:59:48 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 11:59:49 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 11:59:49 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 2 JPA repository interfaces.
+2024-09-03 11:59:50 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 11:59:50 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1673 ms
+2024-09-03 11:59:51 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 11:59:52 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 11:59:52 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:59:52 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 11:59:52 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 11:59:53 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 11:59:53 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 11:59:54 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 11:59:54 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 6.14 seconds (process running for 7.022)
+2024-09-03 11:59:57 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 12:00:19 [http-nio-8087-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 12:00:19 [http-nio-8087-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-09-03 12:00:25 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:00:26 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 12:00:34 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:00:40 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 12:02:36 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 12:08:58 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and (
+            1 = case 
+                when p1_0.id in (?) is not null 
+                    then 0 
+            end
+        )
+2024-09-03 12:08:58 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 12:08:58 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 12:08:59 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 12:09:02 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.2 with PID 20900 (C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service\target\classes started by 1 in C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service)
+2024-09-03 12:09:02 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 12:09:02 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 12:09:03 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 12:09:03 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 2 JPA repository interfaces.
+2024-09-03 12:09:04 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 12:09:04 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1791 ms
+2024-09-03 12:09:05 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 12:09:06 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 12:09:06 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 12:09:06 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 12:09:07 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 12:09:08 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 12:09:08 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 12:09:08 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 12:09:09 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 6.754 seconds (process running for 7.669)
+2024-09-03 12:09:12 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 12:09:19 [http-nio-8087-exec-2] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 12:09:19 [http-nio-8087-exec-2] INFO  DispatcherServlet - Completed initialization in 1 ms
+2024-09-03 12:09:24 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:09:24 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:09:24 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:09:24 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:09:59 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:09:59 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:10:00 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:10:00 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:10:00 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:10:00 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:10:00 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:10:00 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:10:02 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:10:02 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:10:02 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:10:02 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:10:50 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:10:50 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:10:50 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:10:50 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:11:12 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:11:12 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:11:12 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:11:12 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:12:44 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:12:44 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:12:44 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:12:44 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:12:44 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:12:44 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:12:50 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:12:50 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:12:50 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:01 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:13:01 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:13:01 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:01 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:13:01 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:13:01 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:13:01 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:26 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:13:26 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:13:26 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:26 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:13:46 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:13:46 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:13:46 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:47 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:13:47 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:13:47 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:53 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:13:53 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:13:53 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:13:53 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:15:46 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:17:44 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:17:44 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1
+2024-09-03 12:17:44 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:17:44 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:17:44 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions revoked: [test-0]
+2024-09-03 12:17:44 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: Consumer stopped
+2024-09-03 12:17:44 [SpringApplicationShutdownHook] INFO  LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 12:17:49 [main] INFO  ProjectServiceApplication - Starting ProjectServiceApplication using Java 17.0.2 with PID 21892 (C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service\target\classes started by 1 in C:\Users\1\Desktop\1\4\it-park-graduation-project\backend\project-service)
+2024-09-03 12:17:49 [main] DEBUG ProjectServiceApplication - Running with Spring Boot v3.3.1, Spring v6.1.10
+2024-09-03 12:17:49 [main] INFO  ProjectServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-09-03 12:17:50 [main] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-03 12:17:50 [main] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 2 JPA repository interfaces.
+2024-09-03 12:17:51 [main] INFO  TomcatWebServer - Tomcat initialized with port 8087 (http)
+2024-09-03 12:17:51 [main] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1760 ms
+2024-09-03 12:17:52 [main] INFO  SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-03 12:17:53 [main] INFO  LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-03 12:17:53 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 12:17:53 [main] WARN  DefaultKafkaConfig - Бутстрап NotificationCreateCommand: localhost:29092
+2024-09-03 12:17:53 [main] INFO  QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-09-03 12:17:54 [main] WARN  DefaultKafkaConfig - Бутстрапик: localhost:29092
+2024-09-03 12:17:54 [main] WARN  JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-03 12:17:55 [main] INFO  TomcatWebServer - Tomcat started on port 8087 (http) with context path '/'
+2024-09-03 12:17:55 [main] INFO  ProjectServiceApplication - Started ProjectServiceApplication in 6.46 seconds (process running for 7.382)
+2024-09-03 12:17:59 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  KafkaMessageListenerContainer - my-group: partitions assigned: [test-0]
+2024-09-03 12:18:06 [http-nio-8087-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-09-03 12:18:06 [http-nio-8087-exec-1] INFO  DispatcherServlet - Completed initialization in 2 ms
+2024-09-03 12:18:06 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:18:11 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:18:13 [http-nio-8087-exec-3] DEBUG SQL - 
+    insert 
+    into
+        participant_project
+        (user_email, project_id, id) 
+    values
+        (?, ?, ?)
+2024-09-03 12:18:16 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:18:16 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:18:16 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:18:16 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:19:33 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:33 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:34 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:19:34 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:34 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:34 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:19:35 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:35 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:35 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:19:35 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:35 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:35 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:19:37 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:37 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:37 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:19:37 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:37 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:37 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:19:42 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:19:42 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:19:42 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:02 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:02 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:02 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:03 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:03 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:03 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:05 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:05 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:05 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:05 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:05 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:05 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:09 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:09 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:09 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:09 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:09 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:09 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:46 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:20:46 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:20:46 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:20:46 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:21:01 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:21:01 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?)
+2024-09-03 12:21:01 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:21:01 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:21:23 [http-nio-8087-exec-3] DEBUG SQL - 
+    insert 
+    into
+        participant_project
+        (user_email, project_id, id) 
+    values
+        (?, ?, ?)
+2024-09-03 12:21:27 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:21:27 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:21:27 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:21:27 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:21:27 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:21:27 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:31 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:31 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:38 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:38 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:40 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:40 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:42 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:42 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:48 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:22:48 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:22:48 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:22:48 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:22:48 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:48 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:55 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:55 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:59 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:22:59 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:00 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:00 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:02 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:02 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:17 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:17 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:45 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:45 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id=?
+2024-09-03 12:23:57 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:23:57 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:23:57 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:23:57 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:23:57 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:23:57 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:23:57 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:23:57 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:07 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:07 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:07 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:07 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:08 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:08 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:08 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:08 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:09 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:09 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:09 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:09 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:09 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:09 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:09 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:09 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:17 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:17 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:17 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:17 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:18 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:18 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:18 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:18 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:19 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:19 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:19 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:19 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:19 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:19 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:19 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:19 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:27 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:27 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:27 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:27 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:28 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:28 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:28 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:28 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:30 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:30 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:30 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:30 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:30 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:24:30 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:24:30 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:24:30 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:48 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:25:48 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:25:48 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:48 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:48 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:25:48 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:25:48 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:48 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:50 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:25:50 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:25:50 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:50 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:50 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:25:50 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:25:50 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:50 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:55 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:25:55 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:25:55 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:55 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:55 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:25:55 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:25:55 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:25:55 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:19 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:26:19 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:26:19 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:19 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:19 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:26:19 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:26:19 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:19 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:19 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:26:19 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:26:20 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:20 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:20 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:26:20 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:26:20 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:26:20 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:27 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:27:27 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:27:27 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:27 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:27 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:27:27 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:27:27 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:27 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:45 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:27:45 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:27:45 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:45 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:45 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:27:45 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:27:45 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:45 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:55 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:27:55 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:27:55 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:55 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:55 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:27:55 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:27:55 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:27:55 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:05 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:28:05 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:28:05 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:05 [http-nio-8087-exec-2] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:05 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:28:05 [http-nio-8087-exec-10] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:28:05 [http-nio-8087-exec-1] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:05 [http-nio-8087-exec-4] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:15 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:28:15 [http-nio-8087-exec-8] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:28:15 [http-nio-8087-exec-9] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:15 [http-nio-8087-exec-7] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:15 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.user_email=?
+2024-09-03 12:28:15 [http-nio-8087-exec-6] DEBUG SQL - 
+    select
+        p1_0.id,
+        p1_0.created_at,
+        p1_0.deleted_at,
+        p1_0.description,
+        p1_0.end_date,
+        p1_0.name,
+        p1_0.owner_email,
+        p1_0.start_date,
+        p1_0.status 
+    from
+        projects p1_0 
+    where
+        1=1 
+        and p1_0.id in (?, ?)
+2024-09-03 12:28:15 [http-nio-8087-exec-5] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?
+2024-09-03 12:28:15 [http-nio-8087-exec-3] DEBUG SQL - 
+    select
+        up1_0.id,
+        up1_0.user_email,
+        up1_0.project_id 
+    from
+        participant_project up1_0 
+    where
+        up1_0.project_id=?

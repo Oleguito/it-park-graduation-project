@@ -1,4 +1,4 @@
-package ru.itpark.projectservice.application.service.userproject;
+package ru.itpark.projectservice.application.service.project;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +17,11 @@ public class UserProjectService {
     public UserProject save(UserProject userProject){
         
         return userProjectRepo.save(userProject);
+    }
+    
+    public List<UserProject> findByEmail(String email) {
+    
+        return userProjectRepo.findByEmail(email);
     }
     
     public List<UserProject> getAllForProjectId(Long projectId) {

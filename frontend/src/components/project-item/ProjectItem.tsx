@@ -7,7 +7,7 @@ import { getProjectsFromBackend } from '@/utils/project-service/project-service'
 import { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 
-const ProjectItem = ({ props }: { props: InvitationSearchResponse }) => {
+const ProjectItem = ({ props }: { props: InvitationSearchResponse & ProjectResponse }) => {
 
     const [project, setProject] = useState({} as ProjectResponse)
 

@@ -1,14 +1,14 @@
 // Types for your DTOs based on the Java classes
 
 export type ProjectResponse = {
-    id: number;
-    name: string;
-    description: string;
+    id?: number;
+    name?: string;
+    description?: string;
     startDate?: string;
-    endDate: string;
-    status: string; // assuming this to be a string, adapt as needed
-    ownerEmail: string;
-    dateInfo: DateInfo;
+    endDate?: string;
+    status?: string; // assuming this to be a string, adapt as needed
+    ownerEmail?: string;
+    dateInfo?: DateInfo;
 };
 
 export type ProjectCreateCommand = {

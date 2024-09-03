@@ -1,9 +1,8 @@
-package ru.itpark.projectservice.application.service;
+package ru.itpark.projectservice.application.service.project;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.itpark.projectservice.application.service.userproject.UserProjectService;
 import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
@@ -80,13 +79,13 @@ public class ProjectService {
     }
 
     public List<ProjectResponse> findProjects(ProjectsSearchQuery projectsSearchQuery) {
+        
         List<Project> findedProjects = projectRepository.findAll(projectsSearchQuery);
-
-        if (findedProjects.isEmpty()) {
-            throw new EntityNotFoundException("Проекты не найдены");
-        }
-
+        
+//        if (findedProjects.isEmpty()) {
+//            throw new EntityNotFoundException("Проекты не найдены");
+//        }
+        
         return projectMapper.toListResponse(findedProjects);
-
     }
 }

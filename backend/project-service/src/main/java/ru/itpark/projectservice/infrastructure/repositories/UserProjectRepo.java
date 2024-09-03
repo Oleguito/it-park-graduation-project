@@ -13,6 +13,9 @@ import java.util.UUID;
 @Repository
 public interface UserProjectRepo extends JpaRepository<UserProject, UUID> {
     
+    @Query("select u from UserProject u where u.email = ?1")
+    List<UserProject> findByEmail(String email);
+    
     @Transactional
     @Modifying
     @Query("delete from UserProject u where u.email = ?1 and u.project_id = ?2")

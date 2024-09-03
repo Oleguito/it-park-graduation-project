@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import ru.itpark.projectservice.application.service.KafkaService;
-import ru.itpark.projectservice.application.service.ProjectService;
-import ru.itpark.projectservice.application.service.userproject.UserProjectService;
+import ru.itpark.projectservice.application.service.project.ProjectFacade;
+import ru.itpark.projectservice.application.service.project.ProjectService;
+import ru.itpark.projectservice.application.service.project.UserProjectService;
 import ru.itpark.projectservice.infrastructure.exceptions.ApiError;
 import ru.itpark.projectservice.infrastructure.exceptions.exceptions.UserWasAlreadyInvitedException;
 import ru.itpark.projectservice.infrastructure.invitationservice.invitation.dto.command.CreateInvitationCommand;
@@ -57,6 +58,10 @@ public class ProjectsController {
     
     RestTemplate restTemplate = new RestTemplate();
     
+    @Autowired
+    ProjectFacade projectFacade;
+    
+    
     Gson gson = new Gson();
     
     @RequestMapping(value = "/alltest")
@@ -93,8 +98,19 @@ public class ProjectsController {
     @RequestMapping(method = RequestMethod.POST, path = "/find")
     @ResponseBody
     @CrossOrigin
-    public List<ProjectResponse> getProjectsByFilter(@RequestBody ProjectsSearchQuery projectsSearchQuery) {
+    public List<ProjectResponse> getProjectsByFilter(
+        @RequestBody ProjectsSearchQuery projectsSearchQuery
+    ) {
         return projectService.findProjects(projectsSearchQuery);
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, path = "/find-by")
+    @ResponseBody
+    @CrossOrigin
+    public List<ProjectResponse> getProjectsByParticipant(
+        @RequestParam String email
+    ) {
+        return projectFacade.findByEmail(email);
     }
     
     

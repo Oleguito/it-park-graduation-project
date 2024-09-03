@@ -52,6 +52,18 @@ export const getAllProjects = async (): Promise<ProjectResponse[]> => {
     }
 };
 
+export const getByEmail = async (email: string): Promise<ProjectResponse[]> => {
+  try {
+    const response = await axiosInstance.get<ProjectResponse[]>("/find-by", {
+      params: { email: email },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching all projects", error);
+    throw error;
+  }
+};
+
 export const getUsersForProjectId = async (
     projectId: number
 ): Promise<UserResponse[]> => {

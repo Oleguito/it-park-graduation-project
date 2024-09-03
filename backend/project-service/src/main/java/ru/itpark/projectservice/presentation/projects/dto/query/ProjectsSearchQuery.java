@@ -12,6 +12,7 @@ import org.springframework.data.jpa.domain.Specification;
 import ru.itpark.projectservice.domain.project.Project;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -24,6 +25,7 @@ public class ProjectsSearchQuery implements Specification<Project> {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private Long projectId;
+    private List<Long> projectIds;
 
     @Override
     public Predicate toPredicate(Root<Project> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
@@ -48,6 +50,10 @@ public class ProjectsSearchQuery implements Specification<Project> {
 
         if (projectId != null) {
             predicate = cb.and(predicate, cb.equal(root.get("id"), projectId));
+        }
+        
+        if (projectIds != null && projectIds.size() > 0) {
+            predicate = cb.and(predicate, root.get("id").in(projectIds));
         }
 
         return predicate;

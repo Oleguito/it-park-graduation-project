@@ -19,7 +19,7 @@
 //import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 //import static org.springframework.http.MediaType.*
 //
-//import ru.itpark.projectservice.application.service.ProjectService;
+//import ru.itpark.projectservice.application.service.project.ProjectService;
 //import ru.itpark.projectservice.infrastructure.repositories.ProjectRepo;
 //
 //@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

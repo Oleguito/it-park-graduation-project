@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ProjectRepo extends JpaRepository<Project, Long>, JpaSpecificationExecutor<Project> {
-
-    List<Project> findAll();
+public interface ProjectRepo extends
+    JpaRepository<Project, Long>,
+    JpaSpecificationExecutor<Project> {
 
     Optional<Project> findById(Long id);
 
