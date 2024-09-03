@@ -69,6 +69,9 @@ public class InvitationService {
         }
 
         Invitation invitation = findedInvitation.get(0);
+        
+        if(invitation.getStatus() != Status.SENT) return;
+        
         invitation.setStatus(Status.valueOf(invitationStatusCommand.getStatus()));
 
         invitationsRepo.save(invitation);
@@ -76,7 +79,9 @@ public class InvitationService {
 //        throw new EntityNotFoundException("DSADASDASDA");
 
         // TODO: дернуть ручку в project-service для включения человека в проект
-
+        
+        
+        
         if (Objects.equals(invitationStatusCommand.getStatus(), "ACCEPTED")) {
 
             UserProjectCreateCommand userProjectCreateCommand = UserProjectCreateCommand

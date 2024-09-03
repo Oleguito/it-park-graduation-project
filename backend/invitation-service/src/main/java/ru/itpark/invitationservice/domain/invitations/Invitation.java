@@ -23,7 +23,6 @@ public class Invitation {
     
     @Column(name = "email_from")
     public String emailFrom;
-
     
     @Column(name = "email_to")
     public String emailTo;

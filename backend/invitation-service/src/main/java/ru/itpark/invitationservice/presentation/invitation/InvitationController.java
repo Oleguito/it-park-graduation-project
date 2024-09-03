@@ -50,6 +50,7 @@ public class InvitationController {
       * @param acceptInvitation - содержит информацию о приглашении
      */
     @PatchMapping()
+    @CrossOrigin
     public void changeInvitation(@RequestBody SetInvitationStatusCommand acceptInvitation) {
         invitationService.setInvitationStatus(acceptInvitation);
     }
@@ -60,6 +61,7 @@ public class InvitationController {
      * @param deleteInvitationCommand - содержит индентификатор приглашения и email отправителя
      */
     @DeleteMapping
+    @CrossOrigin
     public void deleteInvitation(@RequestBody DeleteInvitationCommand deleteInvitationCommand) {
         invitationService.deleteInvitation(deleteInvitationCommand);
     }

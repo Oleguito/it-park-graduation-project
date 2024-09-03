@@ -27,11 +27,6 @@ const ProjectInvitationsPage = () => {
         <> {invitations ?
             <>
                 {invitations.map(elem => <InvitationItem key={elem.invUUID} {...elem} />)}
-
-                {/* <div>ProjectInvitationsPage</div>
-                <InvitationItem />
-                <InvitationItem />
-                <InvitationItem /> */}
             </>
             :
             <div>Загрузка...</div>}

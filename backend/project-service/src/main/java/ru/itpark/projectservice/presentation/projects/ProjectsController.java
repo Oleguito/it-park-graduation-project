@@ -163,8 +163,7 @@ public class ProjectsController {
             
             throw new RuntimeException(e);
         }
-        
-        System.out.println();
+
     }
     
     @RequestMapping(path = "/add-participant", method = RequestMethod.POST)
