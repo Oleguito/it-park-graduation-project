@@ -3,8 +3,8 @@ spring:
     name: document-service
   datasource:
     url: ${GP_DOCUMENT_SERVICE_DB_URL:jdbc:postgresql://localhost:5432/documentservicedb}
-    username: documentservice
-    password: 12345
+    username: ${GP_DOCUMENT_SERVICE_DB_USERNAME:documentservice}
+    password: ${GP_DOCUMENT_SERVICE_DB_PASSWORD:12345}
     driverClassName: org.postgresql.Driver
 
 minio:
@@ -12,3 +12,5 @@ minio:
   access-key: minioadmin
   secret-key: minioadmin
   bucket-name: grad-project
+server:
+  port: 8083

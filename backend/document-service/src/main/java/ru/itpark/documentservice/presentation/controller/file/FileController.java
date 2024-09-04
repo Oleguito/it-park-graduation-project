@@ -1,18 +1,26 @@
 package ru.itpark.documentservice.presentation.controller.file;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ru.itpark.documentservice.application.minio.MinioService;
+import ru.itpark.documentservice.application.service.documents.DocumentsService;
+import ru.itpark.documentservice.application.service.minio.MinioService;
+import ru.itpark.documentservice.presentation.controller.file.dto.queries.DocumentsSearchQuery;
+import ru.itpark.documentservice.presentation.controller.file.dto.responses.DocumentResponse;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/files")
+@RequiredArgsConstructor
 public class FileController {
     
     @Autowired
     private MinioService minioService;
+    private final DocumentsService documentsService;
     
     @CrossOrigin
     @RequestMapping(
@@ -36,4 +44,20 @@ public class FileController {
                    .body("File upload failed.");
         }
     }
+
+    @GetMapping("/download")
+    @ResponseBody
+    public ResponseEntity<String> downloadFile(@RequestParam("userId") String userId,
+                               @RequestParam("projectId") String projectId,
+                               @RequestParam("fileName") String fileName) {
+        return ResponseEntity.ofNullable(minioService.downloadFile(userId, projectId, fileName));
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/list")
+    @ResponseBody
+    @CrossOrigin
+    public List<DocumentResponse> getLinks(@RequestBody DocumentsSearchQuery documentsSearchQuery) {
+        return documentsService.getLinks(documentsSearchQuery);
+    }
+
 }

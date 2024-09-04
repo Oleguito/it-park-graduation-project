@@ -42,7 +42,7 @@ Table events {
   updated_at timestamp
 }
 
-Table documents {
+Table document {
   id bigint [pk, increment]
   name varchar(100)
   description text

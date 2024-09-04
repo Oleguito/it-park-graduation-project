@@ -5,6 +5,7 @@ include:
   - path: ../backend/project-service/compose.yaml
   - path: ../backend/notification-service/compose.yaml
   - path: ../backend/invitation-service/compose.yaml
+  - path: ../backend/document-service/compose.yml
 
 networks:
   backend:

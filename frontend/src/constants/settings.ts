@@ -50,10 +50,13 @@ export const Settings = {
             },
         },
         documentService: {
-            baseUrl: "http://localhost:8080",
+            baseUrl: "http://localhost:8083",
             fileUploadUrl: function () {
                 return this.baseUrl + "/api/files/upload";
             },
+            downloadListFiles: function () {
+                return this.baseUrl + "/api/files/list"
+            }
         },
         invitationService: {
             baseUrl: "http://localhost:8082",

@@ -1,4 +1,5 @@
 "use client";
+import { FilesTable } from "@/components/files/FilesTable";
 import ProjectItem from "@/components/project-item/ProjectItem";
 import { Button } from "@/components/ui/button";
 import { InvitationSearchResponse } from "@/types/invitation/invitation";
@@ -134,6 +135,7 @@ const ProjectsPage = () => {
                             .map((item) => {
                               console.log("item: ", item);
                               return item.invitations?.map((invitation) => {
+                                if (invitation.status != "SENT") return;
                                 return (
                                   <div key={invitation.invUUID}>
                                     {/* эта показывает поле КОМУ */}
@@ -215,6 +217,7 @@ const ProjectsPage = () => {
                   </div>
                 )}
               </div>
+              <div><FilesTable key={project.id} projectId={project.id}/></div>
             </div>
           );
         })}

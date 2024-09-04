@@ -6,7 +6,6 @@ import ProjectItem from "../project-item/ProjectItem";
 import { Button } from "../ui/button";
 
 const InvitationItem = (data: InvitationSearchResponse) => {
- 
     
     const acceptInvitationHandler = async () => {
 
