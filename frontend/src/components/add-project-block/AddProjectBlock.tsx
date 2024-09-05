@@ -1,12 +1,13 @@
 'use client'
 
+import { useToast } from "@/components/ui/use-toast";
 import { UserQuery } from "@/types/UserQuery";
 import { fetchUserInfo } from "@/utils/auth-service/user-service";
 import { createProjectOnBackend } from "@/utils/project-service/project-service";
 import React, { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { Button } from "../ui/button";
-
+import { Toaster } from "../ui/toaster";
 
 
 const projectSchema = z.object({
@@ -24,7 +25,7 @@ const projectSchema = z.object({
 const AddProjectBlock = () => {
 
     const formdata = useRef(null);
-
+    const { toast } = useToast();
     const [user, setUser] = useState({} as UserQuery);
 
 
@@ -79,9 +80,21 @@ const AddProjectBlock = () => {
             })
             .then((response) => {
                 console.log("response: ", response);
+                toast({
+                  title: "Проект успешно создан",
+                  description: "Проект успешно создан",
+                  duration: 3000,
+                  variant: "default",
+                });
             })
             .catch((error) => {
                 console.log("error: ", error);
+                toast({
+                    title: "Произошла ошибка!",
+                    description: error.response.data.message,
+                    duration: 3000,
+                    variant: "default",
+                })
             });
             
             
@@ -129,6 +142,7 @@ const AddProjectBlock = () => {
                     </div>
                     <Button>Добавить проект</Button>
                 </form>
+                <Toaster/>
             </div>
         </>
     );

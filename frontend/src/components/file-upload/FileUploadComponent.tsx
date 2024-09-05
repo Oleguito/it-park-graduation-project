@@ -2,30 +2,37 @@ import { uploadFile } from "@/utils/document-service/document-service";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 
-const FileUploadComponent: React.FC = () => {
-    const [fileToUpload, setFileToUpload] = useState<File | null>(null);
+export type Props = {
+  projectId: number;
+  userId: number;
+  callback: () => void;
+};
 
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files) {
-            setFileToUpload(event.target.files[0]);
-            console.log(fileToUpload);
-        }
-    };
+const FileUploadComponent: React.FC<Props> = ({ projectId, userId, callback }) => {
+  const [fileToUpload, setFileToUpload] = useState<File | null>(null);
 
-    const handleUpload = () => {
-        if (fileToUpload) {
-            uploadFile(fileToUpload);
-        }
-    };
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFileToUpload(event.target.files[0]);
+      console.log(fileToUpload);
+    }
+  };
 
-    return (
-        <div>
-            <input type="file" onChange={handleFileChange} />
-            <Button onClick={handleUpload} disabled={!fileToUpload}>
-                Загрузить документ
-            </Button>
-        </div>
-    );
+  const handleUpload = async () => {
+    if (fileToUpload) {
+      await uploadFile(fileToUpload, projectId, userId);
+      callback && callback();
+    }
+  };
+
+  return (
+    <div>
+      <input type="file" onChange={handleFileChange} />
+      <Button onClick={handleUpload} disabled={!fileToUpload}>
+        Добавить вложение
+      </Button>
+    </div>
+  );
 };
 
 export default FileUploadComponent;

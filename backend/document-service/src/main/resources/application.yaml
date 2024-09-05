@@ -12,5 +12,6 @@ minio:
   access-key: minioadmin
   secret-key: minioadmin
   bucket-name: grad-project
+
 server:
   port: 8083

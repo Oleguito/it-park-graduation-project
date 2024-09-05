@@ -35,4 +35,8 @@ public class UserProjectService {
             userProjectDeleteCommand.getProjectId()
         );
     }
+    
+    public void deleteAllForProjectId(Long id) {
+        userProjectRepo.deleteByProject_id(id);
+    }
 }

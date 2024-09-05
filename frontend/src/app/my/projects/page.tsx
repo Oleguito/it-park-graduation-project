@@ -1,4 +1,5 @@
 "use client";
+import FileUploadComponent from "@/components/file-upload/FileUploadComponent";
 import { FilesTable } from "@/components/files/FilesTable";
 import ProjectItem from "@/components/project-item/ProjectItem";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,8 @@ const ProjectsPage = () => {
   const [projectsAndUsers, setProjectsAndUsers] = useState(
     [] as MapProjectsAndUsers[],
   );
+  const [update, setUpdate] = useState(false);
+  const [updateFiles, setUpdateFiles] = useState(false);
 
   useEffect(() => {
     fetchUserInfo()
@@ -85,7 +88,7 @@ const ProjectsPage = () => {
           console.log("getProjectsFromBackend: ", error);
         });
     }
-  }, [user]);
+  }, [user, update]);
 
   const addMemberHandler = (project: ProjectResponse) => {
     window.location.href = `/my/participants/add?forProject=${project.id}`;
@@ -107,120 +110,140 @@ const ProjectsPage = () => {
         Технологии: gRPC, база данных для хранения информации о проектах и
         задачах (например, MongoDB).
       </div>
-      <div className="w-full">
-        {projects.map((project) => {
-          return (
-            <div key={project.id} className="mb-8 bg-slate-900 border-solid border-2 border-cyan-400">
-              <ProjectItem
-                props={{
-                  projectId: project.id,
-                  name: project.name,
-                  status: project.status,
-                  description: project.description,
-                }}
-              />
-              <div key={project.id * 2}>
-                {project.ownerEmail === user.email && (
-                  <div>
-                    <div className="font-bold">
-                      Приглашения от Вас в данный проект:
-                    </div>
+      <div className="w-full flex justify-center items-center">
+        {projects.length == 0 ? (
+          <div className="mt-8">У вас нет проектов</div>
+        ) : (
+          projects.map((project) => {
+            return (
+              <div
+                key={project.id}
+                className="mb-8 bg-slate-900 border-solid border-2 border-cyan-400 w-[90%]"
+              >
+                <ProjectItem
+                  props={{
+                    projectId: project.id,
+                    name: project.name,
+                    status: project.status,
+                    description: project.description,
+                  }}
+                  callback={() => {
+                    setUpdate(!update);
+                  }}
+                />
+                <div key={project.id * 2}>
+                  {project.ownerEmail === user.email && (
                     <div>
-                      <ul>
-                        <li>
-                          {projectsAndUsers
-                            .filter((item) => {
-                              return item.projectId === project.id;
-                            })
-                            .map((item) => {
-                              console.log("item: ", item);
-                              return item.invitations?.map((invitation) => {
-                                if (invitation.status != "SENT") return;
-                                return (
-                                  <div key={invitation.invUUID}>
-                                    {/* эта показывает поле КОМУ */}
-                                    <div className="flex">
-                                      <div className="w-1/5">Кому:</div>
-                                      <div className="italic">
-                                        {invitation.emailTo}
+                      <div className="font-bold">
+                        Приглашения от Вас в данный проект:
+                      </div>
+                      <div>
+                        <ul>
+                          <li>
+                            {projectsAndUsers
+                              .filter((item) => {
+                                return item.projectId === project.id;
+                              })
+                              .map((item) => {
+                                console.log("item: ", item);
+                                return item.invitations?.map((invitation) => {
+                                  if (invitation.status != "SENT") return;
+                                  return (
+                                    <div key={invitation.invUUID}>
+                                      {/* эта показывает поле КОМУ */}
+                                      <div className="flex">
+                                        <div className="w-1/5">Кому:</div>
+                                        <div className="italic">
+                                          {invitation.emailTo}
+                                        </div>
+                                      </div>
+                                      {/* а эта - СТАТУС */}
+                                      <div className="flex">
+                                        <div className="w-1/5">Статус:</div>
+                                        <div className="italic">
+                                          {invitation.status}
+                                        </div>
                                       </div>
                                     </div>
-                                    {/* а эта - СТАТУС */}
-                                    <div className="flex">
-                                      <div className="w-1/5">Статус:</div>
-                                      <div className="italic">
-                                        {invitation.status}
-                                      </div>
-                                    </div>
-                                  </div>
-                                );
-                              });
-                            })}
-                        </li>
-                      </ul>
+                                  );
+                                });
+                              })}
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                <div className="project-item-participants-list">
-                  {
-                    <div>
-                      <span className="font-bold">
-                        Участники данного проекта:
-                      </span>
-                      <p>(Включая Вас)</p>
-                    </div>
-                  }
-                  <div className="flex flex-wrap">
-                    <div>
-                      {projectsAndUsers
-                        .filter((item) => {
-                          console.log("item: ", item);
-                          console.log("project: ", project);
-                          return item.projectId === project.id;
-                        })
-                        .map((item) => {
-                          // console.log(participant)
-                          return (
-                            <span className="italic mr-1" key={item.projectId}>
-                              {item.participants
-                                .map((participant) => {
-                                  return participant.email;
-                                })
-                                .join(", ")}
-                            </span>
-                          );
-                        })}
+                  <div className="project-item-participants-list">
+                    {
+                      <div>
+                        <span className="font-bold">
+                          Участники данного проекта:
+                        </span>
+                        <p>(Включая Вас)</p>
+                      </div>
+                    }
+                    <div className="flex flex-wrap">
+                      <div>
+                        {projectsAndUsers
+                          .filter((item) => {
+                            console.log("item: ", item);
+                            console.log("project: ", project);
+                            return item.projectId === project.id;
+                          })
+                          .map((item) => {
+                            // console.log(participant)
+                            return (
+                              <span
+                                className="italic mr-1"
+                                key={item.projectId}
+                              >
+                                {item.participants
+                                  .map((participant) => {
+                                    return participant.email;
+                                  })
+                                  .join(", ")}
+                              </span>
+                            );
+                          })}
+                      </div>
                     </div>
                   </div>
+
+                  {project.ownerEmail === user.email && (
+                    <div className="project-item-participants-list-buttons">
+                      <p>Отправить приглашение:</p>
+                      <Button
+                        onClick={() => {
+                          addMemberHandler(project);
+                        }}
+                        className="m-1"
+                      >
+                        Добавить участника
+                      </Button>
+                      <p>Удалить участника, принявшего приглашение:</p>
+                      <Button
+                        onClick={() => {
+                          deleteMemberHandler(project);
+                        }}
+                      >
+                        Удалить участника
+                      </Button>
+                    </div>
+                  )}
                 </div>
-
-                {project.ownerEmail === user.email && (
-                  <div className="project-item-participants-list-buttons">
-                    <p>Отправить приглашение:</p>
-                    <Button
-                      onClick={() => {
-                        addMemberHandler(project);
-                      }}
-                      className="m-1"
-                    >
-                      Добавить участника
-                    </Button>
-                    <p>Удалить участника, принявшего приглашение:</p>
-                    <Button
-                      onClick={() => {
-                        deleteMemberHandler(project);
-                      }}
-                    >
-                      Удалить участника
-                    </Button>
-                  </div>
-                )}
+                <div>
+                  <FilesTable key={project.id} projectId={project.id} updateFiles={updateFiles} />
+                </div>
+                <FileUploadComponent
+                  projectId={project.id}
+                  userId={user.id}
+                  callback={() => setUpdateFiles(!updateFiles)}
+                />
               </div>
-              <div><FilesTable key={project.id} projectId={project.id}/></div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </>
   );

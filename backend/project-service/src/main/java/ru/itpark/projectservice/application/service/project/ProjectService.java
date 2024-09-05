@@ -88,4 +88,8 @@ public class ProjectService {
         
         return projectMapper.toListResponse(findedProjects);
     }
+    
+    public void removeProject(Long id) {
+        projectRepository.deleteById(id);
+    }
 }

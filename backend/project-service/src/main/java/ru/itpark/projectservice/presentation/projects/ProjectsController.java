@@ -200,4 +200,10 @@ public class ProjectsController {
             userProjectDeleteCommand
         );
     }
+    
+    @RequestMapping(path = "/remove-project/{id}", method = RequestMethod.DELETE)
+    @CrossOrigin
+    public void removeProject(@PathVariable Long id) {
+        projectFacade.removeProject(id);
+    }
 }

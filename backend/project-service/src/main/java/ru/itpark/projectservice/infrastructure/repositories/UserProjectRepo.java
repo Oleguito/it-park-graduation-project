@@ -13,6 +13,11 @@ import java.util.UUID;
 @Repository
 public interface UserProjectRepo extends JpaRepository<UserProject, UUID> {
     
+    @Transactional
+    @Modifying
+    @Query("delete from UserProject u where u.project_id = ?1")
+    int deleteByProject_id(Long project_id);
+    
     @Query("select u from UserProject u where u.email = ?1")
     List<UserProject> findByEmail(String email);
     

@@ -113,3 +113,14 @@ export const removeParticipant = async (
         throw error;
     }
 };
+
+export const removeProject = async (
+  id: number
+): Promise<void> => {
+  try {
+    await axiosInstance.delete(`/remove-project/${id}`);
+  } catch (error) {
+    console.error("Error removing participant", error);
+    throw error;
+  }
+};

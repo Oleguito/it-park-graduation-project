@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import { getAxiosInstance } from "../utilities/axiosInstance";
 import { FileAttachmentArray } from "@/types/document/document";
 
-export const uploadFile = async (file: File) => {
+export const uploadFile = async (file: File, projectId: number, userId: number) => {
   const formData = new FormData();
   formData.append("file", file);
 
@@ -13,8 +13,8 @@ export const uploadFile = async (file: File) => {
       formData,
       {
         params: {
-          userId: 1,
-          projectId: 1,
+          userId,
+          projectId,
         },
         headers: {
           "Content-Type": "multipart/form-data",

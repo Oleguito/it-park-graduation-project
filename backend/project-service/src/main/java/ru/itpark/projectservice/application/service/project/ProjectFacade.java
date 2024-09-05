@@ -2,6 +2,7 @@ package ru.itpark.projectservice.application.service.project;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.presentation.projects.dto.query.ProjectResponse;
 import ru.itpark.projectservice.presentation.projects.dto.query.ProjectsSearchQuery;
@@ -38,5 +39,11 @@ public class ProjectFacade {
         
         
         return projectService.findProjects(built);
+    }
+    
+    @Transactional
+    public void removeProject(Long id) {
+        projectService.removeProject(id);
+        userProjectService.deleteAllForProjectId(id);
     }
 }

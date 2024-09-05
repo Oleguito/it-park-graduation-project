@@ -1,8 +1,16 @@
 "use client";
 
 import FileUploadComponent from "@/components/file-upload/FileUploadComponent";
+import { Button } from "@/components/ui/button";
+import axios from "axios";
 
 const DocumentsPage = () => {
+
+    const downloadFile = () => {
+        axios.get("http://localhost:8080/api/files/download/sdgfsdf", {
+            
+        })
+    }
 
 	return (
         <>
@@ -24,6 +32,12 @@ const DocumentsPage = () => {
                 </div>
 				<FileUploadComponent />
             </div>
+
+            <Button
+                onClick={() => {
+                    downloadFile();
+                }}
+            >Скачать документ</Button>
         </>
     );
 };
