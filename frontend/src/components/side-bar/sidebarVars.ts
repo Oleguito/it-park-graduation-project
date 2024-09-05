@@ -26,10 +26,10 @@ export const sidebarVars = {
             //     text: "Задачи",
             //     link: "/my/tasks",
             // },
-            // {
-            //     text: "Чат",
-            //     link: "/my/chat",
-            // },
+            {
+                text: "Чат",
+                link: "/my/chat",
+            },
             // {
             //     text: "Аналитика",
             //     link: "/my/analytics",

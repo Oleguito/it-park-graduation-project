@@ -1,0 +1,8 @@
+.chat-area {
+    height: 70vh;
+    overflow-y: scroll;
+}
+.send-message-area {
+    display: flex;
+    justify-content: space-between;
+}

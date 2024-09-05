@@ -1,6 +1,5 @@
 "use client";
 
-import FileUploadComponent from "@/components/file-upload/FileUploadComponent";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 
@@ -30,7 +29,7 @@ const DocumentsPage = () => {
                         <li>Документ3.excalidraw</li>
                     </ul>
                 </div>
-				<FileUploadComponent />
+				
             </div>
 
             <Button
