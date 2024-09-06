@@ -16,9 +16,9 @@ export const Settings = {
     url: "localhost:3000",
   },
   websocket: {
-    connectionURL: "ws://localhost:8080",
-    subscribeURL: "/api/websocket/subscribe",
-    sendMessageURL: "/api/websocket/send",
+    connectionURL: "http://localhost:8084/chat",
+    subscribeURL: "http://localhost:8084/chats",
+    sendMessageURL: "http://localhost:8084/app/chat",
   },
   backend: {
     userService: {

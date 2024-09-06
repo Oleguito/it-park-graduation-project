@@ -12,6 +12,7 @@ import java.util.List;
 public interface MessageMapper {
     
     @Mapping(target = "chatId", expression = "java(message.getChat().getId())")
+    @Mapping(target = "uuid", expression = "java(message.getUuid().toString())")
     MessageResponse toResponse(Message message);
     
     List<MessageResponse> toListResponse(List<Message> messages);

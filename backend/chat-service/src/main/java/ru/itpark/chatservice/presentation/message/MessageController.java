@@ -19,9 +19,6 @@ public class MessageController {
     @ResponseBody
     @CrossOrigin
     public List<MessageResponse> getMessages(@RequestParam Long chatId) {
-        
-        
-        UUID.fromString("sdf");
         return messageService.getMessages(chatId);
     }
     

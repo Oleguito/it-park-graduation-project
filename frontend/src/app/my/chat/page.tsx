@@ -4,7 +4,7 @@ import ChatsList from "@/components/chat/chatslist/ChatsList";
 import ChatComponent from "@/components/chat/component/ChatComponent";
 import { ChatResponse } from "@/types/chat/chat";
 import { ProjectResponse } from "@/types/project/project";
-import { getChats } from "@/utils/chat-service/controller/chat-controller";
+import { getChats, getMessages } from "@/utils/chat-service/controller/chat-controller";
 import { getByEmail } from "@/utils/project-service/project-controller";
 import { getDecodedToken } from "@/utils/token";
 import React, { useEffect, useState } from "react";
@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 const ChatPage: React.FC = () => {
   const [chats, setChats] = useState([] as ChatResponse[]);
   const [projectIds, setProjectIds] = useState([] as number[]);
+  const [currentChatId, setCurrentChatId] = useState(undefined as number)
 
   useEffect(() => {
     const token = getDecodedToken();
@@ -58,8 +59,11 @@ const ChatPage: React.FC = () => {
       <div className="flex">
         <ChatsList
           items={chats}
+          callback={(chatId: number) => {
+            setCurrentChatId(chatId)
+          }}
         />
-        <ChatComponent chatId={1234234} />
+        <ChatComponent chatId={currentChatId} />
       </div>
     </div>
   );

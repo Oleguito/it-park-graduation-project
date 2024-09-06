@@ -10,6 +10,7 @@ import ru.itpark.chatservice.presentation.message.dto.commands.CreateMessageComm
 import ru.itpark.chatservice.presentation.message.dto.responses.MessageResponse;
 
 import java.util.List;
+import java.util.UUID;
 
 @Component
 @RequiredArgsConstructor

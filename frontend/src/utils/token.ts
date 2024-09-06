@@ -20,6 +20,7 @@ export type JwtPayloadType = {
     preferred_username: string;
     resource_access: ResourceAccess;
     email: string;
+    name: string;
 };
 
 

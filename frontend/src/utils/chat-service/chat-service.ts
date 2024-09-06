@@ -1,34 +1,46 @@
 // Import the required libraries
 import { Settings } from "@/constants/settings";
-import * as SockJS from "sockjs-client";
-import * as Stomp from "stompjs";
-
-
+import { CreateMessageCommand, MessageResponse } from "@/types/chat/chat";
+import { Dispatch, SetStateAction } from "react";
+import SockJS from "sockjs-client";
+import {Client} from "@stomp/stompjs";
 
 // Create a WebSocket connection
 const socket = new SockJS(Settings.websocket.connectionURL);
-export const stompClient = Stomp.over(socket);
+export const stompClient = new Client({
+  webSocketFactory: () => socket,
+  reconnectDelay: 5000,
+});;
 
 // Connect to the WebSocket and subscribe to a specific chat
-stompClient.connect({}, (frame: any) => {
-  console.log(`Connected: ${frame}`);
-
-  const chatId = "12345"; // Unique chat identifier
-
-  // Subscribe to the topic corresponding to the given chat
-  stompClient.subscribe(`${Settings.websocket.subscribeURL}/${chatId}`, (message: any) => {
-    showMessage(JSON.parse(message.body));
-  });
-});
+export const subscribeToChat = (
+  chatId: number,
+  messages: MessageResponse[],
+  setMessages: Dispatch<SetStateAction<MessageResponse[]>>,
+) => {
+  stompClient.onConnect = (frame: any) => {
+    stompClient.subscribe(
+      `${Settings.websocket.subscribeURL}/${chatId}`,
+      (message) => {
+        let msg: CreateMessageCommand = JSON.parse(
+          message.body,
+        ) as CreateMessageCommand;
+        setMessages((prevMessages) => [...prevMessages, msg]);
+        console.log("Новое сообщение получено: ", msg)
+      },
+    );
+    console.log(`Connected to chat: ${chatId}`);
+  };
+  stompClient.activate()
+};
 
 // Send a message to the chat with the specified identifier
-function sendMessage() {
-  const chatId = "12345"; // Unique chat identifier
-  stompClient.send(
-    `${Settings.websocket.sendMessageURL}/${chatId}`,
-    {},
-    JSON.stringify({ content: "Hello!" }),
-  );
+export function sendMessage(chatId: number, message: CreateMessageCommand) {
+  stompClient.publish({
+    destination: `${Settings.websocket.sendMessageURL}/${chatId}`,
+    body: JSON.stringify(message),
+  });
+  console.log(`Сообщение отправлено, chatId: ${chatId}`)
 }
 
 // Function to display the received message

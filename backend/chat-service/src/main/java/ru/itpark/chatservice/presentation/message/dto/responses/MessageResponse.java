@@ -20,6 +20,6 @@ public class MessageResponse {
     private String username;
     private LocalDateTime sentAt;
     private String message;
-    private UUID uuid;
+    private String uuid;
 
 }
