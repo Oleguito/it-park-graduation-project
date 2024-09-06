@@ -1,6 +1,7 @@
 import ChatMessage from '@/components/chat/ChatMessage';
 import { ChatMessageType } from '@/types/chat/chat';
 import { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from "uuid";
 
 export type Props = {
   chatId?: number;
@@ -46,6 +47,7 @@ const ChatComponent: React.FC<Props> = (props: Props) => {
           {messages.map((message) => {
             return (
               <ChatMessage
+                key={uuidv4()}
                 authorNickname={message.author}
                 message={message.message}
                 alignment={message.alignment}
@@ -53,13 +55,13 @@ const ChatComponent: React.FC<Props> = (props: Props) => {
             );
           })}
         </div>
-        <div className="send-message-area mt-4">
+        <div className="send-message-area mt-4 flex justify-between">
           <input
             type="text"
             placeholder="Введите ваше сообщение"
-            className="w-2/3"
+            className="w-[100%]"
           />
-          <button>Отправить</button>
+          <button className="h-4">Отправить</button>
         </div>
       </div>
     </>

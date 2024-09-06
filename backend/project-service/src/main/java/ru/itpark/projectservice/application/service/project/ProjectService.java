@@ -2,10 +2,18 @@ package ru.itpark.projectservice.application.service.project;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 import ru.itpark.projectservice.domain.userproject.UserProject;
 import ru.itpark.projectservice.domain.project.Project;
 import ru.itpark.projectservice.domain.project.valueobjects.Status;
+import ru.itpark.projectservice.infrastructure.chatservice.dto.command.CreateChatCommand;
 import ru.itpark.projectservice.infrastructure.mapper.ProjectMapper;
 import ru.itpark.projectservice.infrastructure.repositories.ProjectRepo;
 import ru.itpark.projectservice.infrastructure.repositories.project.custom.CustomProjectsRepository;
@@ -18,6 +26,9 @@ import java.util.List;
 
 @Service
 public class ProjectService {
+
+    @Value("${services.chat-service.create-chat-url}")
+    private String createChatUrl;
     
     @Autowired
     ProjectRepo projectRepository;
@@ -25,13 +36,14 @@ public class ProjectService {
     @Autowired
     UserProjectService userProjectService;
     
-    // RestTemplate restTemplate = new RestTemplate();
+    RestTemplate restTemplate = new RestTemplate();
     
     @Autowired
     CustomProjectsRepository customProjectsRepository;
     @Autowired
     private ProjectMapper projectMapper;
 
+    @Transactional
     public Project save(ProjectCreateCommand projectCreateCommand) {
         
         final Project project = Project.builder()
@@ -50,6 +62,20 @@ public class ProjectService {
                                 .project_id(saved.getId())
                                 .email(projectCreateCommand.getCreatorEmail())
                                 .build());
+        
+        CreateChatCommand chatCommand = CreateChatCommand.builder()
+                                  .projectName(projectCreateCommand.getName())
+                                  .projectId(saved.getId())
+                                  .build();
+        
+        String url = createChatUrl;
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        HttpEntity<CreateChatCommand> entity = new HttpEntity<>(chatCommand, headers);
+        
+        restTemplate.exchange(url, HttpMethod.POST, entity, Void.class);
         
         return saved;
     }

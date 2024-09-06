@@ -6,6 +6,7 @@ import ru.itpark.chatservice.domain.chat.Chat;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.UUID;
 
 @Entity
 @Table(name = "messages")
@@ -36,5 +37,8 @@ public class Message {
 
     @Column(name = "message")
     private String message;
+    
+    @Column(name = "msg_uuid")
+    private UUID uuid;
 
 }

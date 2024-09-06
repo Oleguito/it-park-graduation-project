@@ -85,7 +85,7 @@ public class ProjectsController {
     public ProjectResponse createProject(@RequestBody ProjectCreateCommand projectCreateCommand) {
 
         return projectMapper.toResponse(
-                projectService.save(projectCreateCommand)
+            projectService.save(projectCreateCommand)
         );
     }
 

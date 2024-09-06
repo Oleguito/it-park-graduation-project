@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS messages (
                                         username VARCHAR(255),
                                         sent_at TIMESTAMP DEFAULT NOW(),
                                         message TEXT,
+                                        msg_uuid uuid,
                                         CONSTRAINT fk_chat
                                             FOREIGN KEY (chat_id)
                                                 REFERENCES chats (id)

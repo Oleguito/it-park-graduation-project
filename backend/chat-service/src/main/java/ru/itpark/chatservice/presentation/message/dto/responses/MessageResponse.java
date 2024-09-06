@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -19,5 +20,6 @@ public class MessageResponse {
     private String username;
     private LocalDateTime sentAt;
     private String message;
+    private UUID uuid;
 
 }

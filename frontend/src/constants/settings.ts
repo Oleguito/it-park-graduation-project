@@ -78,5 +78,14 @@ export const Settings = {
         return this.baseUrl + "/api/invitations";
       },
     },
+    chatService: {
+      baseUrl: "http://localhost:8084",
+      getChatsUrl: function () {
+        return this.baseUrl + "/api/chats/find";
+      },
+      getMessagesUrl: function () {
+        return this.baseUrl + "/api/messages";
+      },
+    },
   },
 };

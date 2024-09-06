@@ -59,6 +59,8 @@ grpc:
 services:
   auth-service:
     addr: ${AUTH_SERVICE_URL:https://localhost:8088}
+  chat-service:
+    create-chat-url: "http://localhost:8084/api/chats"
 logging:
   level:
     org.hibernate: ERROR
@@ -69,3 +71,4 @@ logging:
 invitation-service:
   user-already-invited-error-message: "Приглашение пользователю уже было отправлено"
   create-invitation: "http://localhost:8082/api/invitations"
+

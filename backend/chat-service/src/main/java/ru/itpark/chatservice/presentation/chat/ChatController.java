@@ -25,7 +25,7 @@ public class ChatController {
     @RequestMapping(method = RequestMethod.POST, path = "/find")
     @CrossOrigin
     @ResponseBody
-    public List<ChatResponse> getChat(@RequestBody ChatSearchQuery query) {
+    public List<ChatResponse> getChats(@RequestBody ChatSearchQuery query) {
         return chatService.getChat(query);
     }
 

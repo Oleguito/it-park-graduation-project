@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,5 +17,6 @@ public class CreateMessageCommand {
     private Long userId;
     private String username;
     private String message;
+    private String uuid;
 
 }

@@ -1,6 +1,6 @@
 cls
 
-rem rmdir db\dbdata /s /q
+del db\dbdata /s /q
 
 docker compose -f docker-compose-oleg.yaml down -v --remove-orphans --volumes
 

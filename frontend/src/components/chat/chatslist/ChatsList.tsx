@@ -1,7 +1,7 @@
-import { ChatsListItem } from "@/types/chat/chat";
+import { ChatResponse } from "@/types/chat/chat";
 
 export type Props = {
-  items: ChatsListItem[]
+  items: ChatResponse[]
 }
 
 const ChatsList: React.FC<Props> = (props: Props) => {
@@ -11,7 +11,7 @@ const ChatsList: React.FC<Props> = (props: Props) => {
     <div className="w-1/4">
       <div>ChatsList</div>
       {props.items.map(item => {
-        return <div key={item.id} className="mt-2 mb-2">{item.title}</div>;
+        return <div key={item.chatId} className="mt-2 mb-2">{item.projectName}</div>;
       })}
     </div>
   );
