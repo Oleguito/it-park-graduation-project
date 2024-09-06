@@ -3,7 +3,7 @@ CREATE SEQUENCE IF NOT EXISTS chat_seq_gen START 1;
 CREATE TABLE IF NOT EXISTS chats (
                                      id BIGSERIAL PRIMARY KEY,
                                      project_id BIGINT,
-                                     project_name BIGINT
+                                     project_name TEXT
 );
 CREATE SEQUENCE IF NOT EXISTS message_seq_gen START 1;
 

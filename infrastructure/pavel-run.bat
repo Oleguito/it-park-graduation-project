@@ -21,9 +21,9 @@ chcp 65001 >nul
 echo Остановка сервисов...
 docker compose stop
 echo Подготовка к запуску...
-docker compose up -d collaborative-project-postgres-db liquibase liquibase-auth liquibase-notification liquibase-document
+docker compose up -d collaborative-project-postgres-db liquibase liquibase-auth liquibase-notification liquibase-document liquibase-chat
 echo Ожидание заверешения подготовки
-docker compose wait liquibase liquibase-auth liquibase-notification liquibase-document
+docker compose wait liquibase liquibase-auth liquibase-notification liquibase-document liquibase-chat
 
 REM Проверяем, успешно ли завершилась предыдущая команда
 if %errorlevel% equ 0 (

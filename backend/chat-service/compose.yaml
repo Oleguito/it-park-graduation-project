@@ -5,24 +5,12 @@ services:
     build:
       context: .
       network: host
-#      args:
-#        - DB_NAME=chatservicedb
-#        - DB_PORT=5432
-#        - DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/chatservicedb
-#        - DB_USER=chatservice
-#        - DB_PASSWORD=12345
-#        - AUTH_SERVICE_URL=auth-service
     ports:
       - 8084:8084
     environment:
-      - DB_NAME=chatservicedb
-      - DB_PORT=5432
-      - DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/chatservicedb
-      - DB_USER=chatservice
-      - DB_PASSWORD=12345
-      - KAFKA_BOOTSTRAP_SERVER=kafka:9092
-      - AUTH_SERVICE_URL=auth-service
-      - GP_CHATSERVICE_KEYSTORE_PASSWORD=1PwCgNAb
+      - GP_CHATSERVICE_DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/chatservicedb
+      - GP_CHATSERVICE_DB_USERNAME=chatservice
+      - GP_CHATSERVICE_DB_PASSWORD=12345
     depends_on:
       - collaborative-project-postgres-db
       - kafka
@@ -47,25 +35,3 @@ services:
       - ./src/main/resources/db/changelog:/liquibase/changelog
     networks:
       backend:
-
-#services:
-#  project-service:
-#    image: maven:3.8.3-openjdk-17
-#    working_dir: /app
-#    volumes:
-#      - .:/app
-#      - $HOME/.m2:/root/.m2
-#    command: mvn clean protobuf:compile protobuf:compile-custom package spring-boot:run
-#    ports:
-#      - 8087:8087
-#    depends_on:
-#      - collaborative-project-postgres-db
-#      - kafka
-#    environment:
-#      - DB_NAME=chatservicedb
-#      - DB_PORT=5432
-#      - DB_URL=jdbc:postgresql://collaborative-project-postgres-db/chatservicedb
-#      - DB_USER=chatservice
-#      - DB_PASSWORD=12345
-#    networks:
-#      backend: {}

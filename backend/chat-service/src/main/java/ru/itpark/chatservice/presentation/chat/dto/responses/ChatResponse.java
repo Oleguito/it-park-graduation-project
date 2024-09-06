@@ -12,10 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class ChatResponse {
-
     private Long chatId;
     private Long projectId;
     private String projectName;
-
-
 }

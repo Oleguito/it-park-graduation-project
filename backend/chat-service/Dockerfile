@@ -8,29 +8,13 @@ RUN apk add --no-cache maven protobuf protobuf-dev libc6-compat
 WORKDIR /app
 
 # Определение аргументов сборки
-ARG DB_URL
-ARG DB_USER
-ARG DB_PASSWORD
-ARG DB_NAME
-ARG DB_PORT
-ARG KAFKA_BOOTSTRAP_SERVER
-ARG AUTH_SERVICE_URL
 ARG GP_CHATSERVICE_DB_URL
 ARG GP_CHATSERVICE_DB_USERNAME
 ARG GP_CHATSERVICE_DB_PASSWORD
 
-ENV DB_NAME=chatservicedb
-ENV DB_PORT=5432
-ENV DB_URL=jdbc:postgresql://localhost:5432/chatservicedb
-#ENV DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/chatservicedb
-ENV DB_USER=chatservice
-ENV DB_PASSWORD=12345
-ENV KAFKA_BOOTSTRAP_SERVER=kafka:9092
-ENV AUTH_SERVICE_URL=auth-service
 ENV GP_CHATSERVICE_DB_URL=jdbc:postgresql://localhost:5432/chatservicedb
 ENV GP_CHATSERVICE_DB_USERNAME=chatservice
 ENV GP_CHATSERVICE_DB_PASSWORD=12345
-ENV GP_CHATSERVICE_KEYSTORE_PASSWORD=1PwCgNAb
 
 # Копирование файлов проекта
 COPY pom.xml ./

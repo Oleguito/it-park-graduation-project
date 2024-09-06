@@ -21,6 +21,6 @@ public class Chat {
     private Long projectId;
 
     @Column(name = "project_name")
-    private Long projectName;
+    private String projectName;
 
 }

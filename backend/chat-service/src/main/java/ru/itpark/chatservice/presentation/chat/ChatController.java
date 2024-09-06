@@ -4,6 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.itpark.chatservice.application.chat.services.ChatService;
 import ru.itpark.chatservice.presentation.chat.dto.commands.CreateChatCommand;
+import ru.itpark.chatservice.presentation.chat.dto.responses.ChatResponse;
+import ru.itpark.chatservice.presentation.message.dto.queries.ChatSearchQuery;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/chats")
@@ -18,11 +22,11 @@ public class ChatController {
         chatService.createChat(chat);
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.POST, path = "/find")
     @CrossOrigin
     @ResponseBody
-    public void createChat(@RequestParam Long projectId) {
-        chatService.getChat(projectId);
+    public List<ChatResponse> getChat(@RequestBody ChatSearchQuery query) {
+        return chatService.getChat(query);
     }
 
 }

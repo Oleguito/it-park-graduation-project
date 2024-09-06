@@ -22,7 +22,7 @@ public class Message {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @Column(name = "chat")
+    @JoinColumn(name = "chat_id")
     private Chat chat;
 
     @Column(name = "user_id")

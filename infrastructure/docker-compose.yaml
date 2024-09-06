@@ -6,6 +6,7 @@ include:
   - path: ../backend/notification-service/compose.yaml
   - path: ../backend/invitation-service/compose.yaml
   - path: ../backend/document-service/compose.yml
+  - path: ../backend/chat-service/compose.yaml
 
 networks:
   backend:
