@@ -5,6 +5,7 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import ru.itpark.chatservice.application.chat.MessageFacade;
 import ru.itpark.chatservice.application.chat.services.ChatService;
 import ru.itpark.chatservice.domain.message.Message;
@@ -12,6 +13,7 @@ import ru.itpark.chatservice.presentation.message.dto.commands.CreateMessageComm
 
 @Component
 @RequiredArgsConstructor
+@Controller
 public class MessageBroker {
 
     private final SimpMessagingTemplate messagingTemplate;
