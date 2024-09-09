@@ -1,27 +1,33 @@
-'use client'
+"use client";
 
 import { ChatResponse } from "@/types/chat/chat";
-import { useRef } from "react";
 
 export type Props = {
-  items: ChatResponse[],
-  callback: (chatId: number) => void
-}
+  items: ChatResponse[];
+  callback: (chatId: number) => void;
+};
 
 const ChatsList: React.FC<Props> = (props: Props) => {
-
   const handleClick = (chatId: number) => {
-    props.callback(chatId)
-  }
+    props.callback(chatId);
+  };
 
   return (
     <div className="w-1/4">
-      <div>ChatsList</div>
-      {props.items.map(item => {
-        return <div key={item.chatId} className="mt-2 mb-2" onClick={() => handleClick(item.chatId)}>{item.projectName}</div>;
+      <div className="font-bold">Список чатов:</div>
+      {props.items.map((item) => {
+        return (
+          <div
+            key={item.chatId}
+            className={`mt-2 mb-2 hover:bg-slate-500 h-10 text-center text-justify-center border-2 rounded border-t-violet-500`}
+            onClick={() => handleClick(item.chatId)}
+          >
+            {item.projectName}
+          </div>
+        );
       })}
     </div>
   );
-}
+};
 
-export default ChatsList
+export default ChatsList;

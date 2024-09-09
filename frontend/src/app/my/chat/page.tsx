@@ -4,7 +4,7 @@ import ChatsList from "@/components/chat/chatslist/ChatsList";
 import ChatComponent from "@/components/chat/component/ChatComponent";
 import { ChatResponse } from "@/types/chat/chat";
 import { ProjectResponse } from "@/types/project/project";
-import { getChats, getMessages } from "@/utils/chat-service/controller/chat-controller";
+import { getChats } from "@/utils/chat-service/controller/chat-controller";
 import { getByEmail } from "@/utils/project-service/project-controller";
 import { getDecodedToken } from "@/utils/token";
 import React, { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ import React, { useEffect, useState } from "react";
 const ChatPage: React.FC = () => {
   const [chats, setChats] = useState([] as ChatResponse[]);
   const [projectIds, setProjectIds] = useState([] as number[]);
-  const [currentChatId, setCurrentChatId] = useState(undefined as number)
+  const [currentChatId, setCurrentChatId] = useState(undefined as number);
 
   useEffect(() => {
     const token = getDecodedToken();
@@ -49,21 +49,23 @@ const ChatPage: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <div>ChatPage</div>
-      <div>
-        ▬ Сервис Чата и Коммуникаций Функционал: Встроенные чаты для общения
-        команды, уведомления о новых сообщениях и событиях. Технологии:
-        WebSockets для реального времени, Kafka для хранения истории чатов.
-      </div>
-      <div className="flex">
+    <div className="w-full flex">
+      <div className="mr-4"></div>
+      <div className="flex mt-4 w-full">
         <ChatsList
           items={chats}
           callback={(chatId: number) => {
-            setCurrentChatId(chatId)
+            setCurrentChatId(chatId);
           }}
         />
-        <ChatComponent chatId={currentChatId} />
+        <div className="w-4"></div>
+        <div className="w-full flex content-center justify-center text-center text-justify-center">
+          {currentChatId ? (
+            <ChatComponent chatId={currentChatId} />
+          ) : (
+            <div className="w-full">Нажмите на чат слева, чтобы начать</div>
+          )}
+        </div>
       </div>
     </div>
   );

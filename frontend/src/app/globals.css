@@ -75,16 +75,18 @@
   }
 }
 
-/* .MyButton {
-  background-color: #000;
-  color: wheat;
-  border-color: red;
-  border-radius: 50px;
-} */
+@layer components {
+  .hover-primary-bg:hover {
+    background-color: var(--background);
+  }
+}
+
 
 body {
-   background-image: url("FUCKDARK.png"); 
+   background-image: url("FUCKBACK.png"); 
 }
+
+
 
 /* * {
    border-style: dotted;
