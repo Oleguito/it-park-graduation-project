@@ -109,42 +109,53 @@ const AddProjectBlock = () => {
     }
 
     return (
-        <>
-            <div>AddProjectBlock</div>
-            <div>Это блок для добавления проектов</div>
-            <div className="container">
-                <form onSubmit={submitHandler} ref={formdata}>
-                    <div>
-                        <label htmlFor="project-title">Название проекта:</label>
-                        <input
-                            type="text"
-                            id="project-title"
-                            name="project-title"
-                            placeholder="Название проекта"
-                        ></input>
-                    </div>
-                    <div className="flex">
-                        <label htmlFor="project-description">
-                            Описание проекта:
-                        </label>
-                        <textarea
-                            id="project-description"
-                            name="project-description"
-                            placeholder="Описание проекта"
-                            cols={80}
-                        ></textarea>
-                    </div>
-                    <div>
-                        <label htmlFor="project-due">
-                            Срок выполнения проекта:
-                        </label>
-                        <input type="date" id="project-due" name="project-due"></input>
-                    </div>
-                    <Button>Добавить проект</Button>
-                </form>
-                <Toaster/>
+      <>
+        <div className="container mt-8">
+          <form
+            onSubmit={submitHandler}
+            ref={formdata}
+            className="flex flex-col"
+          >
+            <div className="flex mb-4">
+              <label htmlFor="project-title" className="w-1/3 m-2">
+                Название проекта:
+              </label>
+              <input
+                type="text"
+                id="project-title"
+                name="project-title"
+                placeholder="Название проекта"
+                className="w-2/3"
+              ></input>
             </div>
-        </>
+            <div className="flex mb-4">
+              <label htmlFor="project-description" className="w-1/3 m-2">
+                Описание проекта:
+              </label>
+              <textarea
+                id="project-description"
+                name="project-description"
+                placeholder="Описание проекта"
+                cols={80}
+                className="w-2/3"
+              ></textarea>
+            </div>
+            <div className="flex mb-4">
+              <label htmlFor="project-due" className="w-1/3 m-2">
+                Срок выполнения проекта:
+              </label>
+              <input
+                type="date"
+                id="project-due"
+                name="project-due"
+                className="w-2/3"
+              ></input>
+            </div>
+            <Button>Добавить проект</Button>
+          </form>
+          <Toaster />
+        </div>
+      </>
     );
 };
 

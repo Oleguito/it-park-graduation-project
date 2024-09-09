@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -73,7 +73,7 @@
   body {
     @apply bg-background text-foreground;
   }
-} */
+}
 
 /* .MyButton {
   background-color: #000;
@@ -82,12 +82,12 @@
   border-radius: 50px;
 } */
 
-* {
+body {
+   background-image: url("FUCKDARK.png"); 
+}
+
+/* * {
    border-style: dotted;
   border-color: rgb(255, 0, 255);
   border-width: 1px;
-}
-
-
-
-
+} */

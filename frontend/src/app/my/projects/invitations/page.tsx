@@ -7,7 +7,7 @@ import {
 } from "@/types/invitation/invitation";
 import { getInvitations } from "@/utils/invitation-service/invitation-service";
 import { getDecodedToken, JwtPayloadType } from "@/utils/token";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProjectInvitationsPage = () => {
   const [invitations, setInvitations] = useState(
@@ -31,25 +31,27 @@ const ProjectInvitationsPage = () => {
 
   return (
     <>
-      {invitations ? (
-        <>
-          {invitations.length == 0 ? (
-            <div>У вас нет приглашений</div>
-          ) : (
-            invitations.map((elem) => (
-              <InvitationItem
-                key={elem.invUUID}
-                data={elem}
-                callback={() => {
-                  setUpdate(!update);
-                }}
-              />
-            ))
-          )}
-        </>
-      ) : (
-        <div>Загрузка...</div>
-      )}
+      <div className="w-full">
+        {invitations ? (
+          <>
+            {invitations.length == 0 ? (
+              <div>У вас нет приглашений</div>
+            ) : (
+              invitations.map((elem) => (
+                <InvitationItem
+                  key={elem.invUUID}
+                  data={elem}
+                  callback={() => {
+                    setUpdate(!update);
+                  }}
+                />
+              ))
+            )}
+          </>
+        ) : (
+          <div>Загрузка...</div>
+        )}
+      </div>
     </>
   );
 };

@@ -26,11 +26,17 @@ const FileUploadComponent: React.FC<Props> = ({ projectId, userId, callback }) =
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <Button onClick={handleUpload} disabled={!fileToUpload}>
-        Добавить вложение
-      </Button>
+    <div className="flex items-center mb-4">
+      <input type="file" onChange={handleFileChange} className="w-[50%]" />
+      <div className="w-[50%]">
+        <Button
+          onClick={handleUpload}
+          disabled={!fileToUpload}
+          className="w-1/2"
+        >
+          Добавить вложение
+        </Button>
+      </div>
     </div>
   );
 };

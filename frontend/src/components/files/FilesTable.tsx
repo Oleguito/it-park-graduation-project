@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { FileElement } from "@/components/files/FileRow";
 import {
   Dialog,
   DialogContent,
@@ -13,17 +13,15 @@ import {
   Table,
   TableBody,
   TableCaption,
-  TableCell,
   TableHead,
   TableHeader,
-  TableRow,
+  TableRow
 } from "@/components/ui/table";
-import Link from "next/link";
 import { Settings } from "@/constants/settings";
-import { downloadListFiles, uploadFile } from "@/utils/document-service/document-service";
 import { FileAttachmentArray } from "@/types/document/document";
-import { error } from "console";
-import { FileElement } from "@/components/files/FileRow";
+import { downloadListFiles } from "@/utils/document-service/document-service";
+import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 export const FilesTable = (props: { projectId: number; updateFiles: boolean }) => {
   const [files, setFiles] = useState([] as FileAttachmentArray);
@@ -48,7 +46,9 @@ export const FilesTable = (props: { projectId: number; updateFiles: boolean }) =
     <div>
       <Dialog>
         <DialogTrigger asChild>
-          <button className={"from-neutral-100"}>Показать вложения</button>
+          <Button className={"from-neutral-100 bg-indigo-400 rounded"}>
+            Показать вложения
+          </Button>
         </DialogTrigger>
         <DialogContent className="max-w-[60rem] w-[60rem]">
           <DialogHeader>
@@ -58,12 +58,12 @@ export const FilesTable = (props: { projectId: number; updateFiles: boolean }) =
           </DialogHeader>
           <DialogDescription></DialogDescription>
           <Table>
-            <TableCaption>A list of your recent invoices.</TableCaption>
+            <TableCaption>Список добавленных Вами файлов</TableCaption>
             <TableHeader>
               <TableRow>
                 <TableHead className="w-[100px]">Имя вложения</TableHead>
-                <TableHead>Автор</TableHead>
-                <TableHead className="hidden">ИД проекта</TableHead>
+                <TableHead>ID авторв</TableHead>
+                <TableHead className="">ID проекта</TableHead>
                 <TableHead className="text-right"></TableHead>
                 <TableHead className="text-right"></TableHead>
               </TableRow>

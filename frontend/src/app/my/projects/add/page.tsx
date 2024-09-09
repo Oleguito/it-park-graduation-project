@@ -1,5 +1,4 @@
 import AddProjectBlock from "@/components/add-project-block/AddProjectBlock";
-import React from "react";
 
 
 const AddProjectPage = () => {
@@ -8,7 +7,6 @@ const AddProjectPage = () => {
 
     return (
         <>
-            <div>AddProjectPage</div>
             <AddProjectBlock />
         </>
     );

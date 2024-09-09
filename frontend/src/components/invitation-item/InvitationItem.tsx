@@ -74,11 +74,11 @@ const InvitationItem = ({
     <>
       <div>
         <ProjectItem props={data} />
-        <div>
-          <Button className="m-1" onClick={acceptInvitationHandler}>
+        <div className="flex justify-center">
+          <Button className="m-1 w-1/2 h-12" onClick={acceptInvitationHandler}>
             Принять приглашение
           </Button>
-          <Button className="m-1" onClick={rejectInvitationHandler}>
+          <Button className="m-1 w-1/2 h-12" onClick={rejectInvitationHandler}>
             Отклонить приглашение
           </Button>
         </div>

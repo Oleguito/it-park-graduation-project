@@ -2,19 +2,13 @@
 
 
 import DoubleList from "@/components/doubleList/doubleList";
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Button} from "@/components/ui/button";
-import {SettingsIcon} from "lucide-react";
-import {UserInfo} from '@/types/user-info'
-import {getUserInfo} from "@/utils/userInfo";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { UserInfo } from '@/types/user-info';
+import { getUserInfo } from "@/utils/userInfo";
 import { useEffect, useState } from "react";
-import jwt_decode from 'jwt-decode';
-import JwtParseData from "../../types/jwt";
-import { Settings } from "@/constants/settings";
-import axios from "axios";
 //import {UserQuery} from "@/types/UserQuery";
-import { ContextMenuSeparator } from "@radix-ui/react-context-menu";
-import { createUserInBackend, createUserInBackend2 } from "@/utils/auth-service/user-service";
+import { createUserInBackend } from "@/utils/auth-service/user-service";
 
 
 const MyPage = () => {
@@ -30,15 +24,10 @@ const MyPage = () => {
 
     return (
         <>
-            <div>
-                <p>- Общая информация о пользователе</p>
-                <p>- Список текущих проектов пользователя</p>
-                <p>- Доступ к функциям управления профилем</p>
-            </div>
             <div className={"flex w-full justify-between items-center h-full"}>
                 <Avatar
                     className={
-                        "w-[128px] h-[128px] flex justify-center items-center"
+                        "w-[128px] h-[128px] flex justify-center items-center mr-8 ml-8"
                     }
                 >
                     <AvatarImage
@@ -47,7 +36,7 @@ const MyPage = () => {
                     />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
-                <div className={"flex justify-around w-full"}>
+                <div className={"flex justify-around w-full flex-col"}>
                     <DoubleList
                         listData={[
                             {
@@ -81,11 +70,11 @@ const MyPage = () => {
                         ]}
                     />
                 </div>
-                <div className={"h-full flex items-start"}>
+                {/* <div className={"h-full flex items-start"}>
                     <Button size={"icon"} variant={"outline"}>
                         <SettingsIcon />
                     </Button>
-                </div>
+                </div> */}
             </div>
             <Button onClick={(e) => { createUserInBackend(); }}>Сделать что-то</Button>
         </>
