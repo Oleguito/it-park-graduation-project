@@ -23,8 +23,9 @@ import { downloadListFiles } from "@/utils/document-service/document-service";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 
-export const FilesTable = (props: { projectId: number; updateFiles: boolean }) => {
+export const FilesTable = (props: { projectId: number; updateFiles: boolean;}) => {
   const [files, setFiles] = useState([] as FileAttachmentArray);
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
     console.log("project id in Table: ", props.projectId);
@@ -40,7 +41,7 @@ export const FilesTable = (props: { projectId: number; updateFiles: boolean }) =
       .catch((error) =>
         console.log("Error occuring while fetching list of files: ", error),
       );
-  }, [props.projectId, props.updateFiles]);
+  }, [props.projectId, props.updateFiles, update]);
 
   return (
     <div>
@@ -50,7 +51,7 @@ export const FilesTable = (props: { projectId: number; updateFiles: boolean }) =
             Показать вложения
           </Button>
         </DialogTrigger>
-        <DialogContent className="max-w-[60rem] w-[60rem]">
+        <DialogContent className="max-w-[80%] w-[80%]">
           <DialogHeader>
             <DialogTitle className="text-[30px]">
               Прикрепленные файлы
@@ -62,7 +63,7 @@ export const FilesTable = (props: { projectId: number; updateFiles: boolean }) =
             <TableHeader>
               <TableRow>
                 <TableHead className="w-[100px]">Имя вложения</TableHead>
-                <TableHead>ID авторв</TableHead>
+                <TableHead>ID автора</TableHead>
                 <TableHead className="">ID проекта</TableHead>
                 <TableHead className="text-right"></TableHead>
                 <TableHead className="text-right"></TableHead>
@@ -71,7 +72,7 @@ export const FilesTable = (props: { projectId: number; updateFiles: boolean }) =
             <TableBody>
               {files.length > 0 &&
                 files.map((file) => {
-                  return <FileElement key={props.projectId} elem={file} />;
+                  return <FileElement key={props.projectId} elem={file} callback={() => setUpdate(!update)} />;
                 })}
             </TableBody>
           </Table>

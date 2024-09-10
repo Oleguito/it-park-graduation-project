@@ -44,6 +44,29 @@ public class FileController {
                    .body("File upload failed.");
         }
     }
+    
+    @CrossOrigin
+    @RequestMapping(
+    path = "/delete",
+    method = RequestMethod.DELETE
+    )
+    public ResponseEntity<String> deleteFile(
+        @RequestParam("userId") String userId,
+        @RequestParam("projectId") String projectId,
+        @RequestParam("fileName") String fileName
+    ) {
+        System.out.println("we are in controller, deleting files...");
+        try {
+            minioService.deleteFile(userId, projectId, fileName);
+            return ResponseEntity
+                   .status(HttpStatus.OK)
+                   .body("File deleted successfully.");
+        } catch (Exception e) {
+            return ResponseEntity
+                   .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                   .body("File deletion failed.");
+        }
+    }
 
     @GetMapping("/download")
     @ResponseBody

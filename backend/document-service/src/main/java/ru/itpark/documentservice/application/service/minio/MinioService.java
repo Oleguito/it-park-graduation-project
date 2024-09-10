@@ -41,7 +41,7 @@ public class MinioService {
 
         try {
 
-            String uri = String.format(pattern, userId, projectId, fileName);
+            String uri = getObjectName(userId, projectId, fileName);
 
             GetPresignedObjectUrlArgs args = GetPresignedObjectUrlArgs.builder()
                     .method(Method.GET)
@@ -78,7 +78,7 @@ public class MinioService {
         createBucketIfNotExists();
 
         String fileName = file.getOriginalFilename();
-        String objectName = String.format(pattern, userId, projectId, fileName);
+        String objectName = getObjectName(userId, projectId, fileName);
         InputStream fileInputStream = file.getInputStream();
 
 //         Upload the file to specified bucket with original name
@@ -117,6 +117,10 @@ public class MinioService {
 //                .build(), Paths.get("test"));
 //
 //        Paths.get("test").toFile().delete();
+    }
+    
+    private String getObjectName(String userId, String projectId, String fileName) {
+        return String.format(pattern, userId, projectId, fileName);
     }
 
 //    public ResponseInputStream<GetObjectResponse> downloadFile(String key) {
@@ -165,6 +169,29 @@ public class MinioService {
             e.printStackTrace();
         }
         return bucketExists;
+    }
+    
+    private void minioRemove(String userId, String projectId, String fileName) {
+        try {
+            minioClient.removeObject(RemoveObjectArgs.builder()
+                                     .bucket(bucketName)
+                                     .object(fileName)
+                                     .build());
+        } catch (Exception e) {
+            System.out.println("Не удалось удалить файл!!! " + fileName);
+        }
+    }
+    
+    public void deleteFile(String userId, String projectId, String fileName) {
+        
+        if(!bucketExists()) return;
+        
+        minioRemove(userId, projectId, fileName);
+        
+        
+        final var found = documentsService.findByPath(fileName);
+        
+        documentsService.deleteDocument(found);
     }
 
 //    public String generatePresignedUrl(String key) {

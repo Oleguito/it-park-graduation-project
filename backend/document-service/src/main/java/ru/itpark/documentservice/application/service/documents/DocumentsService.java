@@ -25,4 +25,12 @@ public class DocumentsService {
     public void saveFile(Document newFile) {
         documentsRepository.save(newFile);
     }
+    
+    public Document findByPath(String objectName) {
+        return documentsRepository.findByPath(objectName);
+    }
+    
+    public void deleteDocument(Document found) {
+        documentsRepository.delete(found);
+    }
 }

@@ -3,7 +3,11 @@ import axios, { AxiosResponse } from "axios";
 import { getAxiosInstance } from "../utilities/axiosInstance";
 import { FileAttachmentArray } from "@/types/document/document";
 
-export const uploadFile = async (file: File, projectId: number, userId: number) => {
+export const uploadFile = async (
+  file: File,
+  projectId: number,
+  userId: number,
+) => {
   const formData = new FormData();
   formData.append("file", file);
 
@@ -37,4 +41,22 @@ export const downloadListFiles = async (
   return await getAxiosInstance(url)
     .post("", query)
     .then((response: AxiosResponse<FileAttachmentArray>) => response.data);
+};
+
+export const deleteFile = async (
+  userId: number,
+  projectId: number,
+  fileName: string,
+) => {
+  return await getAxiosInstance(
+    Settings.backend.documentService.fileDeleteUrl(),
+  )
+    .delete("", {
+      params: {
+        userId,
+        projectId,
+        fileName,
+      },
+    })
+    .then((response: AxiosResponse) => response.data);
 };

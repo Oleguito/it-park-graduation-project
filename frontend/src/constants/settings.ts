@@ -59,6 +59,9 @@ export const Settings = {
       fileUploadUrl: function () {
         return this.baseUrl + "/api/files/upload";
       },
+      fileDeleteUrl: function () {
+        return this.baseUrl + "/api/files/delete";
+      },
       downloadListFiles: function () {
         return this.baseUrl + "/api/files/list";
       },

@@ -113,10 +113,7 @@ const ProjectsPage = () => {
           ) : (
             projects.map((project) => {
               return (
-                <div
-                  key={project.id}
-                  className="mb-8 w-[100%]"
-                >
+                <div key={project.id} className="mb-8 w-[100%]">
                   <ProjectItem
                     props={{
                       projectId: project.id,

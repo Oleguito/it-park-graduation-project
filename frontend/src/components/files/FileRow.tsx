@@ -1,12 +1,27 @@
 'use client'
 
 import { FileAttachment } from '@/types/document/document'
+import { deleteFile } from '@/utils/document-service/document-service'
 import Link from 'next/link'
 import { TableCell, TableRow } from '../ui/table'
 
 export const FileElement = (props: {
   elem: FileAttachment,
+  callback: () => void
 }) => {
+
+    const handleDeleteFile = () => {
+      console.log("deleting file: ", props.elem);
+      deleteFile(props.elem.userId, props.elem.projectId, props.elem.fileName)
+      .then((response) => {
+        console.log(response);
+        props.callback();
+      })
+      .catch((error) => {
+        console.log("Error while deleting file: ", error);
+      });
+    }
+
     return (
       <TableRow key={props.elem.link}>
         <TableCell className="font-medium">{props.elem.fileName}</TableCell>
@@ -20,10 +35,10 @@ export const FileElement = (props: {
           </Link>
         </TableCell>
         <TableCell className="text-right">
-          <Link href="https://www.example.com" passHref legacyBehavior>
-            <a target="_blank" rel="noopener noreferrer">
+          <Link href={''}>
+            <div onClick={handleDeleteFile}>
               Удалить
-            </a>
+            </div>
           </Link>
         </TableCell>
       </TableRow>
