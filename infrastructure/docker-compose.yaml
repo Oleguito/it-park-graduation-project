@@ -8,6 +8,7 @@ include:
   - path: ../backend/document-service/compose.yml
   - path: ../backend/chat-service/compose.yaml
 
+
 networks:
   backend:
     driver: bridge
