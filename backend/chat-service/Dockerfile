@@ -18,10 +18,12 @@ ENV GP_CHATSERVICE_DB_PASSWORD=12345
 
 # Копирование файлов проекта
 COPY pom.xml ./
+COPY src ./src
 RUN mvn dependency:go-offline -B
 
 # Сборка проекта с использованием Maven и передача аргументов сборки
-RUN mvn clean package -Pskip-kafka-tests
+RUN mvn clean package 
+# -P skip-kafka-tests
 #    -DskipTests
 
 # Этап 2: Создание финального образа

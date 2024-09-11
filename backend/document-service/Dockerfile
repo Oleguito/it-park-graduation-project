@@ -18,8 +18,11 @@ ENV GP_DOCUMENT_SERVICE_DB_URL=jdbc:postgresql://localhost:5432/documentserviced
 ENV GP_DOCUMENT_SERVICE_DB_USERNAME=documentservice
 ENV GP_DOCUMENT_SERVICE_DB_PASSWORD=12345
 
+RUN echo "GP_DOCUMENT_SERVICE_DB_URL value is $GP_DOCUMENT_SERVICE_DB_URL"
+
 # Копирование файлов проекта
 COPY pom.xml ./
+COPY src ./src
 RUN mvn dependency:go-offline -B
 
 # Сборка проекта с использованием Maven и передача аргументов сборки

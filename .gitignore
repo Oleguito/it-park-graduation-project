@@ -12,3 +12,5 @@
 /frontend/node_modules
 /frontend/src/stories
 /.metadata/
+backend/auth-service/pom.xml
+.gitignore

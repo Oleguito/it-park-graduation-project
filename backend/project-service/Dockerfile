@@ -39,7 +39,7 @@ COPY src ./src
 COPY certificate.p12 ./
 
 # Сборка проекта с использованием Maven и передача аргументов сборки
-RUN mvn clean package -Pskip-kafka-tests
+RUN mvn clean package -P skip-kafka-tests
 #    -DskipTests
 
 # Этап 2: Создание финального образа

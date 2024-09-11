@@ -4,13 +4,17 @@ services:
   document-service:
     build:
       context: .
+      network: host
+      args:
+      - GP_DOCUMENT_SERVICE_DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/invitationservicedb
     ports:
       - 8083:8083
     environment:
       - GP_DOCUMENT_SERVICE_KEYSTORE_PASSWORD=1PwCgNAb
-      - GP_DOCUMENT_SERVICE_DB_URL=jdbc:postgresql://localhost:5432/invitationservicedb
+      - GP_DOCUMENT_SERVICE_DB_URL=jdbc:postgresql://collaborative-project-postgres-db:5432/invitationservicedb
       - GP_DOCUMENT_SERVICE_DB_USERNAME=invitationservice
       - GP_DOCUMENT_SERVICE_DB_PASSWORD=12345
+    
     depends_on:
       - collaborative-project-postgres-db
     networks:
