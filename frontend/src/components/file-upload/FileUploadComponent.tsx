@@ -1,6 +1,7 @@
 import { uploadFile } from "@/utils/document-service/document-service";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
+import { useToast } from "../ui/use-toast";
 
 export type Props = {
   projectId: number;
@@ -10,6 +11,7 @@ export type Props = {
 
 const FileUploadComponent: React.FC<Props> = ({ projectId, userId, callback }) => {
   const [fileToUpload, setFileToUpload] = useState<File | null>(null);
+  const { toast } = useToast();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
@@ -22,6 +24,12 @@ const FileUploadComponent: React.FC<Props> = ({ projectId, userId, callback }) =
     if (fileToUpload) {
       await uploadFile(fileToUpload, projectId, userId);
       callback && callback();
+      toast({
+        title: "Вложение добавлено!",
+        description: "Вложение добавлено в проект",
+        duration: 3000,
+        variant: "destructive",
+      });
     }
   };
 

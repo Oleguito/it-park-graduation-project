@@ -14,10 +14,10 @@ export const sidebarVars = {
                 text: "Проекты",
                 link: "/my/projects",
             },
-            {
-                text: "Документы",
-                link: "/my/documents",
-            },
+//             {
+//                 text: "Документы",
+//                 link: "/my/documents",
+//             },
             // {
             //     text: "Участники",
             //     link: "/my/participants",
