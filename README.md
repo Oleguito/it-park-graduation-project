@@ -36,12 +36,12 @@ This application provides a platform for teams to effectively plan, execute, and
 
 5. Start microservices, each in its own console window
 
-   `it-park-graduation-project/backend/auth-service/run.bat`
-   `it-park-graduation-project/backend/chat-service/run.bat`
-   `it-park-graduation-project/backend/document-service/run.bat`
-   `it-park-graduation-project/backend/invitation-service/run.bat`
-   `it-park-graduation-project/backend/notification-service/run.bat`
-   `it-park-graduation-project/backend/project-service/run.bat`
+   ```it-park-graduation-project/backend/auth-service/run.bat
+   it-park-graduation-project/backend/chat-service/run.bat
+   it-park-graduation-project/backend/document-service/run.bat
+   it-park-graduation-project/backend/invitation-service/run.bat
+   it-park-graduation-project/backend/notification-service/run.bat
+   it-park-graduation-project/backend/project-service/run.bat```
 
 6. Install the dependencies:
 
