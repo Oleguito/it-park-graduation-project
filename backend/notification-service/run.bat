@@ -37,7 +37,9 @@ set GP_NOTIFICATION_SERVICE_DB_USERNAME=notificationservice
 set GP_NOTIFICATION_SERVICE_DB_PASSWORD=12345
 
 rem call mvn liquibase:dropAll -P include-liquibase-plugin
-call mvn liquibase:update -P include-liquibase-plugin
+rem call mvn liquibase:update -P include-liquibase-plugin
+call mvn -P include-liquibase-plugin liquibase:dropAll liquibase:update
+
 
 rem cls
 rem call mvn clean package

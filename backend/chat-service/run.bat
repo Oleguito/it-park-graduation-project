@@ -10,7 +10,10 @@ rem setx GP_CHATSERVICE_DB_PASSWORD 12345
 
 del target /s /q
 
-call mvnw liquibase:dropAll -P include-liquibase-plugin
-call mvnw liquibase:update -P include-liquibase-plugin
+rem call mvnw liquibase:dropAll -P include-liquibase-plugin
+rem call mvnw liquibase:update -P include-liquibase-plugin
+
+call mvn -P include-liquibase-plugin liquibase:dropAll liquibase:update
+
 
 mvnw spring-boot:run

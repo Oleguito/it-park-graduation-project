@@ -1,51 +1,69 @@
-"# it-park-graduation-project" 
+# Collaborative Project Management Platform
 
-@1ommy @padree @et_lana_banana
-1)
-Идея для приложения: Платформа для Организации и Управления Совместными Проектами
-Описание:
-Приложение представляет собой платформу для организации и управления совместными проектами, которая позволяет командам эффективно планировать, выполнять и отслеживать прогресс задач. Платформа обеспечивает интеграцию с популярными инструментами для совместной работы, такими как календари, системы управления документами и чаты.
+This application provides a platform for teams to effectively plan, execute, and monitor the progress of their collaborative projects.
 
-Микросервисы:
+## Features
 
-▬ Сервис Аутентификации и Авторизации
-   - Функционал: Управление учетными записями пользователей, аутентификация, авторизация и контроль доступа.
-   - Технологии: OAuth2, JWT, базы данных пользователей (например, PostgreSQL).
+- Project planning and task management
+- Integration with popular collaboration tools (calendars, document management, chat)
+- Real-time project status tracking and reporting
+- Customizable workflow and permissions management
+- Mobile-responsive design for on-the-go access
 
-▬ Сервис Управления Проектами 
-   - Функционал: Создание, редактирование и удаление проектов, управление задачами, назначение ответственных.
-   - Технологии: gRPC, база данных для хранения информации о проектах и задачах (например, MongoDB).
+## Getting Started
 
-▬ Сервис Календаря и Планирования
-   - Функционал: Интеграция с календарями, планирование событий и задач, уведомления о сроках.
-   - Технологии: gRPC, интеграция с календарными сервисами (например, Google Calendar API).
+### Prerequisites
 
-▬ Сервис Управления Документами
-   - Функционал: Загрузка, хранение и совместная работа с документами, управление доступом к документам. 
-   - Технологии: Облачное хранилище (например, AWS S3), редакторы документов (например, Google Docs API).
+- Node.js (version 20.11.1 or higher)
+- npm (version 10.8.2 or higher)
 
-▬ Сервис Чата и Коммуникаций
-   - Функционал: Встроенные чаты для общения команды, уведомления о новых сообщениях и событиях.
-   - Технологии: WebSockets для реального времени, Kafka для хранения истории чатов.
+### Installation (tested on Windows)
 
-▬ Сервис Аналитики и Отчетов
-   - Функционал: Сбор данных о прогрессе задач, анализ эффективности команды, генерация отчетов.
-   - Технологии: Big Data технологии (например, Kafka, Elasticsearch).
+1. Clone the repository:
 
-Взаимодействие между микросервисами:
-- API Gateway: Центральная точка доступа для всех запросов, маршрутизация запросов к соответствующим микросервисам.
-- Message Broker: Kafka используется для асинхронного взаимодействия между микросервисами.
-- Monitoring и Logging: Инструменты для мониторинга и логирования работы микросервисов (например, Prometheus, ELK Stack).
+   git clone https://github.com/Oleguito/it-park-graduation-project.git
 
-В команде:
-Oleguito
-@et_lana_banana
-@padree
+2. Navigate to the project directory:
 
-2) тимлид Oleguito
+   cd it-park-graduation-project
 
-3) https://tracker.yandex.ru/pages/projects/1
+3. Prepare containers
 
-4) https://github.com/Oleguito/it-park-graduation-project
+   cd infrastructure
+   ./oleg-run.bat
 
-5) Диаграммы(dbdiagram, excalidraw) в папке Diagrams
+4. Wait for 30-60 seconds
+
+5. Start microservices, each in its own console window
+
+   it-park-graduation-project/backend/auth-service/run.bat
+   it-park-graduation-project/backend/chat-service/run.bat
+   it-park-graduation-project/backend/document-service/run.bat
+   it-park-graduation-project/backend/invitation-service/run.bat
+   it-park-graduation-project/backend/notification-service/run.bat
+   it-park-graduation-project/backend/project-service/run.bat
+
+6. Install the dependencies:
+
+   cd it-park-graduation-project/frontend
+   npm install
+
+7. Start the development server:
+
+   npm run dev
+
+   The application should now be running at http://localhost:3000.
+
+## Usage
+
+1. Click "Выход" button to the right left. Sometimes you might need to reload the page. We are working on that.
+
+2. Explore!
+
+## Contributing
+
+We welcome contributions to this project. If you have any ideas, bug reports, or feature requests, please feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
