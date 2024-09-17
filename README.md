@@ -29,8 +29,8 @@ This application provides a platform for teams to effectively plan, execute, and
 
 3. Prepare containers
 
-   `cd infrastructure`
-   `./oleg-run.bat`
+   ```cd infrastructure
+   ./oleg-run.bat```
 
 4. Wait for 30-60 seconds
 
@@ -45,8 +45,8 @@ This application provides a platform for teams to effectively plan, execute, and
 
 6. Install the dependencies:
 
-   `cd it-park-graduation-project/frontend`
-   `npm install`
+   ```cd it-park-graduation-project/frontend
+   npm install```
 
 7. Start the development server:
 
