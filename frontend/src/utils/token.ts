@@ -1,14 +1,12 @@
 'use client'
-import axios from 'axios'
-import jwt_decode from 'jwt-decode'
-import queryString from 'query-string'
-import {UserRole} from "@/types/user-role";
-import { Settings } from '@/constants/settings'
-import { ResourceAccess } from '@/types/resourceaccess'
-import JwtParseData from '@/types/jwt';
+import { Settings } from '@/constants/settings';
+import { ResourceAccess } from '@/types/resourceaccess';
+import { UserRole } from "@/types/user-role";
+import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 
 
-const LOCAL_STORAGE_TOKEN_KEY = `auth-tokens-${process.env.NODE_ENV}`
+export const LOCAL_STORAGE_TOKEN_KEY = `auth-tokens-${process.env.NODE_ENV}`
 
 export type TokenType = {
     accessToken: string

@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { authorize } from "@/utils/authorizationLogic";
-import { getTokens, signOut } from "@/utils/token";
+import { getTokens, LOCAL_STORAGE_TOKEN_KEY, signOut } from "@/utils/token";
 import { useEffect } from "react";
 
 const fontSans = FontSans({
@@ -13,6 +13,17 @@ const fontSans = FontSans({
 
 export default function RootLayout() {
     useEffect(() => {
+
+        const tokensLS = localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY);
+
+        console.log("tokensLS: ", tokensLS);
+
+        // const refreshToken = JSON.parse(tokensLS).refresh_token
+
+        // const refreshObject = jwt_decode(refreshToken);
+
+        // console.log(refreshObject);
+        
 
         console.log("we are here")
         const tokens = getTokens();
