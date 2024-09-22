@@ -14,19 +14,7 @@ const fontSans = FontSans({
 
 export default function RootLayout() {
   useEffect(() => {
-    const refreshObject: JwtRefreshTokenType = getDecodedRefreshToken();
 
-    // console.log(refreshObject);
-
-    // console.log(refreshObject.exp * 1000 - Date.now());
-
-    const expired = refreshObject.exp * 1000 - Date.now() < 0;
-
-    if (expired) {
-      signOut();
-      authorize();
-      return;
-    }
 
     const tokens = getTokens();
     if (
@@ -34,7 +22,13 @@ export default function RootLayout() {
       tokens === null ||
       Object.keys(tokens).length === 0
     ) {
-      authorize();
+        authorize();
+    } else {
+        const refreshObject: JwtRefreshTokenType = getDecodedRefreshToken();
+        const expired = refreshObject.exp * 1000 - Date.now() < 0;
+        if (expired) {
+          signOut();
+        }
     }
   }, []);
 
