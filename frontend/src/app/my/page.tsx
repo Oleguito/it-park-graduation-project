@@ -3,21 +3,31 @@
 
 import DoubleList from "@/components/doubleList/doubleList";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import { UserInfo } from '@/types/user-info';
 import { getUserInfo } from "@/utils/userInfo";
 import { useEffect, useState } from "react";
-//import {UserQuery} from "@/types/UserQuery";
-import { createUserInBackend } from "@/utils/auth-service/user-service";
-
 
 const MyPage = () => {
 
     const [userInfo, setUserInfo] = useState({} as UserInfo)
 
     useEffect(() => {
-        const ui = getUserInfo();
-        ui && setUserInfo(ui);
+      const ui = getUserInfo();
+      ui && setUserInfo(ui);
+
+    //   const tokensLS = localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY);
+
+    //   const parsed = JSON.parse(tokensLS);
+
+    //   console.log("parsed: ", parsed);
+
+    //   const refreshObject: JwtRefreshTokenType = getDecodedRefreshToken();
+
+    //   console.log(refreshObject);
+
+    //   console.log(refreshObject.exp * 1000 - Date.now());
+
+
     }, [])
 
     

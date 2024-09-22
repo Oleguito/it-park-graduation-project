@@ -2,46 +2,45 @@
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
+import { JwtRefreshTokenType } from "@/types/jwt";
 import { authorize } from "@/utils/authorizationLogic";
-import { getTokens, LOCAL_STORAGE_TOKEN_KEY, signOut } from "@/utils/token";
+import { getDecodedRefreshToken, getTokens, signOut } from "@/utils/token";
 import { useEffect } from "react";
 
 const fontSans = FontSans({
-    subsets: ["latin"],
-    variable: "--font-sans",
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export default function RootLayout() {
-    useEffect(() => {
+  useEffect(() => {
+    const refreshObject: JwtRefreshTokenType = getDecodedRefreshToken();
 
-        const tokensLS = localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY);
+    // console.log(refreshObject);
 
-        console.log("tokensLS: ", tokensLS);
+    // console.log(refreshObject.exp * 1000 - Date.now());
 
-        // const refreshToken = JSON.parse(tokensLS).refresh_token
+    const expired = refreshObject.exp * 1000 - Date.now() < 0;
 
-        // const refreshObject = jwt_decode(refreshToken);
+    if (expired) {
+      signOut();
+      authorize();
+      return;
+    }
 
-        // console.log(refreshObject);
-        
+    const tokens = getTokens();
+    if (
+      tokens === undefined ||
+      tokens === null ||
+      Object.keys(tokens).length === 0
+    ) {
+      authorize();
+    }
+  }, []);
 
-        console.log("we are here")
-        const tokens = getTokens();
-        if (
-            tokens === undefined ||
-            tokens === null ||
-            Object.keys(tokens).length === 0
-        ) {
-            authorize();
-        } else {
-            signOut();
-            authorize();
-        }
-    }, []);
-
-    return (
-      <>
-        <h1> © Collaborative Project Management Tool</h1>
-      </>
-    );
+  return (
+    <>
+      <h1> © Collaborative Project Management Tool</h1>
+    </>
+  );
 }

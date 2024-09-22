@@ -1,5 +1,6 @@
 'use client'
 import { Settings } from '@/constants/settings';
+import { JwtRefreshTokenType } from '@/types/jwt';
 import { ResourceAccess } from '@/types/resourceaccess';
 import { UserRole } from "@/types/user-role";
 import axios from 'axios';
@@ -133,52 +134,11 @@ export function signOut() {
     }
 }
 
-// export function introspectTokenIsActive(): boolean {
-//     const accessToken = getTokens().accessToken
-    
-//     return false
-// }
-
-// export function postToIntrospectUrl1() {
-//     axios
-//         .post(
-//             "https://lemur-7.cloud-iam.com/auth/realms/grad-project/protocol/openid-connect/token/introspect",
-//             queryString.stringify({
-//                 token: "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1VmsyMEV5RFJQVl9rbU5KM2pBaHZtUDdieDhMRUxmM0FTY09jRXVqV05ZIn0.eyJleHAiOjE3MjI0NTEyNDcsImlhdCI6MTcyMjQzMzI0NywiYXV0aF90aW1lIjoxNzIyNDMzMTE4LCJqdGkiOiI0YjgxMzVmMC0zYzliLTQ4MjAtYTkwZi1jZjU1ZDE5MGI1OGQiLCJpc3MiOiJodHRwczovL2xlbXVyLTcuY2xvdWQtaWFtLmNvbS9hdXRoL3JlYWxtcy9ncmFkLXByb2plY3QiLCJzdWIiOiI1NjhiMzBmYi1lMzhlLTQ4NjMtYjExOC03NjhhNWRjZTRhMzIiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhdXRoLXNlcnZpY2UiLCJzaWQiOiJlNWVkZWUyMS1lZmMzLTRmYTUtYTkxMS0zNGFkMDAxYWNmMWMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtZ3JhZC1wcm9qZWN0Il19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYXV0aC1zZXJ2aWNlIjp7InJvbGVzIjpbImFkbWluIiwidXNlciJdfX0sInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6Ik9sZWd1aXRvIFN3YWdidWNrcyIsInByZWZlcnJlZF91c2VybmFtZSI6Im9sZWd1aXRvIiwiZ2l2ZW5fbmFtZSI6Ik9sZWd1aXRvIiwiZmFtaWx5X25hbWUiOiJTd2FnYnVja3MiLCJlbWFpbCI6InRlbnpvcmlhdG9yQHJhbWJsZXIucnUifQ.RsUuzo6m_MphDYg7ynzYaJCuEb-G-ockjRTAtKIyshty7rwpHohQs61UzSdPIPCx3mM2reQlwDGr-uHdTVkEsSPTglWlvi-ZSUENF13czlU19cGirNrBwAXMHJ-cLUjzuRhbdacwcpSZeSoNmhUcx6Wh_RospNaMLislzof9HOTaJsRLabXyo7L_BbLM9Ayqo-agACTgd2W3YMTXvPURIsqpxtHp_BYZ0SIBjXC5kLOo3F0G2T4t1xJPfhGeEKQjDwA-HqaU0NlhMkQkDKFXwy8XiiqnhP90MvHMk5R-5Xcx7bhTctVuUwG3Jh1EiBCxOy5dFRPBleiuoUp7OMqZVw",
-//                 client_id: "auth-service",
-//                 client_secret: "7TCb2UhbgVpyh186oC6VMe9srakq16Bp",
-//             }),
-//             {
-//                 headers: {
-//                     "Content-Type": "application/x-www-form-urlencoded",
-//                     Accept: "*/*",
-//                 },
-//             }
-//         )
-//         .then((response) => {
-//             console.log("postToIntrospectUrl: ", response);
-//         })
-//         .catch((error) => {
-//             console.log("postToIntrospectUrl: ", error);
-//         });
-// }
-
-
-
-// export function getAccessTokenAndRefreshIfExpired(): string {
-
-
-//     const accessToken = getTokens().accessToken
-//     const active = introspectTokenIsActive()
-//     // console.log(`active: ${active}`);
-    
-//     // if(checkIsTokenExpired(accessToken)) {
-//     //     updateToken()
-//     // }
-
-//     // if(!active) {
-//     //     updateToken();
-//     // }
-
-//     return getTokens().accessToken
-// }
+export function getDecodedRefreshToken(): JwtRefreshTokenType | null {
+    const tokensLS = localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY);
+    const parsed = JSON.parse(tokensLS);
+    // console.log("parsed: ", parsed);
+    const refreshObject: JwtRefreshTokenType = jwt_decode(parsed.refreshToken);
+    // console.log(refreshObject);
+    return refreshObject;
+}
