@@ -26,9 +26,9 @@ export const Header = () => {
     <header className="flex justify-between sticky w-full p-4">
       <ModeToggle />
       <div className="flex gap-5">
-        <Button onClick={addProjectHandler}>Добавить проект</Button>
+        {/* <Button onClick={addProjectHandler}>Добавить проект</Button>
         <Button onClick={myProjectsHandler}>Мои проекты</Button>
-        <Button onClick={invitationsHandler}>Приглашения</Button>
+        <Button onClick={invitationsHandler}>Приглашения</Button> */}
         <Link href={"/my"}>
           <Button
             variant={isRouteActive(pathName, "/my") ? "default" : "default"}

@@ -35,7 +35,9 @@ const ProjectInvitationsPage = () => {
         {invitations ? (
           <>
             {invitations.length == 0 ? (
-              <div>У вас нет приглашений</div>
+              <div className="flex justify-center items-center mt-3">
+                <span>У вас нет приглашений</span>
+              </div>
             ) : (
               invitations.map((elem) => (
                 <InvitationItem

@@ -3,7 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { authorize } from "@/utils/authorizationLogic";
-import { getTokens } from "@/utils/token";
+import { getTokens, signOut } from "@/utils/token";
 import { useEffect } from "react";
 
 const fontSans = FontSans({
@@ -13,6 +13,8 @@ const fontSans = FontSans({
 
 export default function RootLayout() {
     useEffect(() => {
+
+        console.log("we are here")
         const tokens = getTokens();
         if (
             tokens === undefined ||
@@ -20,13 +22,15 @@ export default function RootLayout() {
             Object.keys(tokens).length === 0
         ) {
             authorize();
+        } else {
+            signOut();
+            authorize();
         }
     }, []);
 
     return (
-        <>
-            <h1>Добро пожаловать на сайт!</h1>
-            <p>Подождите, пока загрузится страница</p>
-        </>
+      <>
+        <h1> © Collaborative Project Management Tool</h1>
+      </>
     );
 }
